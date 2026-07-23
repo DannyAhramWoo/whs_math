@@ -14,21 +14,32 @@
 <li><span class="n">2</span><a href="#s2">Divisibility by 9 and 11</a></li>
 <li><span class="n">3</span><a href="#s3">Digit Patterns (numbers written in a row)</a></li>
 <li><span class="n">4</span><a href="#s4">Basic Operations (fractions, decimals, units, days of week)</a></li>
+<li><span class="n">5</span><a href="#s5">More Tools (fractions, decimals, exponents, bases)</a></li>
 </ol></nav>
 <section id="s1">
 <span class="sec-num">1</span>
 <h2>Letting Digits Be Variables &amp; Bases — <em>Sec 1</em></h2>
+<p class="src-note"><em>Source: AOPS Introduction to Number Theory Ch.8 (Base Numbers) — §8.1–8.2 (digit bundles, numerals), §8.4 (base digits), §8.5 (converting between bases)</em></p>
+<p><strong>Place value = "digit bundles."</strong> A number's digits are just the coefficients of powers of the base. In base 10, the numeral 3572 <em>means</em></p>
+<p><code>3·10³ + 5·10² + 7·10¹ + 2·10⁰</code> — four "digit bundles" of sizes 1000, 100, 10, 1 added together. (A <strong>numeral</strong> is the symbol we write; the <strong>number</strong> is the amount it stands for.)</p>
 <ul>
-<li><strong>Write a number by its digits:</strong> a 3-digit number with digits a, b, c means <strong>abc = 100a + 10b + c</strong>.<br><span style="color:var(--ink-soft)">Example: 375 = 100×3 + 10×7 + 5. The "place value" of each digit is 100, 10, 1.</span><br><span style="color:var(--ink-soft)">A 4-digit number: <strong>abcd = 1000a + 100b + 10c + d</strong>.</span></li>
-<li><strong>Swap the two end digits (abc → cba):</strong> the difference is always <strong>99(c − a)</strong>.<br><span style="color:var(--ink-soft)">Example: 375 − 573 → (100·3+10·7+5) − (100·5+10·7+3) = 99(3−5) = −198. The middle digit never matters.</span></li>
-<li><strong>Swap tens and units (abc → acb):</strong> the difference is always <strong>9(c − b)</strong>.<br><span style="color:var(--ink-soft)">Only the last two digits move, so the change is small.</span></li>
-<li><strong>Bases (base-n ↔ base-10):</strong> normally each place is ×10. In <strong>base n</strong>, each place is ×n instead.<br><span style="color:var(--ink-soft)">Example: 234 in base 5 = 2×25 + 3×5 + 4 = <strong>69</strong> in base 10. To go back, keep dividing by n and read the remainders bottom-to-top.</span></li>
+<li><strong>Write a number by its digits:</strong> a 3-digit number with digits a, b, c means <strong>abc = 100a + 10b + c</strong>.<br><span style="color:var(--ink-soft)">Example: 375 = 100×3 + 10×7 + 5.</span><br><span style="color:var(--ink-soft)">A 4-digit number: <strong>abcd = 1000a + 100b + 10c + d</strong>.</span></li>
+<li><strong>Swap the two end digits (abc → cba):</strong> the difference is always <strong>99(c − a)</strong> — the middle digit never matters.<br><span style="color:var(--ink-soft)">Example: 375 − 573 = 99(3−5) = −198.</span></li>
+<li><strong>Swap tens and units (abc → acb):</strong> the difference is always <strong>9(c − b)</strong>.</li>
 </ul>
-<div class="cp"><strong>Competition point:</strong> When a problem says "reverse the digits" or "move the first digit to the end," <strong>write the number with letters first</strong>. Then it becomes an equation you can actually solve (→ Mock Q1-12, Mock Q5-25).</div>
+<p><strong>Bases — bundling in a different size.</strong> A <strong>base number system</strong> groups quantities into powers of the base instead of powers of 10. In <strong>base n</strong>, each place is worth ×n instead of ×10, and you may use only the digits 0 … (n−1). When you collect n of one bundle, you carry it up to the next place — e.g. in base 3, <code>5·3² = 1·3³ + 2·3²</code>.</p>
+<ul>
+<li><strong>Base b → base 10:</strong> add up the decimal value of every digit bundle.<br><span style="color:var(--ink-soft)"><code>514₉ = 5·9² + 1·9¹ + 4·9⁰ = 405 + 9 + 4 = 418</code>.</span><br><span style="color:var(--ink-soft)"><code>234₅ = 2·25 + 3·5 + 4 = 69</code>.</span></li>
+<li><strong>Base 10 → base b:</strong> repeatedly divide by b; the remainders, read <strong>bottom-to-top</strong>, are the digits.<br><span style="color:var(--ink-soft)"><code>65 → base 3</code>: 65÷3 = 21 r2, 21÷3 = 7 r0, 7÷3 = 2 r1, 2÷3 = 0 r2 → <strong>2102₃</strong> (keep the 0!).</span></li>
+<li><strong>Bases above 10 need extra digit symbols.</strong> In base 12 we use A for ten and B for eleven, so <code>1B7₁₂ = 1·144 + 11·12 + 7 = 283</code>.</li>
+<li><strong>Base names worth knowing:</strong> base 2 <em>binary</em>, 3 <em>ternary</em>, 8 <em>octal</em>, 12 <em>duodecimal</em>, 16 <em>hexadecimal</em>, 60 <em>sexagesimal</em>.</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> When a problem says "reverse the digits" or "move the first digit to the end," <strong>write the number with letters first</strong> (a·place-value form). It becomes an equation you can solve (→ Mock Q1-12, Mock Q5-25). For base problems, always fall back on the digit-bundle meaning: a base-b numeral is just a sum of <code>digit × bⁿ</code>.</div>
 </section>
 <section id="s2">
 <span class="sec-num">2</span>
 <h2>Divisibility by 9 and 11</h2>
+<p class="src-note"><em>Source: AOPS Introduction to Number Theory Ch.7 (Divisibility Rules — the "digit sum" rules for 3 and 9, the alternating-sum rule for 11)</em></p>
 <ul>
 <li><strong>Multiple of 9:</strong> a number is a multiple of 9 exactly when its <strong>digit sum is a multiple of 9</strong>.<br><span style="color:var(--ink-soft)">Example: 738 → 7+3+8 = 18 → multiple of 9 ✓</span></li>
 <li><strong>Multiple of 11:</strong> take (sum of digits in <strong>odd</strong> positions) − (sum of digits in <strong>even</strong> positions). If that is <strong>0 or a multiple of 11</strong>, the number is a multiple of 11.<br><span style="color:var(--ink-soft)">Example: 2354 → (2+5) − (3+4) = 0 → multiple of 11 ✓</span></li>
@@ -39,6 +50,7 @@
 <section id="s3">
 <span class="sec-num">3</span>
 <h2>Digit Patterns (numbers written in a row)</h2>
+<p class="src-note"><em>Source: standard competition counting technique (group by digit-length); the "how many digits does each range use" idea underlies AOPS Introduction to Number Theory palindrome/digit problems (Ch.8).</em></p>
 <ul>
 <li><strong>Count digits by how many digits each number has:</strong><br><span style="color:var(--ink-soft)">1–9 → <strong>9 numbers × 1 digit = 9 digits</strong></span><br><span style="color:var(--ink-soft)">10–99 → <strong>90 numbers × 2 digits = 180 digits</strong></span><br><span style="color:var(--ink-soft)">100–999 → <strong>900 numbers × 3 digits = 2700 digits</strong></span></li>
 <li><strong>Find the N-th digit:</strong> keep subtracting these totals until you land in the right group. That tells you <strong>which number</strong> you are inside, and then <strong>which digit</strong> of that number.<br><span style="color:var(--ink-soft)">Example: the 15th digit of "123456789101112..." → first 9 digits are 1–9, so digit 15 is the 6th digit into the 2-digit numbers → 10,11,12 → "1 0 1 1 1 2" → the 6th of these is <strong>2</strong>.</span></li>
@@ -48,16 +60,21 @@
 <section id="s4">
 <span class="sec-num">4</span>
 <h2>Basic Operations (fractions, decimals, units, days of week)</h2>
+<p class="src-note"><em>Source: AOPS Prealgebra Ch.6 §6.5 Summary (decimals, terminating vs repeating), Ch.6.33 (scientific notation); day-of-week is a standard mod-7 technique.</em></p>
 <ul>
 <li><strong>Fractions:</strong> to add or subtract, make a <strong>common denominator</strong> first, then add the tops. Always <strong>simplify</strong> at the end. A mixed number like 2⅓ = improper fraction 7/3.</li>
-<li><strong>Decimals:</strong> <strong>line up the place values</strong> (the decimal points) before you add or subtract.</li>
+<li><strong>Decimals:</strong> a decimal is just base 10 extended past the point. <strong>Line up the decimal points</strong> before adding or subtracting. Multiplying or dividing by a power of 10 only <strong>moves the decimal point</strong> (×10 moves it one place right, ÷10 one place left).</li>
+<li><strong>Terminating vs repeating (know this rule):</strong> a fraction in lowest terms is a <strong>finite (terminating) decimal</strong> exactly when its denominator's only prime factors are <strong>2 and/or 5</strong>; any other prime factor forces an <strong>infinite repeating</strong> decimal.<br><span style="color:var(--ink-soft)"><code>n/9 = 0.n̄</code> (the digit n repeats): 7/9 = 0.777…. A famous special case: <strong>0.9̄ = 1</strong> exactly.</span></li>
+<li><strong>Scientific notation:</strong> write a number as <code>a·10ᵇ</code> with <code>1 ≤ a &lt; 10</code>. <code>38100 = 3.81·10⁴</code>, <code>0.025 = 2.5·10⁻²</code>. Multiply by adding exponents, then fix <code>a</code> back into range: <code>(3·10⁵)(4·10⁶) = 12·10¹¹ = 1.2·10¹²</code>.</li>
 <li><strong>Unit change:</strong> 1 hour = 60 min, 1 min = 60 sec; 1 m = 100 cm. Convert everything to the <strong>same unit</strong> before comparing.</li>
-<li><strong>Day of the week:</strong> days repeat every <strong>7</strong>. So use <strong>mod 7</strong>. If today is Thursday, then 7 days later, 14 days later, … are all Thursday; 8 days later is Friday (8 = 7 + 1).</li>
+<li><strong>Day of the week:</strong> days repeat every <strong>7</strong>, so use <strong>mod 7</strong>. If today is Thursday, then 7, 14, … days later are all Thursday; 100 days later = 100 mod 7 = 2 → Saturday.</li>
 </ul>
-<div class="cp"><strong>Competition point:</strong> For "what day of the week" problems, count the total days and take the remainder after dividing by 7 (→ AP 2025 Q04). For a long chain of fractions, look for terms that <strong>cancel</strong> (→ RI 2023 Q01, RI 2024 Q05).</div>
+<div class="cp"><strong>Competition point:</strong> For "what day of the week" problems, count the total days and take the remainder mod 7 (→ AP 2025 Q04). For a long chain of fractions, look for terms that <strong>cancel</strong> or <strong>telescope</strong> (→ RI 2023 Q01, RI 2024 Q05).</div>
 </section>
-<section id="from-the-books-extra-tricks">
-<h2>📚 From the Books (extra tricks)</h2>
+<section id="s5">
+<span class="sec-num">5</span>
+<h2>More Tools (fractions, decimals, exponents, bases)</h2>
+<p class="src-note"><em>Source: AOPS Prealgebra Ch.6 §6.5 Summary (terminating vs repeating decimals, repeating-decimal → fraction), Ch.2 (exponent laws); base conversion from AOPS Introduction to Number Theory §8.5.</em></p>
 <ul>
 <li><strong>Comparing fractions without a common denominator:</strong> cross-multiply — for a/b vs c/d, compare a×d vs b×c (bigger product wins). Or compare each fraction to a nearby "nice" benchmark like 1/3 or 1/2.<br><span style="color:var(--ink-soft)">Example: order 5/19, 7/21, 9/23 → 7/21 = 1/3 exactly; 5/19 &lt; 1/3; 9/23 &gt; 1/3. So <strong>5/19 &lt; 7/21 &lt; 9/23</strong>, no common denominator needed.</span></li>
 <li><strong>Continued fractions:</strong> expressions like 1/(1+1/(1+1/(1+1/2))) are worked out from the <strong>innermost term outward</strong>.</li>
@@ -77,6 +94,10 @@
 <th>Key point</th>
 </tr></thead><tbody>
 <tr>
+<td>Digit bundles</td>
+<td>3572 = 3·10³+5·10²+7·10¹+2·10⁰</td>
+</tr>
+<tr>
 <td>3-digit number</td>
 <td>abc = 100a + 10b + c</td>
 </tr>
@@ -89,8 +110,16 @@
 <td>difference = 9(c − b)</td>
 </tr>
 <tr>
-<td>Base n to base 10</td>
-<td>each place ×n, then add</td>
+<td>Base b → base 10</td>
+<td>add up digit×bⁿ</td>
+</tr>
+<tr>
+<td>Base 10 → base b</td>
+<td>divide by b, read remainders bottom-up</td>
+</tr>
+<tr>
+<td>Bases &gt; 10</td>
+<td>A = 10, B = 11, … as single digits</td>
 </tr>
 <tr>
 <td>Multiple of 9</td>
@@ -105,12 +134,24 @@
 <td>1–9: 9, 10–99: 180, 100–999: 2700</td>
 </tr>
 <tr>
+<td>Terminating decimal</td>
+<td>denominator's only primes are 2 and/or 5</td>
+</tr>
+<tr>
+<td>n/9</td>
+<td>= 0.n̄ ; and 0.9̄ = 1</td>
+</tr>
+<tr>
+<td>Scientific notation</td>
+<td>a·10ᵇ with 1 ≤ a &lt; 10</td>
+</tr>
+<tr>
 <td>Day of week</td>
 <td>use mod 7</td>
 </tr>
 <tr>
 <td>Chain of fractions</td>
-<td>look for cancelling terms</td>
+<td>look for cancelling / telescoping terms</td>
 </tr>
 </tbody></table></div>
 </section>
@@ -161,13 +202,23 @@
 <li>Convert 143 in base 5 into base 10.</li>
 <li>Is 8291 a multiple of 11? Use the odd−even position rule.</li>
 <li>If today is Thursday, what day of the week is it 100 days from now?</li>
+<li>Convert the decimal number 65 into base 3.</li>
+<li>Does 7/40 terminate or repeat as a decimal? Why?</li>
+<li>Does 5/12 terminate or repeat? Why?</li>
+<li>Write 0.9̄ (0.999…) as a fraction.</li>
+<li>Write 48000 in scientific notation.</li>
 </ol>
 <details><summary>Answers</summary><div class="answer">
 <p>1. 100×4 + 10×0 + 7 = <strong>407</strong></p>
 <p>2. 673 − 376 = <strong>297</strong>; 99(c−a) = 99(3−6) = 99×(−3) = −297, same size ✓</p>
 <p>3. 1×25 + 4×5 + 3 = <strong>48</strong></p>
 <p>4. (8+9) − (2+1) = 14, not 0 or a multiple of 11 → <strong>not a multiple of 11</strong></p>
-<p>5. 100 ÷ 7 = 14 remainder 2 → 2 days after Thursday = <strong>Saturday</strong></p></div></details>
+<p>5. 100 ÷ 7 = 14 remainder 2 → 2 days after Thursday = <strong>Saturday</strong></p>
+<p>6. 65÷3=21 r2, 21÷3=7 r0, 7÷3=2 r1, 2÷3=0 r2 → read up → <strong>2102₃</strong></p>
+<p>7. 40 = 2³×5 → only primes 2 and 5 → <strong>terminates</strong> (7/40 = 0.175)</p>
+<p>8. 12 = 2²×3 → has the prime 3 → <strong>repeats</strong> (5/12 = 0.41666…)</p>
+<p>9. <strong>1</strong> (0.9̄ = 1 exactly)</p>
+<p>10. 48000 = <strong>4.8 × 10⁴</strong></p></div></details>
 <p class="footer-note">Source map: <code>약점진단/05_자릿수_진법_기초연산.md</code> · Number theory continues in <a class="cx" href="06_Primes_Modular_Factorial.html">06 Primes Modular Factorial</a></p>
 </section>
 <a class="backlink" href="index.html">← All units</a>

@@ -13,26 +13,41 @@ What this note covers:
 2. Divisibility by 9 and 11
 3. Digit Patterns (numbers written in a row)
 4. Basic Operations (fractions, decimals, units, days of week)
+5. More Tools (fractions, decimals, exponents, bases)
 
 ---
 
 ## 1. Letting Digits Be Variables & Bases — *Sec 1*
 
-- **Write a number by its digits:** a 3-digit number with digits a, b, c means **abc = 100a + 10b + c**.
-  - Example: 375 = 100×3 + 10×7 + 5. The "place value" of each digit is 100, 10, 1.
-  - A 4-digit number: **abcd = 1000a + 100b + 10c + d**.
-- **Swap the two end digits (abc → cba):** the difference is always **99(c − a)**.
-  - Example: 375 − 573 → (100·3+10·7+5) − (100·5+10·7+3) = 99(3−5) = −198. The middle digit never matters.
-- **Swap tens and units (abc → acb):** the difference is always **9(c − b)**.
-  - Only the last two digits move, so the change is small.
-- **Bases (base-n ↔ base-10):** normally each place is ×10. In **base n**, each place is ×n instead.
-  - Example: 234 in base 5 = 2×25 + 3×5 + 4 = **69** in base 10. To go back, keep dividing by n and read the remainders bottom-to-top.
+> 📖 *Source: AOPS Introduction to Number Theory Ch.8 (Base Numbers) — §8.1–8.2 (digit bundles, numerals), §8.4 (base digits), §8.5 (converting between bases)*
 
-> 💡 **Competition point:** When a problem says "reverse the digits" or "move the first digit to the end," **write the number with letters first**. Then it becomes an equation you can actually solve (→ Mock Q1-12, Mock Q5-25).
+**Place value = "digit bundles."** A number's digits are just the coefficients of powers of the base. In base 10, the numeral 3572 *means*
+`3·10³ + 5·10² + 7·10¹ + 2·10⁰` — four "digit bundles" of sizes 1000, 100, 10, 1 added together. (A **numeral** is the symbol we write; the **number** is the amount it stands for.)
+
+- **Write a number by its digits:** a 3-digit number with digits a, b, c means **abc = 100a + 10b + c**.
+  - Example: 375 = 100×3 + 10×7 + 5.
+  - A 4-digit number: **abcd = 1000a + 100b + 10c + d**.
+- **Swap the two end digits (abc → cba):** the difference is always **99(c − a)** — the middle digit never matters.
+  - Example: 375 − 573 = 99(3−5) = −198.
+- **Swap tens and units (abc → acb):** the difference is always **9(c − b)**.
+
+**Bases — bundling in a different size.** A **base number system** groups quantities into powers of the base instead of powers of 10. In **base n**, each place is worth ×n instead of ×10, and you may use only the digits 0 … (n−1). When you collect n of one bundle, you carry it up to the next place — e.g. in base 3, `5·3² = 1·3³ + 2·3²`.
+
+- **Base b → base 10:** add up the decimal value of every digit bundle.
+  - `514₉ = 5·9² + 1·9¹ + 4·9⁰ = 405 + 9 + 4 = 418`.
+  - `234₅ = 2·25 + 3·5 + 4 = 69`.
+- **Base 10 → base b:** repeatedly divide by b; the remainders, read **bottom-to-top**, are the digits.
+  - `65 → base 3`: 65÷3 = 21 r2, 21÷3 = 7 r0, 7÷3 = 2 r1, 2÷3 = 0 r2 → **2102₃** (keep the 0!).
+- **Bases above 10 need extra digit symbols.** In base 12 we use A for ten and B for eleven, so `1B7₁₂ = 1·144 + 11·12 + 7 = 283`.
+- **Base names worth knowing:** base 2 *binary*, 3 *ternary*, 8 *octal*, 12 *duodecimal*, 16 *hexadecimal*, 60 *sexagesimal*.
+
+> 💡 **Competition point:** When a problem says "reverse the digits" or "move the first digit to the end," **write the number with letters first** (a·place-value form). It becomes an equation you can solve (→ Mock Q1-12, Mock Q5-25). For base problems, always fall back on the digit-bundle meaning: a base-b numeral is just a sum of `digit × bⁿ`.
 
 ---
 
 ## 2. Divisibility by 9 and 11
+
+> 📖 *Source: AOPS Introduction to Number Theory Ch.7 (Divisibility Rules — the "digit sum" rules for 3 and 9, the alternating-sum rule for 11)*
 
 - **Multiple of 9:** a number is a multiple of 9 exactly when its **digit sum is a multiple of 9**.
   - Example: 738 → 7+3+8 = 18 → multiple of 9 ✓
@@ -45,6 +60,8 @@ What this note covers:
 ---
 
 ## 3. Digit Patterns (numbers written in a row)
+
+> 📖 *Source: standard competition counting technique (group by digit-length); the "how many digits does each range use" idea underlies AOPS Introduction to Number Theory palindrome/digit problems (Ch.8).*
 
 - **Count digits by how many digits each number has:**
   - 1–9 → **9 numbers × 1 digit = 9 digits**
@@ -59,16 +76,23 @@ What this note covers:
 
 ## 4. Basic Operations (fractions, decimals, units, days of week)
 
-- **Fractions:** to add or subtract, make a **common denominator** first, then add the tops. Always **simplify** at the end. A mixed number like 2⅓ = improper fraction 7/3.
-- **Decimals:** **line up the place values** (the decimal points) before you add or subtract.
-- **Unit change:** 1 hour = 60 min, 1 min = 60 sec; 1 m = 100 cm. Convert everything to the **same unit** before comparing.
-- **Day of the week:** days repeat every **7**. So use **mod 7**. If today is Thursday, then 7 days later, 14 days later, … are all Thursday; 8 days later is Friday (8 = 7 + 1).
+> 📖 *Source: AOPS Prealgebra Ch.6 §6.5 Summary (decimals, terminating vs repeating), Ch.6.33 (scientific notation); day-of-week is a standard mod-7 technique.*
 
-> 💡 **Competition point:** For "what day of the week" problems, count the total days and take the remainder after dividing by 7 (→ AP 2025 Q04). For a long chain of fractions, look for terms that **cancel** (→ RI 2023 Q01, RI 2024 Q05).
+- **Fractions:** to add or subtract, make a **common denominator** first, then add the tops. Always **simplify** at the end. A mixed number like 2⅓ = improper fraction 7/3.
+- **Decimals:** a decimal is just base 10 extended past the point. **Line up the decimal points** before adding or subtracting. Multiplying or dividing by a power of 10 only **moves the decimal point** (×10 moves it one place right, ÷10 one place left).
+- **Terminating vs repeating (know this rule):** a fraction in lowest terms is a **finite (terminating) decimal** exactly when its denominator's only prime factors are **2 and/or 5**; any other prime factor forces an **infinite repeating** decimal.
+  - `n/9 = 0.n̄` (the digit n repeats): 7/9 = 0.777…. A famous special case: **0.9̄ = 1** exactly.
+- **Scientific notation:** write a number as `a·10ᵇ` with `1 ≤ a < 10`. `38100 = 3.81·10⁴`, `0.025 = 2.5·10⁻²`. Multiply by adding exponents, then fix `a` back into range: `(3·10⁵)(4·10⁶) = 12·10¹¹ = 1.2·10¹²`.
+- **Unit change:** 1 hour = 60 min, 1 min = 60 sec; 1 m = 100 cm. Convert everything to the **same unit** before comparing.
+- **Day of the week:** days repeat every **7**, so use **mod 7**. If today is Thursday, then 7, 14, … days later are all Thursday; 100 days later = 100 mod 7 = 2 → Saturday.
+
+> 💡 **Competition point:** For "what day of the week" problems, count the total days and take the remainder mod 7 (→ AP 2025 Q04). For a long chain of fractions, look for terms that **cancel** or **telescope** (→ RI 2023 Q01, RI 2024 Q05).
 
 ---
 
-## 📚 From the Books (extra tricks)
+## 5. More Tools (fractions, decimals, exponents, bases)
+
+> 📖 *Source: AOPS Prealgebra Ch.6 §6.5 Summary (terminating vs repeating decimals, repeating-decimal → fraction), Ch.2 (exponent laws); base conversion from AOPS Introduction to Number Theory §8.5.*
 
 - **Comparing fractions without a common denominator:** cross-multiply — for a/b vs c/d, compare a×d vs b×c (bigger product wins). Or compare each fraction to a nearby "nice" benchmark like 1/3 or 1/2.
   - Example: order 5/19, 7/21, 9/23 → 7/21 = 1/3 exactly; 5/19 < 1/3; 9/23 > 1/3. So **5/19 < 7/21 < 9/23**, no common denominator needed.
@@ -92,15 +116,21 @@ What this note covers:
 
 | Idea | Key point |
 |------|-----------|
+| Digit bundles | 3572 = 3·10³+5·10²+7·10¹+2·10⁰ |
 | 3-digit number | abc = 100a + 10b + c |
 | Reverse end digits | difference = 99(c − a) |
 | Swap tens & units | difference = 9(c − b) |
-| Base n to base 10 | each place ×n, then add |
+| Base b → base 10 | add up digit×bⁿ |
+| Base 10 → base b | divide by b, read remainders bottom-up |
+| Bases > 10 | A = 10, B = 11, … as single digits |
 | Multiple of 9 | digit sum is a multiple of 9 |
 | Multiple of 11 | (odd places) − (even places) = multiple of 11 |
 | Digits in a row | 1–9: 9, 10–99: 180, 100–999: 2700 |
+| Terminating decimal | denominator's only primes are 2 and/or 5 |
+| n/9 | = 0.n̄ ; and 0.9̄ = 1 |
+| Scientific notation | a·10ᵇ with 1 ≤ a < 10 |
 | Day of week | use mod 7 |
-| Chain of fractions | look for cancelling terms |
+| Chain of fractions | look for cancelling / telescoping terms |
 
 ---
 
@@ -148,6 +178,11 @@ These concepts appear in real problems on the quiz app. Learn the idea, then cli
 3. Convert 143 in base 5 into base 10.
 4. Is 8291 a multiple of 11? Use the odd−even position rule.
 5. If today is Thursday, what day of the week is it 100 days from now?
+6. Convert the decimal number 65 into base 3.
+7. Does 7/40 terminate or repeat as a decimal? Why?
+8. Does 5/12 terminate or repeat? Why?
+9. Write 0.9̄ (0.999…) as a fraction.
+10. Write 48000 in scientific notation.
 
 <details>
 <summary>Answers</summary>
@@ -157,6 +192,11 @@ These concepts appear in real problems on the quiz app. Learn the idea, then cli
 3. 1×25 + 4×5 + 3 = **48**
 4. (8+9) − (2+1) = 14, not 0 or a multiple of 11 → **not a multiple of 11**
 5. 100 ÷ 7 = 14 remainder 2 → 2 days after Thursday = **Saturday**
+6. 65÷3=21 r2, 21÷3=7 r0, 7÷3=2 r1, 2÷3=0 r2 → read up → **2102₃**
+7. 40 = 2³×5 → only primes 2 and 5 → **terminates** (7/40 = 0.175)
+8. 12 = 2²×3 → has the prime 3 → **repeats** (5/12 = 0.41666…)
+9. **1** (0.9̄ = 1 exactly)
+10. 48000 = **4.8 × 10⁴**
 
 </details>
 
