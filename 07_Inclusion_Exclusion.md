@@ -57,6 +57,8 @@ What this note covers:
 - **How to use it:** many problems ask "how many are divisible by **none** of these" or "wear **neither** X nor Y". Steps:
   1. Count the union |A ∪ B ∪ C| with the formula above.
   2. Subtract from the **total N**.
+- **"At least" is also a complement job.** Counting "**at least** one …" directly means casework; instead count the **opposite** — "**none** / **zero**" — and subtract from the total. (Book example §2.3: "three-digit numbers that are *not* multiples of 7" = 900 − ⌊multiples of 7⌋; "at least 2 boys sit together" = total − (no two boys together).)
+- **The book's name for this: complementary counting** — "count what you *don't* want", because it is often far easier than counting what you do.
 - **For counting multiples up to N:** the number of multiples of *d* from 1 to N is **⌊N ÷ d⌋** (whole-number part of the division).
   - Example: multiples of 7 up to 500 → ⌊500 ÷ 7⌋ = **71**. For "both 2 and 3", count multiples of **LCM(2,3)=6**.
 
@@ -84,6 +86,7 @@ A **Venn diagram** is the fastest way to see the overlaps. Fill the **innermost 
   - Let the overlap (short-haired kittens) = **x**. Then short-haired-only = 14 − x, kittens-only = 11 − x, and outside = 5.
   - All regions sum to the total: `(14 − x) + x + (11 − x) + 5 = 27` → `30 − x = 27` → **x = 3**.
 - **Concept (from the book):** when you set up a variable, **let it stand for the quantity the problem is asking for** — then you solve for the answer directly.
+- **Concept (from the book):** once the diagram is filled, **check that every circle-total matches the problem** (14 short-haired, 11 kittens, 27 total). A filled Venn diagram both *gives* the answer and *catches* mistakes.
 
 > 💡 **Competition point:** When a problem gives two categories with two options each (e.g. white/black top **and** black/blue bottom), draw a small table and use the union rule (→ Mock Q4-16 below).
 
@@ -111,6 +114,9 @@ The exact same add/subtract idea works for **probabilities**, not just counts.
 - **Mutually exclusive events:** two events that **cannot both happen at once** (rolling a 1 vs rolling a 4 on one die). For these, **P(A or B) = P(A) + P(B)** — just add. This extends to any number: P(A₁ or A₂ or … or Aₙ) = P(A₁) + … + P(Aₙ) **when they are pairwise mutually exclusive**.
 - **When events *can* overlap, subtract the overlap** — the probability inclusion-exclusion rule: **P(A or B) = P(A) + P(B) − P(A and B)**.
   - Example: draw one card from 52. P(Queen or ◊) = P(Queen) + P(◊) − P(Queen of ◊) = 4/52 + 13/52 − 1/52 = **16/52 = 4/13**. (The queen of diamonds was counted in both, so subtract it once.)
+
+- **Complementary probability (§8.3):** the chance an event happens plus the chance it *doesn't* is always **1**, so **P(A) = 1 − P(not A)**. For "at least one …" probabilities, it is usually far quicker to compute **1 − P(none)**.
+  - Example: P(four dice are **not** all the same) = 1 − P(all four the same) = 1 − 6/6⁴ = 1 − 1/216 = **215/216**.
 
 > ⚠️ **Warning:** "Add the probabilities" only works when the events are **mutually exclusive**. If they can happen together (like "Queen" and "diamond"), you must **subtract P(both)** — exactly the two-set rule from Section 1, in probability form.
 
@@ -140,7 +146,9 @@ The exact same add/subtract idea works for **probabilities**, not just counts.
 | Unknown overlap | let it = x, write regions in x, sum = total |
 | Mutually exclusive | P(A or B) = P(A) + P(B) |
 | Overlapping events | P(A or B) = P(A) + P(B) − P(A and B) |
+| Complementary prob | P(A) = 1 − P(not A) |
 | "None of these" | total N − union |
+| "At least one" | total − (none); or 1 − P(none) |
 | Multiples of d up to N | ⌊N ÷ d⌋ |
 | "Both 2 and 3" | count multiples of LCM = 6 |
 | Venn diagram | fill the centre first |
@@ -176,6 +184,7 @@ These concepts appear in real problems on the quiz app. Learn the idea, then cli
 5. In a class of 40, 30 passed Maths and 25 passed Science. What is the **least** number who passed **both**?
 6. A card is drawn from 52. Find P(King or ♥) — remember to subtract the overlap.
 7. 25 cats: 16 are black, 12 have long tails, 4 are neither. Using "let x = both", how many are black **and** long-tailed?
+8. Three fair coins are flipped. Using complementary probability, find P(at least one head).
 
 <details>
 <summary>Answers</summary>
@@ -187,6 +196,7 @@ These concepts appear in real problems on the quiz app. Learn the idea, then cli
 5. min both = 30 + 25 − 40 = **15**
 6. 4/52 + 13/52 − 1/52 = 16/52 = **4/13** (the King of hearts is the overlap)
 7. black-only (16−x) + both (x) + long-only (12−x) + neither (4) = 25 → 32 − x = 25 → **x = 7**
+8. P(at least one head) = 1 − P(no heads) = 1 − (1/2)³ = 1 − 1/8 = **7/8**
 
 </details>
 

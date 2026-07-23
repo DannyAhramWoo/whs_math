@@ -47,6 +47,8 @@
 <ul>
 <li><strong>Complement:</strong> the <strong>opposite</strong> group — everything that is <strong>not</strong> in your set. If there are <strong>N</strong> things in total, then<br><span style="color:var(--ink-soft)"><strong>(not in A ∪ B ∪ C) = N − |A ∪ B ∪ C|</strong></span></li>
 <li><strong>How to use it:</strong> many problems ask "how many are divisible by <strong>none</strong> of these" or "wear <strong>neither</strong> X nor Y". Steps:<br><span style="color:var(--ink-soft)">Count the union |A ∪ B ∪ C| with the formula above.</span><br><span style="color:var(--ink-soft)">Subtract from the <strong>total N</strong>.</span></li>
+<li><strong>"At least" is also a complement job.</strong> Counting "<strong>at least</strong> one …" directly means casework; instead count the <strong>opposite</strong> — "<strong>none</strong> / <strong>zero</strong>" — and subtract from the total. (Book example §2.3: "three-digit numbers that are <em>not</em> multiples of 7" = 900 − ⌊multiples of 7⌋; "at least 2 boys sit together" = total − (no two boys together).)</li>
+<li><strong>The book's name for this: complementary counting</strong> — "count what you <em>don't</em> want", because it is often far easier than counting what you do.</li>
 <li><strong>For counting multiples up to N:</strong> the number of multiples of <em>d</em> from 1 to N is <strong>⌊N ÷ d⌋</strong> (whole-number part of the division).<br><span style="color:var(--ink-soft)">Example: multiples of 7 up to 500 → ⌊500 ÷ 7⌋ = <strong>71</strong>. For "both 2 and 3", count multiples of <strong>LCM(2,3)=6</strong>.</span></li>
 </ul>
 <div class="cp"><strong>Competition point:</strong> "Not divisible by 2, 3 or 7" from 1 to 500 = 500 − |mult of 2 or 3 or 7| (→ Mock Q5-22 below). Always turn "none" into total minus union.</div>
@@ -64,6 +66,7 @@
 <ul>
 <li><strong>Problem:</strong> 27 cats; 14 are short-haired, 11 are kittens, 5 are neither. How many short-haired kittens?<br><span style="color:var(--ink-soft)">Let the overlap (short-haired kittens) = <strong>x</strong>. Then short-haired-only = 14 − x, kittens-only = 11 − x, and outside = 5.</span><br><span style="color:var(--ink-soft)">All regions sum to the total: <code>(14 − x) + x + (11 − x) + 5 = 27</code> → <code>30 − x = 27</code> → <strong>x = 3</strong>.</span></li>
 <li><strong>Concept (from the book):</strong> when you set up a variable, <strong>let it stand for the quantity the problem is asking for</strong> — then you solve for the answer directly.</li>
+<li><strong>Concept (from the book):</strong> once the diagram is filled, <strong>check that every circle-total matches the problem</strong> (14 short-haired, 11 kittens, 27 total). A filled Venn diagram both <em>gives</em> the answer and <em>catches</em> mistakes.</li>
 </ul>
 <div class="cp"><strong>Competition point:</strong> When a problem gives two categories with two options each (e.g. white/black top <strong>and</strong> black/blue bottom), draw a small table and use the union rule (→ Mock Q4-16 below).</div>
 </section>
@@ -85,6 +88,9 @@
 <ul>
 <li><strong>Mutually exclusive events:</strong> two events that <strong>cannot both happen at once</strong> (rolling a 1 vs rolling a 4 on one die). For these, <strong>P(A or B) = P(A) + P(B)</strong> — just add. This extends to any number: P(A₁ or A₂ or … or Aₙ) = P(A₁) + … + P(Aₙ) <strong>when they are pairwise mutually exclusive</strong>.</li>
 <li>**When events <em>can</em> overlap, subtract the overlap<strong> — the probability inclusion-exclusion rule: </strong>P(A or B) = P(A) + P(B) − P(A and B)**.<br><span style="color:var(--ink-soft)">Example: draw one card from 52. P(Queen or ◊) = P(Queen) + P(◊) − P(Queen of ◊) = 4/52 + 13/52 − 1/52 = <strong>16/52 = 4/13</strong>. (The queen of diamonds was counted in both, so subtract it once.)</span></li>
+</ul>
+<ul>
+<li><strong>Complementary probability (§8.3):</strong> the chance an event happens plus the chance it <em>doesn't</em> is always <strong>1</strong>, so <strong>P(A) = 1 − P(not A)</strong>. For "at least one …" probabilities, it is usually far quicker to compute <strong>1 − P(none)</strong>.<br><span style="color:var(--ink-soft)">Example: P(four dice are <strong>not</strong> all the same) = 1 − P(all four the same) = 1 − 6/6⁴ = 1 − 1/216 = <strong>215/216</strong>.</span></li>
 </ul>
 <div class="callout warn"><strong>Warning:</strong> "Add the probabilities" only works when the events are <strong>mutually exclusive</strong>. If they can happen together (like "Queen" and "diamond"), you must <strong>subtract P(both)</strong> — exactly the two-set rule from Section 1, in probability form.</div>
 </section>
@@ -138,8 +144,16 @@
 <td>P(A or B) = P(A) + P(B) − P(A and B)</td>
 </tr>
 <tr>
+<td>Complementary prob</td>
+<td>P(A) = 1 − P(not A)</td>
+</tr>
+<tr>
 <td>"None of these"</td>
 <td>total N − union</td>
+</tr>
+<tr>
+<td>"At least one"</td>
+<td>total − (none); or 1 − P(none)</td>
 </tr>
 <tr>
 <td>Multiples of d up to N</td>
@@ -197,6 +211,7 @@
 <li>In a class of 40, 30 passed Maths and 25 passed Science. What is the <strong>least</strong> number who passed <strong>both</strong>?</li>
 <li>A card is drawn from 52. Find P(King or ♥) — remember to subtract the overlap.</li>
 <li>25 cats: 16 are black, 12 have long tails, 4 are neither. Using "let x = both", how many are black <strong>and</strong> long-tailed?</li>
+<li>Three fair coins are flipped. Using complementary probability, find P(at least one head).</li>
 </ol>
 <details><summary>Answers</summary><div class="answer">
 <p>1. 14 + 11 − 5 = <strong>20</strong></p>
@@ -205,7 +220,8 @@
 <p>4. mult of 2 = 30, mult of 3 = 20, mult of 6 = 10 → union = 40 → none = 60 − 40 = <strong>20</strong></p>
 <p>5. min both = 30 + 25 − 40 = <strong>15</strong></p>
 <p>6. 4/52 + 13/52 − 1/52 = 16/52 = <strong>4/13</strong> (the King of hearts is the overlap)</p>
-<p>7. black-only (16−x) + both (x) + long-only (12−x) + neither (4) = 25 → 32 − x = 25 → <strong>x = 7</strong></p></div></details>
+<p>7. black-only (16−x) + both (x) + long-only (12−x) + neither (4) = 25 → 32 − x = 25 → <strong>x = 7</strong></p>
+<p>8. P(at least one head) = 1 − P(no heads) = 1 − (1/2)³ = 1 − 1/8 = <strong>7/8</strong></p></div></details>
 <p class="footer-note">Source map: <code>약점진단/07_포함배제_원리.md</code> · Counting continues in <a class="cx" href="08_Permutations_Combinations_Counting.html">08 Permutations Combinations Counting</a></p>
 </section>
 <a class="backlink" href="index.html">← All units</a>
