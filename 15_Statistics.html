@@ -14,17 +14,25 @@
 <li><span class="n">2</span><a href="#s2">Using a "Guessed Mean" Shortcut</a></li>
 <li><span class="n">3</span><a href="#s3">Harmonic Mean and Geometric Mean</a></li>
 <li><span class="n">4</span><a href="#s4">Mean/Median/Mode Together (harder problems)</a></li>
+<li><span class="n">5</span><a href="#s5">Reading Data Displays</a></li>
 </ol></nav>
 <section id="s1">
 <span class="sec-num">1</span>
 <h2>Mean, Median, Mode, Range</h2>
+<p class="src-note"><em>Source: AOPS Prealgebra §13.1 "Basic Statistics" (Ch.13 "Data and Statistics") — mean/median/mode/range and the "balance" view of the average.</em></p>
 <ul>
 <li><strong>Mean (average):</strong> sum of all values ÷ how many values there are.<br><span style="color:var(--ink-soft)">Example: 3, 5, 6, 10 → mean = (3+5+6+10)/4 = 6.</span></li>
 <li><strong>Median:</strong> the middle value once the list is sorted. If there's an even number of values, average the two middle ones.<br><span style="color:var(--ink-soft)">Example: 4, 5, 7, 8, 11 → median = 7 (the middle one).</span><br><span style="color:var(--ink-soft)">Example (even count): 4, 5, 7, 8 → median = (5+7)/2 = 6.</span></li>
-<li><strong>Mode:</strong> the value(s) that appear most often. A list can have no mode, one mode, or several (if tied).</li>
+<li><strong>Mode:</strong> the value(s) that appear most often. A list can have no mode, one mode, or several (if tied). (The mode is often the <em>least</em> useful summary — one common value can be misleading.)</li>
 <li><strong>Range:</strong> biggest value − smallest value.</li>
 </ul>
-<div class="cp"><strong>Competition point:</strong> An <strong>outlier</strong> (one value far from the rest) swings the <strong>mean</strong> a lot but barely moves the <strong>median</strong>. If a data set has one extreme value, the median is the more "honest" summary.</div>
+<div class="callout warn"><strong>Warning:</strong> mean, median, and mode are all sometimes called "averages", but in everyday use <strong>"the average" means the mean</strong>. Say which one you mean.</div>
+<p><strong>The average is a "balance point".</strong> The total amount that values sit <strong>above</strong> the mean exactly equals the total amount they sit <strong>below</strong> it. Two useful consequences:</p>
+<ul>
+<li><strong>Raise-the-average (working backward):</strong> to hit a target average, first find the <strong>total you'd need</strong> (target × count), then subtract what you already have. E.g. you scored 82, 88, 91 on three tests; to average 88 over four tests you need a total 88 × 4 = 352, so the 4th test must be 352 − 261 = <strong>91</strong>.</li>
+<li><strong>Add a constant to every value → the mean shifts by that constant</strong> (add 5 to every score → the average goes up by exactly 5). Likewise multiplying every value by k multiplies the mean by k.</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> An <strong>outlier</strong> (one value far from the rest) swings the <strong>mean</strong> a lot but barely moves the <strong>median</strong> — so when one value is extreme, the median is the more "honest" summary. Statistics can mislead: an average alone tells you nothing about the <strong>spread</strong> or the <strong>totals</strong> behind it.</div>
 </section>
 <section id="s2">
 <span class="sec-num">2</span>
@@ -38,6 +46,7 @@
 <section id="s3">
 <span class="sec-num">3</span>
 <h2>Harmonic Mean and Geometric Mean</h2>
+<p class="src-note"><em>Source: these two "other means" are beyond the Prealgebra statistics chapter. The <strong>geometric mean</strong> appears in AOPS Intro to Algebra §21.3 (as the middle term of a geometric sequence); the <strong>harmonic mean</strong> appears in AOPS Prealgebra §7.5 as a Sidenote on round-trip average speed. Both are standard competition tools.</em></p>
 <ul>
 <li><strong>Geometric mean</strong> of n numbers = the nth root of their product. For two numbers a and b: geometric mean = √(ab).<br><span style="color:var(--ink-soft)">Example: geometric mean of 4 and 9 = √36 = 6.</span></li>
 <li><strong>Harmonic mean</strong> of n numbers = n ÷ (sum of the reciprocals of the numbers).<br><span style="color:var(--ink-soft)">Example: harmonic mean of 1, 2, 4 = 3 ÷ (1/1 + 1/2 + 1/4) = 3 ÷ (7/4) = 12/7.</span></li>
@@ -47,6 +56,7 @@
 <section id="s4">
 <span class="sec-num">4</span>
 <h2>Mean/Median/Mode Together (harder problems)</h2>
+<p class="src-note"><em>Source: AOPS Prealgebra §13.1 (Problem 13.7, the classic AMC-8 "mean 15, median 18, biggest possible largest value" — with its Bogus Solution) and §13.2 "Limits of Basic Statistics".</em></p>
 <p>Some problems fix the mean, median, AND range (or mode) all at once, and ask you to find missing numbers. The method:</p>
 <ol>
 <li>Use the <strong>median</strong> to pin down the middle value(s) — this bounds what the sorted list can look like.</li>
@@ -54,6 +64,19 @@
 <li><strong>Case-check</strong>: try the different orderings/digit choices that fit the constraints, and eliminate any that break a rule (like all numbers needing to be distinct, or a specific mode).</li>
 </ol>
 <div class="cp"><strong>Competition point:</strong> These problems reward careful bounding before guessing — figure out the tightest range for each unknown first, then check a short list of candidates rather than guessing randomly.</div>
+</section>
+<section id="s5">
+<span class="sec-num">5</span>
+<h2>Reading Data Displays</h2>
+<p class="src-note"><em>Source: AOPS Prealgebra §13.3 "Tables, Graphs, and Charts".</em></p>
+<p>Exams often give the data as a <strong>picture</strong> instead of a list. Know how to read each one, then apply §1.</p>
+<ul>
+<li><strong>Bar chart / histogram:</strong> bar heights give counts. A <strong>histogram</strong> groups values into ranges (bins), so you can find the mean/median <em>approximately</em> but not the exact values (grouping hides them).</li>
+<li><strong>Stem-and-leaf plot:</strong> the "stem" is the leading digit(s), each "leaf" a last digit. <code>4 | 2 5 7</code> means 42, 45, 47. It keeps every exact value, so you can read off mean, median, and mode directly.</li>
+<li><strong>Line graph:</strong> shows how a value changes over time. Good for trends.</li>
+<li><strong>Pie chart:</strong> each slice is a <strong>percent of the whole</strong> (all slices add to 100%). Multiply a slice's percent by the total to get its amount.</li>
+</ul>
+<div class="callout warn"><strong>Warning:</strong> graphs can be made <strong>misleading by the choice of scale</strong> — a bar chart that doesn't start at 0, or a stretched axis, exaggerates differences. Always read the axis numbers, not just the picture.</div>
 </section>
 <section id="cheat-sheet">
 <h2>Cheat Sheet</h2>
@@ -82,8 +105,28 @@
 <td>swings mean a lot, median barely moves</td>
 </tr>
 <tr>
+<td>Raise the average</td>
+<td>need total = target × count, minus what you have</td>
+</tr>
+<tr>
+<td>Add c to every value</td>
+<td>mean goes up by c</td>
+</tr>
+<tr>
 <td>Guessed mean</td>
 <td>sum deviations from a round number, then adjust</td>
+</tr>
+<tr>
+<td>Stem-and-leaf</td>
+<td>stem = leading digits, leaf = last digit (exact values)</td>
+</tr>
+<tr>
+<td>Pie chart</td>
+<td>each slice = percent of the whole</td>
+</tr>
+<tr>
+<td>Misleading graph</td>
+<td>check the axis scale (may not start at 0)</td>
 </tr>
 <tr>
 <td>Geometric mean (2 numbers)</td>
@@ -106,12 +149,16 @@
 <li>A list has mean 6 and 5 numbers. What is their total sum?</li>
 <li>Find the geometric mean of 8 and 18.</li>
 <li>Find the harmonic mean of 6 and 12.</li>
+<li>Your first three test scores are 78, 85, 89. What must you score on the 4th test to average 85?</li>
+<li>A pie chart shows 40% of 350 students chose maths. How many is that?</li>
 </ol>
 <details><summary>Answers</summary><div class="answer">
 <p>1. Mean = (2+4+4+5+6+10+4)/7 = 35/7 = <strong>5</strong>. Sorted: 2,4,4,4,5,6,10 → median = <strong>4</strong>. Mode = <strong>4</strong> (appears 3 times).</p>
 <p>2. Sum = mean × count = 6 × 5 = <strong>30</strong>.</p>
 <p>3. √(8×18) = √144 = <strong>12</strong>.</p>
-<p>4. 2×6×12/(6+12) = 144/18 = <strong>8</strong>.</p></div></details>
+<p>4. 2×6×12/(6+12) = 144/18 = <strong>8</strong>.</p>
+<p>5. Need total 85 × 4 = 340; you have 78+85+89 = 252; so the 4th = 340 − 252 = <strong>88</strong>.</p>
+<p>6. 40% × 350 = <strong>140 students</strong>.</p></div></details>
 <p class="footer-note">This is a new unit added from book scans (2026-07-22) — no quiz-app problems are linked to it yet. See <a class="cx" href="08_Permutations_Combinations_Counting.html">08 Permutations Combinations Counting</a> for the closely related unit on probability, and <a class="cx" href="10_Distance_Speed_Time.html">10 Distance Speed Time</a> for the harmonic-mean speed formula.</p>
 </section>
 <a class="backlink" href="index.html">← All units</a>
