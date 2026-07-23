@@ -20,7 +20,8 @@ What this note covers:
 
 > 📖 *Source: AOPS Introduction to Counting & Probability §1.4 "Counting Multiple Events" (product rule, p.13) & §1.5 "Permutations" (p.19–20). Repeated-element division is §3.2 (p.49); circular/round-table is §3.4 (p.57); "must/not together" restrictions are §2.5 (p.41).*
 
-- **The product rule (the engine underneath everything):** if a task is made of several **independent steps**, multiply the choices for each step. Choosing an outfit from 5 shirts **and** 4 skirts **and** 3 shoes → 5 × 4 × 3 = 60.
+- **List-length formula (the most basic count of all):** the number of whole numbers in the list **a, a+1, …, b** is **b − a + 1** — *not* b − a. (From 7 to 12 there are 12 − 7 + 1 = 6 numbers, not 5. This "fencepost" +1 is a classic slip.)
+- **The product rule (the engine underneath everything):** if a task is made of several **independent steps**, multiply the choices for each step. Choosing an outfit from 5 shirts **and** 4 skirts **and** 3 shoes → 5 × 4 × 3 = 60. (When a later choice *depends* on an earlier one, use the reduced count — e.g. without replacement.)
 - **Permutation:** an **ordered** arrangement. "ABC" and "CBA" count as **different**.
 - **P(n, r) formula:** the number of ways to line up **r** items chosen from **n**.
   - **P(n, r) = n! / (n−r)! = n(n−1)(n−2)…** (r factors, counting down).
@@ -96,6 +97,7 @@ What this note covers:
   - **Complementary counting** — count what you **don't** want and subtract; often far easier (§2.4). (Same idea as [[07_Inclusion_Exclusion]].)
   - **Constructive counting** — build a valid object one decision at a time (§2.4).
   - **Concept (§2.6):** deal with the **most severe restriction first**, and independent choices → **multiply**, exclusive options → **add**.
+  - **Concept (§1.6):** when a problem looks complicated, **reduce it to a simpler problem you already know how to solve** (fewer objects, a smaller case) — then scale the idea up.
 - **Sum Rule vs Product Rule:** if a job can be done through separate alternatives joined by **"OR"**, **add** the ways. If a job needs several steps joined by **"AND"**, **multiply** the ways.
   - Example: 1 book from 5 paperbacks OR 3 hardcovers → 5+3 = **8** (sum rule). An outfit from 5 shirts AND 4 skirts AND 3 shoes → 5×4×3 = **60** (product rule).
 - **Strategic overcounting (§3.5) — the umbrella idea:** when a direct count is hard, deliberately **overcount** in an easy way, then **divide** by how many times each object was counted. Repeated-letter division, circular (n−1)!, and pairs n(n−1)/2 are all this one idea.
@@ -124,6 +126,7 @@ What this note covers:
 
 | Idea | Key point |
 |------|-----------|
+| List a…b length | b − a + 1 (not b − a) |
 | AND vs OR | multiply (AND) / add (OR) |
 | Repeat allowed? | with replacement nⁿ vs without n(n−1)… |
 | Order matters | use permutation P(n, r) |
@@ -183,6 +186,7 @@ These concepts appear in real problems on the quiz app. Learn the idea, then cli
 6. How many 3-digit PIN codes are there if digits **can** repeat? And if they **can't** repeat?
 7. What is 1 + 2 + 3 + … + 20?
 8. 6 people at a party each shake hands once with every other. How many handshakes?
+9. How many whole numbers are there from 23 to 71 inclusive?
 
 <details>
 <summary>Answers</summary>
@@ -195,6 +199,7 @@ These concepts appear in real problems on the quiz app. Learn the idea, then cli
 6. With repeats: 10×10×10 = **1000**. Without repeats: 10×9×8 = **720**.
 7. n(n+1)/2 = 20·21/2 = **210**
 8. n(n−1)/2 = 6·5/2 = **15**
+9. 71 − 23 + 1 = **49** (don't forget the +1)
 
 </details>
 

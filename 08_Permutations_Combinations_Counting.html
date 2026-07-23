@@ -20,7 +20,8 @@
 <h2>Permutations — order matters</h2>
 <p class="src-note"><em>Source: AOPS Introduction to Counting &amp; Probability §1.4 "Counting Multiple Events" (product rule, p.13) &amp; §1.5 "Permutations" (p.19–20). Repeated-element division is §3.2 (p.49); circular/round-table is §3.4 (p.57); "must/not together" restrictions are §2.5 (p.41).</em></p>
 <ul>
-<li><strong>The product rule (the engine underneath everything):</strong> if a task is made of several <strong>independent steps</strong>, multiply the choices for each step. Choosing an outfit from 5 shirts <strong>and</strong> 4 skirts <strong>and</strong> 3 shoes → 5 × 4 × 3 = 60.</li>
+<li><strong>List-length formula (the most basic count of all):</strong> the number of whole numbers in the list <strong>a, a+1, …, b</strong> is <strong>b − a + 1</strong> — <em>not</em> b − a. (From 7 to 12 there are 12 − 7 + 1 = 6 numbers, not 5. This "fencepost" +1 is a classic slip.)</li>
+<li><strong>The product rule (the engine underneath everything):</strong> if a task is made of several <strong>independent steps</strong>, multiply the choices for each step. Choosing an outfit from 5 shirts <strong>and</strong> 4 skirts <strong>and</strong> 3 shoes → 5 × 4 × 3 = 60. (When a later choice <em>depends</em> on an earlier one, use the reduced count — e.g. without replacement.)</li>
 <li><strong>Permutation:</strong> an <strong>ordered</strong> arrangement. "ABC" and "CBA" count as <strong>different</strong>.</li>
 <li><strong>P(n, r) formula:</strong> the number of ways to line up <strong>r</strong> items chosen from <strong>n</strong>.<br><span style="color:var(--ink-soft)"><strong>P(n, r) = n! / (n−r)! = n(n−1)(n−2)…</strong> (r factors, counting down).</span><br><span style="color:var(--ink-soft)">Example: seat 3 of 5 people in a row → P(5,3) = 5×4×3 = <strong>60</strong>.</span></li>
 <li><strong>With vs. without replacement (don't mix these up):</strong> if each choice <strong>can repeat</strong> (a 4-digit PIN from 0–9), multiply 10×10×10×10 = 10⁴. If each item is <strong>used up</strong> (line up 4 of 25 students), it counts <em>down</em>: 25×24×23×22. Permutations are the <em>without-replacement</em> case.</li>
@@ -75,7 +76,7 @@
 <h2>📚 From the Books (extra tricks)</h2>
 <p class="src-note"><em>Source: AOPS Introduction to Counting &amp; Probability — Sum/Product rules §1.4 &amp; §2.6 (p.13, p.45); counting pairs §3.3 (p.53); "distinguishability" §5.4 (p.88); grid paths §5.2 (p.81). Pascal's Triangle, Hockey Stick, Binomial Theorem are Ch.7 (p.177–216). Named reasoning techniques (casework, complementary, constructive) are Ch.2 (p.27–45).</em></p>
 <ul>
-<li><strong>The named reasoning techniques (the book's toolbox):</strong><br><span style="color:var(--ink-soft)"><strong>Casework</strong> — split into non-overlapping cases, count each, <strong>add</strong> (§2.2).</span><br><span style="color:var(--ink-soft)"><strong>Complementary counting</strong> — count what you <strong>don't</strong> want and subtract; often far easier (§2.4). (Same idea as <a class="cx" href="07_Inclusion_Exclusion.html">07 Inclusion Exclusion</a>.)</span><br><span style="color:var(--ink-soft)"><strong>Constructive counting</strong> — build a valid object one decision at a time (§2.4).</span><br><span style="color:var(--ink-soft)"><strong>Concept (§2.6):</strong> deal with the <strong>most severe restriction first</strong>, and independent choices → <strong>multiply</strong>, exclusive options → <strong>add</strong>.</span></li>
+<li><strong>The named reasoning techniques (the book's toolbox):</strong><br><span style="color:var(--ink-soft)"><strong>Casework</strong> — split into non-overlapping cases, count each, <strong>add</strong> (§2.2).</span><br><span style="color:var(--ink-soft)"><strong>Complementary counting</strong> — count what you <strong>don't</strong> want and subtract; often far easier (§2.4). (Same idea as <a class="cx" href="07_Inclusion_Exclusion.html">07 Inclusion Exclusion</a>.)</span><br><span style="color:var(--ink-soft)"><strong>Constructive counting</strong> — build a valid object one decision at a time (§2.4).</span><br><span style="color:var(--ink-soft)"><strong>Concept (§2.6):</strong> deal with the <strong>most severe restriction first</strong>, and independent choices → <strong>multiply</strong>, exclusive options → <strong>add</strong>.</span><br><span style="color:var(--ink-soft)"><strong>Concept (§1.6):</strong> when a problem looks complicated, <strong>reduce it to a simpler problem you already know how to solve</strong> (fewer objects, a smaller case) — then scale the idea up.</span></li>
 <li><strong>Sum Rule vs Product Rule:</strong> if a job can be done through separate alternatives joined by <strong>"OR"</strong>, <strong>add</strong> the ways. If a job needs several steps joined by <strong>"AND"</strong>, <strong>multiply</strong> the ways.<br><span style="color:var(--ink-soft)">Example: 1 book from 5 paperbacks OR 3 hardcovers → 5+3 = <strong>8</strong> (sum rule). An outfit from 5 shirts AND 4 skirts AND 3 shoes → 5×4×3 = <strong>60</strong> (product rule).</span></li>
 <li><strong>Strategic overcounting (§3.5) — the umbrella idea:</strong> when a direct count is hard, deliberately <strong>overcount</strong> in an easy way, then <strong>divide</strong> by how many times each object was counted. Repeated-letter division, circular (n−1)!, and pairs n(n−1)/2 are all this one idea.</li>
 <li><strong>Sum of the first n whole numbers:</strong> 1 + 2 + … + n = <strong>n(n+1)/2</strong> (Gauss's pairing: pair 1 with n, 2 with n−1, … each pair sums to n+1). Closely tied to the handshake count below.</li>
@@ -101,6 +102,10 @@
 <th>Idea</th>
 <th>Key point</th>
 </tr></thead><tbody>
+<tr>
+<td>List a…b length</td>
+<td>b − a + 1 (not b − a)</td>
+</tr>
 <tr>
 <td>AND vs OR</td>
 <td>multiply (AND) / add (OR)</td>
@@ -222,6 +227,7 @@
 <li>How many 3-digit PIN codes are there if digits <strong>can</strong> repeat? And if they <strong>can't</strong> repeat?</li>
 <li>What is 1 + 2 + 3 + … + 20?</li>
 <li>6 people at a party each shake hands once with every other. How many handshakes?</li>
+<li>How many whole numbers are there from 23 to 71 inclusive?</li>
 </ol>
 <details><summary>Answers</summary><div class="answer">
 <p>1. 4! = <strong>24</strong></p>
@@ -231,7 +237,8 @@
 <p>5. C(10,3) = <strong>120</strong> (no collinear sets to subtract)</p>
 <p>6. With repeats: 10×10×10 = <strong>1000</strong>. Without repeats: 10×9×8 = <strong>720</strong>.</p>
 <p>7. n(n+1)/2 = 20·21/2 = <strong>210</strong></p>
-<p>8. n(n−1)/2 = 6·5/2 = <strong>15</strong></p></div></details>
+<p>8. n(n−1)/2 = 6·5/2 = <strong>15</strong></p>
+<p>9. 71 − 23 + 1 = <strong>49</strong> (don't forget the +1)</p></div></details>
 <p class="footer-note">Source map: <code>약점진단/08_순열_조합_세기.md</code> · Counting continues in <a class="cx" href="09_Colouring_Partitions_Pigeonhole.html">09 Colouring Partitions Pigeonhole</a></p>
 </section>
 <a class="backlink" href="index.html">← All units</a>
