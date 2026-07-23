@@ -18,31 +18,38 @@
 <section id="s1">
 <span class="sec-num">1</span>
 <h2>Setting Up &amp; Solving Equations</h2>
+<p class="src-note"><em>Source: AOPS Introduction to Algebra Ch.3 "Linear Equations" — §3.1–3.2 (solving), §3.3 (word problems). The book's method adds a 5th step: check.</em></p>
 <ul>
 <li><strong>Equation:</strong> a math sentence with an <strong>equals sign</strong> and an unknown letter. Example: 2x + 3 = 11 → x = 4.</li>
-<li><strong>The 4 steps (always follow in order):</strong><br><span style="color:var(--ink-soft)"><strong>What to find?</strong> — decide the exact thing the question asks.</span><br><span style="color:var(--ink-soft)"><strong>Choose a variable</strong> — call that unknown <em>x</em> (or <em>a</em>, <em>n</em>, …).</span><br><span style="color:var(--ink-soft)"><strong>Condition = equation</strong> — turn the words of the problem into an equation.</span><br><span style="color:var(--ink-soft)"><strong>Solve</strong> — do the same thing to both sides until the letter is alone.</span></li>
+<li><strong>The 5 steps (always follow in order):</strong><br><span style="color:var(--ink-soft)"><strong>What to find?</strong> — decide the exact thing the question asks.</span><br><span style="color:var(--ink-soft)"><strong>Choose a variable</strong> — call that unknown <em>x</em> (or <em>a</em>, <em>n</em>, …).</span><br><span style="color:var(--ink-soft)"><strong>Condition = equation</strong> — turn the words of the problem into an equation.</span><br><span style="color:var(--ink-soft)"><strong>Solve</strong> — do the same thing to both sides until the letter is alone.</span><br><span style="color:var(--ink-soft)"><strong>Check</strong> — put your answer back into the original words to be sure it fits (the book always does this).</span></li>
 <li><strong>Example:</strong> "23 coins are worth 320 cents." Let <em>x</em> = number of one kind of coin, write the money total as an equation, then solve. (→ Mock Q2-18 below.)</li>
+<li><strong>How many solutions?</strong> A linear equation can have <strong>one</strong> solution (the usual case), <strong>no</strong> solution (it reduces to something false like 0 = 5), or <strong>infinitely many</strong> (it reduces to something always true like 0 = 0). If your variable cancels out, check which of these happened.</li>
 </ul>
 <div class="cp"><strong>Competition point:</strong> The hard part is usually <strong>step 3</strong>, not the algebra. Read the sentence slowly and write "left side = right side" exactly as the words say.</div>
 </section>
 <section id="s2">
 <span class="sec-num">2</span>
 <h2>Simultaneous Equations — <em>Sec 1</em></h2>
+<p class="src-note"><em>Source: AOPS Introduction to Algebra Ch.5 "Systems of Linear Equations" — §5.2 (substitution), §5.3 (elimination), §5.6 (more variables), §5.7 Summary.</em></p>
 <ul>
 <li><strong>Simultaneous equations:</strong> <strong>two (or more) equations</strong> that must be true at the <strong>same time</strong>, with two (or more) unknowns.</li>
-<li><strong>Elimination:</strong> add or subtract the equations so <strong>one variable cancels</strong>.<br><span style="color:var(--ink-soft)">Example: from x + y = 10 and x − y = 4, add them → 2x = 14 → x = 7, then y = 3.</span></li>
+<li><strong>Elimination:</strong> add or subtract the equations so <strong>one variable cancels</strong>. Often you must <strong>scale one equation first</strong> so a variable's coefficients match.<br><span style="color:var(--ink-soft)">Example: from x + y = 10 and x − y = 4, add them → 2x = 14 → x = 7, then y = 3.</span><br><span style="color:var(--ink-soft)">Scaling example: 2x + 3y = 13 and x + y = 5 → double the second (2x + 2y = 10) → subtract → y = 3.</span></li>
 <li><strong>Substitution:</strong> solve one equation for a letter, then <strong>put that into the other</strong> equation.<br><span style="color:var(--ink-soft)">Example: y = 10 − x, then use it in the second equation to get one unknown.</span></li>
 <li><strong>Three variables (Sec 1):</strong> if you have 3 equations, <strong>subtract one equation from another</strong> to get rid of a variable. Keep reducing until one letter is left.</li>
+<li><strong>Two lines, three outcomes:</strong> two linear equations cross at <strong>one</strong> point (usual), never meet (<strong>parallel</strong> — no solution), or are the <strong>same line</strong> (infinitely many solutions). If elimination kills <em>both</em> variables, you've hit one of the last two cases.</li>
 </ul>
 <div class="cp"><strong>Competition point:</strong> When two equations look almost the same, <strong>subtract them</strong> — the messy parts often cancel and leave a simple answer (→ RI 2024 Q03: x + y/z = 15 and y + x/z = 20).</div>
 </section>
 <section id="s3">
 <span class="sec-num">3</span>
 <h2>Factoring — <em>Sec 1</em></h2>
+<p class="src-note"><em>Source: AOPS Introduction to Algebra Ch.11 "Special Factorizations" — §11.1 (squares of binomials), §11.2 (difference of squares), §11.3 (cubes); factoring quadratics is Ch.10 §10.2–10.3.</em></p>
 <ul>
 <li><strong>Factoring:</strong> writing an expression as a <strong>product</strong> (things multiplied). It is the reverse of expanding.</li>
 <li><strong>Common factor:</strong> pull out what every term shares. <strong>ax + ay = a(x + y)</strong>.<br><span style="color:var(--ink-soft)">Example: 6n + 9 = 3(2n + 3).</span></li>
-<li><strong>Perfect square:</strong> <strong>(a ± b)² = a² ± 2ab + b²</strong>.<br><span style="color:var(--ink-soft)">Example: x² + 6x + 9 = (x + 3)².</span></li>
+<li><strong>Factoring a quadratic x² + bx + c:</strong> find two numbers that <strong>multiply to c and add to b</strong>; then x² + bx + c = (x + p)(x + q). When the leading coefficient isn't 1 (like 6x² + 11x + 3), look for factors of (first × last) that add to the middle, or split the middle term.</li>
+<li><strong>Zero-product property (why factoring solves equations):</strong> if a <strong>product is 0</strong>, then one of the factors is 0. So (x − 2)(x + 5) = 0 means x = 2 <strong>or</strong> x = −5. This is the whole reason we factor to solve.</li>
+<li><strong>Perfect square:</strong> <strong>(a ± b)² = a² ± 2ab + b²</strong>.<br><span style="color:var(--ink-soft)">Example: x² + 6x + 9 = (x + 3)². (Handy for mental math: 31² = (30+1)² = 900 + 60 + 1 = 961.)</span></li>
 <li><strong>Difference of squares (⭐ most useful):</strong> <strong>a² − b² = (a + b)(a − b)</strong>.<br><span style="color:var(--ink-soft)">Example: 41² − 39² = (41 + 39)(41 − 39) = 80 × 2 = 160 (no long multiplying!).</span></li>
 <li><strong>Sum/Difference of cubes (advanced):</strong> <strong>a³ ± b³ = (a ± b)(a² ∓ ab + b²)</strong>.</li>
 </ul>
@@ -51,17 +58,21 @@
 <section id="s4">
 <span class="sec-num">4</span>
 <h2>Algebraic Manipulation — <em>Sec, advanced</em></h2>
+<p class="src-note"><em>Source: AOPS Introduction to Algebra — linear combinations &amp; symmetric systems Ch.22 §22.3; AM–GM as the "Trivial Inequality" Ch.15 §15.3; quadratic optimization §15.4.</em></p>
 <ul>
 <li><strong>Linear combination:</strong> build the thing you want by <strong>adding multiples</strong> of the equations you have (like aX + bY). You don't always need each letter's value — just the right mix.<br><span style="color:var(--ink-soft)">Example: combine two people's price equations to find a total (→ AP 2025 Q18).</span></li>
-<li><strong>Symmetric expressions (advanced):</strong> if you know <strong>x + y</strong> and <strong>xy</strong>, then x and y are the <strong>roots of</strong> t² − (x + y)t + xy = 0. Symmetric sums (x + y, xy) often solve the whole problem without finding x and y separately.</li>
-<li><strong>Optimization with AM–GM (advanced):</strong> for positive a and b, <strong>a + b ≥ 2√(ab)</strong>, and they are <strong>equal when a = b</strong>. This is the quick way to find a <strong>maximum or minimum</strong> (→ Mock Q1-34: split time to maximise a product).</li>
+<li><strong>Symmetric systems (advanced):</strong> if a system doesn't change when you swap the letters, <strong>add all the equations</strong> (and/or subtract them) to get simpler symmetric combinations like x + y and xy.</li>
+<li><strong>Symmetric expressions (advanced):</strong> if you know <strong>x + y</strong> and <strong>xy</strong>, then x and y are the <strong>roots of</strong> t² − (x + y)t + xy = 0. Also <strong>x² + y² = (x + y)² − 2xy</strong> — a constant time-saver.</li>
+<li><strong>Optimization with AM–GM (advanced):</strong> for positive a and b, <strong>a + b ≥ 2√(ab)</strong>, and they are <strong>equal when a = b</strong>. This is the quick way to find a <strong>maximum or minimum</strong> (→ Mock Q1-34: split time to maximise a product). It rests on the <strong>Trivial Inequality</strong> (any square is ≥ 0), since (√a − √b)² ≥ 0 rearranges to a + b ≥ 2√(ab).</li>
+<li><strong>Vertex/completing-the-square optimization:</strong> a quadratic y = ax² + bx + c reaches its max or min at the <strong>vertex</strong>; complete the square to read it off. (This is the non-AM-GM way to do "biggest product" problems.)</li>
 </ul>
 <div class="cp"><strong>Competition point:</strong> If a problem asks for the <strong>biggest product with a fixed sum</strong>, the answer is usually when the two parts are <strong>equal</strong>. That is AM–GM in disguise.</div>
 </section>
 <section id="from-the-books-extra-tricks">
 <h2>📚 From the Books (extra tricks)</h2>
+<p class="src-note"><em>Source: AOPS Introduction to Algebra — SFFT Ch.11 §11.5; completing the square &amp; quadratic formula Ch.13 §13.2–13.3; discriminant §13.5; Vieta's Ch.10 §10.4; rationalizing Ch.11 §11.4; nested radicals/self-similarity Ch.22 §22.2; telescoping Ch.21 §21.5. (Consecutive-integer sums is a number-theory topic, external to this book.)</em></p>
 <ul>
-<li><strong>Consecutive-integer sums:</strong> N can be written as a sum of 2 or more consecutive positive integers <strong>unless N is a power of 2</strong>. Count the <strong>odd factors of N</strong> (including 1) — call that k — and there are exactly <strong>k − 1</strong> ways.<br><span style="color:var(--ink-soft)">Example: 1995 = 3 × 5 × 7 × 19 has 2⁴ = 16 odd factors → <strong>15 ways</strong> to write 1995 as a sum of consecutive positive integers.</span></li>
+<li><strong>Consecutive-integer sums</strong> <em>(number theory — see <a class="cx" href="04_Divisors_Multiples_GCD_LCM.html">04 Divisors Multiples GCD LCM</a>, not in Intro to Algebra)</em>: N can be written as a sum of 2 or more consecutive positive integers <strong>unless N is a power of 2</strong>. Count the <strong>odd factors of N</strong> (including 1) — call that k — and there are exactly <strong>k − 1</strong> ways.<br><span style="color:var(--ink-soft)">Example: 1995 = 3 × 5 × 7 × 19 has 2⁴ = 16 odd factors → <strong>15 ways</strong> to write 1995 as a sum of consecutive positive integers.</span></li>
 <li><strong>Middle-term trick:</strong> for consecutive integers, the sum = (<strong>middle term</strong>) × (<strong>count of terms</strong>) when the count is <strong>odd</strong>. When the count is <strong>even</strong>, use the <strong>average of the two middle terms</strong> instead.<br><span style="color:var(--ink-soft)">Example: 6 consecutive integers add to 2019 → average = 2019 ÷ 6 = 336.5 → the terms sit around 336.5, so they run 334…339 (largest = <strong>339</strong>).</span></li>
 </ul>
 <div class="cp"><strong>Competition point (SFFT — very famous, very useful):</strong> an expression like <strong>xy + ax + by</strong> can be forced into a product by adding <strong>ab</strong> to both sides: <strong>(x + b)(y + a) = (constant) + ab</strong>. This turns a 2-variable equation into a <strong>factor-pair search</strong>.</div>
@@ -69,8 +80,8 @@
 <ul>
 <li><strong>Completing the square:</strong> to turn x² + bx into a perfect square, add <strong>(b/2)²</strong>. This solves <em>any</em> quadratic, even ones that don't factor nicely.<br><span style="color:var(--ink-soft)">Example: x² + 8x = 14 → add 16 to both sides → (x + 4)² = 30 → x = −4 ± √30.</span></li>
 <li><strong>The Quadratic Formula:</strong> completing the square on ax² + bx + c = 0 in general gives <strong>x = (−b ± √(b² − 4ac)) / (2a)</strong>.</li>
-<li><strong>The Discriminant (b² − 4ac):</strong> tells you the <em>type</em> of roots without solving — <strong>positive</strong> → 2 different real roots, <strong>zero</strong> → 1 repeated root, <strong>negative</strong> → no real roots.</li>
-<li><strong>Vieta's Formulas (full version):</strong> for ax² + bx + c = 0 with roots r and s: <strong>r + s = −b/a</strong> and <strong>r × s = c/a</strong>. Read the sum/product straight off the coefficients — no need to solve at all.</li>
+<li><strong>The Discriminant (b² − 4ac):</strong> tells you the <em>type</em> of roots without solving — <strong>positive</strong> → 2 different real roots, <strong>zero</strong> → 1 repeated root, <strong>negative</strong> → no real roots (the two roots are a <strong>complex-conjugate pair</strong>, a ± b<em>i</em>).</li>
+<li><strong>Vieta's Formulas (full version):</strong> for ax² + bx + c = 0 with roots r and s: <strong>r + s = −b/a</strong> and <strong>r × s = c/a</strong>. Read the sum/product straight off the coefficients — no need to solve at all.<br><span style="color:var(--ink-soft)"><strong>Combine with the identity</strong> r² + s² = (r + s)² − 2rs to get the sum of squares of the roots straight from the coefficients — a very common contest step.</span></li>
 <li><strong>Coefficient-matching:</strong> if Ax + B and Cx + D are equal for <strong>every</strong> value of x (not just one), then <strong>A = C and B = D</strong>. Fast way to find them: plug in an easy value like <strong>x = 0</strong> to isolate one equation instantly.</li>
 <li><strong>Rationalizing with a conjugate:</strong> for a denominator like c + √d, multiply top and bottom by its conjugate <strong>c − √d</strong>, since (c + √d)(c − √d) = <strong>c² − d</strong> removes the square root.</li>
 <li><strong>Nested radicals:</strong> for something like √(6+√11) + √(6−√11), let x = the whole expression and <strong>square it</strong> — the cross term collapses because √((6+√11)(6−√11)) = √(36−11) = √25 = 5.</li>
@@ -87,7 +98,11 @@
 </tr></thead><tbody>
 <tr>
 <td>Word problem</td>
-<td>4 steps: find → variable → equation → solve</td>
+<td>5 steps: find → variable → equation → solve → check</td>
+</tr>
+<tr>
+<td>Solution count</td>
+<td>one / none (0=5) / infinite (0=0)</td>
 </tr>
 <tr>
 <td>Two unknowns</td>
@@ -96,6 +111,10 @@
 <tr>
 <td>Three unknowns</td>
 <td>subtract equations to reduce</td>
+</tr>
+<tr>
+<td>Zero-product</td>
+<td>product = 0 → a factor is 0</td>
 </tr>
 <tr>
 <td>Common factor</td>
@@ -157,13 +176,17 @@
 <li>Factor fully: 8m + 12.</li>
 <li>Three numbers add to 30. The pair-sums of two pairs are 19 and 21. Find the third number's partner sums — actually, find all three numbers.</li>
 <li>You will split 12 into two positive parts to make their <strong>product</strong> as big as possible. What are the two parts?</li>
+<li>Solve (x − 3)(x + 7) = 0 using the zero-product property.</li>
+<li>For x² − 5x + 6 = 0, use Vieta to find r + s and rs without solving.</li>
 </ol>
 <details><summary>Answers</summary><div class="answer">
 <p>1. Add: 2x = 26 → x = 13; then y = 20 − 13 = <strong>7</strong> (so x = 13, y = 7)</p>
 <p>2. 53² − 47² = (53 + 47)(53 − 47) = 100 × 6 = <strong>600</strong></p>
 <p>3. 8m + 12 = <strong>4(2m + 3)</strong></p>
 <p>4. Let the numbers be a, b, c with a+b+c = 30. If a+b = 19 then c = 11; if a+c = 21 then b = 9; so a = 30 − 9 − 11 = 10 → <strong>10, 9, 11</strong></p>
-<p>5. Equal parts give the biggest product: 6 and 6 → <strong>6 and 6</strong> (product 36)</p></div></details>
+<p>5. Equal parts give the biggest product: 6 and 6 → <strong>6 and 6</strong> (product 36)</p>
+<p>6. One factor must be 0 → x = <strong>3 or −7</strong></p>
+<p>7. r + s = −(−5)/1 = <strong>5</strong>, rs = 6/1 = <strong>6</strong> (indeed the roots are 2 and 3)</p></div></details>
 <p class="footer-note">Source map: <code>약점진단/12_방정식_식조작_인수분해.md</code> · Puzzle-style reasoning continues in <a class="cx" href="13_Logic_and_Magic_Squares.html">13 Logic and Magic Squares</a></p>
 </section>
 <a class="backlink" href="index.html">← All units</a>
