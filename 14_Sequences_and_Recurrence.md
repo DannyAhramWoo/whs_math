@@ -19,12 +19,18 @@ What this note covers:
 
 ## 1. Arithmetic Sequences and their Sum
 
+> 📖 *Source: AOPS Introduction to Algebra Ch.21 "Sequences & Series" — §21.1 (arithmetic sequences) & §21.2 (arithmetic series).*
+
+- **Sequence vs. series:** a **sequence** is the *list* of numbers; a **series** is what you get when you *add them up*. (So "3, 7, 11" is a sequence; "3 + 7 + 11" is a series.)
 - **Arithmetic sequence:** a list where you **add the same number each time**. That fixed jump is the **common difference (d)**.
   - Example: 3, 7, 11, 15, ... → d = 4
 - **nth term:** the number in position n is **a + (n−1)d** (start value a, then take (n−1) jumps).
   - Example: 3, 7, 11, ... → 10th term = 3 + 9×4 = 39
-- **Sum of an arithmetic sequence:** **S_n = n(a + l)/2** (n terms, first a, last l). Same as **S_n = n(2a + (n−1)d)/2**.
-  - Trick to remember: pair the first and last, second and second-last... each pair has the same total. There are n/2 pairs, each equal to (a + l).
+- **How many terms?** the count from first term a to last term l is **n = (l − a)/d + 1** (don't forget the +1).
+  - Example: 5, 11, …, 89 → (89 − 5)/6 + 1 = **15** terms.
+- **Arithmetic-mean property:** any term is the **average of its two neighbours** — aₙ = (aₙ₋₁ + aₙ₊₁)/2. More generally, a term exactly between two others equals their average.
+- **Sum of an arithmetic series:** **S_n = n(a + l)/2** (n terms, first a, last l). Same as **S_n = n(2a + (n−1)d)/2**.
+  - *Why (Gauss's reverse-and-add):* write the sum forwards and backwards, then add term by term — every column totals (a + l), and there are n columns, so 2·S_n = n(a + l). It's "**(number of terms) × (average of first and last)**".
   - Example: 1 + 2 + ... + 100 = 100×(1+100)/2 = **5050**
 
 > 💡 **Competition point:** Odd numbers 1, 3, 5, ... are an arithmetic sequence with d = 2. Their running sums are **perfect squares**: 1 = 1², 1+3 = 2², 1+3+5 = 3². The sum of the first n odd numbers = **n²**.
@@ -33,19 +39,26 @@ What this note covers:
 
 ## 2. Geometric Sequences and their Sum — *Sec 1*
 
+> 📖 *Source: AOPS Introduction to Algebra Ch.21 — §21.3 (geometric sequences) & §21.4 (geometric series, including infinite).*
+
 - **Geometric sequence:** a list where you **multiply by the same number each time**. That fixed multiplier is the **common ratio (r)**.
   - Example: 2, 6, 18, 54, ... → r = 3
 - **nth term:** **a × r^(n−1)** (start value a, then multiply by r a total of (n−1) times).
-- **Sum of a geometric sequence:** **S_n = a(1 − rⁿ)/(1 − r)** (when r ≠ 1).
+- **Geometric-mean property:** any term equals the **geometric mean of its two neighbours** — aₙ = √(aₙ₋₁ × aₙ₊₁). (The multiplicative cousin of the arithmetic-mean property in §1.)
+- **Sum of a geometric series:** **S_n = a(1 − rⁿ)/(1 − r)** (when r ≠ 1).
+  - *Why (multiply-and-subtract):* let S = a + ar + … + arⁿ⁻¹. Then rS = ar + … + arⁿ. Subtract: S − rS = a − arⁿ, so S(1 − r) = a(1 − rⁿ). Almost everything cancels.
   - Example: 1 + 2 + 4 + 8 + 16 = 1×(1 − 2⁵)/(1 − 2) = (1 − 32)/(−1) = **31**
-- **Infinite geometric sum (advanced):** if the ratio is a fraction between −1 and 1, the whole never-ending sum settles on **S = a/(1 − r)**.
+- **Infinite geometric sum (advanced):** if **|r| < 1** (a fraction between −1 and 1), rⁿ shrinks to 0 as you add more terms, so the never-ending sum settles on **S = a/(1 − r)**. If |r| ≥ 1 the terms don't shrink and the sum **has no finite value**.
   - Example: 1/2 + 1/4 + 1/8 + ... = (1/2)/(1 − 1/2) = **1**
+- **Repeating decimal → fraction:** a repeating decimal *is* an infinite geometric series. 0.3̄ = 3/10 + 3/100 + … = (3/10)/(1 − 1/10) = **1/3**.
 
 > 💡 **Competition point:** For a "sum that goes on forever" problem, check the ratio first. If it is a small fraction, use **S = a/(1 − r)** — you do not need to add infinitely many terms.
 
 ---
 
 ## 3. Special Number Patterns (triangular, square sums)
+
+> 📖 *Source: the sum 1 + 2 + … + n = n(n+1)/2 is AOPS Introduction to Algebra §21.2; the "figurate/triangular" framing and the sum-of-squares formula are standard competition results (not derived in Intro to Algebra).*
 
 - **Triangular numbers:** dots that build a triangle: 1, 3, 6, 10, 15, ... The nth one is **T_n = n(n+1)/2**.
   - This is just the arithmetic sum 1 + 2 + ... + n.
@@ -58,6 +71,8 @@ What this note covers:
 ---
 
 ## 4. Recurrence and General Term
+
+> 📖 *Source: standard competition technique. AOPS Introduction to Algebra Ch.21 works with closed-form sequences; "guess the ×k + c rule from the terms" is a general pattern-finding method, not a book topic.*
 
 - **Recurrence:** a rule that builds **each term from the earlier terms**. Example: "double the last term, then add 1."
 - **General term:** a single formula that gives term n **directly**, without walking through all the earlier ones.
@@ -73,6 +88,8 @@ What this note covers:
 
 ## 5. Fibonacci, Stairs & Tiling
 
+> 📖 *Source: standard competition topic (Fibonacci recurrence and "split by the last move" counting). Not in AOPS Introduction to Algebra; it's the recurrence idea from [[08_Permutations_Combinations_Counting]] applied to counting.*
+
 - **Fibonacci sequence:** each term is the **sum of the two before it**: **f(n) = f(n−1) + f(n−2)**.
   - Start 1, 1 → 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
 - **Stairs / tiling follow Fibonacci:** many "how many ways" counting problems land on the exact same rule.
@@ -86,6 +103,9 @@ What this note covers:
 
 ## 📚 From the Books (extra tricks)
 
+> 📖 *Source: index-sum & mean-of-neighbours shortcuts are AOPS Introduction to Algebra §21.1 (Important boxes, p.573); telescoping is §21.5. Difference tables, repeating-cycle position, and common-terms-of-two-APs are standard competition techniques not in that book.*
+
+- **Telescoping sums** *(also in [[12_Equations_Algebra_Factoring]])*: rewrite each term as a **difference of two pieces** so the middle cancels. 1/(1·2) + 1/(2·3) + … + 1/(99·100) = (1 − 1/2) + (1/2 − 1/3) + … = **1 − 1/100 = 99/100**. AOPS §21.5 makes this its flagship "collapse the sum" method.
 - **Difference tables:** if the first differences are not constant, take the differences **of the differences** (second differences), and repeat. The number of rounds needed to get a constant row tells you the sequence follows a polynomial of that degree.
   - Example: 5, 11, 19, 29, ... → 1st differences 6, 8, 10 (not constant) → 2nd differences 2, 2, 2 (constant!) → this is a **"degree 2"** pattern, so you can build a formula for the nth term.
 - **Repeating-cycle position:** for a periodic pattern (repeating decimal digits, a repeating letter/colour sequence), find the kth term using **k mod (period length)** — but a remainder of 0 usually means "the **last** term of the cycle," not term 0.
@@ -106,8 +126,11 @@ What this note covers:
 
 | Idea | Key point |
 |------|-----------|
+| Sequence vs series | the list vs the sum of the list |
 | Arithmetic nth term | a + (n−1)d |
-| Arithmetic sum | n(a + l)/2 |
+| Number of terms | (l − a)/d + 1 |
+| Term = avg of neighbours | aₙ = (aₙ₋₁ + aₙ₊₁)/2 |
+| Arithmetic sum | n(a + l)/2 = terms × avg of ends |
 | Sum of first n odd numbers | n² (a perfect square) |
 | Geometric nth term | a × r^(n−1) |
 | Geometric sum | a(1 − rⁿ)/(1 − r) |
@@ -142,6 +165,8 @@ These concepts appear in real problems on the quiz app. Learn the idea, then cli
 3. Find the 6th triangular number.
 4. A sequence goes 2, 5, 14, 41, ... Each term is "×3 − 1" of the one before. What is the 5th term?
 5. In how many ways can you climb a staircase of 6 steps, taking 1 or 2 steps at a time?
+6. How many terms are in the sequence 7, 12, 17, …, 132?
+7. Find the infinite sum 6 + 2 + 2/3 + 2/9 + … (ratio 1/3).
 
 <details>
 <summary>Answers</summary>
@@ -151,6 +176,8 @@ These concepts appear in real problems on the quiz app. Learn the idea, then cli
 3. T₆ = 6×7/2 = **21**
 4. 41×3 − 1 = **122**
 5. Fibonacci: f(6) with f(1)=1, f(2)=2 → 1, 2, 3, 5, 8, **13**
+6. (132 − 7)/5 + 1 = 25 + 1 = **26** terms
+7. S = a/(1 − r) = 6/(1 − 1/3) = 6/(2/3) = **9**
 
 </details>
 
