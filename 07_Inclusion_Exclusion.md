@@ -14,10 +14,13 @@ What this note covers:
 3. The Complement Trick ("none of these")
 4. A Worked Venn Example — *Sec 1*
 5. Min / Max Overlap (pigeon-style bounds) — *Sec, advanced*
+6. The Probability Version (mutually exclusive events) — *Sec 1*
 
 ---
 
 ## 1. Two Sets — the basic overlap rule
+
+> 📖 *Source: AOPS Introduction to Counting & Probability §1.3 "Counting with Addition and Subtraction" (pp.6–12).*
 
 - **Set:** just a group of things. **|A|** means "how many things are in group A".
 - **Union (A or B):** everything that is in A **or** B **or both**. Written **|A ∪ B|**.
@@ -33,6 +36,8 @@ What this note covers:
 
 ## 2. Three Sets — add, subtract, add back
 
+> 📖 *Source: standard inclusion–exclusion. AOPS Introduction to Counting & Probability develops the two-circle case in §1.3; the three-circle Venn extension follows the same "fill each region" logic.*
+
 - **The three-set formula:**
   - **|A ∪ B ∪ C| = |A| + |B| + |C| − |A∩B| − |A∩C| − |B∩C| + |A∩B∩C|**
   - In words: **add the singles**, **subtract the pairs**, **add back the triple**.
@@ -44,6 +49,8 @@ What this note covers:
 ---
 
 ## 3. The Complement Trick ("none of these")
+
+> 📖 *Source: AOPS Introduction to Counting & Probability §2.3 "Complementary Counting" (p.35) — count the opposite, then subtract from the total.*
 
 - **Complement:** the **opposite** group — everything that is **not** in your set. If there are **N** things in total, then
   - **(not in A ∪ B ∪ C) = N − |A ∪ B ∪ C|**
@@ -59,6 +66,8 @@ What this note covers:
 
 ## 4. A Worked Venn Example — *Sec 1*
 
+> 📖 *Source: AOPS Introduction to Counting & Probability §1.3 — the Venn-diagram method and the "let a region be a variable" technique (cats/kittens example, pp.9–11). A **Venn diagram** is named after John Venn (1834–1923), who first published it in 1881.*
+
 A **Venn diagram** is the fastest way to see the overlaps. Fill the **innermost region first**, then work outward.
 
 - **Problem:** 30 students. 18 play violin, 15 play e-piano, 7 play **both**. How many play **neither**?
@@ -68,6 +77,13 @@ A **Venn diagram** is the fastest way to see the overlaps. Fill the **innermost 
   - At least one = 11 + 8 + 7 = **26** (this is the union)
   - Neither = 30 − 26 = **4**
 - **Rule of thumb:** the number written in a circle (like "18 play violin") is the **total** for that circle, so subtract the overlap to get the "only" part.
+
+**The "let a region be x" method** (when you *don't* know the overlap). Put a variable in the region you don't know, write every other region in terms of it, then use the grand total to solve.
+
+- **Problem:** 27 cats; 14 are short-haired, 11 are kittens, 5 are neither. How many short-haired kittens?
+  - Let the overlap (short-haired kittens) = **x**. Then short-haired-only = 14 − x, kittens-only = 11 − x, and outside = 5.
+  - All regions sum to the total: `(14 − x) + x + (11 − x) + 5 = 27` → `30 − x = 27` → **x = 3**.
+- **Concept (from the book):** when you set up a variable, **let it stand for the quantity the problem is asking for** — then you solve for the answer directly.
 
 > 💡 **Competition point:** When a problem gives two categories with two options each (e.g. white/black top **and** black/blue bottom), draw a small table and use the union rule (→ Mock Q4-16 below).
 
@@ -83,6 +99,20 @@ A **Venn diagram** is the fastest way to see the overlaps. Fill the **innermost 
   - **(do all) ≥ N − (sum of the ones who miss each)**.
 
 > 💡 **Competition point:** "At least how many people can do all 4 sports?" or "minimum in both sets" both use **|A|+|B|−N** style bounds (→ RI 2023 Q13, AP 2021 Q21 below).
+
+---
+
+## 6. The Probability Version (mutually exclusive events) — *Sec 1*
+
+> 📖 *Source: AOPS Introduction to Counting & Probability §8.2 "Probability and Addition" (pp.123–126).*
+
+The exact same add/subtract idea works for **probabilities**, not just counts.
+
+- **Mutually exclusive events:** two events that **cannot both happen at once** (rolling a 1 vs rolling a 4 on one die). For these, **P(A or B) = P(A) + P(B)** — just add. This extends to any number: P(A₁ or A₂ or … or Aₙ) = P(A₁) + … + P(Aₙ) **when they are pairwise mutually exclusive**.
+- **When events *can* overlap, subtract the overlap** — the probability inclusion-exclusion rule: **P(A or B) = P(A) + P(B) − P(A and B)**.
+  - Example: draw one card from 52. P(Queen or ◊) = P(Queen) + P(◊) − P(Queen of ◊) = 4/52 + 13/52 − 1/52 = **16/52 = 4/13**. (The queen of diamonds was counted in both, so subtract it once.)
+
+> ⚠️ **Warning:** "Add the probabilities" only works when the events are **mutually exclusive**. If they can happen together (like "Queen" and "diamond"), you must **subtract P(both)** — exactly the two-set rule from Section 1, in probability form.
 
 ---
 
@@ -107,6 +137,9 @@ A **Venn diagram** is the fastest way to see the overlaps. Fill the **innermost 
 | Two sets | \|A∪B\| = \|A\|+\|B\|−\|A∩B\| |
 | Three sets | singles − pairs + triple |
 | Sign pattern | +, −, +, −, … (flips each level) |
+| Unknown overlap | let it = x, write regions in x, sum = total |
+| Mutually exclusive | P(A or B) = P(A) + P(B) |
+| Overlapping events | P(A or B) = P(A) + P(B) − P(A and B) |
 | "None of these" | total N − union |
 | Multiples of d up to N | ⌊N ÷ d⌋ |
 | "Both 2 and 3" | count multiples of LCM = 6 |
@@ -141,6 +174,8 @@ These concepts appear in real problems on the quiz app. Learn the idea, then cli
 3. From 1 to 100, how many numbers are multiples of 2 **or** 5?
 4. From 1 to 60, how many are divisible by **none** of 2 and 3?
 5. In a class of 40, 30 passed Maths and 25 passed Science. What is the **least** number who passed **both**?
+6. A card is drawn from 52. Find P(King or ♥) — remember to subtract the overlap.
+7. 25 cats: 16 are black, 12 have long tails, 4 are neither. Using "let x = both", how many are black **and** long-tailed?
 
 <details>
 <summary>Answers</summary>
@@ -150,6 +185,8 @@ These concepts appear in real problems on the quiz app. Learn the idea, then cli
 3. mult of 2 = 50, mult of 5 = 20, mult of 10 (both) = 10 → 50 + 20 − 10 = **60**
 4. mult of 2 = 30, mult of 3 = 20, mult of 6 = 10 → union = 40 → none = 60 − 40 = **20**
 5. min both = 30 + 25 − 40 = **15**
+6. 4/52 + 13/52 − 1/52 = 16/52 = **4/13** (the King of hearts is the overlap)
+7. black-only (16−x) + both (x) + long-only (12−x) + neither (4) = 25 → 32 − x = 25 → **x = 7**
 
 </details>
 
