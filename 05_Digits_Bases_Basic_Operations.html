@@ -11,7 +11,7 @@
 <p class="src-note" style="border-left-color:var(--rule);color:var(--ink-faint)"><strong>Unit:</strong> Number Theory Basics (Unit 05 of 14) · <strong>23 linked problems</strong> · <strong>For:</strong> primary students — concepts go up to <strong>Secondary 1</strong> level</p>
 <nav class="onpage"><div class="onpage-tag">On this page</div><ol>
 <li><span class="n">1</span><a href="#s1">Letting Digits Be Variables &amp; Bases — <em>Sec 1</em></a></li>
-<li><span class="n">2</span><a href="#s2">Divisibility by 9 and 11</a></li>
+<li><span class="n">2</span><a href="#s2">Divisibility by 3, 9 and 11</a></li>
 <li><span class="n">3</span><a href="#s3">Digit Patterns (numbers written in a row)</a></li>
 <li><span class="n">4</span><a href="#s4">Basic Operations (fractions, decimals, units, days of week)</a></li>
 <li><span class="n">5</span><a href="#s5">More Tools (fractions, decimals, exponents, bases)</a></li>
@@ -19,7 +19,7 @@
 <section id="s1">
 <span class="sec-num">1</span>
 <h2>Letting Digits Be Variables &amp; Bases — <em>Sec 1</em></h2>
-<p class="src-note"><em>Source: AOPS Introduction to Number Theory Ch.8 (Base Numbers) — §8.1–8.2 (digit bundles, numerals), §8.4 (base digits), §8.5 (converting between bases)</em></p>
+<p class="src-note"><em>Source: AOPS Introduction to Number Theory Ch.8 (Base Numbers) — §8.1–8.2 (digit bundles, numerals), §8.4 (base digits), §8.5 (converting between bases); the "digit as a variable" technique (10A+B) is developed in Ch.7 "Algebra With Integers" §7.2–7.3.</em></p>
 <p><strong>Place value = "digit bundles."</strong> A number's digits are just the coefficients of powers of the base. In base 10, the numeral 3572 <em>means</em></p>
 <p><code>3·10³ + 5·10² + 7·10¹ + 2·10⁰</code> — four "digit bundles" of sizes 1000, 100, 10, 1 added together. (A <strong>numeral</strong> is the symbol we write; the <strong>number</strong> is the amount it stands for.)</p>
 <ul>
@@ -32,16 +32,20 @@
 <li><strong>Base b → base 10:</strong> add up the decimal value of every digit bundle.<br><span style="color:var(--ink-soft)"><code>514₉ = 5·9² + 1·9¹ + 4·9⁰ = 405 + 9 + 4 = 418</code>.</span><br><span style="color:var(--ink-soft)"><code>234₅ = 2·25 + 3·5 + 4 = 69</code>.</span></li>
 <li><strong>Base 10 → base b:</strong> repeatedly divide by b; the remainders, read <strong>bottom-to-top</strong>, are the digits.<br><span style="color:var(--ink-soft)"><code>65 → base 3</code>: 65÷3 = 21 r2, 21÷3 = 7 r0, 7÷3 = 2 r1, 2÷3 = 0 r2 → <strong>2102₃</strong> (keep the 0!).</span></li>
 <li><strong>Bases above 10 need extra digit symbols.</strong> In base 12 we use A for ten and B for eleven, so <code>1B7₁₂ = 1·144 + 11·12 + 7 = 283</code>.</li>
-<li><strong>Base names worth knowing:</strong> base 2 <em>binary</em>, 3 <em>ternary</em>, 8 <em>octal</em>, 12 <em>duodecimal</em>, 16 <em>hexadecimal</em>, 60 <em>sexagesimal</em>.</li>
+<li><strong>The base is also called the radix</strong> (or <em>scale</em>) — different words for the same thing.</li>
+<li><strong>Base names worth knowing:</strong> base 2 <em>binary</em>, 3 <em>ternary</em>, 4 <em>quaternary</em>, 5 <em>quinary</em>, 6 <em>senary</em>, 7 <em>septenary</em>, 8 <em>octal</em>, 9 <em>nonary</em>, 10 <em>decimal</em>, 11 <em>undenary</em>, 12 <em>duodecimal</em>, 16 <em>hexadecimal</em>, 20 <em>vigesimal</em>, 60 <em>sexagesimal</em>.</li>
+<li><strong>Convert directly when one base is a power of another.</strong> You don't have to detour through base 10. Because 9 = 3², each base-9 digit equals exactly <strong>two</strong> base-3 digits, so you can regroup digit-by-digit: <code>2671₉ → 22021013₃</code> by expanding each base-9 digit into its 2-digit base-3 form. Same idea links base 2 ↔ base 4 ↔ base 8 ↔ base 16.</li>
 </ul>
+<div class="callout"><strong>Concept:</strong> Once you write digits as variables, contest problems often need one of these <strong>factoring identities</strong> (from AOPS Intro to NT Ch.7): a² − b² = (a+b)(a−b); a³ − b³ = (a−b)(a²+ab+b²); a³ + b³ = (a+b)(a²−ab+b²); and the "SFFT" trick xy + Ax + By = (x+B)(y+A) − AB. They turn a digit equation into a product you can pin down.</div>
 <div class="cp"><strong>Competition point:</strong> When a problem says "reverse the digits" or "move the first digit to the end," <strong>write the number with letters first</strong> (a·place-value form). It becomes an equation you can solve (→ Mock Q1-12, Mock Q5-25). For base problems, always fall back on the digit-bundle meaning: a base-b numeral is just a sum of <code>digit × bⁿ</code>.</div>
 </section>
 <section id="s2">
 <span class="sec-num">2</span>
-<h2>Divisibility by 9 and 11</h2>
-<p class="src-note"><em>Source: AOPS Introduction to Number Theory Ch.7 (Divisibility Rules — the "digit sum" rules for 3 and 9, the alternating-sum rule for 11)</em></p>
+<h2>Divisibility by 3, 9 and 11</h2>
+<p class="src-note"><em>Source: standard number theory. In AOPS Introduction to Number Theory these digit rules are Ch.13 "Divisibility Rules" — a chapter absent from our book scan — so this section is written from the standard results.</em></p>
 <ul>
-<li><strong>Multiple of 9:</strong> a number is a multiple of 9 exactly when its <strong>digit sum is a multiple of 9</strong>.<br><span style="color:var(--ink-soft)">Example: 738 → 7+3+8 = 18 → multiple of 9 ✓</span></li>
+<li><strong>Multiple of 3:</strong> a number is a multiple of 3 exactly when its <strong>digit sum is a multiple of 3</strong>.<br><span style="color:var(--ink-soft)">Example: 471 → 4+7+1 = 12 → multiple of 3 ✓</span></li>
+<li><strong>Multiple of 9:</strong> a number is a multiple of 9 exactly when its <strong>digit sum is a multiple of 9</strong>.<br><span style="color:var(--ink-soft)">Example: 738 → 7+3+8 = 18 → multiple of 9 ✓</span><br><span style="color:var(--ink-soft)"><em>Why it works:</em> every power of 10 is one more than a multiple of 9 (10 = 9+1, 100 = 99+1, …), so a number and its digit sum leave the <strong>same remainder</strong> when divided by 9 (or 3).</span></li>
 <li><strong>Multiple of 11:</strong> take (sum of digits in <strong>odd</strong> positions) − (sum of digits in <strong>even</strong> positions). If that is <strong>0 or a multiple of 11</strong>, the number is a multiple of 11.<br><span style="color:var(--ink-soft)">Example: 2354 → (2+5) − (3+4) = 0 → multiple of 11 ✓</span></li>
 <li><strong>Finding an unknown digit:</strong> if a number with a missing digit must be a multiple of 9 (or 11), set up the digit-sum condition and solve for that one digit.</li>
 </ul>
@@ -84,7 +88,7 @@
 <li><strong>Exponent laws:</strong> aᵐ×aⁿ=aᵐ⁺ⁿ, aᵐ÷aⁿ=aᵐ⁻ⁿ, (aᵐ)ⁿ=aᵐⁿ, aⁿ×bⁿ=(ab)ⁿ, a⁻ⁿ=1/aⁿ, a⁰=1 (a≠0).</li>
 <li><strong>Decimal → base n:</strong> divide by n repeatedly and read the remainders <strong>last to first</strong>.<br><span style="color:var(--ink-soft)">Example: 65 to base 3 → 65÷3=21 R2, 21÷3=7 R0, 7÷3=2 R1, 2÷3=0 R2 → reading bottom-up: <strong>65 = 2102 in base 3</strong> (don't drop the 0!).</span></li>
 <li><strong>×base shifts digits left</strong> — appending a zero, just like ×10 does in base 10.</li>
-<li><strong>Trailing zeros in base b:</strong> a number ends in k zeros in base b exactly when bᵏ divides it. Factor b into primes to see how many zeros are possible.</li>
+<li><strong>Trailing zeros in base b</strong> (AOPS Intro to NT §8.6): a number ends in k zeros in base b exactly when bᵏ divides it. Factor b into primes to count them — e.g. trailing zeros of a factorial in base 12 = how many times 12 = 2²·3 divides it, limited by whichever of 2² or 3 runs out first (see <a class="cx" href="06_Primes_Modular_Factorial.html">06 Primes Modular Factorial</a> §6 for the power-of-a-prime count).</li>
 </ul>
 </section>
 <section id="cheat-sheet">
@@ -120,6 +124,14 @@
 <tr>
 <td>Bases &gt; 10</td>
 <td>A = 10, B = 11, … as single digits</td>
+</tr>
+<tr>
+<td>Base = radix</td>
+<td>one base is a power of another → convert digit-groups directly</td>
+</tr>
+<tr>
+<td>Multiple of 3</td>
+<td>digit sum is a multiple of 3</td>
 </tr>
 <tr>
 <td>Multiple of 9</td>
@@ -207,6 +219,8 @@
 <li>Does 5/12 terminate or repeat? Why?</li>
 <li>Write 0.9̄ (0.999…) as a fraction.</li>
 <li>Write 48000 in scientific notation.</li>
+<li>Is 5124 a multiple of 3? Use the digit-sum rule.</li>
+<li>Convert 21₉ straight to base 3 (each base-9 digit becomes two base-3 digits).</li>
 </ol>
 <details><summary>Answers</summary><div class="answer">
 <p>1. 100×4 + 10×0 + 7 = <strong>407</strong></p>
@@ -218,7 +232,9 @@
 <p>7. 40 = 2³×5 → only primes 2 and 5 → <strong>terminates</strong> (7/40 = 0.175)</p>
 <p>8. 12 = 2²×3 → has the prime 3 → <strong>repeats</strong> (5/12 = 0.41666…)</p>
 <p>9. <strong>1</strong> (0.9̄ = 1 exactly)</p>
-<p>10. 48000 = <strong>4.8 × 10⁴</strong></p></div></details>
+<p>10. 48000 = <strong>4.8 × 10⁴</strong></p>
+<p>11. 5+1+2+4 = 12, a multiple of 3 → <strong>yes, 5124 is a multiple of 3</strong></p>
+<p>12. 21₉ = 2·9 + 1 = 19; and 2₉ = 02₃, 1₉ = 01₃ → stick together → <strong>0201₃ = 201₃</strong> (check: 2·9+0+1 = 19 ✓)</p></div></details>
 <p class="footer-note">Source map: <code>약점진단/05_자릿수_진법_기초연산.md</code> · Number theory continues in <a class="cx" href="06_Primes_Modular_Factorial.html">06 Primes Modular Factorial</a></p>
 </section>
 <a class="backlink" href="index.html">← All units</a>

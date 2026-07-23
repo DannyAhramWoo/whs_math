@@ -10,7 +10,7 @@
 What this note covers:
 
 1. Letting Digits Be Variables & Bases — *Sec 1*
-2. Divisibility by 9 and 11
+2. Divisibility by 3, 9 and 11
 3. Digit Patterns (numbers written in a row)
 4. Basic Operations (fractions, decimals, units, days of week)
 5. More Tools (fractions, decimals, exponents, bases)
@@ -19,7 +19,7 @@ What this note covers:
 
 ## 1. Letting Digits Be Variables & Bases — *Sec 1*
 
-> 📖 *Source: AOPS Introduction to Number Theory Ch.8 (Base Numbers) — §8.1–8.2 (digit bundles, numerals), §8.4 (base digits), §8.5 (converting between bases)*
+> 📖 *Source: AOPS Introduction to Number Theory Ch.8 (Base Numbers) — §8.1–8.2 (digit bundles, numerals), §8.4 (base digits), §8.5 (converting between bases); the "digit as a variable" technique (10A+B) is developed in Ch.7 "Algebra With Integers" §7.2–7.3.*
 
 **Place value = "digit bundles."** A number's digits are just the coefficients of powers of the base. In base 10, the numeral 3572 *means*
 `3·10³ + 5·10² + 7·10¹ + 2·10⁰` — four "digit bundles" of sizes 1000, 100, 10, 1 added together. (A **numeral** is the symbol we write; the **number** is the amount it stands for.)
@@ -39,18 +39,25 @@ What this note covers:
 - **Base 10 → base b:** repeatedly divide by b; the remainders, read **bottom-to-top**, are the digits.
   - `65 → base 3`: 65÷3 = 21 r2, 21÷3 = 7 r0, 7÷3 = 2 r1, 2÷3 = 0 r2 → **2102₃** (keep the 0!).
 - **Bases above 10 need extra digit symbols.** In base 12 we use A for ten and B for eleven, so `1B7₁₂ = 1·144 + 11·12 + 7 = 283`.
-- **Base names worth knowing:** base 2 *binary*, 3 *ternary*, 8 *octal*, 12 *duodecimal*, 16 *hexadecimal*, 60 *sexagesimal*.
+- **The base is also called the radix** (or *scale*) — different words for the same thing.
+- **Base names worth knowing:** base 2 *binary*, 3 *ternary*, 4 *quaternary*, 5 *quinary*, 6 *senary*, 7 *septenary*, 8 *octal*, 9 *nonary*, 10 *decimal*, 11 *undenary*, 12 *duodecimal*, 16 *hexadecimal*, 20 *vigesimal*, 60 *sexagesimal*.
+- **Convert directly when one base is a power of another.** You don't have to detour through base 10. Because 9 = 3², each base-9 digit equals exactly **two** base-3 digits, so you can regroup digit-by-digit: `2671₉ → 22021013₃` by expanding each base-9 digit into its 2-digit base-3 form. Same idea links base 2 ↔ base 4 ↔ base 8 ↔ base 16.
+
+> **Concept:** Once you write digits as variables, contest problems often need one of these **factoring identities** (from AOPS Intro to NT Ch.7): a² − b² = (a+b)(a−b); a³ − b³ = (a−b)(a²+ab+b²); a³ + b³ = (a+b)(a²−ab+b²); and the "SFFT" trick xy + Ax + By = (x+B)(y+A) − AB. They turn a digit equation into a product you can pin down.
 
 > 💡 **Competition point:** When a problem says "reverse the digits" or "move the first digit to the end," **write the number with letters first** (a·place-value form). It becomes an equation you can solve (→ Mock Q1-12, Mock Q5-25). For base problems, always fall back on the digit-bundle meaning: a base-b numeral is just a sum of `digit × bⁿ`.
 
 ---
 
-## 2. Divisibility by 9 and 11
+## 2. Divisibility by 3, 9 and 11
 
-> 📖 *Source: AOPS Introduction to Number Theory Ch.7 (Divisibility Rules — the "digit sum" rules for 3 and 9, the alternating-sum rule for 11)*
+> 📖 *Source: standard number theory. In AOPS Introduction to Number Theory these digit rules are Ch.13 "Divisibility Rules" — a chapter absent from our book scan — so this section is written from the standard results.*
 
+- **Multiple of 3:** a number is a multiple of 3 exactly when its **digit sum is a multiple of 3**.
+  - Example: 471 → 4+7+1 = 12 → multiple of 3 ✓
 - **Multiple of 9:** a number is a multiple of 9 exactly when its **digit sum is a multiple of 9**.
   - Example: 738 → 7+3+8 = 18 → multiple of 9 ✓
+  - *Why it works:* every power of 10 is one more than a multiple of 9 (10 = 9+1, 100 = 99+1, …), so a number and its digit sum leave the **same remainder** when divided by 9 (or 3).
 - **Multiple of 11:** take (sum of digits in **odd** positions) − (sum of digits in **even** positions). If that is **0 or a multiple of 11**, the number is a multiple of 11.
   - Example: 2354 → (2+5) − (3+4) = 0 → multiple of 11 ✓
 - **Finding an unknown digit:** if a number with a missing digit must be a multiple of 9 (or 11), set up the digit-sum condition and solve for that one digit.
@@ -108,7 +115,7 @@ What this note covers:
 - **Decimal → base n:** divide by n repeatedly and read the remainders **last to first**.
   - Example: 65 to base 3 → 65÷3=21 R2, 21÷3=7 R0, 7÷3=2 R1, 2÷3=0 R2 → reading bottom-up: **65 = 2102 in base 3** (don't drop the 0!).
 - **×base shifts digits left** — appending a zero, just like ×10 does in base 10.
-- **Trailing zeros in base b:** a number ends in k zeros in base b exactly when bᵏ divides it. Factor b into primes to see how many zeros are possible.
+- **Trailing zeros in base b** (AOPS Intro to NT §8.6): a number ends in k zeros in base b exactly when bᵏ divides it. Factor b into primes to count them — e.g. trailing zeros of a factorial in base 12 = how many times 12 = 2²·3 divides it, limited by whichever of 2² or 3 runs out first (see [[06_Primes_Modular_Factorial]] §6 for the power-of-a-prime count).
 
 ---
 
@@ -123,6 +130,8 @@ What this note covers:
 | Base b → base 10 | add up digit×bⁿ |
 | Base 10 → base b | divide by b, read remainders bottom-up |
 | Bases > 10 | A = 10, B = 11, … as single digits |
+| Base = radix | one base is a power of another → convert digit-groups directly |
+| Multiple of 3 | digit sum is a multiple of 3 |
 | Multiple of 9 | digit sum is a multiple of 9 |
 | Multiple of 11 | (odd places) − (even places) = multiple of 11 |
 | Digits in a row | 1–9: 9, 10–99: 180, 100–999: 2700 |
@@ -183,6 +192,8 @@ These concepts appear in real problems on the quiz app. Learn the idea, then cli
 8. Does 5/12 terminate or repeat? Why?
 9. Write 0.9̄ (0.999…) as a fraction.
 10. Write 48000 in scientific notation.
+11. Is 5124 a multiple of 3? Use the digit-sum rule.
+12. Convert 21₉ straight to base 3 (each base-9 digit becomes two base-3 digits).
 
 <details>
 <summary>Answers</summary>
@@ -197,6 +208,8 @@ These concepts appear in real problems on the quiz app. Learn the idea, then cli
 8. 12 = 2²×3 → has the prime 3 → **repeats** (5/12 = 0.41666…)
 9. **1** (0.9̄ = 1 exactly)
 10. 48000 = **4.8 × 10⁴**
+11. 5+1+2+4 = 12, a multiple of 3 → **yes, 5124 is a multiple of 3**
+12. 21₉ = 2·9 + 1 = 19; and 2₉ = 02₃, 1₉ = 01₃ → stick together → **0201₃ = 201₃** (check: 2·9+0+1 = 19 ✓)
 
 </details>
 
