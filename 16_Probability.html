@@ -20,9 +20,12 @@
 <section id="s1">
 <span class="sec-num">1</span>
 <h2>Basic Probability</h2>
+<p class="src-note"><em>Source: AOPS Introduction to Counting &amp; Probability Ch.7 "Introduction to Probability" — §7.2 (basic probability), §7.3 (equally likely outcomes), §7.4 (counting techniques), §7.5 Summary.</em></p>
 <ul>
+<li><strong>What probability means:</strong> if you repeated the experiment <strong>very many times</strong>, the event would happen about this fraction of the time. P = 1/6 means "roughly 1 in 6 rolls".</li>
 <li><strong>Probability formula:</strong> P(event) = (number of ways it happens) ÷ (number of ways total) — <strong>only valid when every outcome is equally likely.</strong><br><span style="color:var(--ink-soft)">Example: rolling a fair die, P(even number) = 3/6 = 1/2.</span></li>
-<li>Probability is always between 0 (never happens) and 1 (always happens).</li>
+<li>Probability is always between 0 (never happens) and 1 (always happens). <strong>If you ever get a number below 0 or above 1, you made a mistake</strong> — a quick sanity check.</li>
+<li><strong>Most probability problems are just two counting problems:</strong> count the favourable outcomes, count the total outcomes, divide. Everything from <a class="cx" href="08_Permutations_Combinations_Counting.html">08 Permutations Combinations Counting</a> applies.</li>
 </ul>
 <div class="cp"><strong>Competition point:</strong> The #1 mistake is treating outcomes as equally likely when they're not (e.g. treating "sum of two dice" as 11 equally likely values 2–12 — it's not! You must count the 36 equally likely dice-pairs instead, since sum=7 has 6 ways but sum=2 has only 1).</div>
 <ul>
@@ -32,29 +35,37 @@
 <section id="s2">
 <span class="sec-num">2</span>
 <h2>Complement and "At Least One"</h2>
+<p class="src-note"><em>Source: AOPS Introduction to Counting &amp; Probability §8.3 "Complementary Probabilities".</em></p>
 <ul>
-<li><strong>Complement rule:</strong> P(event happens) = 1 − P(event does NOT happen). Very useful when "at least one" is hard to count directly but "none" is easy.<br><span style="color:var(--ink-soft)">Example: rolling a die 4 times, P(at least one 6) = 1 − P(no 6 in 4 rolls) = 1 − (5/6)⁴.</span></li>
+<li><strong>Complement rule:</strong> P(event happens) = 1 − P(event does NOT happen). Very useful when "at least one" is hard to count directly but "none" is easy — the complement turns an ugly casework problem into one subtraction.<br><span style="color:var(--ink-soft)">Example: rolling a die 4 times, P(at least one 6) = 1 − P(no 6 in 4 rolls) = 1 − (5/6)⁴.</span></li>
 </ul>
 </section>
 <section id="s3">
 <span class="sec-num">3</span>
 <h2>Independent vs Dependent Events</h2>
+<p class="src-note"><em>Source: AOPS Introduction to Counting &amp; Probability §8.4 "Probability and Multiplication" (independent) &amp; §8.5 "Probability with Dependent Events".</em></p>
 <ul>
 <li><strong>Independent events</strong> (neither affects the other): P(A and B) = P(A) × P(B).<br><span style="color:var(--ink-soft)">Example: two coin flips, P(both heads) = 1/2 × 1/2 = 1/4.</span></li>
 <li><strong>Dependent events</strong> (one changes the pool for the next, like drawing without replacement): multiply the changing probabilities step by step.<br><span style="color:var(--ink-soft)">Example: drawing 2 red socks in a row (no replacement) from a drawer of 5 red, 3 blue: P = 5/8 × 4/7 = 20/56 = 5/14.</span></li>
 </ul>
+<div class="callout warn"><strong>Warning (the book's Bogus Solution):</strong> for <strong>without-replacement</strong> draws, don't reuse the first probability. Drawing two cards of the same suit is 13/52 × <strong>12/51</strong>, <em>not</em> 13/52 × 13/52 — after the first card, one suit-card and one card are gone, so the second fraction changes.</div>
 </section>
 <section id="s4">
 <span class="sec-num">4</span>
 <h2>Addition Rule (Overlapping Events)</h2>
+<p class="src-note"><em>Source: AOPS Introduction to Counting &amp; Probability §8.2 "Probability and Addition".</em></p>
 <ul>
-<li>P(A or B) = P(A) + P(B) − P(A and B) — same idea as <a class="cx" href="07_Inclusion_Exclusion.html">07 Inclusion Exclusion</a>, applied to probabilities instead of counts. For mutually exclusive events (can't both happen), just add: P(A or B) = P(A) + P(B).<br><span style="color:var(--ink-soft)">Example: rolling a die, P(even or greater than 4) = 3/6 + 2/6 − 1/6 = 4/6 = 2/3 (subtract the overlap: rolling a 6 is counted in both groups).</span></li>
+<li>P(A or B) = P(A) + P(B) − P(A and B) — same idea as <a class="cx" href="07_Inclusion_Exclusion.html">07 Inclusion Exclusion</a>, applied to probabilities instead of counts. For <strong>mutually exclusive</strong> events (can't both happen), the overlap is 0, so just add: P(A or B) = P(A) + P(B). This extends to any number of pairwise-exclusive events: P(A₁ or … or Aₙ) = P(A₁) + … + P(Aₙ).<br><span style="color:var(--ink-soft)">Example: rolling a die, P(even or greater than 4) = 3/6 + 2/6 − 1/6 = 4/6 = 2/3 (subtract the overlap: rolling a 6 is counted in both groups).</span></li>
 </ul>
 </section>
 <section id="s5">
 <span class="sec-num">5</span>
 <h2>Geometric Probability</h2>
-<p>When outcomes form a continuous range (a random point on a segment, a random arrival time) instead of a countable list, probability = (favorable length/area) ÷ (total length/area).</p>
+<p class="src-note"><em>Source: AOPS Introduction to Counting &amp; Probability Ch.10 "Geometric Probability" — §10.2 (lengths), §10.3 (areas), including the meeting problem.</em></p>
+<ul>
+<li><strong>Discrete vs continuous:</strong> when the outcomes are a <strong>countable list</strong> (die faces, cards) you count them; when they form a <strong>continuous range</strong> (any point on a line, any time in an hour) you can't count — you measure length or area instead.</li>
+<li><strong>First find the "successful region", then divide by the whole.</strong> When outcomes form a continuous range, probability = (favorable length/area) ÷ (total length/area).</li>
+</ul>
 <ul>
 <li>Example: a point is picked at random on a 10-unit segment. P(point is within the last 3 units) = 3/10.</li>
 <li><strong>Classic "meeting problem":</strong> two people each arrive at a random time in a 1-hour window and wait 15 minutes for each other. Plot both arrival times on a square (one axis per person); the region where they overlap is a diagonal band. P(they meet) = (area of the band) ÷ (area of the whole square) — found by subtracting the two unmet corner triangles from the full square, same "whole minus holes" idea from <a class="cx" href="02_Angles_Similarity_Circles.html">02 Angles Similarity Circles</a>.</li>
@@ -63,8 +74,11 @@
 <section id="s6">
 <span class="sec-num">6</span>
 <h2>Expected Value</h2>
+<p class="src-note"><em>Source: AOPS Introduction to Counting &amp; Probability Ch.11 "Expected Value" — §11.2 (definition), §11.3 (problems), §11.5 Summary.</em></p>
 <ul>
-<li><strong>Expected value (E):</strong> the probability-weighted average of all possible outcomes: E = p₁x₁ + p₂x₂ + ... + pₙxₙ, where each xᵢ is an outcome's value and pᵢ its probability.<br><span style="color:var(--ink-soft)">Example: a standard die roll has E = (1+2+3+4+5+6)/6 = 3.5 (note: the expected value doesn't have to be an outcome you can actually roll!).</span></li>
+<li><strong>Expected value (E, sometimes written μ):</strong> the probability-weighted average of all possible outcomes: E = p₁x₁ + p₂x₂ + ... + pₙxₙ, where each xᵢ is an outcome's value and pᵢ its probability. (The weights must satisfy <strong>p₁ + p₂ + … + pₙ = 1</strong> — every outcome accounted for.)<br><span style="color:var(--ink-soft)">Example: a standard die roll has E = (1+2+3+4+5+6)/6 = 3.5 (note: the expected value doesn't have to be an outcome you can actually roll!).</span></li>
+<li><strong>E generalises the plain average:</strong> if <strong>all outcomes are equally likely</strong>, the expected value is just the ordinary mean. When they aren't, E weights each outcome by how likely it is.</li>
+<li><strong>Expected value of a sum (linearity):</strong> the expected value of two things added is the <strong>sum of their expected values</strong> — E(X + Y) = E(X) + E(Y), <em>even if X and Y affect each other</em>. E.g. the expected total of two dice = 3.5 + 3.5 = <strong>7</strong>.</li>
 <li><strong>Fair price of a game:</strong> the amount that makes the game break even in the long run = its expected winnings. Charging more than that gives the house an expected profit.<br><span style="color:var(--ink-soft)">Example: a weighted coin (heads 3/4 of the time, wins $2; tails 1/4, loses $1): E = (3/4)(2) + (1/4)(−1) = $1.25. That's the "fair" price to play.</span></li>
 </ul>
 <div class="cp"><strong>Competition point:</strong> For "find the unknown given the expected value" problems, set up E as an algebraic expression with the unknown, set it equal to the given value, and solve like a normal equation.</div>
@@ -80,8 +94,12 @@
 <td>favorable ÷ total, only if equally likely</td>
 </tr>
 <tr>
+<td>Probability range</td>
+<td>between 0 and 1 (else you erred)</td>
+</tr>
+<tr>
 <td>Complement</td>
-<td>P(not A) = 1 − P(A)</td>
+<td>P(not A) = 1 − P(A); use for "at least one"</td>
 </tr>
 <tr>
 <td>Independent events</td>
@@ -93,7 +111,11 @@
 </tr>
 <tr>
 <td>A or B (overlap)</td>
-<td>P(A) + P(B) − P(A and B)</td>
+<td>P(A) + P(B) − P(A and B); exclusive → just add</td>
+</tr>
+<tr>
+<td>Discrete vs continuous</td>
+<td>count outcomes vs measure length/area</td>
 </tr>
 <tr>
 <td>Geometric probability</td>
@@ -101,7 +123,11 @@
 </tr>
 <tr>
 <td>Expected value</td>
-<td>Σ (outcome × its probability)</td>
+<td>Σ (outcome × its probability); weights sum to 1</td>
+</tr>
+<tr>
+<td>E of a sum</td>
+<td>E(X + Y) = E(X) + E(Y)</td>
 </tr>
 <tr>
 <td>Fair price</td>
@@ -116,12 +142,16 @@
 <li>Two dice are rolled. What's the probability the sum is 7?</li>
 <li>A box has 3 red and 2 blue balls. Two are drawn without replacement. What's the probability both are red?</li>
 <li>A game gives $10 with probability 1/5 and $0 otherwise. What's the expected value?</li>
+<li>A die is rolled 3 times. Using the complement, find P(at least one 6).</li>
+<li>What is the expected total when you roll two fair dice? (Use linearity.)</li>
 </ol>
 <details><summary>Answers</summary><div class="answer">
 <p>1. 4/10 = <strong>2/5</strong>.</p>
 <p>2. 6 ways out of 36 total (1-6,2-5,3-4,4-3,5-2,6-1) = <strong>1/6</strong>.</p>
 <p>3. 3/5 × 2/4 = 6/20 = <strong>3/10</strong>.</p>
-<p>4. E = (1/5)(10) + (4/5)(0) = <strong>$2</strong>.</p></div></details>
+<p>4. E = (1/5)(10) + (4/5)(0) = <strong>$2</strong>.</p>
+<p>5. 1 − P(no 6) = 1 − (5/6)³ = 1 − 125/216 = <strong>91/216</strong>.</p>
+<p>6. Each die has E = 3.5, so E(sum) = 3.5 + 3.5 = <strong>7</strong>.</p></div></details>
 <p class="footer-note">This is a new unit added from book scans (2026-07-22) — no quiz-app problems are linked to it yet. Builds directly on <a class="cx" href="08_Permutations_Combinations_Counting.html">08 Permutations Combinations Counting</a> (counting tools) and <a class="cx" href="07_Inclusion_Exclusion.html">07 Inclusion Exclusion</a> (the addition rule). See <a class="cx" href="15_Statistics.html">15 Statistics</a> for the mean/median/mode unit.</p>
 </section>
 <a class="backlink" href="index.html">← All units</a>
