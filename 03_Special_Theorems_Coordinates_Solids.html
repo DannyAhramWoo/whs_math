@@ -1,0 +1,219 @@
+<title>03. Special Theorems, Coordinates &amp; Solids — Math Competition Notes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="shared.css">
+<div class="wrap">
+<a class="backlink" href="index.html">← All units</a>
+<header class="chapter-head">
+<p class="eyebrow">Unit 03</p>
+<h1>Special Theorems, Coordinates &amp; Solids</h1>
+<p class="standfirst">These are the "special weapons" of geometry. One clever theorem (like the British Flag Theorem), the coordinate method, or good solid-shape thinking can turn a scary problem into a one-line answer.</p>
+</header>
+<p class="src-note" style="border-left-color:var(--rule);color:var(--ink-faint)"><strong>Unit:</strong> Geometry Tools (Unit 03 of 14) · <strong>7 linked problems</strong> · <strong>For:</strong> primary competition students (SMO · NMOS · IMSO) — concepts go up to <strong>Secondary 2</strong> level</p>
+<section id="lesson-overview">
+<h2>Lesson Overview</h2>
+<p>What this note covers:</p>
+<ol>
+<li>British Flag Theorem</li>
+<li>Coordinate Geometry — <em>Sec 1</em></li>
+<li>Solids: Volume, Surface Area &amp; Cross-Section</li>
+<li>More Tools (Pick's Theorem, nets, Euler's Formula)</li>
+</ol>
+</section>
+<section id="s1">
+<span class="sec-num">1</span>
+<h2>British Flag Theorem</h2>
+<p class="src-note"><em>Source: standard competition theorem (not in the AOPS core chapters); provable from the Pythagorean theorem in <a class="cx" href="02_Angles_Similarity_Circles.html">02 Angles Similarity Circles</a> §8.</em></p>
+<ul>
+<li><strong>British Flag Theorem:</strong> take a <strong>rectangle</strong> and any point <strong>P inside</strong> it. Label the corners A, B, C, D in order. Then the two "opposite corner" distance pairs are equal:<br><span style="color:var(--ink-soft)"><strong>PA² + PC² = PB² + PD²</strong></span><br><span style="color:var(--ink-soft)">A and C are opposite corners; B and D are the other opposite corners.</span><br><span style="color:var(--ink-soft)">Example: if PA = 3, PB = 4, PC = 5, then PA² + PC² = 9 + 25 = 34, so PB² + PD² = 34 → 16 + PD² = 34 → PD² = 18 → PD = √18.</span></li>
+<li><strong>How to use it:</strong> whenever you see a <strong>rectangle + a point inside + three given distances</strong>, the theorem gives you the <strong>fourth distance instantly</strong>. No hard geometry needed.</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> The theorem still works even when the point is <strong>outside</strong> the rectangle, and it can hide inside area problems (→ Mock Q5-31 below, where squares are built on the distances).</div>
+</section>
+<section id="s2">
+<span class="sec-num">2</span>
+<h2>Coordinate Geometry — <em>Sec 1</em></h2>
+<p class="src-note"><em>Source: AOPS Introduction to Algebra Ch.8 (Graphing Lines) — §8.1 (Number Line &amp; Cartesian Plane / distance formula), §8.2 (slope, slope-intercept form)</em></p>
+<p><strong>The plane and a point's coordinates.</strong> The Cartesian plane locates a point by (x, y): x is how far right of the y-axis, y is how far above the x-axis. The little numbers in (x₁, y₁) and (x₂, y₂) are <strong>subscripts</strong> — they tag <em>which</em> point each coordinate belongs to.</p>
+<ul>
+<li><strong>Distance formula:</strong> the distance from (x₁, y₁) to (x₂, y₂) is <strong>√((x₂−x₁)² + (y₂−y₁)²)</strong>.<br><span style="color:var(--ink-soft)">This is <strong>just the Pythagorean theorem</strong>: drop a horizontal and a vertical segment to make a right triangle with legs (x₂−x₁) and (y₂−y₁); the distance is the hypotenuse. So you never need to memorise it separately.</span><br><span style="color:var(--ink-soft)">Example: from (−3, −5) to (5, 1) → legs 8 and 6 → √(64 + 36) = √100 = <strong>10</strong>. From (0,0) to (3,4) → √(9+16) = <strong>5</strong>.</span></li>
+<li><strong>Slope</strong> measures steepness: <strong>m = (y₂−y₁)/(x₂−x₁) = rise/run</strong>.<br><span style="color:var(--ink-soft)"><strong>Positive slope</strong> goes up left-to-right; <strong>negative</strong> goes down. <strong>Slope 0</strong> is horizontal (y₂ = y₁); a <strong>vertical line has undefined slope</strong> (x₂ = x₁, division by zero).</span><br><span style="color:var(--ink-soft)">A large slope (like 10) is nearly vertical; a slope near 0 (like 1/10) is nearly horizontal.</span></li>
+<li><strong>Slope-intercept form: y = mx + b.</strong> Here <strong>m is the slope</strong> and <strong>b is the y-coordinate of the y-intercept</strong> (where the line crosses the y-axis). To read the slope off any linear equation, rearrange it into this form.<br><span style="color:var(--ink-soft)">Example: 3x − 5y = 7 → solve for y → y = (3/5)x − 7/5 → slope = <strong>3/5</strong>, y-intercept (0, −7/5).</span></li>
+<li><strong>Quick graphing:</strong> find the <strong>x- and y-intercepts</strong> (set y=0, then x=0), plot those two points, draw the line through them.</li>
+<li><strong>Parallel &amp; perpendicular:</strong> parallel lines have <strong>equal slopes</strong>; perpendicular lines have slopes whose product is <strong>−1</strong> (each is the negative reciprocal of the other).</li>
+<li><strong>Triangle area (Shoelace formula):</strong> for corners (x₁,y₁), (x₂,y₂), (x₃,y₃), area = <strong>½ × |x₁(y₂−y₃) + x₂(y₃−y₁) + x₃(y₁−y₂)|</strong>. The bars | | mean "take the positive value."</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> When a shape sits on a grid, <strong>give every corner coordinates</strong> — then distances and areas come from formulas, not guessing (→ AP 2025 Q21). Always be ready to <strong>rearrange an equation into a handier form</strong> (e.g. into y = mx + b to read the slope instantly).</div>
+</section>
+<section id="s3">
+<span class="sec-num">3</span>
+<h2>Solids: Volume, Surface Area &amp; Cross-Section</h2>
+<p class="src-note"><em>Source: AOPS Introduction to Geometry Ch.14 §14.5 Summary (Prisms, Pyramids, Regular Polyhedra) &amp; Ch.15 §15.5 Summary (Cylinders, Cones, Spheres)</em></p>
+<p><strong>Vocabulary first.</strong> A <strong>polyhedron</strong> is a solid with polygon faces. A <strong>prism</strong> has two congruent parallel faces (the <strong>bases</strong>) with parallelograms for the other faces; in a <strong>right prism</strong> those side faces are rectangles. A <strong>pyramid</strong> connects every vertex of a base polygon to a single point (the <strong>apex</strong>) off the plane; its side faces are all triangles, and a <strong>tetrahedron</strong> is a pyramid with a triangular base. <strong>Volume</strong> measures the space inside (how many 1×1×1 blocks fit); <strong>surface area</strong> is the total area of the boundary faces.</p>
+<p><strong>Prisms and boxes:</strong></p>
+<ul>
+<li><strong>Prism volume = base area × height</strong> (the distance between the two bases). This one rule covers <em>every</em> prism.</li>
+<li><strong>Cuboid / rectangular box</strong> (dimensions l, w, h): Volume = <strong>lwh</strong>, Surface area = <strong>2(lw + wh + lh)</strong>, <strong>space diagonal = √(l² + w² + h²)</strong>.</li>
+<li><strong>Cube (edge s):</strong> Volume = <strong>s³</strong>, Surface area = <strong>6s²</strong>, <strong>space diagonal = s√3</strong>.</li>
+</ul>
+<p><strong>Pyramids and cones (the "⅓" family):</strong></p>
+<ul>
+<li><strong>Pyramid volume = ⅓ × base area × height.</strong> Lateral surface area of a <em>regular</em> pyramid = ½ × slant height × base perimeter.</li>
+<li><strong>Cone</strong> (a pyramid with a circular base; radius r, height h, slant height l = √(r²+h²)): Volume = <strong>⅓πr²h</strong>, lateral area = <strong>πrl</strong>, total area = <strong>πrl + πr²</strong>.</li>
+</ul>
+<p><strong>Round solids:</strong></p>
+<ul>
+<li><strong>Cylinder</strong> (radius r, height h): Volume = <strong>πr²h</strong>, lateral area = <strong>2πrh</strong>, total area = <strong>2πrh + 2πr²</strong>.</li>
+<li><strong>Sphere</strong> (radius r): Volume = <strong>4πr³/3</strong>, surface area = <strong>4πr²</strong>. <strong>Every cross-section of a sphere is a circle</strong>, and the line from the sphere's center to that circle's center is perpendicular to the cutting plane.</li>
+</ul>
+<p><strong>Net thinking &amp; cross-sections:</strong></p>
+<ul>
+<li>A <strong>net</strong> is a solid <strong>unfolded flat</strong>. If a path or length wraps around a solid, unfold it first — the shortest path then becomes a <strong>straight line</strong> you can measure with Pythagoras. A cylinder unrolls to a <strong>rectangle</strong>; a cone unrolls to a <strong>sector</strong> (radius = slant height, arc = base circumference).</li>
+<li>A <strong>cross-section</strong> is the flat shape from <strong>slicing</strong> a solid. Slicing a cube can give a square, rectangle, triangle, or even a hexagon.</li>
+</ul>
+<div class="callout"><strong>Concept:</strong> <strong>Most 3-D problems are 2-D problems in disguise.</strong> Take a <strong>cross-section through the important points</strong> (for a sphere, one through the center; if it's tangent to something, one through the point of tangency) and your ordinary 2-D tools — above all <strong>building a right triangle for Pythagoras</strong> — solve it.</div>
+<div class="cp"><strong>Competition point:</strong> For an <strong>n×n×n painted cube</strong> cut into unit cubes, sort by how many faces are painted instead of counting one by one: corner cubes (3 faces) = 8, edge cubes (2) = 12(n−2), face-center cubes (1) = 6(n−2)², interior (0) = (n−2)³ (→ RI 2021 Q19). For net problems, mentally <strong>fold the flat shape back up</strong> to test it (→ AP 2021 Q30).</div>
+</section>
+<section id="s4">
+<span class="sec-num">4</span>
+<h2>More Tools (grids, nets, polyhedra formulas)</h2>
+<p class="src-note"><em>Source: Pick's Theorem &amp; Euler's Formula are standard competition/olympiad results; the 11 nets, Platonic-solid counts, and extra volume/surface-area formulas extend AOPS Introduction to Geometry Ch.14–15.</em></p>
+<ul>
+<li><strong>Pick's Theorem:</strong> for any polygon whose corners all sit on <strong>grid (lattice) points</strong>, Area = <strong>I + B/2 − 1</strong>, where I = number of grid points <strong>strictly inside</strong>, B = number of grid points <strong>on the boundary</strong> (including all 4 corners of a rectangle, not just the corners).<br><span style="color:var(--ink-soft)">Example: a shape with I = 5 interior points and B = 8 boundary points → Area = 5 + 4 − 1 = <strong>8</strong>.</span><br><span style="color:var(--ink-soft)">Great shortcut for messy grid shapes where the shoelace formula would need many corners.</span></li>
+<li><strong>Cube and octahedron nets:</strong> there are exactly <strong>11 different nets</strong> that fold into a cube, and also <strong>11</strong> that fold into an octahedron.<br><span style="color:var(--ink-soft)">To check which points land on top of each other when folded: draw a straight line across two neighbouring squares of the net, from your target point through the fold line between them. Points that are the <strong>same distance</strong> from that crossing point end up meeting at the same corner.</span><br><span style="color:var(--ink-soft)">Remember: <strong>3 faces meet at every cube corner</strong>, but <strong>4 faces meet at every octahedron corner</strong> — use this to check a folding answer makes sense.</span></li>
+<li><strong>Euler's Formula (any convex polyhedron):</strong> <strong>Faces + Vertices = Edges + 2</strong>.<br><span style="color:var(--ink-soft)">Also handy: <strong>Edges = (Faces × sides per face) / 2</strong> (each edge is shared by 2 faces).</span><br><span style="color:var(--ink-soft)">The 5 Platonic solids (Faces / Vertices / Edges): Tetrahedron 4/4/6, Cube 6/8/12, Octahedron 8/6/12, Dodecahedron 12/20/30, Icosahedron 20/12/30.</span></li>
+<li><strong>More surface area formulas:</strong><br><span style="color:var(--ink-soft)">Cylinder (radius r, height h): S = <strong>2πr² + 2πrh</strong>.</span><br><span style="color:var(--ink-soft)">Cone (radius r, height h, slant length l = √(r² + h²)): S = <strong>πrl + πr²</strong>.</span><br><span style="color:var(--ink-soft)">Sphere (radius r): S = <strong>4πr²</strong>.</span></li>
+<li><strong>More volume formulas:</strong><br><span style="color:var(--ink-soft)">Any pyramid: V = <strong>⅓ × base area × height</strong>.</span><br><span style="color:var(--ink-soft)">Regular tetrahedron (edge s): V = <strong>(√2/12)s³</strong>.</span><br><span style="color:var(--ink-soft)">Square pyramid with all edges = s: V = <strong>(√2/6)s³</strong>.</span><br><span style="color:var(--ink-soft)">Frustum of a cone (top radius r, bottom radius R, height h): V = <strong>⅓πh(R² + r² + Rr)</strong>.</span></li>
+<li><strong>Similar solids:</strong> if the scale factor between two similar solids is <strong>k</strong>, surface area scales by <strong>k²</strong> and volume scales by <strong>k³</strong> — the 3D partner of "area scales by k²" for flat shapes.</li>
+<li><strong>Space diagonal (corner to opposite corner through the inside):</strong><br><span style="color:var(--ink-soft)">Cube (side a): diagonal = <strong>a√3</strong>.</span><br><span style="color:var(--ink-soft)">Box (length, width, height): diagonal = <strong>√(length² + width² + height²)</strong>.</span></li>
+<li><strong>Unrolling trick (shortest path on a curved surface):</strong> to find the shortest crawling distance for an ant on a cylinder or cone, <strong>unroll the curved surface flat</strong> — a cylinder becomes a rectangle, a cone becomes a sector (with radius = slant length and arc length = the base's circumference). Once it's flat, the shortest path is a straight line — just use Pythagoras.</li>
+<li><strong>Three views &amp; base plans:</strong> a solid built from unit cubes can be described by its <strong>front / top / side views</strong>, or by a <strong>base plan</strong> — a grid seen from above where each cell shows the <strong>stack height</strong> at that spot. These are used to find the minimum (or maximum) number of cubes that fit a given set of views.</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> For an n×n×n painted cube cut into unit cubes, don't count one by one — use the formulas: <strong>corners (3 faces) = 8</strong> always, <strong>edges (2 faces) = 12(n−2)</strong>, <strong>face cubes (1 face) = 6(n−2)²</strong>, <strong>inside (0 faces) = (n−2)³</strong>. Check they add up to n³.</div>
+</section>
+<section id="cheat-sheet">
+<h2>Cheat Sheet</h2>
+<div class="tbl-scroll"><table><thead><tr>
+<th>Idea</th>
+<th>Key point</th>
+</tr></thead><tbody>
+<tr>
+<td>British Flag Theorem</td>
+<td>PA² + PC² = PB² + PD² (rectangle + inside point)</td>
+</tr>
+<tr>
+<td>Distance formula</td>
+<td>√((dx)² + (dy)²) — it's Pythagoras</td>
+</tr>
+<tr>
+<td>Slope</td>
+<td>m = (y₂−y₁)/(x₂−x₁); horizontal 0, vertical undefined</td>
+</tr>
+<tr>
+<td>Slope-intercept</td>
+<td>y = mx + b (m = slope, b = y-intercept)</td>
+</tr>
+<tr>
+<td>Parallel / perpendicular</td>
+<td>equal slopes / product = −1</td>
+</tr>
+<tr>
+<td>Triangle area (shoelace)</td>
+<td>½ \</td>
+<td>x₁(y₂−y₃) + x₂(y₃−y₁) + x₃(y₁−y₂)\</td>
+<td></td>
+</tr>
+<tr>
+<td>Cube</td>
+<td>V = a³, S = 6a², diagonal = a√3</td>
+</tr>
+<tr>
+<td>Cuboid</td>
+<td>V = abc, S = 2(ab+bc+ca), diag = √(a²+b²+c²)</td>
+</tr>
+<tr>
+<td>Prism</td>
+<td>V = base area × height</td>
+</tr>
+<tr>
+<td>Pyramid / cone</td>
+<td>V = ⅓ × base area × height</td>
+</tr>
+<tr>
+<td>Cylinder</td>
+<td>V = πr²h, S = 2πrh + 2πr²</td>
+</tr>
+<tr>
+<td>Sphere</td>
+<td>V = 4πr³/3, S = 4πr²</td>
+</tr>
+<tr>
+<td>Similar solids (ratio k)</td>
+<td>areas × k², volumes × k³</td>
+</tr>
+<tr>
+<td>Painted cube</td>
+<td>count 3-, 2-, 1-, 0-face cubes</td>
+</tr>
+<tr>
+<td>Wrap-around length</td>
+<td>unfold the net → straight line</td>
+</tr>
+<tr>
+<td>Pick's Theorem</td>
+<td>Area = I + B/2 − 1 (lattice polygon)</td>
+</tr>
+<tr>
+<td>Euler's Formula</td>
+<td>F + V = E + 2</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="linked-competition-problems">
+<h2>🔗 Linked Competition Problems</h2>
+<p>These concepts appear in real problems on the quiz app. Learn the idea, then click a problem and try it.</p>
+<p><strong>① British Flag Theorem</strong></p>
+<ul>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/2_34.png">Mock Q2-34</a> — a point inside a rectangle; relate PA, PB, PC, PD</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/5_31.png">Mock Q5-31</a> — square AEFG = 16, triangle BFD = 42; find the area of square ABCD</li>
+</ul>
+<p><strong>② Coordinate geometry</strong></p>
+<ul>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/60.%20AP%202025/21.png">AP 2025 Q21</a> — a square built on a triangle; find the distance from A to B</li>
+</ul>
+<p><strong>③ Solids (volume, surface area, cross-section)</strong></p>
+<ul>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/02.%20NM%202010/19.png">NM 2010 Q19</a> — five cubes; find the odd one out</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/1_15.png">Mock Q1-15</a> — fill a 4×3×5 tank; how many extra 1 cm cubes are needed</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/51.%20RI%202021/19.png">RI 2021 Q19</a> — a 4×4×4 cube; 37 small cubes have paint → count painted faces</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/56.%20AP%202021/30.png">AP 2021 Q30</a> — remove 2 of 8 cells to make a valid cube net</li>
+</ul>
+</section>
+<section id="quick-check">
+<h2>Quick Check</h2>
+<ol>
+<li>In rectangle ABCD, point P is inside with PA = 6, PB = 7, PC = 9. Find PD².</li>
+<li>Find the distance between the points (1, 2) and (7, 10).</li>
+<li>A cube has edge length 5 cm. What is its volume, total surface area, and space diagonal?</li>
+<li>A 3×3×3 cube is painted on all outside faces, then cut into 27 unit cubes. How many unit cubes have <strong>no</strong> paint on them?</li>
+<li>Two lines are perpendicular. One has slope 2. What is the slope of the other?</li>
+<li>Write 4x − 2y = 10 in slope-intercept form. What is its slope and y-intercept?</li>
+<li>A cylinder has radius 3 and height 10. Find its volume (leave π in).</li>
+<li>A square pyramid has a 6×6 base and height 10. Find its volume.</li>
+<li>A convex polyhedron has 6 faces and 8 vertices. How many edges does it have?</li>
+<li>A lattice polygon has 7 interior points and 10 boundary points. Find its area (Pick's Theorem).</li>
+</ol>
+<details><summary>Answers</summary><div class="answer">
+<p>1. PA² + PC² = PB² + PD² → 36 + 81 = 49 + PD² → 117 − 49 = <strong>68</strong></p>
+<p>2. √((7−1)² + (10−2)²) = √(36 + 64) = √100 = <strong>10</strong></p>
+<p>3. Volume = 5³ = <strong>125 cm³</strong>; surface area = 6 × 5² = <strong>150 cm²</strong>; diagonal = 5√3 ≈ <strong>8.66 cm</strong></p>
+<p>4. Only the very centre cube is hidden → <strong>1</strong></p>
+<p>5. slopes multiply to −1 → 2 × m = −1 → m = <strong>−½</strong></p>
+<p>6. −2y = −4x + 10 → y = 2x − 5 → slope = <strong>2</strong>, y-intercept = <strong>(0, −5)</strong></p>
+<p>7. V = πr²h = π·9·10 = <strong>90π</strong></p>
+<p>8. V = ⅓ × base × height = ⅓ × 36 × 10 = <strong>120</strong></p>
+<p>9. Euler: F + V = E + 2 → 6 + 8 = E + 2 → E = <strong>12</strong></p>
+<p>10. Area = I + B/2 − 1 = 7 + 5 − 1 = <strong>11</strong></p></div></details>
+<p class="footer-note">Source map: <code>약점진단/03_특수정리_좌표_입체.md</code> · Puzzle-style reasoning continues in <a class="cx" href="13_Logic_and_Magic_Squares.html">13 Logic and Magic Squares</a></p>
+</section>
+<a class="backlink" href="index.html">← All units</a>
+</div>

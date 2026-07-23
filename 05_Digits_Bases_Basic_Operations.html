@@ -1,0 +1,178 @@
+<title>05. Digits, Bases &amp; Basic Operations — Math Competition Notes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="shared.css">
+<div class="wrap">
+<a class="backlink" href="index.html">← All units</a>
+<header class="chapter-head">
+<p class="eyebrow">Unit 05</p>
+<h1>Digits, Bases &amp; Basic Operations</h1>
+<p class="standfirst">So many problems talk about "a 3-digit number" or "swap the digits". If you know how to write digits as letters (abc = 100a+10b+c), these turn from tricky puzzles into simple equations.</p>
+</header>
+<p class="src-note" style="border-left-color:var(--rule);color:var(--ink-faint)"><strong>Unit:</strong> Number Theory Basics (Unit 05 of 14) · <strong>23 linked problems</strong> · <strong>For:</strong> primary competition students (SMO · NMOS · IMSO) — concepts go up to <strong>Secondary 1</strong> level</p>
+<section id="lesson-overview">
+<h2>Lesson Overview</h2>
+<p>What this note covers:</p>
+<ol>
+<li>Letting Digits Be Variables &amp; Bases — <em>Sec 1</em></li>
+<li>Divisibility by 9 and 11</li>
+<li>Digit Patterns (numbers written in a row)</li>
+<li>Basic Operations (fractions, decimals, units, days of week)</li>
+</ol>
+</section>
+<section id="s1">
+<span class="sec-num">1</span>
+<h2>Letting Digits Be Variables &amp; Bases — <em>Sec 1</em></h2>
+<ul>
+<li><strong>Write a number by its digits:</strong> a 3-digit number with digits a, b, c means <strong>abc = 100a + 10b + c</strong>.<br><span style="color:var(--ink-soft)">Example: 375 = 100×3 + 10×7 + 5. The "place value" of each digit is 100, 10, 1.</span><br><span style="color:var(--ink-soft)">A 4-digit number: <strong>abcd = 1000a + 100b + 10c + d</strong>.</span></li>
+<li><strong>Swap the two end digits (abc → cba):</strong> the difference is always <strong>99(c − a)</strong>.<br><span style="color:var(--ink-soft)">Example: 375 − 573 → (100·3+10·7+5) − (100·5+10·7+3) = 99(3−5) = −198. The middle digit never matters.</span></li>
+<li><strong>Swap tens and units (abc → acb):</strong> the difference is always <strong>9(c − b)</strong>.<br><span style="color:var(--ink-soft)">Only the last two digits move, so the change is small.</span></li>
+<li><strong>Bases (base-n ↔ base-10):</strong> normally each place is ×10. In <strong>base n</strong>, each place is ×n instead.<br><span style="color:var(--ink-soft)">Example: 234 in base 5 = 2×25 + 3×5 + 4 = <strong>69</strong> in base 10. To go back, keep dividing by n and read the remainders bottom-to-top.</span></li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> When a problem says "reverse the digits" or "move the first digit to the end," <strong>write the number with letters first</strong>. Then it becomes an equation you can actually solve (→ Mock Q1-12, Mock Q5-25).</div>
+</section>
+<section id="s2">
+<span class="sec-num">2</span>
+<h2>Divisibility by 9 and 11</h2>
+<ul>
+<li><strong>Multiple of 9:</strong> a number is a multiple of 9 exactly when its <strong>digit sum is a multiple of 9</strong>.<br><span style="color:var(--ink-soft)">Example: 738 → 7+3+8 = 18 → multiple of 9 ✓</span></li>
+<li><strong>Multiple of 11:</strong> take (sum of digits in <strong>odd</strong> positions) − (sum of digits in <strong>even</strong> positions). If that is <strong>0 or a multiple of 11</strong>, the number is a multiple of 11.<br><span style="color:var(--ink-soft)">Example: 2354 → (2+5) − (3+4) = 0 → multiple of 11 ✓</span></li>
+<li><strong>Finding an unknown digit:</strong> if a number with a missing digit must be a multiple of 9 (or 11), set up the digit-sum condition and solve for that one digit.</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> "Digit sum equals 12" or "largest prime you can make" problems (→ NM 2010 Q29, Mock Q2-19) all start from these digit-sum rules.</div>
+</section>
+<section id="s3">
+<span class="sec-num">3</span>
+<h2>Digit Patterns (numbers written in a row)</h2>
+<ul>
+<li><strong>Count digits by how many digits each number has:</strong><br><span style="color:var(--ink-soft)">1–9 → <strong>9 numbers × 1 digit = 9 digits</strong></span><br><span style="color:var(--ink-soft)">10–99 → <strong>90 numbers × 2 digits = 180 digits</strong></span><br><span style="color:var(--ink-soft)">100–999 → <strong>900 numbers × 3 digits = 2700 digits</strong></span></li>
+<li><strong>Find the N-th digit:</strong> keep subtracting these totals until you land in the right group. That tells you <strong>which number</strong> you are inside, and then <strong>which digit</strong> of that number.<br><span style="color:var(--ink-soft)">Example: the 15th digit of "123456789101112..." → first 9 digits are 1–9, so digit 15 is the 6th digit into the 2-digit numbers → 10,11,12 → "1 0 1 1 1 2" → the 6th of these is <strong>2</strong>.</span></li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> Always split by digit-length first. Never count one by one (→ RMO 2025 Q01, Mock Q5-35).</div>
+</section>
+<section id="s4">
+<span class="sec-num">4</span>
+<h2>Basic Operations (fractions, decimals, units, days of week)</h2>
+<ul>
+<li><strong>Fractions:</strong> to add or subtract, make a <strong>common denominator</strong> first, then add the tops. Always <strong>simplify</strong> at the end. A mixed number like 2⅓ = improper fraction 7/3.</li>
+<li><strong>Decimals:</strong> <strong>line up the place values</strong> (the decimal points) before you add or subtract.</li>
+<li><strong>Unit change:</strong> 1 hour = 60 min, 1 min = 60 sec; 1 m = 100 cm. Convert everything to the <strong>same unit</strong> before comparing.</li>
+<li><strong>Day of the week:</strong> days repeat every <strong>7</strong>. So use <strong>mod 7</strong>. If today is Thursday, then 7 days later, 14 days later, … are all Thursday; 8 days later is Friday (8 = 7 + 1).</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> For "what day of the week" problems, count the total days and take the remainder after dividing by 7 (→ AP 2025 Q04). For a long chain of fractions, look for terms that <strong>cancel</strong> (→ RI 2023 Q01, RI 2024 Q05).</div>
+</section>
+<section id="from-the-books-extra-tricks">
+<h2>📚 From the Books (extra tricks)</h2>
+<ul>
+<li><strong>Comparing fractions without a common denominator:</strong> cross-multiply — for a/b vs c/d, compare a×d vs b×c (bigger product wins). Or compare each fraction to a nearby "nice" benchmark like 1/3 or 1/2.<br><span style="color:var(--ink-soft)">Example: order 5/19, 7/21, 9/23 → 7/21 = 1/3 exactly; 5/19 &lt; 1/3; 9/23 &gt; 1/3. So <strong>5/19 &lt; 7/21 &lt; 9/23</strong>, no common denominator needed.</span></li>
+<li><strong>Continued fractions:</strong> expressions like 1/(1+1/(1+1/(1+1/2))) are worked out from the <strong>innermost term outward</strong>.</li>
+<li><strong>Unit-fraction inequalities:</strong> e.g. 1/2+1/5+1/8 &gt; 1/x+1/6+1/8 → cancel the shared terms, isolate 1/x, then remember: taking <strong>reciprocals flips the inequality</strong>.</li>
+<li><strong>Repeating decimal → fraction:</strong><br><span style="color:var(--ink-soft)">one repeating digit → digit/9 (0.777... = 7/9)</span><br><span style="color:var(--ink-soft)">two repeating digits → digits/99</span><br><span style="color:var(--ink-soft)">non-repeating part + repeating part → (whole digit string − non-repeating part) ÷ (a 9 for each repeating digit, then a 0 for each non-repeating digit)</span><br><span style="color:var(--ink-soft)">Example: 0.7245... (72 fixed, 45 repeats) → (7245−72)/9900 = 7173/9900 = <strong>797/1100</strong>.</span></li>
+<li><strong>Terminating vs repeating decimals:</strong> a fraction in lowest terms terminates only if its denominator's prime factors are just 2s and/or 5s — otherwise it repeats forever. Number of decimal places = the <strong>larger</strong> of the powers of 2 or 5 in the denominator.</li>
+<li><strong>Exponent laws:</strong> aᵐ×aⁿ=aᵐ⁺ⁿ, aᵐ÷aⁿ=aᵐ⁻ⁿ, (aᵐ)ⁿ=aᵐⁿ, aⁿ×bⁿ=(ab)ⁿ, a⁻ⁿ=1/aⁿ, a⁰=1 (a≠0).</li>
+<li><strong>Decimal → base n:</strong> divide by n repeatedly and read the remainders <strong>last to first</strong>.<br><span style="color:var(--ink-soft)">Example: 65 to base 3 → 65÷3=21 R2, 21÷3=7 R0, 7÷3=2 R1, 2÷3=0 R2 → reading bottom-up: <strong>65 = 2102 in base 3</strong> (don't drop the 0!).</span></li>
+<li><strong>×base shifts digits left</strong> — appending a zero, just like ×10 does in base 10.</li>
+<li><strong>Trailing zeros in base b:</strong> a number ends in k zeros in base b exactly when bᵏ divides it. Factor b into primes to see how many zeros are possible.</li>
+</ul>
+</section>
+<section id="cheat-sheet">
+<h2>Cheat Sheet</h2>
+<div class="tbl-scroll"><table><thead><tr>
+<th>Idea</th>
+<th>Key point</th>
+</tr></thead><tbody>
+<tr>
+<td>3-digit number</td>
+<td>abc = 100a + 10b + c</td>
+</tr>
+<tr>
+<td>Reverse end digits</td>
+<td>difference = 99(c − a)</td>
+</tr>
+<tr>
+<td>Swap tens &amp; units</td>
+<td>difference = 9(c − b)</td>
+</tr>
+<tr>
+<td>Base n to base 10</td>
+<td>each place ×n, then add</td>
+</tr>
+<tr>
+<td>Multiple of 9</td>
+<td>digit sum is a multiple of 9</td>
+</tr>
+<tr>
+<td>Multiple of 11</td>
+<td>(odd places) − (even places) = multiple of 11</td>
+</tr>
+<tr>
+<td>Digits in a row</td>
+<td>1–9: 9, 10–99: 180, 100–999: 2700</td>
+</tr>
+<tr>
+<td>Day of week</td>
+<td>use mod 7</td>
+</tr>
+<tr>
+<td>Chain of fractions</td>
+<td>look for cancelling terms</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="linked-competition-problems">
+<h2>🔗 Linked Competition Problems</h2>
+<p>These concepts appear in real problems on the quiz app. Learn the idea, then click a problem and try it.</p>
+<p><strong>① Letting digits be variables &amp; bases</strong></p>
+<ul>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/1_12.png">Mock Q1-12</a> — a 4-digit number where 2×(abcd) + 1000 = dcba</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/2_23.png">Mock Q2-23</a> — a 3-digit number meeting two digit conditions</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/2_31.png">Mock Q2-31</a> — six 3-digit numbers in arithmetic progression; smallest possible sum</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/5_25.png">Mock Q5-25</a> — moving the first digit to the end makes it 4707 bigger; smallest such number</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/51.%20RI%202021/14.png">RI 2021 Q14</a> — list palindromes from 11 upward; find the 661st digit</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/55.%20RMO%202025/12.png">RMO 2025 Q12</a> — a 3-digit number whose tens digit is the average of the other two</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/56.%20AP%202021/20.png">AP 2021 Q20</a> — 7n has 2021 digits; units digit of the smallest such n</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/60.%20AP%202025/14.png">AP 2025 Q14</a> — count x where x/3 and 3x are both 5-digit numbers</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/60.%20AP%202025/27.png">AP 2025 Q27</a> — after some digit transforms the result equals the original 4-digit number</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/60.%20AP%202025/30.png">AP 2025 Q30</a> — 4-digit ABCD = (AB + CD)²; sum of all such numbers</li>
+</ul>
+<p><strong>② Divisibility by 9 and 11</strong></p>
+<ul>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/02.%20NM%202010/29.png">NM 2010 Q29</a> — dates in 2010 whose digits add up to 12</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/2_19.png">Mock Q2-19</a> — use each of 1–9 once; largest prime in a group</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/2_35.png">Mock Q2-35</a> — rows sorted by digit sum; find the position of 9799</li>
+</ul>
+<p><strong>③ Digit patterns (numbers written in a row)</strong></p>
+<ul>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/5_35.png">Mock Q5-35</a> — write 1–100 in a row, group by 3; max − min difference</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/55.%20RMO%202025/01.png">RMO 2025 Q01</a> — the n-th integer repeats n times; find the 2025th digit</li>
+</ul>
+<p><strong>④ Basic operations (fractions, decimals, units, days of week)</strong></p>
+<ul>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/2_12.png">Mock Q2-12</a> — integer part of 1 ÷ (1/2016 + … + 1/2011)</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/5_8.png">Mock Q5-8</a> — sharing $480 among Sandra, Hans, Joe; Hans' first amount</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/51.%20RI%202021/11.png">RI 2021 Q11</a> — sum of 1/Σ terms</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/53.%20RI%202023/01.png">RI 2023 Q01</a> — smallest n with sum of 1/[k(k+1)] greater than 1823/2023</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/54.%20RI%202024/05.png">RI 2024 Q05</a> — 1/(2²−1) + … + 1/(2024²−1); digit sums of numerator and denominator</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/54.%20RI%202024/10.png">RI 2024 Q10</a> — rearrange a double sum into integer sums</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/01.%20NM%202008/02.png">NM 2008 Q02</a> — running 12 hours a day; days to print $864000 worth</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/60.%20AP%202025/04.png">AP 2025 Q04</a> — Feb 29 2024 is a Thursday; next leap-year Feb 29 that is also Thursday</li>
+</ul>
+</section>
+<section id="quick-check">
+<h2>Quick Check</h2>
+<ol>
+<li>Write the 3-digit number with digits a=4, b=0, c=7 in the form 100a+10b+c. What is its value?</li>
+<li>The number 673 has its end digits swapped to make 376. What is 673 − 376, and does 99(c−a) give the same answer?</li>
+<li>Convert 143 in base 5 into base 10.</li>
+<li>Is 8291 a multiple of 11? Use the odd−even position rule.</li>
+<li>If today is Thursday, what day of the week is it 100 days from now?</li>
+</ol>
+<details><summary>Answers</summary><div class="answer">
+<p>1. 100×4 + 10×0 + 7 = <strong>407</strong></p>
+<p>2. 673 − 376 = <strong>297</strong>; 99(c−a) = 99(3−6) = 99×(−3) = −297, same size ✓</p>
+<p>3. 1×25 + 4×5 + 3 = <strong>48</strong></p>
+<p>4. (8+9) − (2+1) = 14, not 0 or a multiple of 11 → <strong>not a multiple of 11</strong></p>
+<p>5. 100 ÷ 7 = 14 remainder 2 → 2 days after Thursday = <strong>Saturday</strong></p></div></details>
+<p class="footer-note">Source map: <code>약점진단/05_자릿수_진법_기초연산.md</code> · Number theory continues in <a class="cx" href="06_Primes_Modular_Factorial.html">06 Primes Modular Factorial</a></p>
+</section>
+<a class="backlink" href="index.html">← All units</a>
+</div>

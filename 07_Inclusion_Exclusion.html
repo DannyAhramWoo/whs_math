@@ -1,0 +1,179 @@
+<title>07. Inclusion-Exclusion Principle — Math Competition Notes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="shared.css">
+<div class="wrap">
+<a class="backlink" href="index.html">← All units</a>
+<header class="chapter-head">
+<p class="eyebrow">Unit 07</p>
+<h1>Inclusion-Exclusion Principle</h1>
+<p class="standfirst">When you count things that <strong>overlap</strong> — people in two clubs, numbers that are multiples of both 2 and 3 — simple adding gives the wrong answer. Inclusion-Exclusion is the tool that fixes double-counting. It shows up in almost every counting problem.</p>
+</header>
+<p class="src-note" style="border-left-color:var(--rule);color:var(--ink-faint)"><strong>Unit:</strong> Counting (Unit 07 of 14) · <strong>9 linked problems</strong> · <strong>For:</strong> primary competition students (SMO · NMOS · IMSO) — concepts go up to <strong>Secondary 1</strong> level</p>
+<section id="lesson-overview">
+<h2>Lesson Overview</h2>
+<p>What this note covers:</p>
+<ol>
+<li>Two Sets — the basic overlap rule</li>
+<li>Three Sets — add, subtract, add back</li>
+<li>The Complement Trick ("none of these")</li>
+<li>A Worked Venn Example — <em>Sec 1</em></li>
+<li>Min / Max Overlap (pigeon-style bounds) — <em>Sec, advanced</em></li>
+</ol>
+</section>
+<section id="s1">
+<span class="sec-num">1</span>
+<h2>Two Sets — the basic overlap rule</h2>
+<ul>
+<li><strong>Set:</strong> just a group of things. <strong>|A|</strong> means "how many things are in group A".</li>
+<li><strong>Union (A or B):</strong> everything that is in A <strong>or</strong> B <strong>or both</strong>. Written <strong>|A ∪ B|</strong>.</li>
+<li><strong>Intersection (A and B):</strong> the things that are in <strong>both</strong> A and B. Written <strong>|A ∩ B|</strong>.</li>
+<li><strong>The two-set formula:</strong><br><span style="color:var(--ink-soft)"><strong>|A ∪ B| = |A| + |B| − |A ∩ B|</strong></span><br><span style="color:var(--ink-soft)">Why the minus? If you just add |A| + |B|, the <strong>overlap gets counted twice</strong> (once in A, once in B). Subtract it <strong>once</strong> to fix that.</span><br><span style="color:var(--ink-soft)">Example: 20 like juice, 15 like milk, 8 like <strong>both</strong>. How many like at least one? → 20 + 15 − 8 = <strong>27</strong>.</span></li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> The same rule works for <strong>overlapping shapes</strong>. Area(square1) + Area(square2) − Area(overlap) = Area covered (→ NM 2008 Q03 below).</div>
+</section>
+<section id="s2">
+<span class="sec-num">2</span>
+<h2>Three Sets — add, subtract, add back</h2>
+<ul>
+<li><strong>The three-set formula:</strong><br><span style="color:var(--ink-soft)"><strong>|A ∪ B ∪ C| = |A| + |B| + |C| − |A∩B| − |A∩C| − |B∩C| + |A∩B∩C|</strong></span><br><span style="color:var(--ink-soft)">In words: <strong>add the singles</strong>, <strong>subtract the pairs</strong>, <strong>add back the triple</strong>.</span></li>
+<li><strong>Why add the triple back?</strong> An item in <strong>all three</strong> gets added 3 times, then subtracted 3 times (once in each pair) → it disappears completely. So you must <strong>add it back once</strong> to count it.</li>
+<li><strong>The alternating-sign pattern:</strong> singles <strong>+</strong>, pairs <strong>−</strong>, triples <strong>+</strong>, and (if you ever have 4 sets) fours <strong>−</strong>. The sign flips each level. That flipping is the whole idea of "inclusion–exclusion".</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> Count multiples of 2, of 3, and of 7 the three-set way, then use the complement (Section 3) to get "divisible by none" (→ Mock Q5-22 below).</div>
+</section>
+<section id="s3">
+<span class="sec-num">3</span>
+<h2>The Complement Trick ("none of these")</h2>
+<ul>
+<li><strong>Complement:</strong> the <strong>opposite</strong> group — everything that is <strong>not</strong> in your set. If there are <strong>N</strong> things in total, then<br><span style="color:var(--ink-soft)"><strong>(not in A ∪ B ∪ C) = N − |A ∪ B ∪ C|</strong></span></li>
+<li><strong>How to use it:</strong> many problems ask "how many are divisible by <strong>none</strong> of these" or "wear <strong>neither</strong> X nor Y". Steps:<br><span style="color:var(--ink-soft)">Count the union |A ∪ B ∪ C| with the formula above.</span><br><span style="color:var(--ink-soft)">Subtract from the <strong>total N</strong>.</span></li>
+<li><strong>For counting multiples up to N:</strong> the number of multiples of <em>d</em> from 1 to N is <strong>⌊N ÷ d⌋</strong> (whole-number part of the division).<br><span style="color:var(--ink-soft)">Example: multiples of 7 up to 500 → ⌊500 ÷ 7⌋ = <strong>71</strong>. For "both 2 and 3", count multiples of <strong>LCM(2,3)=6</strong>.</span></li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> "Not divisible by 2, 3 or 7" from 1 to 500 = 500 − |mult of 2 or 3 or 7| (→ Mock Q5-22 below). Always turn "none" into total minus union.</div>
+</section>
+<section id="s4">
+<span class="sec-num">4</span>
+<h2>A Worked Venn Example — <em>Sec 1</em></h2>
+<p>A <strong>Venn diagram</strong> is the fastest way to see the overlaps. Fill the <strong>innermost region first</strong>, then work outward.</p>
+<ul>
+<li><strong>Problem:</strong> 30 students. 18 play violin, 15 play e-piano, 7 play <strong>both</strong>. How many play <strong>neither</strong>?<br><span style="color:var(--ink-soft)">Both (centre) = <strong>7</strong></span><br><span style="color:var(--ink-soft)">Violin only = 18 − 7 = <strong>11</strong></span><br><span style="color:var(--ink-soft)">E-piano only = 15 − 7 = <strong>8</strong></span><br><span style="color:var(--ink-soft)">At least one = 11 + 8 + 7 = <strong>26</strong> (this is the union)</span><br><span style="color:var(--ink-soft)">Neither = 30 − 26 = <strong>4</strong></span></li>
+<li><strong>Rule of thumb:</strong> the number written in a circle (like "18 play violin") is the <strong>total</strong> for that circle, so subtract the overlap to get the "only" part.</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> When a problem gives two categories with two options each (e.g. white/black top <strong>and</strong> black/blue bottom), draw a small table and use the union rule (→ Mock Q4-16 below).</div>
+</section>
+<section id="s5">
+<span class="sec-num">5</span>
+<h2>Min / Max Overlap (pigeon-style bounds) — <em>Sec, advanced</em></h2>
+<ul>
+<li><strong>Maximum overlap</strong> of two groups = the size of the <strong>smaller</strong> group (one can sit entirely inside the other).</li>
+<li><strong>Minimum overlap</strong> of A and B inside a total N:<br><span style="color:var(--ink-soft)"><strong>min(A ∩ B) = |A| + |B| − N</strong> (and if that is negative, the minimum is 0).</span><br><span style="color:var(--ink-soft)">Why? To keep the overlap <strong>small</strong>, spread the two groups apart. But once |A| + |B| is bigger than N, they are <strong>forced</strong> to share |A| + |B| − N members.</span></li>
+<li><strong>Many sets, "who can do ALL of them":</strong> to find the <strong>smallest</strong> number who satisfy every condition, add up the people <strong>missing</strong> each condition; the total who fail at least one is <strong>at most</strong> that sum, so<br><span style="color:var(--ink-soft)"><strong>(do all) ≥ N − (sum of the ones who miss each)</strong>.</span></li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> "At least how many people can do all 4 sports?" or "minimum in both sets" both use <strong>|A|+|B|−N</strong> style bounds (→ RI 2023 Q13, AP 2021 Q21 below).</div>
+</section>
+<section id="from-the-books-extra-tricks">
+<h2>📚 From the Books (extra tricks)</h2>
+<ul>
+<li><strong>Set language:</strong> <strong>B ⊆ A</strong> ("B is a subset of A") just means every member of B is also in A. The <strong>universal set U</strong> is "everything we're talking about" for that problem. <strong>A∩B</strong> = "in both" (intersection), <strong>A∪B</strong> = "in either" (union) — same symbols as Sections 1–2, just the formal names.</li>
+<li><strong>Counting subsets:</strong> a set with <strong>n</strong> elements has <strong>2ⁿ</strong> subsets in total (this includes the empty set and the whole set itself), and <strong>2ⁿ − 1 proper subsets</strong> (all subsets except the whole set). Exactly <strong>2ⁿ ⁄ 2</strong> of the subsets have an <strong>even</strong> number of elements.<br><span style="color:var(--ink-soft)">Example: a 5-element set → 2⁵ = <strong>32</strong> subsets total, <strong>31</strong> proper subsets, <strong>16</strong> with an even element-count.</span></li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> If a problem says "how many subsets does {a,b,c,d,e} have", don't list them — just compute 2ⁿ.</div>
+<ul>
+<li><strong>The "tickets" method</strong> for "at least how many people do <strong>ALL</strong> k activities": give each person one ticket per activity they like, and add up <strong>all</strong> tickets given out. Everyone then gives back tickets until they hold <strong>at most (k−1)</strong> each (people who like fewer activities just give back everything). Whatever tickets are <strong>left over</strong> can only belong to people who like <strong>all k</strong> activities.<br><span style="color:var(--ink-soft)">Example: 4 activities liked by 78%, 80%, 84%, 88% of 100 students → 332 tickets handed out. At most 3×100 = 300 can be given back (everyone keeps ≤3). So at least 332 − 300 = <strong>32</strong> students like all 4.</span><br><span style="color:var(--ink-soft)">This is another way to get the same kind of bound as Section 5's min-overlap formula, but works cleanly for <strong>more than 2</strong> groups.</span></li>
+</ul>
+</section>
+<section id="cheat-sheet">
+<h2>Cheat Sheet</h2>
+<div class="tbl-scroll"><table><thead><tr>
+<th>Idea</th>
+<th>Key point</th>
+</tr></thead><tbody>
+<tr>
+<td>Two sets</td>
+<td>\</td>
+<td>A∪B\</td>
+<td>= \</td>
+<td>A\</td>
+<td>+\</td>
+<td>B\</td>
+<td>−\</td>
+<td>A∩B\</td>
+<td></td>
+</tr>
+<tr>
+<td>Three sets</td>
+<td>singles − pairs + triple</td>
+</tr>
+<tr>
+<td>Sign pattern</td>
+<td>+, −, +, −, … (flips each level)</td>
+</tr>
+<tr>
+<td>"None of these"</td>
+<td>total N − union</td>
+</tr>
+<tr>
+<td>Multiples of d up to N</td>
+<td>⌊N ÷ d⌋</td>
+</tr>
+<tr>
+<td>"Both 2 and 3"</td>
+<td>count multiples of LCM = 6</td>
+</tr>
+<tr>
+<td>Venn diagram</td>
+<td>fill the centre first</td>
+</tr>
+<tr>
+<td>Max overlap</td>
+<td>size of the smaller group</td>
+</tr>
+<tr>
+<td>Min overlap</td>
+<td>\</td>
+<td>A\</td>
+<td>+\</td>
+<td>B\</td>
+<td>−N (or 0)</td>
+</tr>
+<tr>
+<td>"Do all" minimum</td>
+<td>N − (sum of those who miss each)</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="linked-competition-problems">
+<h2>🔗 Linked Competition Problems</h2>
+<p>These concepts appear in real problems on the quiz app. Learn the idea, then click a problem and try it.</p>
+<p><strong>① Inclusion-Exclusion Principle</strong></p>
+<ul>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/01.%20NM%202008/03.png">NM 2008 Q03</a> — overlap area of two squares → area1 + area2 − union</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/01.%20NM%202008/08.png">NM 2008 Q08</a> — greatest number wearing <strong>neither</strong> a bow-tie nor glasses (max "neither")</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/02.%20NM%202010/14.png">NM 2010 Q14</a> — students comparing their Maths and English grades (two overlapping groups)</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/2_8.png">Mock Q2-8</a> — how many play violin <strong>or</strong> e-piano → union count</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/4_16.png">Mock Q4-16</a> — 60 people, white/black tops &amp; black/blue bottoms; find black-top <strong>and</strong> black-bottom</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/5_22.png">Mock Q5-22</a> — from 1 to 500, how many are divisible by <strong>none</strong> of 2, 3, 7</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/53.%20RI%202023/13.png">RI 2023 Q13</a> — 46 people; the <strong>minimum</strong> who can do all 4 sports</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/56.%20AP%202021/19.png">AP 2021 Q19</a> — arrange 6 cards so neighbours differ in colour and number (careful counting)</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/56.%20AP%202021/21.png">AP 2021 Q21</a> — SMOPS and HCIC participant sets → union / overlap</li>
+</ul>
+</section>
+<section id="quick-check">
+<h2>Quick Check</h2>
+<ol>
+<li>25 pupils: 14 like apples, 11 like bananas, 5 like both. How many like at least one?</li>
+<li>30 people: 20 wear a hat, 12 wear a scarf, 6 wear both. How many wear <strong>neither</strong>?</li>
+<li>From 1 to 100, how many numbers are multiples of 2 <strong>or</strong> 5?</li>
+<li>From 1 to 60, how many are divisible by <strong>none</strong> of 2 and 3?</li>
+<li>In a class of 40, 30 passed Maths and 25 passed Science. What is the <strong>least</strong> number who passed <strong>both</strong>?</li>
+</ol>
+<details><summary>Answers</summary><div class="answer">
+<p>1. 14 + 11 − 5 = <strong>20</strong></p>
+<p>2. At least one = 20 + 12 − 6 = 26 → neither = 30 − 26 = <strong>4</strong></p>
+<p>3. mult of 2 = 50, mult of 5 = 20, mult of 10 (both) = 10 → 50 + 20 − 10 = <strong>60</strong></p>
+<p>4. mult of 2 = 30, mult of 3 = 20, mult of 6 = 10 → union = 40 → none = 60 − 40 = <strong>20</strong></p>
+<p>5. min both = 30 + 25 − 40 = <strong>15</strong></p></div></details>
+<p class="footer-note">Source map: <code>약점진단/07_포함배제_원리.md</code> · Counting continues in <a class="cx" href="08_Permutations_Combinations_Counting.html">08 Permutations Combinations Counting</a></p>
+</section>
+<a class="backlink" href="index.html">← All units</a>
+</div>

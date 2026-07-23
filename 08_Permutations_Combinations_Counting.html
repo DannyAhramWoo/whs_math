@@ -1,0 +1,185 @@
+<title>08. Permutations, Combinations &amp; Counting — Math Competition Notes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="shared.css">
+<div class="wrap">
+<a class="backlink" href="index.html">← All units</a>
+<header class="chapter-head">
+<p class="eyebrow">Unit 08</p>
+<h1>Permutations, Combinations &amp; Counting</h1>
+<p class="standfirst">Counting problems are everywhere. If you know when order matters (permutation) and when it does not (combination), you can turn a scary "how many ways" question into one clean multiplication.</p>
+</header>
+<p class="src-note" style="border-left-color:var(--rule);color:var(--ink-faint)"><strong>Unit:</strong> Counting &amp; Combinatorics (Unit 08 of 14) · <strong>12 linked problems</strong> · <strong>For:</strong> primary competition students (SMO · NMOS · IMSO) — concepts go up to <strong>Secondary 1</strong> level</p>
+<section id="lesson-overview">
+<h2>Lesson Overview</h2>
+<p>What this note covers:</p>
+<ol>
+<li>Permutations (order matters)</li>
+<li>Combinations (order does not matter) — <em>Sec 1</em></li>
+<li>Geometric Counting (points, lines, triangles)</li>
+<li>Burnside's Lemma (counting with symmetry) — <em>Sec, advanced</em></li>
+</ol>
+</section>
+<section id="s1">
+<span class="sec-num">1</span>
+<h2>Permutations — order matters</h2>
+<ul>
+<li><strong>Permutation:</strong> an <strong>ordered</strong> arrangement. "ABC" and "CBA" count as <strong>different</strong>.</li>
+<li><strong>P(n, r) formula:</strong> the number of ways to line up <strong>r</strong> items chosen from <strong>n</strong>.<br><span style="color:var(--ink-soft)"><strong>P(n, r) = n! / (n−r)! = n(n−1)(n−2)…</strong> (r factors, counting down).</span><br><span style="color:var(--ink-soft)">Example: seat 3 of 5 people in a row → P(5,3) = 5×4×3 = <strong>60</strong>.</span></li>
+<li><strong>With repeats (repeated letters):</strong> if some items are the same, divide by the factorial of each repeat.<br><span style="color:var(--ink-soft)"><strong>Arrangements = n! / (a! b! c! …)</strong></span><br><span style="color:var(--ink-soft)">Example: the word "hello" has 5 letters with <strong>two l's</strong> → 5! / 2! = 120 / 2 = <strong>60</strong>.</span></li>
+<li><strong>Circular arrangement:</strong> n people around a <strong>circle</strong> = <strong>(n − 1)!</strong>. Fix one person; only the others' order matters (rotations are the same).<br><span style="color:var(--ink-soft)">Example: 5 people at a round table → (5−1)! = 4! = <strong>24</strong>.</span></li>
+<li><strong>"Must be together" (glue rule):</strong> treat the group as <strong>one block</strong>, arrange, then multiply by the ways <strong>inside</strong> the block.</li>
+<li><strong>"Not together":</strong> first arrange the others, then <strong>place the special ones in the gaps</strong> between them.</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> A <strong>derangement (mis-arrangement)</strong> is an arrangement where <strong>nothing</strong> sits in its own place. Small ones are worth memorising: 3 items → 2, 4 items → 9, 5 items → 44 (→ Mock Q4-27, AP 2021 Q23 below).</div>
+</section>
+<section id="s2">
+<span class="sec-num">2</span>
+<h2>Combinations — order does not matter — <em>Sec 1</em></h2>
+<ul>
+<li><strong>Combination:</strong> a <strong>choice</strong> where order does <strong>not</strong> matter. Picking {A, B, C} is the same as {C, B, A}.</li>
+<li><strong>C(n, r) formula:</strong> the number of ways to <strong>choose r</strong> from <strong>n</strong>.<br><span style="color:var(--ink-soft)"><strong>C(n, r) = n! / (r! (n−r)!)</strong></span><br><span style="color:var(--ink-soft)">Example: choose 2 from 5 → C(5,2) = 10.</span></li>
+<li><strong>Symmetry:</strong> C(n, r) = C(n, n−r). Choosing what to keep = choosing what to leave out.</li>
+<li><strong>Pascal's identity:</strong> <strong>C(n, r) = C(n−1, r−1) + C(n−1, r)</strong>. Each entry in Pascal's triangle is the sum of the two above it.</li>
+<li><strong>Subtract-the-bad:</strong> count <strong>everything</strong>, then take away the cases that break the rule.<br><span style="color:var(--ink-soft)">Example: triangles from points = C(all, 3) − (sets of 3 that lie <strong>on one line</strong>).</span></li>
+<li><strong>Conditional ("A and B both hold"):</strong> count only the arrangements that satisfy <strong>every</strong> condition at once, often by combining a choice with a rule.</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> "Strictly decreasing digits" like 6 &gt; 4 &gt; 1 means <strong>once you choose the digits, only one order works</strong> — so it becomes a pure <strong>combination</strong>, not a permutation (→ RI 2021 Q09 below).</div>
+</section>
+<section id="s3">
+<span class="sec-num">3</span>
+<h2>Geometric Counting — points, lines, triangles</h2>
+<ul>
+<li><strong>Triangles from N points:</strong> choose any 3 points → C(N, 3). But 3 points <strong>on a straight line</strong> make <strong>no</strong> triangle.<br><span style="color:var(--ink-soft)"><strong>Number of triangles = C(N, 3) − (number of collinear 3-point sets).</strong></span></li>
+<li><strong>Finding collinear sets on a grid/array:</strong> scan every <strong>row</strong>, <strong>column</strong>, and <strong>diagonal</strong>; for a line with k points count C(k, 3) bad sets.</li>
+<li><strong>Segments/lines through points:</strong> count carefully by direction so you do <strong>not</strong> count the same line twice.</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> In a triangular or grid array, the sneaky part is the <strong>diagonals</strong> — students remember rows and columns but forget the slanted lines (→ RI 2024 Q13 below).</div>
+</section>
+<section id="s4">
+<span class="sec-num">4</span>
+<h2>Burnside's Lemma — counting with symmetry — <em>Sec, advanced</em></h2>
+<ul>
+<li><strong>The problem it solves:</strong> when rotations or flips make some arrangements <strong>look the same</strong>, plain counting <strong>over-counts</strong>.</li>
+<li><strong>Burnside's lemma:</strong> number of <strong>truly different</strong> arrangements = the <strong>average number of arrangements that stay unchanged</strong> across all the symmetries.<br><span style="color:var(--ink-soft)"><strong>Distinct = (1 / |G|) × (sum of fixed arrangements for each symmetry)</strong>, where <strong>|G|</strong> is how many symmetries there are.</span><br><span style="color:var(--ink-soft)">Example: 4 beads in a circle with only rotations → <strong>|G| = 4</strong> (turn by 0, 1, 2, 3 places); average the beads that "come back to themselves" for each turn.</span></li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> For a rectangle card the symmetry group is small (identity, half-turn, two flips). List each symmetry, count what it fixes, then average (→ AP 2025 Q26 below).</div>
+</section>
+<section id="from-the-books-extra-tricks">
+<h2>📚 From the Books (extra tricks)</h2>
+<ul>
+<li><strong>Sum Rule vs Product Rule:</strong> if a job can be done through separate alternatives joined by <strong>"OR"</strong>, <strong>add</strong> the ways. If a job needs several steps joined by <strong>"AND"</strong>, <strong>multiply</strong> the ways.<br><span style="color:var(--ink-soft)">Example: 1 book from 5 paperbacks OR 3 hardcovers → 5+3 = <strong>8</strong> (sum rule). An outfit from 5 shirts AND 4 skirts AND 3 shoes → 5×4×3 = <strong>60</strong> (product rule).</span></li>
+<li><strong>Multinomial coefficient:</strong> splitting <strong>n distinct</strong> objects into groups of sizes n₁, n₂, … nᵣ, where the groups are <strong>distinguishable</strong> (e.g. named people) = <strong>n! / (n₁! n₂! … nᵣ!)</strong>.<br><span style="color:var(--ink-soft)">Example: give 6 different books to Alex, Bob, Catherine, 2 each → 6!/(2!2!2!) = <strong>90</strong>.</span></li>
+<li><strong>Stars and Bars:</strong> placing <strong>n identical</strong> objects into <strong>k distinguishable</strong> bins = <strong>C(n+k−1, k−1)</strong>. If every bin needs <strong>at least one</strong>: <strong>C(n−1, k−1)</strong>.<br><span style="color:var(--ink-soft)">Example: 3 friends share 6 identical pencils, everyone gets ≥1 → C(5,2) = <strong>10</strong>. If 0 is allowed → C(8,2) = <strong>28</strong>.</span></li>
+<li><strong>Digit-pattern shortcuts:</strong> n-digit numbers with strictly <strong>increasing</strong> digits = <strong>C(9, n)</strong>. Strictly <strong>decreasing</strong> digits (a leading digit can pair with a trailing 0) = <strong>C(10, n)</strong>. n-digit <strong>palindromes</strong> = <strong>9 × 10^(⌈n/2⌉ − 1)</strong>.</li>
+<li><strong>Grid path counting:</strong> moving only right/up on a grid, the paths from corner to corner = <strong>C(m+n, n)</strong>, where m and n are the steps in each direction. Counting <strong>rectangles</strong> in a grid of m vertical and n horizontal lines = <strong>C(m,2) × C(n,2)</strong>.</li>
+<li><strong>Basic probability:</strong> <strong>P(event) = (ways it happens) ÷ (ways total)</strong>, when every outcome is equally likely. Don't mix ordered and unordered counting — count both the successes <strong>and</strong> the total the <strong>same way</strong>, never one ordered and the other not.</li>
+<li><strong>Handshake / counting-pairs formula:</strong> pairs among n items (handshakes, matches, diagonals) = <strong>n(n−1)/2</strong> — count the ordered pairs n(n−1), then halve since each pair got counted twice.</li>
+<li><strong>Pascal's Triangle ↔ combinations:</strong> building the triangle (each entry = sum of the two above) gives exactly <strong>C(n, r)</strong> at row n, position r. This can be proven with a "committee" argument: an r-person team either includes one fixed person or it doesn't.</li>
+<li><strong>Hockey Stick Identity:</strong> C(r,r) + C(r+1,r) + … + C(n,r) = <strong>C(n+1, r+1)</strong> — on Pascal's Triangle these terms trace an L-shape, hence the name.</li>
+<li><strong>Binomial Theorem:</strong> (x+y)ⁿ = C(n,0)xⁿ + C(n,1)xⁿ⁻¹y + … + C(n,n)yⁿ — each coefficient is a combination number straight from row n of Pascal's Triangle.<br><span style="color:var(--ink-soft)">Example: (x+y)³ = x³ + 3x²y + 3xy² + y³ (coefficients 1, 3, 3, 1).</span></li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> Stars and Bars and the Hockey Stick Identity look unrelated to permutations at first, but both come from the same C(n, r) toolbox — spotting "identical objects, distinguishable bins" or a Pascal's-Triangle L-shape is often the fastest way in.</div>
+</section>
+<section id="cheat-sheet">
+<h2>Cheat Sheet</h2>
+<div class="tbl-scroll"><table><thead><tr>
+<th>Idea</th>
+<th>Key point</th>
+</tr></thead><tbody>
+<tr>
+<td>Order matters</td>
+<td>use permutation P(n, r)</td>
+</tr>
+<tr>
+<td>Order does not</td>
+<td>use combination C(n, r)</td>
+</tr>
+<tr>
+<td>P(n, r)</td>
+<td>n! / (n−r)!</td>
+</tr>
+<tr>
+<td>C(n, r)</td>
+<td>n! / (r!(n−r)!)</td>
+</tr>
+<tr>
+<td>Repeated items</td>
+<td>divide by a! b! c!</td>
+</tr>
+<tr>
+<td>Circle of n</td>
+<td>(n−1)!</td>
+</tr>
+<tr>
+<td>Must be together</td>
+<td>glue into one block</td>
+</tr>
+<tr>
+<td>Not together</td>
+<td>place in the gaps</td>
+</tr>
+<tr>
+<td>Derangements</td>
+<td>3→2, 4→9, 5→44</td>
+</tr>
+<tr>
+<td>Pascal's identity</td>
+<td>C(n,r) = C(n−1,r−1) + C(n−1,r)</td>
+</tr>
+<tr>
+<td>Triangles from points</td>
+<td>C(N,3) − collinear 3-sets</td>
+</tr>
+<tr>
+<td>Symmetry over-counts</td>
+<td>Burnside: average the fixed cases</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="linked-competition-problems">
+<h2>🔗 Linked Competition Problems</h2>
+<p>These concepts appear in real problems on the quiz app. Learn the idea, then click a problem and try it.</p>
+<p><strong>① Permutation</strong></p>
+<ul>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/01.%20NM%202008/09.png">NM 2008 Q09</a> — enter and leave a room through 8 doors; count the ordered ways</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/4_27.png">Mock Q4-27</a> — mis-arrangements (derangements) of the word "hello"</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/5_16.png">Mock Q5-16</a> — 6 people in a row with Jack, Tony, Andy all next to each other → <em>glue rule</em></li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/56.%20AP%202021/06.png">AP 2021 Q06</a> — place 5 stones on a board, one per row and one per column</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/56.%20AP%202021/23.png">AP 2021 Q23</a> — derangements of the digits 2, 3, 4, 5</li>
+</ul>
+<p><strong>② Combination</strong></p>
+<ul>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/51.%20RI%202021/09.png">RI 2021 Q09</a> — 3-digit even numbers with strictly decreasing digits</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/54.%20RI%202024/06.png">RI 2024 Q06</a> — 12 equally spaced points on a circle; triangles up to rotation and reflection</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/53.%20RI%202023/16.png">RI 2023 Q16</a> — scores you <strong>cannot</strong> make from 3-, 4- and 6-point problems</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/60.%20AP%202025/22.png">AP 2025 Q22</a> — integer pairs meeting the ≥25% and 25–28 conditions at once</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/60.%20AP%202025/25.png">AP 2025 Q25</a> — 4-digit numbers with exactly one repeated digit</li>
+</ul>
+<p><strong>③ Geometric counting (3 points / collinear)</strong></p>
+<ul>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/54.%20RI%202024/13.png">RI 2024 Q13</a> — triangular array of points; count the segments passing through 3 points</li>
+</ul>
+<p><strong>④ Burnside's lemma</strong></p>
+<ul>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/60.%20AP%202025/26.png">AP 2025 Q26</a> — 2×3 black/white cards; count the symmetry classes → <em>Sec, advanced</em></li>
+</ul>
+</section>
+<section id="quick-check">
+<h2>Quick Check</h2>
+<ol>
+<li>In how many ways can 4 different books be lined up on a shelf?</li>
+<li>How many different arrangements are there of the letters in "BANANA"?</li>
+<li>From 7 students, how many ways to choose a team of 3?</li>
+<li>6 friends sit around a round table. How many seatings are different?</li>
+<li>There are 10 points and no 3 are on one line. How many triangles can be drawn?</li>
+</ol>
+<details><summary>Answers</summary><div class="answer">
+<p>1. 4! = <strong>24</strong></p>
+<p>2. "BANANA" has 3 A's and 2 N's → 6! / (3!·2!) = 720 / 12 = <strong>60</strong></p>
+<p>3. C(7,3) = 7!/(3!·4!) = <strong>35</strong></p>
+<p>4. (6−1)! = 5! = <strong>120</strong></p>
+<p>5. C(10,3) = <strong>120</strong> (no collinear sets to subtract)</p></div></details>
+<p class="footer-note">Source map: <code>약점진단/08_순열_조합_세기.md</code> · Counting continues in <a class="cx" href="09_Colouring_Partitions_Pigeonhole.html">09 Colouring Partitions Pigeonhole</a></p>
+</section>
+<a class="backlink" href="index.html">← All units</a>
+</div>

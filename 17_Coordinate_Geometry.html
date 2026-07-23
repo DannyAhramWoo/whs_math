@@ -1,0 +1,128 @@
+<title>17. Coordinate Geometry — Math Competition Notes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="shared.css">
+<div class="wrap">
+<a class="backlink" href="index.html">← All units</a>
+<header class="chapter-head">
+<p class="eyebrow">Unit 17</p>
+<h1>Coordinate Geometry</h1>
+<p class="standfirst">Distance/midpoint/slope formulas let you solve geometry problems with pure algebra instead of drawing — a fast backup method when angle-chasing gets stuck. Builds on the coordinate basics already in <a class="cx" href="03_Special_Theorems_Coordinates_Solids.html">03 Special Theorems Coordinates Solids</a>.</p>
+</header>
+<p class="src-note" style="border-left-color:var(--rule);color:var(--ink-faint)"><strong>Unit:</strong> Coordinate Geometry (Unit 17 · extra unit from book scans, no linked quiz-app problems yet) · <strong>For:</strong> primary competition students (SMO · NMOS · IMSO) — concepts go up to <strong>Secondary 2</strong> level</p>
+<section id="lesson-overview">
+<h2>Lesson Overview</h2>
+<p>What this note covers:</p>
+<ol>
+<li>Distance and Midpoint Formulas</li>
+<li>Slope</li>
+<li>Equations of a Line</li>
+<li>Parallel &amp; Perpendicular Lines</li>
+<li>Equation of a Circle</li>
+<li>Power of a Point (algebraic view)</li>
+</ol>
+</section>
+<section id="s1">
+<span class="sec-num">1</span>
+<h2>Distance and Midpoint Formulas</h2>
+<ul>
+<li><strong>Distance formula</strong> (from Pythagoras): distance between (x₁,y₁) and (x₂,y₂) = √[(x₂−x₁)² + (y₂−y₁)²].<br><span style="color:var(--ink-soft)">Example: distance from (1,1) to (4,5) = √[3² + 4²] = √25 = 5.</span></li>
+<li><strong>Midpoint formula:</strong> midpoint of (x₁,y₁) and (x₂,y₂) = ((x₁+x₂)/2, (y₁+y₂)/2).<br><span style="color:var(--ink-soft)">Example: midpoint of (2,4) and (8,10) = (5,7).</span></li>
+</ul>
+</section>
+<section id="s2">
+<span class="sec-num">2</span>
+<h2>Slope</h2>
+<ul>
+<li><strong>Slope</strong> m = (y₂−y₁)/(x₂−x₁) — measures steepness. Positive slope rises left-to-right, negative falls, zero slope is horizontal (y=k), and a vertical line (x=h) has undefined slope.<br><span style="color:var(--ink-soft)">Example: through (2,3) and (6,11): slope = (11−3)/(6−2) = 8/4 = 2.</span></li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> Never swap the order of subtraction between numerator and denominator — always use the SAME point order in both.</div>
+</section>
+<section id="s3">
+<span class="sec-num">3</span>
+<h2>Equations of a Line</h2>
+<ul>
+<li><strong>Slope-intercept form:</strong> y = mx + b (m = slope, b = y-intercept).</li>
+<li><strong>Point-slope form:</strong> y − y₁ = m(x − x₁), built directly from the slope formula using one known point.</li>
+<li><strong>Standard form:</strong> Ax + By = C.</li>
+<li><strong>x-intercept / y-intercept:</strong> set y=0 to find the x-intercept, set x=0 to find the y-intercept. Quick way to graph a line — just plot both intercepts and connect them.<br><span style="color:var(--ink-soft)">Example: for 2x + 3y = 12, x-intercept = (6,0), y-intercept = (0,4).</span></li>
+</ul>
+</section>
+<section id="s4">
+<span class="sec-num">4</span>
+<h2>Parallel &amp; Perpendicular Lines</h2>
+<ul>
+<li><strong>Parallel lines</strong> have EQUAL slopes.</li>
+<li><strong>Perpendicular lines</strong> have slopes that are <strong>negative reciprocals</strong> of each other (their product = −1).<br><span style="color:var(--ink-soft)">Example: a line perpendicular to slope 2/3 has slope −3/2.</span></li>
+</ul>
+</section>
+<section id="s5">
+<span class="sec-num">5</span>
+<h2>Equation of a Circle</h2>
+<ul>
+<li>A circle with center (h,k) and radius r has equation (x−h)² + (y−k)² = r².</li>
+<li>If given a messy expanded equation, <strong>complete the square</strong> (for x and for y separately) to find the center and radius.<br><span style="color:var(--ink-soft)">Example: x² − 4x + y² + 8y = 2 → (x−2)² + (y+4)² = 22, so center (2,−4), radius √22.</span></li>
+</ul>
+</section>
+<section id="s6">
+<span class="sec-num">6</span>
+<h2>Power of a Point (algebraic view)</h2>
+<p>This is the same theorem already in <a class="cx" href="02_Angles_Similarity_Circles.html">02 Angles Similarity Circles</a>, but here's how to find where a line crosses a circle using algebra: substitute the line's equation into the circle's equation, giving a quadratic — its two roots are the two crossing points' coordinates.</p>
+<div class="cp"><strong>Competition point:</strong> Combining a line equation and a circle equation always reduces to solving ONE quadratic. If the discriminant (see <a class="cx" href="12_Equations_Algebra_Factoring.html">12 Equations Algebra Factoring</a>) is zero, the line is tangent to the circle (touches at exactly one point).</div>
+</section>
+<section id="cheat-sheet">
+<h2>Cheat Sheet</h2>
+<div class="tbl-scroll"><table><thead><tr>
+<th>Idea</th>
+<th>Formula</th>
+</tr></thead><tbody>
+<tr>
+<td>Distance</td>
+<td>√[(x₂−x₁)² + (y₂−y₁)²]</td>
+</tr>
+<tr>
+<td>Midpoint</td>
+<td>((x₁+x₂)/2, (y₁+y₂)/2)</td>
+</tr>
+<tr>
+<td>Slope</td>
+<td>(y₂−y₁)/(x₂−x₁)</td>
+</tr>
+<tr>
+<td>Point-slope form</td>
+<td>y−y₁ = m(x−x₁)</td>
+</tr>
+<tr>
+<td>Parallel lines</td>
+<td>same slope</td>
+</tr>
+<tr>
+<td>Perpendicular lines</td>
+<td>slopes multiply to −1</td>
+</tr>
+<tr>
+<td>Circle equation</td>
+<td>(x−h)²+(y−k)² = r²</td>
+</tr>
+<tr>
+<td>Line meets circle</td>
+<td>substitute → quadratic; discriminant=0 means tangent</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="quick-check">
+<h2>Quick Check</h2>
+<ol>
+<li>Find the distance between (0,0) and (3,4).</li>
+<li>Find the midpoint of (−2,6) and (4,−2).</li>
+<li>Find the slope of the line through (1,2) and (5,10).</li>
+<li>Find the equation of a circle with center (3,−1) and radius 5.</li>
+</ol>
+<details><summary>Answers</summary><div class="answer">
+<p>1. √(9+16) = √25 = <strong>5</strong>.</p>
+<p>2. ((−2+4)/2, (6−2)/2) = <strong>(1, 2)</strong>.</p>
+<p>3. (10−2)/(5−1) = 8/4 = <strong>2</strong>.</p>
+<p>4. (x−3)² + (y+1)² = <strong>25</strong>.</p></div></details>
+<p class="footer-note">This is a new unit added from book scans (2026-07-22) — no quiz-app problems are linked to it yet. Builds on the coordinate basics in <a class="cx" href="03_Special_Theorems_Coordinates_Solids.html">03 Special Theorems Coordinates Solids</a> and connects to circle theorems in <a class="cx" href="02_Angles_Similarity_Circles.html">02 Angles Similarity Circles</a>.</p>
+</section>
+<a class="backlink" href="index.html">← All units</a>
+</div>

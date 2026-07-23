@@ -1,0 +1,134 @@
+<title>18. Inequalities &amp; Quadratic Graphs — Math Competition Notes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="shared.css">
+<div class="wrap">
+<a class="backlink" href="index.html">← All units</a>
+<header class="chapter-head">
+<p class="eyebrow">Unit 18</p>
+<h1>Inequalities &amp; Quadratic Graphs</h1>
+<p class="standfirst">Inequalities appear whenever a problem says "at most," "at least," or "find the range of possible values." Quadratic graphs (parabolas) give a visual way to see the max/min facts already used in <a class="cx" href="12_Equations_Algebra_Factoring.html">12 Equations Algebra Factoring</a>.</p>
+</header>
+<p class="src-note" style="border-left-color:var(--rule);color:var(--ink-faint)"><strong>Unit:</strong> Inequalities &amp; Quadratic Graphs (Unit 18 · extra unit from book scans, no linked quiz-app problems yet) · <strong>For:</strong> primary competition students (SMO · NMOS · IMSO) — concepts go up to <strong>Secondary 2</strong> level</p>
+<section id="lesson-overview">
+<h2>Lesson Overview</h2>
+<p>What this note covers:</p>
+<ol>
+<li>Inequality Manipulation Rules</li>
+<li>Absolute Value Inequalities</li>
+<li>Quadratic Inequalities (Sign Analysis)</li>
+<li>The Trivial Inequality and AM-GM</li>
+<li>Parabolas and the Vertex</li>
+</ol>
+</section>
+<section id="s1">
+<span class="sec-num">1</span>
+<h2>Inequality Manipulation Rules</h2>
+<ul>
+<li>Adding/subtracting the same number from both sides keeps the direction the same.</li>
+<li>Multiplying/dividing by a <strong>positive</strong> number keeps the direction the same.</li>
+<li>Multiplying/dividing by a <strong>negative</strong> number <strong>FLIPS</strong> the inequality sign — the single most commonly missed step.<br><span style="color:var(--ink-soft)">Example: −2x &lt; 6 → dividing by −2 flips the sign: x &gt; −3.</span></li>
+<li><strong>Compound inequalities</strong> like a &lt; x &lt; b: apply the same operation to all three parts at once.</li>
+</ul>
+</section>
+<section id="s2">
+<span class="sec-num">2</span>
+<h2>Absolute Value Inequalities</h2>
+<ul>
+<li>Isolate the absolute value first.</li>
+<li>|expr| <strong>&gt;</strong> k (k&gt;0) splits into TWO separate ranges: "expr &gt; k OR expr &lt; −k".</li>
+<li>|expr| <strong>&lt;</strong> k becomes ONE combined range: "−k &lt; expr &lt; k" (not "or").<br><span style="color:var(--ink-soft)">Example: 4|x+3|+3 &gt; 9 → |x+3| &gt; 3/2 → x &gt; −3/2 OR x &lt; −9/2.</span></li>
+</ul>
+</section>
+<section id="s3">
+<span class="sec-num">3</span>
+<h2>Quadratic Inequalities (Sign Analysis)</h2>
+<p>To solve something like (x−2)(x−5) &lt; 0:</p>
+<ol>
+<li>Find the roots (where each factor = 0) — these are the boundary points.</li>
+<li>Test each interval between the roots to see if the product is positive or negative there.</li>
+<li>For strict inequalities (&lt;, &gt;), exclude the boundary points; for ≤/≥, include them.</li>
+</ol>
+<ul>
+<li>Example: (x−2)(x−5) &lt; 0 is true only BETWEEN the roots: 2 &lt; x &lt; 5 (since one factor is positive and one is negative in that range, making the product negative).</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> If the quadratic isn't factored, use the quadratic formula (see <a class="cx" href="12_Equations_Algebra_Factoring.html">12 Equations Algebra Factoring</a>) to find the roots first, THEN do the sign analysis.</div>
+</section>
+<section id="s4">
+<span class="sec-num">4</span>
+<h2>The Trivial Inequality and AM-GM</h2>
+<ul>
+<li><strong>Trivial Inequality:</strong> for any real number x, x² ≥ 0 always (equality only when x=0). This "obvious" fact is the starting point for proving many other inequalities — rearrange an expression until it becomes a sum of squares.</li>
+<li><strong>AM-GM Inequality (core idea):</strong> for positive numbers, their average (arithmetic mean) is always ≥ the geometric mean (nth root of the product); equality happens only when all the numbers are equal.<br><span style="color:var(--ink-soft)">Example: for two positive numbers with a fixed sum a+b, their product ab is LARGEST when a=b.</span></li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> "Find the maximum/minimum" word problems with a fixed sum or fixed product are usually AM-GM in disguise — check when equality can happen (both a bound AND an attainability check are needed).</div>
+</section>
+<section id="s5">
+<span class="sec-num">5</span>
+<h2>Parabolas and the Vertex</h2>
+<ul>
+<li>The graph of y = ax² + bx + c is a U-shaped curve called a <strong>parabola</strong>. It opens upward if a &gt; 0 (has a minimum) and downward if a &lt; 0 (has a maximum). The turning point is the <strong>vertex</strong>.</li>
+<li><strong>Vertex x-coordinate:</strong> x = −b/(2a) — this is also the average of the two roots.</li>
+<li><strong>Vertex form:</strong> y = a(x−h)² + k, where (h,k) is the vertex — get there by completing the square (see <a class="cx" href="12_Equations_Algebra_Factoring.html">12 Equations Algebra Factoring</a>).<br><span style="color:var(--ink-soft)">Example: y = x² − 4x + 3 = (x−2)² − 1, so the vertex is (2,−1), minimum value −1.</span></li>
+</ul>
+</section>
+<section id="cheat-sheet">
+<h2>Cheat Sheet</h2>
+<div class="tbl-scroll"><table><thead><tr>
+<th>Idea</th>
+<th>Key point</th>
+</tr></thead><tbody>
+<tr>
+<td>Multiply/divide by negative</td>
+<td>flips the inequality sign</td>
+</tr>
+<tr>
+<td>\</td>
+<td>expr\</td>
+<td>&gt; k</td>
+<td>expr &gt; k OR expr &lt; −k</td>
+</tr>
+<tr>
+<td>\</td>
+<td>expr\</td>
+<td>&lt; k</td>
+<td>−k &lt; expr &lt; k</td>
+</tr>
+<tr>
+<td>Quadratic inequality</td>
+<td>find roots, test each interval's sign</td>
+</tr>
+<tr>
+<td>Trivial Inequality</td>
+<td>x² ≥ 0 always</td>
+</tr>
+<tr>
+<td>AM-GM (2 numbers)</td>
+<td>(a+b)/2 ≥ √(ab), equal only when a=b</td>
+</tr>
+<tr>
+<td>Vertex x-coordinate</td>
+<td>−b/(2a) = average of the roots</td>
+</tr>
+<tr>
+<td>Vertex form</td>
+<td>y = a(x−h)²+k</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="quick-check">
+<h2>Quick Check</h2>
+<ol>
+<li>Solve: 3 − 2x &gt; 7.</li>
+<li>Solve: |x − 4| &lt; 3.</li>
+<li>Solve: (x+1)(x−3) ≥ 0.</li>
+<li>Find the vertex of y = x² − 6x + 5.</li>
+</ol>
+<details><summary>Answers</summary><div class="answer">
+<p>1. −2x &gt; 4 → dividing by −2 flips → x &lt; <strong>−2</strong>.</p>
+<p>2. −3 &lt; x−4 &lt; 3 → <strong>1 &lt; x &lt; 7</strong>.</p>
+<p>3. Roots at x=−1, x=3. Product ≥0 outside or on the roots → <strong>x ≤ −1 or x ≥ 3</strong>.</p>
+<p>4. x = −(−6)/(2×1) = 3 → y = 9−18+5 = −4 → vertex <strong>(3, −4)</strong>.</p></div></details>
+<p class="footer-note">This is a new unit added from book scans (2026-07-22) — no quiz-app problems are linked to it yet. Builds directly on the quadratic formula/discriminant in <a class="cx" href="12_Equations_Algebra_Factoring.html">12 Equations Algebra Factoring</a>.</p>
+</section>
+<a class="backlink" href="index.html">← All units</a>
+</div>

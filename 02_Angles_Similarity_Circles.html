@@ -1,0 +1,371 @@
+<title>02. Angles, Similarity &amp; Circles (Plane Geometry) — Math Competition Notes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="shared.css">
+<div class="wrap">
+<a class="backlink" href="index.html">← All units</a>
+<header class="chapter-head">
+<p class="eyebrow">Unit 02</p>
+<h1>Angles, Similarity &amp; Circles (Plane Geometry)</h1>
+<p class="standfirst">Plane geometry is where the hardest "figure" questions live. If you can chase angles, spot similar triangles, and use the circle rules, you can crack most shape problems without guessing.</p>
+</header>
+<p class="src-note" style="border-left-color:var(--rule);color:var(--ink-faint)"><strong>Unit:</strong> Plane Geometry (Unit 02 of 14) · <strong>21 linked problems</strong> · <strong>For:</strong> primary competition students (SMO · NMOS · IMSO) — concepts go up to <strong>Secondary 2</strong> level</p>
+<section id="lesson-overview">
+<h2>Lesson Overview</h2>
+<p>What this note covers:</p>
+<ol>
+<li>What an Angle Is, and Measuring It</li>
+<li>Angle Chasing (straight, vertical, supplementary, complementary)</li>
+<li>Parallel Lines Cut by a Transversal</li>
+<li>Angles in a Triangle (the 180° rule)</li>
+<li>Exterior Angles (and the 360° result)</li>
+<li>Congruence, Similarity &amp; Triangle/Quadrilateral Properties — <em>Sec 1</em></li>
+<li>Circle Properties — <em>Sec 2</em></li>
+<li>Pythagoras, Special Triangles &amp; Area Cutting — <em>Sec 1</em></li>
+<li>More Tools (triangle centers, Ptolemy, special quads, sectors) — <em>advanced</em></li>
+</ol>
+</section>
+<section id="s1">
+<span class="sec-num">1</span>
+<h2>What an Angle Is, and Measuring It</h2>
+<p class="src-note"><em>Source: AOPS Introduction to Geometry §2.1 "What is an Angle?", §2.2 "Measuring Angles"</em></p>
+<ul>
+<li><strong>Angle:</strong> two rays sharing a common origin. The shared origin is the <strong>vertex</strong>; the two rays are the <strong>sides</strong>.<br><span style="color:var(--ink-soft)">We write ∠XOY with the <strong>vertex in the middle</strong> (∠XOY or ∠YOX, but never ∠XYO). When only one angle can be meant, just ∠O.</span><br><span style="color:var(--ink-soft)">When two lines cross at P, "∠P" is ambiguous — you must name three points (∠APC, ∠BPC, …) to say <em>which</em> angle.</span></li>
+<li><strong>Measuring — degrees.</strong> A full circle is <strong>360°</strong>; a half-circle (<strong>semicircle</strong>) is 180°. A protractor is a semicircle split into 180 equal degrees.</li>
+<li><strong>The "fraction of a circle" view (very useful).</strong> An angle's measure = the fraction of a full circle it cuts off, times 360°.<br><span style="color:var(--ink-soft)">¼ of a circle = 90°, ⅓ = 120°, 1/12 = 30°, 1/8 = 45°.</span></li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> The "fraction of a circle" idea turns pie-chart / clock / pizza-slice problems into a one-line calculation: (fraction) × 360°. A clock's hour marks are <code>360°/12 = 30°</code> apart.</div>
+</section>
+<section id="s2">
+<span class="sec-num">2</span>
+<h2>Angle Chasing (straight, vertical, supplementary, complementary)</h2>
+<p class="src-note"><em>Source: AOPS Introduction to Geometry §2.3 "Straight and Vertical Angles"</em></p>
+<ul>
+<li><strong>Straight angle:</strong> a straight line is an angle of <strong>180°</strong> (it cuts off exactly half a circle).</li>
+<li><strong>Supplementary angles:</strong> two angles that add to <strong>180°</strong>. Any two adjacent angles on a straight line are supplementary.<br><span style="color:var(--ink-soft)">Example: if two angles sit on a line and one is 55°, the other is <code>180° − 55° = 125°</code>.</span></li>
+<li><strong>Complementary angles:</strong> two angles that add to <strong>90°</strong>.</li>
+<li><strong>Vertical (opposite) angles are equal.</strong> When two lines cross, the angles directly across from each other are equal.<br><span style="color:var(--ink-soft)"><em>Why (proof):</em> ∠MPN = 180° − ∠NPO (straight line), and ∠LPO = 180° − ∠NPO (straight line), so ∠MPN = ∠LPO. The proof never used the actual number — vertical angles are <em>always</em> equal.</span></li>
+</ul>
+<div class="callout"><strong>Concept:</strong> When you can't compute the target angle directly, <strong>find whatever angles you can first</strong> — a straight line or a crossing point almost always hands you one, and that unlocks the rest.</div>
+<div class="callout warn"><strong>Warning:</strong> An <em>example</em> is not a <em>proof</em>. Checking one case (e.g. "when it's 72° it works") does not prove a statement always holds.</div>
+</section>
+<section id="s3">
+<span class="sec-num">3</span>
+<h2>Parallel Lines Cut by a Transversal</h2>
+<p class="src-note"><em>Source: AOPS Introduction to Geometry §2.4 "Parallel Lines"</em></p>
+<ul>
+<li><strong>Parallel lines</strong> never meet; we write AB ∥ CD. Little arrows on the lines mark them parallel.</li>
+<li>When a <strong>transversal</strong> (crossing line) cuts two parallel lines, all <strong>8 angles fall into just two sizes</strong>:<br><span style="color:var(--ink-soft)">a group of <strong>four equal angles</strong>, and another group of <strong>four equal angles</strong>, and the two group-sizes are <strong>supplementary</strong> (add to 180°).</span></li>
+<li>So every pair is either <strong>equal</strong> or <strong>supplementary</strong> — that's all you really need. (The formal names — corresponding, alternate interior/exterior, co-interior — are nice to know but not worth memorising; just see which angles match and which sum to 180°.)</li>
+</ul>
+<p><strong>Worked example.</strong> m ∥ n, one angle marked 113°. Every angle equals <strong>113°</strong> or its supplement <strong>67°</strong> (<code>180° − 113°</code>). Pick each angle's size by whether it's in the same group as the 113° or the other group.</p>
+<div class="cp"><strong>Competition point:</strong> The instant you see parallel lines, copy the one known angle to <strong>every</strong> matching position in the figure (equal) and mark the supplements (180° − it). Angle problems collapse once every angle is labelled.</div>
+</section>
+<section id="s4">
+<span class="sec-num">4</span>
+<h2>Angles in a Triangle (the 180° rule)</h2>
+<p class="src-note"><em>Source: AOPS Introduction to Geometry §2.5 "Angles in a Triangle"</em></p>
+<ul>
+<li><strong>The three interior angles of any triangle add to 180°.</strong> This is one of the most-used facts in all of geometry.<br><span style="color:var(--ink-soft)"><em>Why (proof sketch):</em> through vertex A draw a line parallel to BC. The two "extra" angles it makes equal ∠B and ∠C (alternate angles), and together with ∠A they form a straight angle → ∠A + ∠B + ∠C = 180°.</span></li>
+<li><strong>Turning words into equations.</strong> Most triangle word problems: name the unknown angles with a variable, write "they sum to 180°," solve.<br><span style="color:var(--ink-soft)">Example: one angle is twice another, the third is 54°. Let the small one be x, the other 2x → <code>54° + x + 2x = 180°</code> → x = 42°. Angles are 42°, 54°, 84°; smallest = <strong>42°</strong>.</span></li>
+</ul>
+<div class="callout"><strong>Concept:</strong> Seeing "180°" should make you look for a <strong>useful line</strong> — often a parallel line, because parallel lines hand out equal angles. That's the trick behind the proof above.</div>
+<div class="callout warn"><strong>Warning:</strong> Your <em>last</em> step should always be to check you answered the actual question asked (here: the <em>smallest</em> angle, not just x).</div>
+</section>
+<section id="s5">
+<span class="sec-num">5</span>
+<h2>Exterior Angles (and the 360° result)</h2>
+<p class="src-note"><em>Source: AOPS Introduction to Geometry §2.6 "Exterior Angles"</em></p>
+<ul>
+<li><strong>Exterior angle</strong> = the angle formed by extending one side of a triangle past a vertex.</li>
+<li><strong>Exterior Angle Theorem:</strong> an exterior angle equals the <strong>sum of the two non-adjacent (far) interior angles</strong>.<br><span style="color:var(--ink-soft)"><em>Why:</em> at vertex C, interior ∠ACB and exterior x sit on a straight line, so <code>∠ACB + x = 180°</code>; but also <code>∠A + ∠B + ∠ACB = 180°</code>, so <code>x = ∠A + ∠B</code>.</span><br><span style="color:var(--ink-soft)">Example: interior angles 35° and 79° → the far exterior angle is <code>35° + 79° = 114°</code>.</span></li>
+<li><strong>Beautiful result — the three exterior angles of a triangle add to 360°.</strong><br><span style="color:var(--ink-soft)">Each exterior angle = sum of its two far interior angles, so x + y + z = 2(∠A + ∠B + ∠C) = 2(180°) = <strong>360°</strong>. (This generalises: the exterior angles of <em>any</em> convex polygon sum to 360°.)</span></li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> The exterior-angle theorem lets you skip a step — read the far angle directly as a sum instead of computing the interior angle first (→ RI 2024 Q20: sum the 5 tip angles of a star by chasing exterior angles).</div>
+<ul>
+<li><strong>Isosceles triangle:</strong> if two sides are equal, the <strong>two base angles are equal</strong> (and vice versa) — a constant source of "hidden" equal angles.</li>
+</ul>
+</section>
+<section id="s6">
+<span class="sec-num">6</span>
+<h2>Congruence, Similarity &amp; Triangle/Quadrilateral Properties — <em>Sec 1</em></h2>
+<p class="src-note"><em>Source: AOPS Introduction to Geometry Ch.3 (Congruent Triangles, §3.8 Summary) &amp; Ch.5 (Similar Triangles); "same base / same altitude" area idea from Ch.4</em></p>
+<p><strong>Congruent = exactly the same.</strong> Two figures are <strong>congruent</strong> if you can slide, spin, and/or flip one to land exactly on the other. For triangles, four tests prove congruence:</p>
+<ul>
+<li><strong>SSS</strong> — three sides equal.</li>
+<li><strong>SAS</strong> — two sides and the angle <em>between</em> them equal.</li>
+<li><strong>ASA</strong> — two angles and the side <em>between</em> them equal.</li>
+<li><strong>AAS</strong> — two angles and a <em>non-included</em> side equal.</li>
+<li><strong>CPCTC</strong> — once triangles are congruent, <strong>C</strong>orresponding <strong>P</strong>arts of <strong>C</strong>ongruent <strong>T</strong>riangles are <strong>C</strong>ongruent: every matching side and angle is equal. This is how one congruence unlocks many equal lengths/angles.</li>
+</ul>
+<div class="callout warn"><strong>Warning — the SSA trap:</strong> SSA (two sides + a non-included angle) is <strong>NOT</strong> a valid congruence test. The same three measurements can give two different triangles (this is the "ambiguous case" — e.g. AB = 13, BC = 10, ∠A = 40° has <em>two</em> possible triangles).</div>
+<p><strong>Isosceles &amp; equilateral (a constant source of equal angles):</strong></p>
+<ul>
+<li><strong>Isosceles:</strong> if two sides are equal, the two <strong>base angles</strong> are equal — and the converse: equal base angles force equal sides. (AB = AC ⟺ ∠B = ∠C.)</li>
+<li><strong>Equilateral:</strong> all three sides equal ⟺ all three angles equal ⟺ every angle is <strong>60°</strong>.</li>
+<li><em>Trick:</em> dropping a segment from the apex of an isosceles triangle to the midpoint of the base splits it into two congruent right triangles — instant symmetry.</li>
+</ul>
+<p><strong>Similar = same shape, scaled size.</strong> Matching angles are equal and matching sides share one ratio <strong>k</strong> (the scale factor). Three tests:</p>
+<ul>
+<li><strong>AA</strong> — two angles equal (the one you'll use most; the third angle is then automatic).</li>
+<li><strong>SAS similarity</strong> — two sides in the same ratio with the included angle equal.</li>
+<li><strong>SSS similarity</strong> — all three sides in the same constant ratio.<br><span style="color:var(--ink-soft)">Example: △ABC with sides 7, 4, 5 and △DEF with sides 14, 8, 10 → every side doubles, so AB/DE = AC/DF = BC/EF = 1/2 → △ABC ~ △DEF, and therefore ∠A=∠D, ∠B=∠E, ∠C=∠F.</span></li>
+</ul>
+<ul>
+<li><strong>Scale factor k → area k², volume k³.</strong> Side ratio k means perimeters in ratio k, <strong>areas in ratio k²</strong>, volumes in ratio k³.<br><span style="color:var(--ink-soft)">Sides ×2 → area ×4, volume ×8.</span></li>
+</ul>
+<p><strong>Area shortcuts (very competition-relevant):</strong></p>
+<ul>
+<li><strong>Same height → area ratio = base ratio.</strong> Two triangles with equal heights compare by their bases alone.</li>
+<li><strong>Same base and same height → equal area</strong>, even if the shapes look different (a triangle "slides" its apex along a line parallel to the base without changing area).</li>
+<li><strong>Midpoint theorem:</strong> the segment joining midpoints of two sides is <strong>half the third side</strong> and <strong>parallel</strong> to it.</li>
+<li><strong>Parallelogram:</strong> opposite sides equal; diagonals <strong>bisect each other</strong>.</li>
+<li><strong>Trapezium area:</strong> (top + bottom) × height ÷ 2.</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> To compare two areas, hunt for <strong>similar triangles</strong> (use the k² rule) or <strong>shared height/base</strong> — never measure. Proving a small congruence with SSS/SAS/ASA/AAS, then applying CPCTC, is the workhorse for "show these two lengths are equal" problems (→ RI 2022 Q02: from a parallelogram's area, find triangle ABC).</div>
+</section>
+<section id="s7">
+<span class="sec-num">7</span>
+<h2>Circle Properties — <em>Sec 2</em></h2>
+<p class="src-note"><em>Source: AOPS Introduction to Geometry §11.4 (Circle basics), Ch.12 §12.6 Summary (Circles and Angles) &amp; Ch.13 §13.3 Summary (Power of a Point)</em></p>
+<p><strong>Vocabulary.</strong> A <strong>circle</strong> is all points a fixed distance (the <strong>radius</strong> r) from a fixed <strong>center</strong>. A <strong>chord</strong> joins two points on the circle; a <strong>diameter</strong> is a chord through the center (length 2r). A <strong>secant</strong> is a line hitting the circle at two points; a <strong>tangent</strong> touches at exactly one point. An <strong>arc</strong> is a piece of the circle; a <strong>central angle</strong> (vertex at the center) equals the measure of the arc it cuts off.</p>
+<p><strong>The angle rules (this is the whole chapter in one place).</strong> Where an angle's vertex sits decides the rule:</p>
+<ul>
+<li><strong>Vertex ON the circle — inscribed angle = half its arc.</strong> An angle formed by two chords from a point on the circle equals <strong>half the arc it cuts off</strong>: ∠PQR = (arc PR)/2.<br><span style="color:var(--ink-soft)"><strong>Consequence 1:</strong> any angle inscribed in a <strong>semicircle is 90°</strong> (Thales — the arc is a full semicircle = 180°, half is 90°).</span><br><span style="color:var(--ink-soft)"><strong>Consequence 2:</strong> two angles inscribed in (standing on) the <strong>same arc are equal</strong>.</span><br><span style="color:var(--ink-soft)"><strong>Consequence 3:</strong> a <strong>central angle is twice</strong> any inscribed angle on the same arc.</span></li>
+<li><strong>Vertex INSIDE — average of the two arcs.</strong> Two chords crossing inside the circle make an angle equal to <strong>half the sum</strong> of the two arcs they cut off: ∠ = (arc₁ + arc₂)/2.</li>
+<li><strong>Vertex OUTSIDE — half the difference.</strong> Two secants (or a tangent + secant, or two tangents) meeting outside make an angle equal to <strong>half the difference</strong> of the far and near arcs: ∠ = (far arc − near arc)/2.</li>
+<li><strong>Tangent–chord angle:</strong> an angle between a tangent and a chord at the point of tangency = <strong>half the intercepted arc</strong>.</li>
+</ul>
+<p><strong>Tangent &amp; radius facts:</strong></p>
+<ul>
+<li>A tangent is <strong>perpendicular to the radius</strong> drawn to the point of tangency (and the converse: a line through a circle point perpendicular to that radius must be tangent). "Draw the radius to a tangent point" is a reflex move.</li>
+<li>From an outside point you can draw <strong>two tangent segments, and they're equal in length</strong>.</li>
+</ul>
+<p><strong>Cyclic quadrilateral:</strong> if all 4 corners lie on a circle, <strong>opposite angles add to 180°</strong>.</p>
+<p><strong>Power of a Point (Sec 2, advanced but very useful).</strong> For any line through a point P meeting the circle at U and V, the product <strong>(PU)(PV) is constant</strong> — the "power" of P.</p>
+<ul>
+<li><strong>P inside</strong> (two chords cross at X): (XA)(XB) = (XC)(XD).</li>
+<li><strong>P outside</strong> (two secants): (PB)(PA) = (PD)(PC) — <em>the same outside point P must appear in every segment.</em></li>
+<li><strong>Tangent from outside:</strong> (tangent PT)² = (PB)(PA) for any secant through P.</li>
+</ul>
+<div class="callout warn"><strong>Warning:</strong> In the outside-point version, the shared point must be in <em>all four</em> segments. Writing (BC)(BA) = (DC)(DE) is wrong; the correct pairing keeps C common: (CD)(CE) = (CB)(CA).</div>
+<div class="cp"><strong>Competition point:</strong> When a circle appears, <strong>draw radii to every key point</strong> and hunt for a right angle (tangent) or a diameter (Thales) — those right angles unlock everything. If a segment <strong>stops in the middle of a circle</strong>, extend it to the circle and reach for Power of a Point (→ AP 2021 Q10: area of a circle around 7 unit squares; AP 2021 Q24: two perpendicular chords).</div>
+</section>
+<section id="s8">
+<span class="sec-num">8</span>
+<h2>Pythagoras, Special Triangles &amp; Area Cutting — <em>Sec 1</em></h2>
+<p class="src-note"><em>Source: AOPS Introduction to Geometry §6.2 (Two Special Right Triangles), §6.3 (Pythagorean Triples), §6.5★ (Heron's Formula), §6.7 Summary, and Ch.10 §10.3 (Triangle Inequality)</em></p>
+<ul>
+<li><strong>Pythagoras' theorem:</strong> in a <strong>right-angled triangle</strong>, <strong>a² + b² = c²</strong>, where <strong>c is the hypotenuse</strong> (longest side, opposite the right angle).</li>
+<li><strong>Pythagorean triples (memorise!):</strong> whole-number sides that fit a²+b²=c² — <strong>3-4-5</strong>, <strong>5-12-13</strong>, <strong>8-15-17</strong>, <strong>7-24-25</strong>. Any multiple works too (6-8-10, 9-12-15). Spotting one skips all calculation.<br><span style="color:var(--ink-soft)">Legs 3 and 4 → hypotenuse <strong>5</strong>, no working. (Note {1,2,3} is <em>not</em> a triple — you can't make the third from the other two.)</span></li>
+</ul>
+<p><strong>Two special right triangles (know the side ratios cold):</strong></p>
+<ul>
+<li><strong>45-45-90 (isosceles right):</strong> the two legs are equal and the <strong>hypotenuse = leg × √2</strong>. (Proof: leg² + leg² = 2·leg² = hyp².)<br><span style="color:var(--ink-soft)">Leg 5 → hypotenuse 5√2. Hypotenuse 6 → each leg 6/√2 = 3√2.</span></li>
+<li><strong>30-60-90:</strong> sides are in ratio <strong>1 : √3 : 2</strong> (short leg : long leg : hypotenuse). The short leg faces the 30° angle, the long leg faces 60°, the hypotenuse faces 90°.<br><span style="color:var(--ink-soft)">Hypotenuse 12 with a 30° angle → short leg 6, long leg 6√3.</span><br><span style="color:var(--ink-soft)"><em>These come from cutting an equilateral triangle in half with an altitude</em> — which is also how you derive the <strong>equilateral-triangle area = (√3/4)·s²</strong>.</span></li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> The instant you see a <strong>30°, 60°, 120°, or 45°</strong> angle in a figure, look for a hidden 30-60-90 or 45-45-90 triangle — you can then read off the sides with no trig.</div>
+<p><strong>Heron's Formula (area from three sides, no height needed):</strong></p>
+<ul>
+<li><strong>[ABC] = √(s(s−a)(s−b)(s−c))</strong>, where <strong>s = (a+b+c)/2</strong> is the semiperimeter.<br><span style="color:var(--ink-soft)">Example: sides 13, 14, 15 → s = 21 → area = √(21·8·7·6) = √7056 = <strong>84</strong>.</span></li>
+<li>Derived by dropping an altitude and applying Pythagoras twice — the reason the area is fixed once you fix all three sides (SSS congruence).</li>
+</ul>
+<p><strong>Triangle Inequality (when three lengths can even form a triangle):</strong></p>
+<ul>
+<li>Each side must be <strong>less than the sum</strong> of the other two: a+b&gt;c, a+c&gt;b, b+c&gt;a. (Equivalently, each side is <strong>greater than the difference</strong> of the other two.)<br><span style="color:var(--ink-soft)">Sides 7 and 13 → the third side x must satisfy <strong>6 &lt; x &lt; 20</strong>.</span></li>
+</ul>
+<p><strong>Area cutting:</strong> split a complex shape into simple <strong>triangles and rectangles</strong>, then add or subtract their areas.</p>
+<div class="cp"><strong>Competition point:</strong> For a shaded region, think "<strong>whole minus holes</strong>" — compute one big easy area, subtract the unwanted pieces. When paper is <strong>folded</strong>, the two layers are <strong>congruent</strong>, handing you hidden equal lengths — set up a Pythagoras equation on the crease (→ Mock Q1-27: fold so A lands on C).</div>
+</section>
+<section id="s9">
+<span class="sec-num">9</span>
+<h2>More Tools (advanced / competition extras)</h2>
+<p class="src-note"><em>Source: AOPS Introduction to Geometry Ch.7 (Special Parts of a Triangle — centers), Ch.8 (Quadrilaterals), Ch.9 (Polygons), Ch.11 (sector area), plus standard competition results (Ptolemy). These go beyond the core chapters above.</em></p>
+<ul>
+<li><strong>Right-triangle congruence shortcuts:</strong> besides SSS/SAS/ASA/AAS, right triangles also have <strong>HL</strong> (hypotenuse + one leg) and <strong>LL</strong> (two legs).</li>
+<li><strong>Four triangle centers</strong> (Ch.7):<br><span style="color:var(--ink-soft)"><strong>Centroid</strong> — the three <strong>medians</strong> meet here, cutting each median <strong>2:1</strong> from the vertex; splits the triangle into <strong>6 equal-area</strong> pieces.</span><br><span style="color:var(--ink-soft)"><strong>Incenter</strong> — the three <strong>angle bisectors</strong> meet here, equidistant from the 3 <em>sides</em> (center of the incircle, radius r). <strong>Area = r × s</strong> (s = semiperimeter).</span><br><span style="color:var(--ink-soft)"><strong>Circumcenter</strong> — the three <strong>perpendicular bisectors</strong> meet here, equidistant from the 3 <em>vertices</em> (center of the circumcircle, radius R). For a <strong>right triangle</strong>, the circumcenter is the <strong>midpoint of the hypotenuse</strong>, so <strong>R = ½ · hypotenuse</strong>.</span><br><span style="color:var(--ink-soft)"><strong>Orthocenter</strong> — where the three <strong>altitudes</strong> meet.</span></li>
+<li><strong>Angle Bisector Theorem:</strong> if AD bisects ∠A (D on BC), then <strong>AB/BD = AC/DC</strong> — the bisector splits the opposite side in the ratio of the two adjacent sides.</li>
+<li><strong>Altitude-to-hypotenuse (right triangle):</strong> the altitude from the right angle to the hypotenuse at D gives three "geometric mean" facts: <strong>BD² = AD·DC</strong>, <strong>AB² = AD·AC</strong>, <strong>CB² = CD·CA</strong>.</li>
+<li><strong>Ptolemy's Theorem</strong> (cyclic quadrilateral ABCD): <strong>AC · BD = AB·CD + AD·BC</strong>.</li>
+<li><strong>Incircle/circumcircle radii:</strong> <strong>r = Area/s</strong>; for a right triangle <strong>r = (leg₁ + leg₂ − hypotenuse)/2</strong>; and <strong>R = abc/(4·Area)</strong>.</li>
+<li><strong>Special quadrilaterals</strong> (Ch.8):<br><span style="color:var(--ink-soft)"><strong>Rhombus:</strong> area = (d₁ × d₂)/2, diagonals perpendicular.</span><br><span style="color:var(--ink-soft)"><strong>Isosceles trapezoid:</strong> base angles equal in pairs, legs equal, diagonals equal (any one forces the others).</span><br><span style="color:var(--ink-soft)"><strong>Trapezoid median</strong> (midpoints of the legs): parallel to both bases, <strong>median = (base₁+base₂)/2</strong>, <strong>Area = height × median</strong>.</span><br><span style="color:var(--ink-soft)"><strong>Kite:</strong> two pairs of <em>consecutive</em> equal sides; diagonals perpendicular.</span></li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> for true/false "is every rhombus a rectangle?" traps, remember <strong>square ⊂ rectangle ⊂ parallelogram</strong> and <strong>square ⊂ rhombus ⊂ parallelogram</strong> — a rhombus is a rectangle only if it's a square.</div>
+<ul>
+<li><strong>Sector formulas</strong> (Ch.11): arc length = (angle/360) × 2πr, sector area = (angle/360) × πr².</li>
+<li><strong>Regular polygons</strong> (Ch.9): hexagon area = 6 × (√3/4) × side², long diagonal = 2 × side; octagon area = 2(1+√2) × side².</li>
+<li><strong>Belt/rope around touching circles:</strong> total length = straight tangent parts (each = sum of the two radii it touches) + curved arcs, and <strong>the curved parts always sum to exactly one full circle</strong>, no matter how many circles.</li>
+<li><strong>Symmetry:</strong> a regular n-gon has n lines of symmetry and <strong>rotational symmetry angle = 360°/n</strong>.</li>
+</ul>
+</section>
+<section id="cheat-sheet">
+<h2>Cheat Sheet</h2>
+<div class="tbl-scroll"><table><thead><tr>
+<th>Idea</th>
+<th>Key point</th>
+</tr></thead><tbody>
+<tr>
+<td>Exterior angle</td>
+<td>= sum of two far interior angles</td>
+</tr>
+<tr>
+<td>3 exterior angles</td>
+<td>sum to 360° (any convex polygon)</td>
+</tr>
+<tr>
+<td>n-gon angle sum</td>
+<td>(n−2)×180°</td>
+</tr>
+<tr>
+<td>Parallel lines</td>
+<td>every angle equals it or its supplement</td>
+</tr>
+<tr>
+<td>Vertical angles</td>
+<td>always equal</td>
+</tr>
+<tr>
+<td>Congruence tests</td>
+<td>SSS, SAS, ASA, AAS (SSA is NOT one)</td>
+</tr>
+<tr>
+<td>Similarity tests</td>
+<td>AA, SAS, SSS; area ratio = k², volume = k³</td>
+</tr>
+<tr>
+<td>Same height triangles</td>
+<td>area ratio = base ratio</td>
+</tr>
+<tr>
+<td>Midpoint segment</td>
+<td>half the third side, parallel</td>
+</tr>
+<tr>
+<td>Parallelogram diagonals</td>
+<td>bisect each other</td>
+</tr>
+<tr>
+<td>Inscribed angle (vertex on)</td>
+<td>= half its arc; semicircle → 90°</td>
+</tr>
+<tr>
+<td>Angle vertex inside</td>
+<td>= half the SUM of the two arcs</td>
+</tr>
+<tr>
+<td>Angle vertex outside</td>
+<td>= half the DIFFERENCE of the arcs</td>
+</tr>
+<tr>
+<td>Tangent</td>
+<td>⊥ radius at the touch point</td>
+</tr>
+<tr>
+<td>Two tangents from a point</td>
+<td>equal length</td>
+</tr>
+<tr>
+<td>Power of a Point</td>
+<td>(PU)(PV) constant; tangent² = (PB)(PA)</td>
+</tr>
+<tr>
+<td>Cyclic quadrilateral</td>
+<td>opposite angles add to 180°</td>
+</tr>
+<tr>
+<td>Pythagoras</td>
+<td>a² + b² = c² (c = hypotenuse)</td>
+</tr>
+<tr>
+<td>45-45-90</td>
+<td>hypotenuse = leg·√2</td>
+</tr>
+<tr>
+<td>30-60-90</td>
+<td>sides 1 : √3 : 2</td>
+</tr>
+<tr>
+<td>Heron</td>
+<td>Area = √(s(s−a)(s−b)(s−c)), s=(a+b+c)/2</td>
+</tr>
+<tr>
+<td>Triangle inequality</td>
+<td>each side &lt; sum of other two</td>
+</tr>
+<tr>
+<td>Centroid</td>
+<td>medians meet, 2:1 from vertex</td>
+</tr>
+<tr>
+<td>Shaded area</td>
+<td>whole minus holes</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="linked-competition-problems">
+<h2>🔗 Linked Competition Problems</h2>
+<p>These concepts appear in real problems on the quiz app. Learn the idea, then click a problem and try it.</p>
+<p><strong>① Angle chasing (exterior/interior/parallel)</strong></p>
+<ul>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/4_18.png">Mock Q4-18</a> — after 9 o'clock, when the hour &amp; minute hands are symmetric about 12</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/4_24.png">Mock Q4-24</a> — a rectangle built from 6 squares; find angle ABC</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/52.%20RI%202022/07.png">RI 2022 Q07</a> — two parallelograms with AC = AD = CF; find angle ECD</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/54.%20RI%202024/20.png">RI 2024 Q20</a> — a star shape; find the sum of angles C+D+E+F+G</li>
+</ul>
+<p><strong>② Similarity &amp; triangle/quadrilateral properties</strong></p>
+<ul>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/52.%20RI%202022/02.png">RI 2022 Q02</a> — from a parallelogram area, find the area of triangle ABC</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/1_10.png">Mock Q1-10</a> — a hexagon and pentagon joined; find angle BAC</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/2_14.png">Mock Q2-14</a> — count the triangles in an octagon figure</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/53.%20RI%202023/14.png">RI 2023 Q14</a> — overlap area is 578; find length AF</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/60.%20AP%202025/28.png">AP 2025 Q28</a> — a regular 12-gon; count the obtuse triangles</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/4_34.png">Mock Q4-34</a> — BE + BF = 49; find the smallest area of triangle DEF</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/5_14.png">Mock Q5-14</a> — a staircase cut into a square; find ratio AB : BC</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/2_15.png">Mock Q2-15</a> — a rectangle split into small squares; find the perimeter</li>
+</ul>
+<p><strong>③ Circle properties</strong></p>
+<ul>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/52.%20RI%202022/14.png">RI 2022 Q14</a> — digit sum of a fraction-sum expression</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/52.%20RI%202022/19.png">RI 2022 Q19</a> — two cyclists on a circular track meeting; find the track length</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/53.%20RI%202023/08.png">RI 2023 Q08</a> — a circle rolling inside a square; find the area it covers</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/56.%20AP%202021/10.png">AP 2021 Q10</a> — 7 unit squares; find the area of the circle around them</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/56.%20AP%202021/24.png">AP 2021 Q24</a> — two perpendicular chords; find the area difference of the 4 regions</li>
+</ul>
+<p><strong>④ Pythagoras &amp; area cutting</strong></p>
+<ul>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/1_27.png">Mock Q1-27</a> — fold the paper so A lands on C; find EF</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/1_16.png">Mock Q1-16</a> — from two triangle areas, find the area ADOE</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/53.%20RI%202023/15.png">RI 2023 Q15</a> — three squares of sides 3, 5, 8; find the diagonal shaded area</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/60.%20AP%202025/06.png">AP 2025 Q06</a> — two shaded triangles inside a square</li>
+</ul>
+</section>
+<section id="quick-check">
+<h2>Quick Check</h2>
+<ol>
+<li>A triangle has interior angles 55° and 65°. What is the exterior angle at the third corner?</li>
+<li>What is the total of all interior angles in a hexagon (6 sides)?</li>
+<li>Two triangles are similar with side ratio 3. What is their area ratio? Their volume ratio if they were solids?</li>
+<li>A right triangle has legs 5 and 12. How long is the hypotenuse?</li>
+<li>In a circle, an inscribed angle on an arc is 40°. What is the central angle on the same arc?</li>
+<li>An isosceles right triangle has legs of length 7. How long is the hypotenuse?</li>
+<li>In a 30-60-90 triangle the hypotenuse is 10. Find the two legs.</li>
+<li>Can 4, 5, and 10 be the sides of a triangle?</li>
+<li>Find the area of a triangle with sides 5, 5, 6 (use Heron, or split it).</li>
+<li>Why must the three exterior angles of any triangle add to 360°?</li>
+<li>From a point P outside a circle, a tangent has length 6 and a secant hits the circle at distances 4 and x from P. Find x.</li>
+</ol>
+<details><summary>Answers</summary><div class="answer">
+<p>1. 55° + 65° = <strong>120°</strong></p>
+<p>2. (6−2)×180° = <strong>720°</strong></p>
+<p>3. area = 3² = <strong>9</strong>; volume = 3³ = <strong>27</strong></p>
+<p>4. 5-12-13 triple → <strong>13</strong></p>
+<p>5. 2 × 40° = <strong>80°</strong></p>
+<p>6. hypotenuse = leg·√2 = <strong>7√2</strong></p>
+<p>7. short leg (opposite 30°) = 10/2 = <strong>5</strong>, long leg = 5√3 → legs are <strong>5 and 5√3</strong></p>
+<p>8. Need 4 + 5 &gt; 10? No (9 &lt; 10). <strong>Not a triangle.</strong></p>
+<p>9. s = 8, area = √(8·3·3·2) = √144 = <strong>12</strong>. (Check: base 6, height 4 → ½·6·4 = 12 ✓)</p>
+<p>10. Each exterior angle = sum of its two far interior angles, so the three add to 2(∠A+∠B+∠C) = 2·180° = <strong>360°</strong>.</p>
+<p>11. Power of a Point: tangent² = (near)(far) → 6² = 4·x → 36 = 4x → <strong>x = 9</strong>.</p></div></details>
+<p class="footer-note">Source map: <code>약점진단/02_각도_닮음_원.md</code> · Plane geometry continues in <a class="cx" href="03_Special_Theorems_Coordinates_Solids.html">03 Special Theorems Coordinates Solids</a></p>
+</section>
+<a class="backlink" href="index.html">← All units</a>
+</div>

@@ -1,0 +1,202 @@
+<title>06. Primes, Modular Arithmetic &amp; Factorials — Math Competition Notes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="shared.css">
+<div class="wrap">
+<a class="backlink" href="index.html">← All units</a>
+<header class="chapter-head">
+<p class="eyebrow">Unit 06</p>
+<h1>Primes, Modular Arithmetic &amp; Factorials</h1>
+<p class="standfirst">Primes are the building blocks of every number. Modular arithmetic ("clock maths") lets you find last digits and remainders of huge powers. Factorials hide primes inside them. These three ideas turn "impossible" big-number questions into quick ones.</p>
+</header>
+<p class="src-note" style="border-left-color:var(--rule);color:var(--ink-faint)"><strong>Unit:</strong> Number Theory Basics (Unit 06 of 14) · <strong>11 linked problems</strong> · <strong>For:</strong> primary competition students (SMO · NMOS · IMSO) — concepts go up to <strong>Secondary 1</strong> level</p>
+<section id="lesson-overview">
+<h2>Lesson Overview</h2>
+<p>What this note covers:</p>
+<ol>
+<li>Primes and Composites</li>
+<li>Euler's phi φ(n) — <em>Sec, advanced</em></li>
+<li>Modular Arithmetic — <em>Sec 1</em></li>
+<li>Fermat &amp; CRT — <em>Sec, advanced</em></li>
+<li>Factorials and Legendre's Formula — <em>Sec 1</em></li>
+<li>Multiplicative Magic Square</li>
+</ol>
+</section>
+<section id="s1">
+<span class="sec-num">1</span>
+<h2>Primes and Composites</h2>
+<ul>
+<li><strong>Prime:</strong> a number with <strong>exactly two divisors</strong>, 1 and itself. Example: 2, 3, 5, 7, 11, …</li>
+<li><strong>Composite:</strong> a number with <strong>more than two divisors</strong> (it can be split into smaller factors). Example: 4, 6, 8, 9.</li>
+<li><strong>The number 1</strong> is neither prime nor composite. <strong>2</strong> is the only <strong>even</strong> prime.</li>
+<li><strong>Prime test (must-know):</strong> to check if n is prime, <strong>divide it by every prime up to √n</strong>. If none divides it, n is prime.<br><span style="color:var(--ink-soft)">Example: is 97 prime? √97 ≈ 9.8, so test 2, 3, 5, 7. None divides 97 → <strong>97 is prime</strong>.</span></li>
+<li><strong>The 25 primes under 100 (memorise!):</strong> 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97.</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> When a problem says "distinct primes" or "always prime", first list the small primes and test the edge cases. Watch out: <strong>any expression that is always a multiple of some fixed number</strong> (except that number itself) is composite (→ RMO 2025 Q13 below).</div>
+</section>
+<section id="s2">
+<span class="sec-num">2</span>
+<h2>Euler's phi φ(n) — <em>Sec, advanced</em></h2>
+<ul>
+<li><strong>Euler's phi φ(n):</strong> how many numbers from 1 to n are <strong>coprime</strong> to n (share no prime factor with n).<br><span style="color:var(--ink-soft)">Example: φ(10) = 4, because 1, 3, 7, 9 are coprime to 10.</span><br><span style="color:var(--ink-soft)">For a prime p, φ(p) = <strong>p − 1</strong> (every smaller number is coprime to a prime).</span></li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> φ is the "size" you need for Fermat/Euler power tricks below. For primary contests, knowing φ(p) = p − 1 is usually enough.</div>
+</section>
+<section id="s3">
+<span class="sec-num">3</span>
+<h2>Modular Arithmetic — <em>Sec 1</em></h2>
+<ul>
+<li><strong>Idea:</strong> "mod n" means <strong>keep only the remainder</strong> after dividing by n. Think of a clock: 15 o'clock is 3 o'clock, so 15 ≡ 3 (mod 12).</li>
+<li><strong>Addition rule:</strong> (a + b) mod n = ((a mod n) + (b mod n)) mod n.</li>
+<li><strong>Multiplication rule:</strong> (a × b) mod n = ((a mod n) × (b mod n)) mod n. <strong>You can take the remainder at every step</strong> — the numbers never blow up.</li>
+<li><strong>Cycles (the power trick):</strong> powers a^k mod n <strong>repeat with a short period</strong>.<br><span style="color:var(--ink-soft)">Example: 7^k mod 100 → 07, 49, 43, 01, then <strong>07 again</strong> → period <strong>4</strong>. So 7^2020 = 7^(4×505) ends in <strong>01</strong>.</span></li>
+<li><strong>Last-two-digits = mod 100.</strong> Last digit = mod 10.</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> For "last two digits of a huge power", work <strong>mod 100</strong> and find the cycle length. Then reduce the exponent by that cycle (→ Mock Q4-33 below).</div>
+</section>
+<section id="s4">
+<span class="sec-num">4</span>
+<h2>Fermat &amp; CRT — <em>Sec, advanced</em></h2>
+<ul>
+<li><strong>Fermat's little theorem:</strong> if p is prime and gcd(a, p) = 1, then <strong>a^(p−1) ≡ 1 (mod p)</strong>.<br><span style="color:var(--ink-soft)">Example: mod 7, 3^6 ≡ 1, so 3^600 ≡ 1 too. Big exponents collapse instantly.</span></li>
+<li><strong>Chinese Remainder Theorem (CRT):</strong> if you know a number's remainder for <strong>coprime</strong> moduli (say mod 4 and mod 25), you can <strong>combine them</strong> into a single remainder mod their product (mod 100).<br><span style="color:var(--ink-soft)">This is why mod 100 problems are often split into <strong>mod 4 and mod 25</strong>, solved separately, then glued back.</span></li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> CRT + Fermat is the "adult" way to do last-two-digit problems. For primary level, the <strong>cycle method in Section 3 does the same job</strong> with no theory — use whichever you remember.</div>
+</section>
+<section id="s5">
+<span class="sec-num">5</span>
+<h2>Factorials and Legendre's Formula — <em>Sec 1</em></h2>
+<ul>
+<li><strong>Factorial:</strong> n! = n × (n−1) × … × 2 × 1. Example: 5! = 120.</li>
+<li><strong>Legendre's formula (power of a prime in n!):</strong> the number of times prime <strong>p</strong> divides n! is</li>
+</ul>
+<p><strong>⌊n/p⌋ + ⌊n/p²⌋ + ⌊n/p³⌋ + …</strong> (⌊ ⌋ means round down).</p>
+<ul>
+<li>Example: power of 3 in 10! = ⌊10/3⌋ + ⌊10/9⌋ = 3 + 1 = <strong>4</strong>.</li>
+<li><strong>Trailing zeros of n!</strong> = the <strong>power of 5</strong> in n! (there are always more 2s than 5s, so 5 is the limit).<br><span style="color:var(--ink-soft)">Example: 26! → ⌊26/5⌋ + ⌊26/25⌋ = 5 + 1 = <strong>6 trailing zeros</strong>.</span></li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> "How many zeros at the end of n!?" → <strong>just count the 5s</strong> with Legendre's formula (→ RMO 2025 Q15 below).</div>
+</section>
+<section id="s6">
+<span class="sec-num">6</span>
+<h2>Multiplicative Magic Square</h2>
+<ul>
+<li><strong>Product magic square:</strong> every row, column and diagonal has the <strong>same product</strong> (instead of the same sum).</li>
+<li><strong>Log trick:</strong> take the <strong>logarithm</strong> of every cell → the products become <strong>sums</strong>, so it turns into an ordinary (additive) magic square.</li>
+<li><strong>3×3 sum square fact:</strong> the <strong>centre = the average of all nine numbers</strong>. For a product square, the centre = the <strong>9th root of the total product</strong> (equivalently the "middle-sized" balanced value).</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> For a 3×3 product magic square, the centre is fixed by the nine numbers. Multiply all nine, then the centre is the number whose cube is that product ÷ (centre²)… simplest: <strong>centre³ = full product</strong>, so centre is the cube root (→ Mock Q4-26 below).</div>
+</section>
+<section id="from-the-books-extra-tricks">
+<h2>📚 From the Books (extra tricks)</h2>
+<ul>
+<li><strong>Parity invariant:</strong> the parity (odd/even) of a sum depends <strong>only on how many odd numbers</strong> you add — even numbers never change it. An <strong>even count</strong> of odd numbers → sum is <strong>even</strong>; an <strong>odd count</strong> of odd numbers → sum is <strong>odd</strong>.<br><span style="color:var(--ink-soft)">Example: sum of 30 consecutive integers has 15 odd + 15 even terms → 15 (odd count) odds → the <strong>total is odd</strong>.</span></li>
+<li><strong>a² − b² = (a−b)(a+b), matched-parity trick:</strong> (a−b) and (a+b) are <strong>always the same parity</strong> (both odd or both even). So to solve a² − b² = N, split N into two factors <strong>of the same parity</strong>.<br><span style="color:var(--ink-soft)">Example: a² − b² = 143 = 11 × 13 (both odd) → a−b=11, a+b=13 → <strong>a = 12, b = 1</strong>.</span></li>
+<li><strong>Switch/toggle parity:</strong> if something is flipped cyclically among several objects, a total of N times, use <strong>N mod (number of objects)</strong> to see which objects get one <strong>extra</strong> (odd) flip — those are the ones that end up changed.</li>
+<li><strong>Twin primes &amp; Goldbach:</strong> twin primes are a pair differing by 2 (like 11 and 13). <strong>Goldbach's Conjecture:</strong> every even number &gt; 2 is the sum of two primes — never proven, but believed true and useful for "write X as a sum of two primes" questions.</li>
+<li><strong>"Odd sum of primes → one prime is 2" trick:</strong> every prime except 2 is odd. So if a sum of primes is <strong>odd</strong>, exactly <strong>one of them must be 2</strong>.<br><span style="color:var(--ink-soft)">Example: two primes sum to 39 (odd) → one prime is 2, the other is <strong>37</strong>.</span></li>
+<li><strong>Division Algorithm (the formal remainder rule):</strong> for integer a and positive integer b, <strong>a = bq + r</strong> with 0 ≤ r &lt; b (q = quotient, r = remainder). This is just "long division" written properly.</li>
+<li><strong>Same-remainder trick (mini CRT):</strong> if x leaves the <strong>same remainder r</strong> for several divisors, then <strong>x − r is a common multiple</strong> of all of them — so x − r is a multiple of their <strong>LCM</strong>.<br><span style="color:var(--ink-soft)">Example: x leaves remainder 1 when divided by 2, 3, 4, or 5 → x − 1 is a multiple of LCM(2,3,4,5) = 60 → smallest x = <strong>61</strong>.</span></li>
+<li><strong>Calendar problems:</strong> divide the number of days by <strong>7</strong>, then use the remainder to count forward/backward through the days of the week.</li>
+<li><strong>Perfect / abundant / deficient numbers:</strong> let s(n) = sum of n's <strong>proper divisors</strong> (all divisors except n itself). s(n) = n → <strong>perfect</strong> (6: 1+2+3=6). s(n) &gt; n → <strong>abundant</strong> (12: 1+2+3+4+6=16). s(n) &lt; n → <strong>deficient</strong> (every prime is deficient, since s(p) = 1).</li>
+<li><strong>Palindromes:</strong> a number that reads the same forwards and backwards (like 434 or 13731). Fun fact: <strong>every 2-digit palindrome</strong> (11, 22, …, 99) is a multiple of 11.</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> "sum of primes is odd" and "a² − b² = N" are two of the fastest tricks to spot in a contest — they turn a search problem into a one-line factoring problem.</div>
+</section>
+<section id="cheat-sheet">
+<h2>Cheat Sheet</h2>
+<div class="tbl-scroll"><table><thead><tr>
+<th>Idea</th>
+<th>Key point</th>
+</tr></thead><tbody>
+<tr>
+<td>Prime test</td>
+<td>divide by every prime up to √n</td>
+</tr>
+<tr>
+<td>Only even prime</td>
+<td>2</td>
+</tr>
+<tr>
+<td>The number 1</td>
+<td>neither prime nor composite</td>
+</tr>
+<tr>
+<td>Primes under 100</td>
+<td>there are exactly 25</td>
+</tr>
+<tr>
+<td>φ(p) for a prime</td>
+<td>p − 1</td>
+</tr>
+<tr>
+<td>Mod arithmetic</td>
+<td>take the remainder at every step</td>
+</tr>
+<tr>
+<td>Last two digits</td>
+<td>work mod 100; find the cycle</td>
+</tr>
+<tr>
+<td>Fermat</td>
+<td>a^(p−1) ≡ 1 (mod p)</td>
+</tr>
+<tr>
+<td>Trailing zeros of n!</td>
+<td>count the 5s (Legendre)</td>
+</tr>
+<tr>
+<td>Power of p in n!</td>
+<td>⌊n/p⌋ + ⌊n/p²⌋ + …</td>
+</tr>
+<tr>
+<td>Product magic square</td>
+<td>take logs → sum square; centre³ = full product</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="linked-competition-problems">
+<h2>🔗 Linked Competition Problems</h2>
+<p>These concepts appear in real problems on the quiz app. Learn the idea, then click a problem and try it.</p>
+<p><strong>① Primes and composites</strong></p>
+<ul>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/1_19.png">Mock Q1-19</a> — 3P + 7Q = 335 with P + Q a perfect square; find Q − P</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/53.%20RI%202023/09.png">RI 2023 Q09</a> — a, b, c, d distinct primes with a condition; find ab + bc + cd + da</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/55.%20RMO%202025/13.png">RMO 2025 Q13</a> — count triples where 42 − x − y − z is always prime</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/56.%20AP%202021/17.png">AP 2021 Q17</a> — smallest n with both 4n+1 and 4n−1 composite</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/60.%20AP%202025/02.png">AP 2025 Q02</a> — smallest n so that p² + n is composite for every prime p</li>
+</ul>
+<p><strong>② Modular arithmetic (congruence, cycles)</strong></p>
+<ul>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/4_33.png">Mock Q4-33</a> — difference of 2^2020 and 3^2020, taken mod 100</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/55.%20RMO%202025/04.png">RMO 2025 Q04</a> — modular/number problem (see paper)</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/2_32.png">Mock Q2-32</a> — last two digits of (2¹+1)(2²+1)…(2²⁰¹¹+1)</li>
+</ul>
+<p><strong>③ Factorials</strong></p>
+<ul>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/2_33.png">Mock Q2-33</a> — 26! written out; find A + B + C + D</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/55.%20RMO%202025/15.png">RMO 2025 Q15</a> — number of trailing zeros of 2025!</li>
+</ul>
+<p><strong>④ Multiplicative magic square</strong></p>
+<ul>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/4_26.png">Mock Q4-26</a> — nine divisors of 1225 in a product magic square; find the centre</li>
+</ul>
+</section>
+<section id="quick-check">
+<h2>Quick Check</h2>
+<ol>
+<li>Is 143 prime? (Hint: test primes up to √143 ≈ 11.9)</li>
+<li>What are the last two digits of 7^2020?</li>
+<li>How many trailing zeros does 100! have?</li>
+<li>What is φ(13)?</li>
+<li>What is (3^100) mod 7? (Hint: Fermat says 3^6 ≡ 1 mod 7)</li>
+</ol>
+<details><summary>Answers</summary><div class="answer">
+<p>1. Test 2, 3, 5, 7, 11 → 143 = 11 × 13, so <strong>not prime (composite)</strong></p>
+<p>2. 7^k mod 100 has cycle 07, 49, 43, 01 (period 4); 2020 = 4 × 505 → <strong>01</strong></p>
+<p>3. ⌊100/5⌋ + ⌊100/25⌋ = 20 + 4 = <strong>24 zeros</strong></p>
+<p>4. 13 is prime → φ(13) = 13 − 1 = <strong>12</strong></p>
+<p>5. 100 = 6 × 16 + 4, so 3^100 ≡ 3^4 = 81 ≡ <strong>4 (mod 7)</strong></p></div></details>
+<p class="footer-note">Source map: <code>약점진단/06_소수_모듈러_팩토리얼.md</code> · Number theory continues in <a class="cx" href="07_Inclusion_Exclusion.html">07 Inclusion Exclusion</a></p>
+</section>
+<a class="backlink" href="index.html">← All units</a>
+</div>

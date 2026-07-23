@@ -1,0 +1,141 @@
+<title>19. Functions — Math Competition Notes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="shared.css">
+<div class="wrap">
+<a class="backlink" href="index.html">← All units</a>
+<header class="chapter-head">
+<p class="eyebrow">Unit 19</p>
+<h1>Functions</h1>
+<p class="standfirst">"Function" language (f(x), domain, floor/ceiling) shows up in harder RI/RMO word problems and custom-operator problems, which already appear in <a class="cx" href="12_Equations_Algebra_Factoring.html">12 Equations Algebra Factoring</a>.</p>
+</header>
+<p class="src-note" style="border-left-color:var(--rule);color:var(--ink-faint)"><strong>Unit:</strong> Functions (Unit 19 · extra unit from book scans, no linked quiz-app problems yet) · <strong>For:</strong> primary competition students (SMO · NMOS · IMSO) — concepts go up to <strong>Secondary 2</strong> level</p>
+<section id="lesson-overview">
+<h2>Lesson Overview</h2>
+<p>What this note covers:</p>
+<ol>
+<li>What is a Function</li>
+<li>Domain and Range</li>
+<li>Graph Transformations</li>
+<li>Floor, Ceiling, and Absolute Value Functions</li>
+</ol>
+</section>
+<section id="s1">
+<span class="sec-num">1</span>
+<h2>What is a Function</h2>
+<ul>
+<li>A <strong>function</strong> is a rule that takes an input and gives exactly ONE output — like f(x) = 2x + 3.</li>
+<li>If a single input could give more than one output, it's NOT a function.</li>
+<li>This is the same idea as the <strong>custom-defined operators</strong> already in <a class="cx" href="12_Equations_Algebra_Factoring.html">12 Equations Algebra Factoring</a> (like a♦b = a²+ab−b²) — a function is just a formula you evaluate by substitution.</li>
+</ul>
+</section>
+<section id="s2">
+<span class="sec-num">2</span>
+<h2>Domain and Range</h2>
+<ul>
+<li><strong>Domain:</strong> every input value that's allowed (doesn't break the rule — like dividing by zero, or taking the square root of a negative number).</li>
+<li><strong>Range:</strong> every possible output value.<br><span style="color:var(--ink-soft)">Example: f(x) = 1/(x−3) has domain "all reals except 3" (can't divide by 0) and range "all reals except 0" (the fraction can never equal exactly 0).</span></li>
+</ul>
+</section>
+<section id="s3">
+<span class="sec-num">3</span>
+<h2>Graph Transformations</h2>
+<p>Four basic moves on a graph, given the original y = f(x):</p>
+<div class="tbl-scroll"><table><thead><tr>
+<th>Change</th>
+<th>Effect</th>
+</tr></thead><tbody>
+<tr>
+<td>f(x) + k</td>
+<td>shifts UP by k</td>
+</tr>
+<tr>
+<td>f(x − h)</td>
+<td>shifts RIGHT by h (careful — the sign looks backwards!)</td>
+</tr>
+<tr>
+<td>−f(x)</td>
+<td>flips vertically (upside down)</td>
+</tr>
+<tr>
+<td>a·f(x)</td>
+<td>stretches vertically by factor a</td>
+</tr>
+</tbody></table></div>
+<ul>
+<li>Example: if f(x) = x², then f(x−3)+2 = (x−3)²+2 is the same parabola moved 3 right and 2 up.</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> f(x−h) shifts RIGHT, not left — a common mix-up. Test it with an easy point if unsure.</div>
+</section>
+<section id="s4">
+<span class="sec-num">4</span>
+<h2>Floor, Ceiling, and Absolute Value Functions</h2>
+<ul>
+<li><strong>Floor function ⌊x⌋:</strong> the greatest integer ≤ x ("round down"). ⌊4.7⌋ = 4, but for negatives it's NOT the same as truncating: ⌊−5.3⌋ = <strong>−6</strong>, not −5.</li>
+<li><strong>Ceiling function ⌈x⌉:</strong> the smallest integer ≥ x ("round up"). ⌈3.2⌉ = 4, ⌈−2.3⌉ = −2.</li>
+<li><strong>Fractional part:</strong> {x} = x − ⌊x⌋, always between 0 (inclusive) and 1 (exclusive).</li>
+<li><strong>Absolute value |x|:</strong> the distance from x to 0 — always non-negative. |x−a| means "distance from x to a."<br><span style="color:var(--ink-soft)">Example: |x+3| + |x−2| = 7 — split into cases based on where each inside expression changes sign (x &lt; −3, −3 ≤ x &lt; 2, x ≥ 2), solve each case, then check the solution actually falls in that case's range.</span></li>
+</ul>
+</section>
+<section id="cheat-sheet">
+<h2>Cheat Sheet</h2>
+<div class="tbl-scroll"><table><thead><tr>
+<th>Idea</th>
+<th>Key point</th>
+</tr></thead><tbody>
+<tr>
+<td>Function</td>
+<td>one input → exactly one output</td>
+</tr>
+<tr>
+<td>Domain</td>
+<td>allowed inputs</td>
+</tr>
+<tr>
+<td>Range</td>
+<td>possible outputs</td>
+</tr>
+<tr>
+<td>f(x)+k</td>
+<td>shift up</td>
+</tr>
+<tr>
+<td>f(x−h)</td>
+<td>shift right</td>
+</tr>
+<tr>
+<td>−f(x)</td>
+<td>flip vertically</td>
+</tr>
+<tr>
+<td>⌊x⌋</td>
+<td>round down (careful with negatives!)</td>
+</tr>
+<tr>
+<td>⌈x⌉</td>
+<td>round up</td>
+</tr>
+<tr>
+<td>\</td>
+<td>x−a\</td>
+<td></td>
+<td>distance from x to a</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="quick-check">
+<h2>Quick Check</h2>
+<ol>
+<li>What is ⌊7.9⌋? What is ⌈7.1⌉?</li>
+<li>What is ⌊−3.2⌋?</li>
+<li>If f(x) = x² − 1, what is the domain and range?</li>
+<li>Sketch (in words) how y = f(x−2) − 1 relates to y = f(x).</li>
+</ol>
+<details><summary>Answers</summary><div class="answer">
+<p>1. ⌊7.9⌋ = <strong>7</strong>, ⌈7.1⌉ = <strong>8</strong>.</p>
+<p>2. <strong>−4</strong> (round down, away from zero for negatives).</p>
+<p>3. Domain = all reals. Range = <strong>y ≥ −1</strong> (since x² ≥ 0, so x²−1 ≥ −1).</p>
+<p>4. Shift <strong>right by 2, then down by 1</strong>.</p></div></details>
+<p class="footer-note">This is a new unit added from book scans (2026-07-22) — no quiz-app problems are linked to it yet. Connects to custom operators in <a class="cx" href="12_Equations_Algebra_Factoring.html">12 Equations Algebra Factoring</a> and graphing in <a class="cx" href="17_Coordinate_Geometry.html">17 Coordinate Geometry</a>.</p>
+</section>
+<a class="backlink" href="index.html">← All units</a>
+</div>

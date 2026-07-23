@@ -1,0 +1,241 @@
+<title>04. Divisors, Multiples, GCD &amp; LCM — Math Competition Notes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="shared.css">
+<div class="wrap">
+<a class="backlink" href="index.html">← All units</a>
+<header class="chapter-head">
+<p class="eyebrow">Unit 04</p>
+<h1>Divisors, Multiples, GCD &amp; LCM</h1>
+<p class="standfirst">This is the base of number theory. If you don't know the "number of divisors" formula and the GCD/LCM rule, half of all number theory problems get stuck.</p>
+</header>
+<p class="src-note" style="border-left-color:var(--rule);color:var(--ink-faint)"><strong>Unit:</strong> Number Theory Basics (Unit 04 of 14) · <strong>16 linked problems</strong> · <strong>For:</strong> primary competition students (SMO · NMOS · IMSO) — concepts go up to <strong>Secondary 1</strong> level</p>
+<section id="lesson-overview">
+<h2>Lesson Overview</h2>
+<p>What this note covers:</p>
+<ol>
+<li>Divisors and Multiples</li>
+<li>Primes, Composites &amp; Divisibility Rules</li>
+<li>Prime Factorisation — <em>Sec 1</em></li>
+<li>Number and Sum of Divisors</li>
+<li>GCD and LCM — <em>Sec 1</em></li>
+<li>Euclidean Algorithm — <em>Sec, advanced</em></li>
+<li>More Tools (extra divisibility &amp; GCD/LCM tricks)</li>
+</ol>
+</section>
+<section id="s1">
+<span class="sec-num">1</span>
+<h2>Divisors and Multiples</h2>
+<p class="src-note"><em>Source: AOPS Introduction to Number Theory §1.5 "Divisors" and Ch.3 §3.6 (sums &amp; differences of multiples)</em></p>
+<ul>
+<li><strong>Divisor (Factor):</strong> d is a <strong>divisor</strong> of n when n ÷ d is a whole number (no remainder). "Divisor" and "factor" mean the same thing.<br><span style="color:var(--ink-soft)">Example: divisors of 12 → 1, 2, 3, 4, 6, 12 (six of them).</span><br><span style="color:var(--ink-soft)">Divisors come <strong>in pairs</strong>: 12 = 1×12 = 2×6 = 3×4. Test from the smallest number up and you'll never miss one.</span></li>
+<li><strong>Four ways to say the same thing</strong> (for d ≠ 0): "n is a multiple of d" = "n is divisible by d" = "d is a divisor of n" = "d divides n."</li>
+<li><strong>Multiple:</strong> a number you reach by multiplying. Multiples of 3 → 3, 6, 9, 12, … (never ending).</li>
+<li><strong>Every integer (except 0) is a divisor of itself</strong> (n = n·1), and <strong>every integer is a divisor of 0</strong> (0 ÷ n = 0).</li>
+<li><strong>You only need to test 1 up to n</strong> for divisors: a number bigger than n can't divide n (e.g. 0 &lt; 14/36 &lt; 1 means 36 is not a divisor of 14).</li>
+<li><strong>Divisibility is "transitive":</strong> if a divides b and b divides c, then <strong>a divides c</strong>. (Every divisor of 6 is automatically a divisor of 18, because 6 divides 18.)</li>
+</ul>
+<p><strong>A key competition tool — sums and differences of multiples.</strong> If n divides both a and b, then n divides <strong>a + b</strong> and <strong>a − b</strong>.</p>
+<ul>
+<li><em>Why:</em> write a = xn and b = yn; then a ± b = (x ± y)n, which is n times an integer, hence a multiple of n.</li>
+<li>Restated: <strong>a common divisor of two numbers is also a divisor of their sum and of their difference.</strong> (This one fact powers the Euclidean Algorithm in §6.)</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> A number with an <strong>odd</strong> number of divisors must be a <strong>perfect square</strong> (36 = 6² → 9 divisors), because only a square has an unpaired divisor (the √). Negative integers can be divisors too (−2 is a divisor of 6), though competition problems usually mean positive ones.</div>
+</section>
+<section id="s2">
+<span class="sec-num">2</span>
+<h2>Primes, Composites &amp; Divisibility Rules</h2>
+<p class="src-note"><em>Source: AOPS Introduction to Number Theory §2.3 "Identifying Primes" (Sieve of Eratosthenes) and the divisibility-rule sections of Ch.2</em></p>
+<ul>
+<li><strong>Prime:</strong> a natural number (&gt; 1) whose only divisors are 1 and itself (2, 3, 5, 7, 11, 13, …). <strong>Composite:</strong> more than two divisors (4, 6, 8, 9, …). <strong>1 is neither</strong> prime nor composite. <strong>2 is the only even prime.</strong></li>
+<li><strong>Sieve of Eratosthenes</strong> (finding all primes up to N): list 2, 3, 4, …, N; circle 2 and cross out every larger multiple of 2; circle the next uncrossed number (3) and cross out its multiples; repeat. Whatever's circled is prime. (Named for Eratosthenes, ~230 BC.)</li>
+<li><strong>There are infinitely many primes</strong> (Euclid's proof): if there were only finitely many p₁,…,pₙ, then p₁p₂…pₙ + 1 leaves remainder 1 when divided by each pᵢ, so it has a <em>new</em> prime divisor — contradiction.</li>
+</ul>
+<p><strong>Divisibility rules:</strong></p>
+<ul>
+<li><strong>Divisible by 2:</strong> last digit is <strong>0, 2, 4, 6, 8</strong> (even)</li>
+<li><strong>Divisible by 3:</strong> the <strong>sum of the digits</strong> is a multiple of 3 (e.g. 123 → 1+2+3 = 6 ✓)</li>
+<li><strong>Divisible by 4:</strong> the <strong>last two digits</strong> form a multiple of 4</li>
+<li><strong>Divisible by 5:</strong> last digit is <strong>0 or 5</strong></li>
+<li><strong>Divisible by 9:</strong> the sum of the digits is a multiple of <strong>9</strong> (a stronger version of the rule for 3)</li>
+<li><strong>Divisible by 11:</strong> (sum of odd-position digits) − (sum of even-position digits) is <strong>0 or a multiple of 11</strong> <em>(Sec)</em></li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> Problems like "digit sum is a multiple of 7" (→ AP 2021 Q26 below) start from this idea.</div>
+</section>
+<section id="s3">
+<span class="sec-num">3</span>
+<h2>Prime Factorisation — <em>Sec 1</em></h2>
+<p class="src-note"><em>Source: AOPS Introduction to Number Theory Ch.4 (Prime Factorization / Fundamental Theorem of Arithmetic)</em></p>
+<ul>
+<li><strong>Definition:</strong> writing a number as a <strong>product of prime numbers only</strong>. Example: 60 = 2² × 3 × 5</li>
+<li><strong>Method (factor tree):</strong> 60 → 6×10 → (2×3)×(2×5) → 2×2×3×5. However you split it, the <strong>answer is always the same</strong> (this is unique).</li>
+<li><strong>Index (power) notation (Sec 1):</strong> group the same prime as a power. 2×2×2 = 2³.</li>
+<li><strong>Why learn it:</strong> it lets you solve steps 4 and 5 below <strong>with a formula</strong>. It is the <strong>starting point of every number theory problem.</strong></li>
+</ul>
+<div class="cp"><strong>Tip:</strong> When you meet a number theory problem, <strong>start by prime factorising.</strong></div>
+</section>
+<section id="s4">
+<span class="sec-num">4</span>
+<h2>Number and Sum of Divisors</h2>
+<p class="src-note"><em>Source: AOPS Introduction to Number Theory Ch.4–5 (Divisors from prime factorization — number &amp; sum of divisors)</em></p>
+<ul>
+<li><strong>Number of divisors formula:</strong> if n = pᵃ × qᵇ × rᶜ, then number of divisors = <strong>(a+1)(b+1)(c+1)</strong><br><span style="color:var(--ink-soft)">Add <strong>1</strong> to each power, then multiply. (You may use the prime 0 to a times → a+1 choices.)</span><br><span style="color:var(--ink-soft)">Example: 72 = 2³×3² → (3+1)(2+1) = <strong>12 divisors</strong></span></li>
+<li><strong>Sum of divisors (advanced):</strong> σ(n) = (1+p+…+pᵃ)(1+q+…+qᵇ)…<br><span style="color:var(--ink-soft)">Example: 12 = 2²×3 → (1+2+4)(1+3) = 7×4 = <strong>28</strong></span></li>
+<li><strong>Coprime:</strong> two numbers whose GCD is 1, i.e. they <strong>share no prime factor</strong>.</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> "9 divisors" → 9 = 3×3 = (2+1)(2+1) → the number is <strong>p²q²</strong>. "Exactly 3 divisors" → a prime squared (4, 9, 25, …).</div>
+</section>
+<section id="s5">
+<span class="sec-num">5</span>
+<h2>GCD and LCM — <em>Sec 1</em></h2>
+<p class="src-note"><em>Source: AOPS Introduction to Number Theory Ch.3 (Multiples and Divisors — common divisors) &amp; Ch.6 (GCD/LCM from prime factorization)</em></p>
+<ul>
+<li><strong>GCD (Greatest Common Divisor):</strong> the <strong>biggest</strong> shared divisor. From prime factors, take <strong>each shared prime with the smaller power</strong>.</li>
+<li><strong>LCM (Lowest Common Multiple):</strong> the <strong>smallest</strong> shared multiple. Take <strong>every prime with the larger power</strong>.</li>
+<li><strong>Example:</strong> 12 = 2²×3, 18 = 2×3² → GCD = 2×3 = <strong>6</strong>, LCM = 2²×3² = <strong>36</strong></li>
+<li><strong>Golden formula:</strong> <strong>GCD × LCM = product of the two numbers</strong> → 6×36 = 216 = 12×18 ✓</li>
+<li><strong>Letting variables (must-know):</strong> if GCD = k, then A = k·a and B = k·b (where a and b are coprime).<br><span style="color:var(--ink-soft)">Then <strong>A + B = k(a+b)</strong> and <strong>LCM = k·a·b</strong> → the condition breaks apart nicely.</span></li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> When both GCD and LCM are given, <strong>always set A = ka, B = kb</strong> (→ Mock Q2-21: A+B = 2024, LCM = 3795).</div>
+</section>
+<section id="s6">
+<span class="sec-num">6</span>
+<h2>Euclidean Algorithm — <em>Sec, advanced</em></h2>
+<p class="src-note"><em>Source: AOPS Introduction to Number Theory §3.7 "The Euclidean Algorithm"</em></p>
+<ul>
+<li><strong>Why it works:</strong> a common divisor of two numbers also divides their <strong>difference</strong> (§1). So the pairs (a, b) and (a−b, b) have <em>exactly the same</em> common divisors — and therefore the same GCD.<br><span style="color:var(--ink-soft)"><strong>Subtraction form:</strong> gcd(m, n) = gcd(m − n, n) for m &gt; n. Example: gcd(990, 720) = gcd(270, 720) = gcd(270, 450) = gcd(270, 180) = gcd(90, 180) = gcd(90, 90) = <strong>90</strong>.</span></li>
+<li><strong>Faster division form:</strong> gcd(a, b) = gcd(b, a mod b) — replace the pair by the <strong>remainder</strong> of dividing the bigger by the smaller, repeat until one is 0.<br><span style="color:var(--ink-soft)">Example: gcd(48, 18) → gcd(18, 12) → gcd(12, 6) → gcd(6, 0) = <strong>6</strong>.</span></li>
+<li><strong>Why useful:</strong> it finds the GCD of <strong>large numbers</strong> (too big to prime-factorise) in just a few steps — e.g. gcd(819, 504) without factoring either one.</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> Word problems that ask for the largest equal-size piece (e.g. two rectangles of area 1086 and 828 sharing an integer width → the width is a common divisor, so the largest is gcd(1086, 828)) are Euclidean-algorithm problems in disguise.</div>
+</section>
+<section id="s7">
+<span class="sec-num">7</span>
+<h2>More Tools (extra divisibility &amp; GCD/LCM tricks)</h2>
+<p class="src-note"><em>Source: divisibility rules for 7/8/13/etc. and conditional divisor-counting extend AOPS Introduction to Number Theory Ch.2–5; some (fraction GCD/LCM) are standard competition results.</em></p>
+<ul>
+<li><strong>GCD/LCM scaling rule:</strong> if you multiply both numbers by the same n, then GCD(na, nb) = n×GCD(a,b) and LCM(na, nb) = n×LCM(a,b). Spot an obvious common factor <strong>first</strong>, then only prime-factorise the leftover (smaller) numbers.<br><span style="color:var(--ink-soft)">Example: GCD(24, 36) — 24 = 4×6, 36 = 4×9 → GCD = 4×GCD(6,9) = 4×3 = <strong>12</strong></span></li>
+<li><strong>Divisibility by 6:</strong> divisible by 6 exactly when divisible by <strong>both 2 and 3</strong>. This works because 2 and 3 are <strong>coprime</strong>. Careful: 18 is divisible by both 2 and 6, but that does <strong>not</strong> mean it's divisible by 12 — 2 and 6 are <strong>not</strong> coprime (they share the factor 2), so the trick breaks.</li>
+<li><strong>More last-digits rules:</strong> divisible by <strong>8</strong> → last 3 digits divisible by 8. By <strong>16</strong> → last 4 digits. By <strong>25</strong> → last 2 digits. By <strong>125</strong> → last 3 digits. By <strong>625</strong> → last 4 digits.</li>
+<li><strong>Divisibility by 7 (advanced trick):</strong> double the last digit, subtract it from the rest of the number, repeat if needed — divisible by 7 iff the result is.<br><span style="color:var(--ink-soft)">Example: is 616 divisible by 7? → 61 − (6×2) = 49 → yes, divisible by 7.</span></li>
+<li><strong>Divisibility by 13 (advanced trick):</strong> remove the last digit, subtract <strong>9×</strong> that digit from what's left, repeat if needed.</li>
+<li><strong>Counting divisors with a condition:</strong> for "even divisors" / "multiples of m" / "perfect square divisors" etc., <strong>factor out</strong> the required piece first, then apply the (power+1) rule to what remains.<br><span style="color:var(--ink-soft)">Example: 72 = 2³×3² → even divisors → factor out one 2, leaving 2²×3² → (2+1)(2+1) = <strong>9 even divisors</strong></span></li>
+<li><strong>Perfect-square divisors:</strong> a divisor is a perfect square only if <strong>every prime's power in it is even</strong>.</li>
+<li><strong>LCM or GCD — which one?</strong> Things <strong>recurring/coinciding again</strong> (flashing lights, buses meeting, gears lining up) → <strong>LCM</strong> of the cycle lengths. Things being <strong>cut/split into equal pieces</strong> → <strong>GCD</strong>.</li>
+<li><strong>GCD/LCM of fractions (Sec):</strong> LCM(a/b, c/d) = LCM(a,c) / GCD(b,d), and GCD(a/b, c/d) = GCD(a,c) / LCM(b,d). Same prime-power idea also works for GCD/LCM of <strong>algebraic terms</strong> (treat each variable's exponent like a prime's power).</li>
+</ul>
+</section>
+<section id="cheat-sheet">
+<h2>Cheat Sheet</h2>
+<div class="tbl-scroll"><table><thead><tr>
+<th>Idea</th>
+<th>Key point</th>
+</tr></thead><tbody>
+<tr>
+<td>Odd number of divisors</td>
+<td>perfect square only</td>
+</tr>
+<tr>
+<td>Only even prime</td>
+<td>2</td>
+</tr>
+<tr>
+<td>The number 1</td>
+<td>neither prime nor composite</td>
+</tr>
+<tr>
+<td>d divides a and b</td>
+<td>then d divides a+b and a−b</td>
+</tr>
+<tr>
+<td>a\</td>
+<td>b and b\</td>
+<td>c</td>
+<td>then a\</td>
+<td>c (transitive)</td>
+</tr>
+<tr>
+<td>Sieve of Eratosthenes</td>
+<td>cross out multiples to find primes</td>
+</tr>
+<tr>
+<td>Number-of-divisors formula</td>
+<td>multiply (power + 1)</td>
+</tr>
+<tr>
+<td>Sum of divisors</td>
+<td>(1+p+…+pᵃ)(1+q+…+qᵇ)…</td>
+</tr>
+<tr>
+<td>9 divisors</td>
+<td>of the form p²q²</td>
+</tr>
+<tr>
+<td>GCD × LCM</td>
+<td>= product of the two numbers</td>
+</tr>
+<tr>
+<td>GCD/LCM problem</td>
+<td>set A = ka, B = kb (a, b coprime)</td>
+</tr>
+<tr>
+<td>Euclidean algorithm</td>
+<td>gcd(m,n) = gcd(m−n, n)</td>
+</tr>
+<tr>
+<td>"coincide again" / "equal pieces"</td>
+<td>LCM / GCD</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="linked-competition-problems">
+<h2>🔗 Linked Competition Problems</h2>
+<p>These concepts appear in real problems on the quiz app. Learn the idea, then click a problem and try it.</p>
+<p><strong>① Divisors &amp; multiples</strong></p>
+<ul>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/02.%20NM%202010/23.png">NM 2010 Q23</a> — three-digit X and its reverse Y</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/4_29.png">Mock Q4-29</a> — three consecutive numbers that are multiples of 4, 7, 9; smallest sum</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/54.%20RI%202024/16.png">RI 2024 Q16</a> — 2024 as a sum of n consecutive numbers; largest n</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/56.%20AP%202021/26.png">AP 2021 Q26</a> — counting numbers whose digit sum is a multiple of 7</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/60.%20AP%202025/09.png">AP 2025 Q9</a> — smallest positive integer whose prime factors sum to 2025</li>
+</ul>
+<p><strong>② GCD / LCM</strong></p>
+<ul>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/2_21.png">Mock Q2-21</a> — A+B = 2024, LCM = 3795; find the larger → <em>set A = ka, B = kb</em></li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/56.%20AP%202021/07.png">AP 2021 Q7</a> — four different numbers summing to 1111; greatest common divisor</li>
+</ul>
+<p><strong>③ Number of divisors &amp; coprime</strong></p>
+<ul>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/52.%20RI%202022/11.png">RI 2022 Q11</a> — labels 1–1000, using number of divisors</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/56.%20AP%202021/13.png">AP 2021 Q13</a> — divisors by 2 or 7 but not both</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/60.%20AP%202025/05.png">AP 2025 Q5</a> — 20th special number coprime to the previous sum</li>
+</ul>
+</section>
+<section id="quick-check">
+<h2>Quick Check</h2>
+<ol>
+<li>How many divisors does 48 have?</li>
+<li>What is the LCM of 24 and 36?</li>
+<li>Two numbers have product 216 and GCD 6. What is their LCM?</li>
+<li>Find all two-digit numbers with exactly 3 divisors.</li>
+<li>Find GCD(60, 36) using the Euclidean algorithm.</li>
+<li>Both 51 and 34 are multiples of 17. Explain why 51 − 34 = 17 must also be a multiple of 17.</li>
+<li>How many divisors of 72 are <strong>even</strong>?</li>
+<li>Is 1 prime? Is 2? Why is 2 special among primes?</li>
+<li>What is the sum of all divisors of 12?</li>
+<li>A light flashes every 12 s, another every 18 s. They just flashed together. When do they next flash together?</li>
+</ol>
+<details><summary>Answers</summary><div class="answer">
+<p>1. 48 = 2⁴×3 → (4+1)(1+1) = <strong>10</strong></p>
+<p>2. 24 = 2³×3, 36 = 2²×3² → LCM = 2³×3² = <strong>72</strong></p>
+<p>3. GCD × LCM = product → 216 ÷ 6 = <strong>36</strong></p>
+<p>4. Squares of primes that are two-digit: <strong>25 (5²), 49 (7²)</strong></p>
+<p>5. GCD(60,36)→(36,24)→(24,12)→(12,0) = <strong>12</strong></p>
+<p>6. 51 = 3·17, 34 = 2·17, so 51 − 34 = (3−2)·17 = 17 — a common divisor divides the difference.</p>
+<p>7. 72 = 2³×3²; factor out one 2, leaving 2²×3² → (2+1)(2+1) = <strong>9 even divisors</strong></p>
+<p>8. 1 is <strong>not</strong> prime (a prime needs exactly two divisors). 2 <strong>is</strong> prime, and it's the <strong>only even prime</strong>.</p>
+<p>9. σ(12) = (1+2+4)(1+3) = 7×4 = <strong>28</strong></p>
+<p>10. LCM(12, 18) = 2²×3² = <strong>36 s</strong></p></div></details>
+<p class="footer-note">Source map: <code>약점진단/04_약수_배수_GCDLCM.md</code> · Number theory continues in <a class="cx" href="06_Primes_Modular_Factorial.html">06 Primes Modular Factorial</a></p>
+</section>
+<a class="backlink" href="index.html">← All units</a>
+</div>

@@ -1,0 +1,172 @@
+<title>14. Sequences &amp; Recurrence — Math Competition Notes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="shared.css">
+<div class="wrap">
+<a class="backlink" href="index.html">← All units</a>
+<header class="chapter-head">
+<p class="eyebrow">Unit 14</p>
+<h1>Sequences &amp; Recurrence</h1>
+<p class="standfirst">Many hard competition problems hide a <strong>pattern</strong>. If you can spot the rule of a sequence, or write a <strong>recurrence</strong> (each term from the ones before), a scary-looking problem turns into a short, safe calculation.</p>
+</header>
+<p class="src-note" style="border-left-color:var(--rule);color:var(--ink-faint)"><strong>Unit:</strong> Patterns &amp; Sequences (Unit 14 of 14) · <strong>5 linked problems</strong> · <strong>For:</strong> primary competition students (SMO · NMOS · IMSO) — concepts go up to <strong>Secondary 1</strong> level</p>
+<section id="lesson-overview">
+<h2>Lesson Overview</h2>
+<p>What this note covers:</p>
+<ol>
+<li>Arithmetic Sequences and their Sum</li>
+<li>Geometric Sequences and their Sum — <em>Sec 1</em></li>
+<li>Special Number Patterns (triangular, square sums)</li>
+<li>Recurrence and General Term</li>
+<li>Fibonacci, Stairs &amp; Tiling</li>
+</ol>
+</section>
+<section id="s1">
+<span class="sec-num">1</span>
+<h2>Arithmetic Sequences and their Sum</h2>
+<ul>
+<li><strong>Arithmetic sequence:</strong> a list where you <strong>add the same number each time</strong>. That fixed jump is the <strong>common difference (d)</strong>.<br><span style="color:var(--ink-soft)">Example: 3, 7, 11, 15, ... → d = 4</span></li>
+<li><strong>nth term:</strong> the number in position n is <strong>a + (n−1)d</strong> (start value a, then take (n−1) jumps).<br><span style="color:var(--ink-soft)">Example: 3, 7, 11, ... → 10th term = 3 + 9×4 = 39</span></li>
+<li><strong>Sum of an arithmetic sequence:</strong> <strong>S_n = n(a + l)/2</strong> (n terms, first a, last l). Same as <strong>S_n = n(2a + (n−1)d)/2</strong>.<br><span style="color:var(--ink-soft)">Trick to remember: pair the first and last, second and second-last... each pair has the same total. There are n/2 pairs, each equal to (a + l).</span><br><span style="color:var(--ink-soft)">Example: 1 + 2 + ... + 100 = 100×(1+100)/2 = <strong>5050</strong></span></li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> Odd numbers 1, 3, 5, ... are an arithmetic sequence with d = 2. Their running sums are <strong>perfect squares</strong>: 1 = 1², 1+3 = 2², 1+3+5 = 3². The sum of the first n odd numbers = <strong>n²</strong>.</div>
+</section>
+<section id="s2">
+<span class="sec-num">2</span>
+<h2>Geometric Sequences and their Sum — <em>Sec 1</em></h2>
+<ul>
+<li><strong>Geometric sequence:</strong> a list where you <strong>multiply by the same number each time</strong>. That fixed multiplier is the <strong>common ratio (r)</strong>.<br><span style="color:var(--ink-soft)">Example: 2, 6, 18, 54, ... → r = 3</span></li>
+<li><strong>nth term:</strong> <strong>a × r^(n−1)</strong> (start value a, then multiply by r a total of (n−1) times).</li>
+<li><strong>Sum of a geometric sequence:</strong> <strong>S_n = a(1 − rⁿ)/(1 − r)</strong> (when r ≠ 1).<br><span style="color:var(--ink-soft)">Example: 1 + 2 + 4 + 8 + 16 = 1×(1 − 2⁵)/(1 − 2) = (1 − 32)/(−1) = <strong>31</strong></span></li>
+<li><strong>Infinite geometric sum (advanced):</strong> if the ratio is a fraction between −1 and 1, the whole never-ending sum settles on <strong>S = a/(1 − r)</strong>.<br><span style="color:var(--ink-soft)">Example: 1/2 + 1/4 + 1/8 + ... = (1/2)/(1 − 1/2) = <strong>1</strong></span></li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> For a "sum that goes on forever" problem, check the ratio first. If it is a small fraction, use <strong>S = a/(1 − r)</strong> — you do not need to add infinitely many terms.</div>
+</section>
+<section id="s3">
+<span class="sec-num">3</span>
+<h2>Special Number Patterns (triangular, square sums)</h2>
+<ul>
+<li><strong>Triangular numbers:</strong> dots that build a triangle: 1, 3, 6, 10, 15, ... The nth one is <strong>T_n = n(n+1)/2</strong>.<br><span style="color:var(--ink-soft)">This is just the arithmetic sum 1 + 2 + ... + n.</span></li>
+<li><strong>Sum of squares:</strong> <strong>1² + 2² + ... + n² = n(n+1)(2n+1)/6</strong>.<br><span style="color:var(--ink-soft)">Example: 1² + 2² + 3² + 4² = 4×5×9/6 = <strong>30</strong></span></li>
+<li><strong>Odd-number groups:</strong> a common competition setup groups odd numbers like (1) (3 5) (7 9 11) (13 15 17 19)... Row n has <strong>n numbers</strong>, so after n rows you have used <strong>1 + 2 + ... + n = T_n</strong> odd numbers in total.</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> To find <em>which group</em> a number lands in, count <strong>how many numbers came before</strong>. Use triangular numbers T_n = n(n+1)/2 to jump ahead instead of listing every term (→ Mock Q1-22, AP 2025 Q23 below).</div>
+</section>
+<section id="s4">
+<span class="sec-num">4</span>
+<h2>Recurrence and General Term</h2>
+<ul>
+<li><strong>Recurrence:</strong> a rule that builds <strong>each term from the earlier terms</strong>. Example: "double the last term, then add 1."</li>
+<li><strong>General term:</strong> a single formula that gives term n <strong>directly</strong>, without walking through all the earlier ones.</li>
+<li><strong>How to attack a mystery sequence:</strong><br><span style="color:var(--ink-soft)">Write out the <strong>first 5 terms</strong> by hand.</span><br><span style="color:var(--ink-soft)">Look at the <strong>differences</strong> (or the <strong>ratios</strong>) between neighbours.</span><br><span style="color:var(--ink-soft)">Guess the rule, then <strong>test it</strong> on the next known term.</span><br><span style="color:var(--ink-soft)">Example: 4, 9, 24, 69, 204, ... Check: 9 = 4×3 − 3, 24 = 9×3 − 3, 69 = 24×3 − 3 → rule is <strong>×3 − 3</strong>. Next: 204×3 − 3 = 609. ✓</span></li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> If plain differences do not form a pattern, try <strong>"multiply by something, then add/subtract something"</strong> (the ×k + c type). Testing on 2–3 known terms confirms it fast (→ RI 2024 Q02 below).</div>
+</section>
+<section id="s5">
+<span class="sec-num">5</span>
+<h2>Fibonacci, Stairs &amp; Tiling</h2>
+<ul>
+<li><strong>Fibonacci sequence:</strong> each term is the <strong>sum of the two before it</strong>: <strong>f(n) = f(n−1) + f(n−2)</strong>.<br><span style="color:var(--ink-soft)">Start 1, 1 → 1, 1, 2, 3, 5, 8, 13, 21, 34, ...</span></li>
+<li><strong>Stairs / tiling follow Fibonacci:</strong> many "how many ways" counting problems land on the exact same rule.<br><span style="color:var(--ink-soft)"><strong>Climbing stairs</strong> (1 or 2 steps at a time) to reach step n = f(n).</span><br><span style="color:var(--ink-soft)"><strong>Tiling a 2×n board</strong> with 2×1 dominoes: the last column is either one <strong>vertical</strong> tile (leaving 2×(n−1)) or two <strong>horizontal</strong> tiles (leaving 2×(n−2)). So <strong>ways(n) = ways(n−1) + ways(n−2)</strong> — Fibonacci again!</span><br><span style="color:var(--ink-soft)">Ways for 2×n: n=1 → 1, 2 → 2, 3 → 3, 4 → 5, 5 → 8, 6 → 13, 7 → 21, 8 → <strong>34</strong>.</span></li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> When a counting problem says "in one step you can do this <strong>or</strong> that," split by the <strong>last move</strong>. The two cases almost always add up to a <strong>Fibonacci-style recurrence</strong> (→ Mock Q1-25 below).</div>
+</section>
+<section id="from-the-books-extra-tricks">
+<h2>📚 From the Books (extra tricks)</h2>
+<ul>
+<li><strong>Difference tables:</strong> if the first differences are not constant, take the differences <strong>of the differences</strong> (second differences), and repeat. The number of rounds needed to get a constant row tells you the sequence follows a polynomial of that degree.<br><span style="color:var(--ink-soft)">Example: 5, 11, 19, 29, ... → 1st differences 6, 8, 10 (not constant) → 2nd differences 2, 2, 2 (constant!) → this is a <strong>"degree 2"</strong> pattern, so you can build a formula for the nth term.</span></li>
+<li><strong>Repeating-cycle position:</strong> for a periodic pattern (repeating decimal digits, a repeating letter/colour sequence), find the kth term using <strong>k mod (period length)</strong> — but a remainder of 0 usually means "the <strong>last</strong> term of the cycle," not term 0.<br><span style="color:var(--ink-soft)">Example: 100th digit of 1/7 = 0.142857142857... (period 6): 100 = 16×6 + 4 → matches the 4th digit of "142857," which is <strong>8</strong>.</span></li>
+<li><strong>Middle-term trick (odd count):</strong> for an arithmetic series with an <strong>odd</strong> number of terms, sum = (number of terms) × (the middle term). Often faster than the full sum formula, especially when the problem gives scattered terms.<br><span style="color:var(--ink-soft)">Example: a₄ + a₇ + a₁₀ = 17, and a₇ is the middle of that trio → 3×a₇ = 17 directly, no need to find the first term and common difference.</span></li>
+<li><strong>Geometric mean between neighbours:</strong> in a geometric sequence, any term equals <strong>√(product of its two neighbours)</strong> — the geometric-sequence version of "a term = average of its two neighbours" in arithmetic sequences.<br><span style="color:var(--ink-soft)">Example: 3, 3√3, 9, 9√3, 27 → middle term 9 = √(3×27).</span></li>
+<li><strong>Index-sum shortcut:</strong> if m + n = p + q, then <strong>aₘ + aₙ = aₚ + aq</strong> (arithmetic) or <strong>aₘ × aₙ = aₚ × aq</strong> (geometric). If m + n = 2t, then aₘ + aₙ = 2aₜ. This skips solving for a and d entirely.<br><span style="color:var(--ink-soft)">Example: a₁ + a₉ = 10 → since 1+9 = 2×5, a₁+a₉ = 2a₅ → a₅ = <strong>5</strong> directly.</span></li>
+<li><strong>Common terms of two arithmetic sequences:</strong> if two arithmetic sequences share infinitely many terms, those shared terms form a <strong>new arithmetic sequence</strong>, with common difference = <strong>LCM</strong> of the two original common differences.</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> Before grinding through a sum or an unknown term, check if the index numbers add up nicely (m+n = p+q) or if the count of terms is odd — these shortcuts skip solving for a and d altogether.</div>
+</section>
+<section id="cheat-sheet">
+<h2>Cheat Sheet</h2>
+<div class="tbl-scroll"><table><thead><tr>
+<th>Idea</th>
+<th>Key point</th>
+</tr></thead><tbody>
+<tr>
+<td>Arithmetic nth term</td>
+<td>a + (n−1)d</td>
+</tr>
+<tr>
+<td>Arithmetic sum</td>
+<td>n(a + l)/2</td>
+</tr>
+<tr>
+<td>Sum of first n odd numbers</td>
+<td>n² (a perfect square)</td>
+</tr>
+<tr>
+<td>Geometric nth term</td>
+<td>a × r^(n−1)</td>
+</tr>
+<tr>
+<td>Geometric sum</td>
+<td>a(1 − rⁿ)/(1 − r)</td>
+</tr>
+<tr>
+<td>Infinite geometric sum</td>
+<td>a/(1 − r), needs \</td>
+<td>r\</td>
+<td>&lt; 1</td>
+</tr>
+<tr>
+<td>Triangular number</td>
+<td>T_n = n(n+1)/2</td>
+</tr>
+<tr>
+<td>Sum of squares</td>
+<td>n(n+1)(2n+1)/6</td>
+</tr>
+<tr>
+<td>Fibonacci</td>
+<td>f(n) = f(n−1) + f(n−2)</td>
+</tr>
+<tr>
+<td>Stairs / 2×n tiling</td>
+<td>Fibonacci pattern</td>
+</tr>
+<tr>
+<td>Mystery sequence</td>
+<td>list 5 terms, check differences/ratios, test the rule</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="linked-competition-problems">
+<h2>🔗 Linked Competition Problems</h2>
+<p>These concepts appear in real problems on the quiz app. Learn the idea, then click a problem and try it.</p>
+<p><strong>① Sequence rules (arithmetic / geometric / triangular)</strong></p>
+<ul>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/1_22.png">Mock Q1-22</a> — odd numbers in growing groups; find the size of the group holding 2023 → <em>use triangular numbers</em></li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/60.%20AP%202025/23.png">AP 2025 Q23</a> — odd-number table with growing rows; the number sitting just below 2025</li>
+</ul>
+<p><strong>② Recurrence / general term</strong></p>
+<ul>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/1_25.png">Mock Q1-25</a> — cover a 2×8 board with 2×1 tiles; count the number of ways → <em>Fibonacci</em></li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/54.%20RI%202024/02.png">RI 2024 Q02</a> — 4, 9, 24, 69, 204, 609, ...; find the sum of the next two terms</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/52.%20RI%202022/05.png">RI 2022 Q05</a> — value of the infinite sum of Fibonacci ÷ 5ⁿ</li>
+</ul>
+</section>
+<section id="quick-check">
+<h2>Quick Check</h2>
+<ol>
+<li>What is 5 + 8 + 11 + ... + 50? (arithmetic, d = 3)</li>
+<li>What is the sum 1 + 3 + 5 + ... + 39?</li>
+<li>Find the 6th triangular number.</li>
+<li>A sequence goes 2, 5, 14, 41, ... Each term is "×3 − 1" of the one before. What is the 5th term?</li>
+<li>In how many ways can you climb a staircase of 6 steps, taking 1 or 2 steps at a time?</li>
+</ol>
+<details><summary>Answers</summary><div class="answer">
+<p>1. Terms: 5, 8, ..., 50 → count n = (50−5)/3 + 1 = 16. Sum = 16×(5+50)/2 = <strong>440</strong></p>
+<p>2. These are the first 20 odd numbers (39 is the 20th) → 20² = <strong>400</strong></p>
+<p>3. T₆ = 6×7/2 = <strong>21</strong></p>
+<p>4. 41×3 − 1 = <strong>122</strong></p>
+<p>5. Fibonacci: f(6) with f(1)=1, f(2)=2 → 1, 2, 3, 5, 8, <strong>13</strong></p></div></details>
+<p class="footer-note">Source map: <code>약점진단/14_수열_점화식.md</code> · Patterns connect back to scaling ideas in <a class="cx" href="01_Ratio_and_Proportion.html">01 Ratio and Proportion</a></p>
+</section>
+<a class="backlink" href="index.html">← All units</a>
+</div>

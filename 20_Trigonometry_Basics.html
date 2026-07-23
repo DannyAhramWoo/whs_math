@@ -1,0 +1,122 @@
+<title>20. Trigonometry Basics — Math Competition Notes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="shared.css">
+<div class="wrap">
+<a class="backlink" href="index.html">← All units</a>
+<header class="chapter-head">
+<p class="eyebrow">Unit 20</p>
+<h1>Trigonometry Basics</h1>
+<p class="standfirst">Most SMO/NMOS/IMSO problems avoid full trigonometry, but the Law of Sines/Cosines occasionally solve "awkward angle" triangle problems faster than angle-chasing. Treat this unit as <em>optional/advanced</em> — read <a class="cx" href="02_Angles_Similarity_Circles.html">02 Angles Similarity Circles</a> first.</p>
+</header>
+<p class="src-note" style="border-left-color:var(--rule);color:var(--ink-faint)"><strong>Unit:</strong> Trigonometry (Unit 20 · extra unit from book scans, no linked quiz-app problems yet) · <strong>For:</strong> primary competition students (SMO · NMOS · IMSO) — concepts go up to <strong>Secondary 3, advanced</strong></p>
+<section id="lesson-overview">
+<h2>Lesson Overview</h2>
+<p>What this note covers:</p>
+<ol>
+<li>sin, cos, tan Basics — <em>Sec 3, advanced</em></li>
+<li>Special Angle Values</li>
+<li>Law of Sines and Law of Cosines — <em>Sec 3, advanced</em></li>
+</ol>
+</section>
+<section id="s1">
+<span class="sec-num">1</span>
+<h2>sin, cos, tan Basics — <em>Sec 3, advanced</em></h2>
+<p>For a right triangle with a chosen acute angle A:</p>
+<ul>
+<li><strong>sin A</strong> = opposite side / hypotenuse</li>
+<li><strong>cos A</strong> = adjacent side / hypotenuse</li>
+<li><strong>tan A</strong> = opposite / adjacent = sin A / cos A</li>
+</ul>
+<ul>
+<li>Core identity: sin²A + cos²A = 1 (this is really just Pythagoras in disguise).</li>
+</ul>
+</section>
+<section id="s2">
+<span class="sec-num">2</span>
+<h2>Special Angle Values</h2>
+<p>These come straight from the 45-45-90 and 30-60-90 triangles already in <a class="cx" href="02_Angles_Similarity_Circles.html">02 Angles Similarity Circles</a>:</p>
+<div class="tbl-scroll"><table><thead><tr>
+<th>Angle</th>
+<th>sin</th>
+<th>cos</th>
+<th>tan</th>
+</tr></thead><tbody>
+<tr>
+<td>30°</td>
+<td>1/2</td>
+<td>√3/2</td>
+<td>1/√3</td>
+</tr>
+<tr>
+<td>45°</td>
+<td>√2/2</td>
+<td>√2/2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>60°</td>
+<td>√3/2</td>
+<td>1/2</td>
+<td>√3</td>
+</tr>
+</tbody></table></div>
+<ul>
+<li>Example: a right triangle with a 30° angle and short leg 5 → other leg = 5√3, hypotenuse = 10 (matches the 1:√3:2 ratio).</li>
+</ul>
+</section>
+<section id="s3">
+<span class="sec-num">3</span>
+<h2>Law of Sines and Law of Cosines — <em>Sec 3, advanced</em></h2>
+<ul>
+<li><strong>Law of Sines:</strong> a/sin A = b/sin B = c/sin C = 2R (R = circumradius). Use this when you know two angles and one side (or two sides and a non-included angle).</li>
+<li><strong>Law of Cosines:</strong> c² = a² + b² − 2ab·cos(C). Use this when you know two sides and the INCLUDED angle, or all three sides (to find an angle). It's a generalization of Pythagoras — when C=90°, cos(90°)=0 and it collapses to the normal c²=a²+b².<br><span style="color:var(--ink-soft)">Example: sides a=3, b=4, included angle C=30° → c² = 9+16−2(3)(4)cos30° = 25−12√3.</span></li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> If a triangle problem gives you an "ugly" non-90° angle and asks for a side or area, the Law of Cosines usually solves it in one line — faster than trying to angle-chase a solution.</div>
+</section>
+<section id="cheat-sheet">
+<h2>Cheat Sheet</h2>
+<div class="tbl-scroll"><table><thead><tr>
+<th>Idea</th>
+<th>Formula</th>
+</tr></thead><tbody>
+<tr>
+<td>sin A</td>
+<td>opposite / hypotenuse</td>
+</tr>
+<tr>
+<td>cos A</td>
+<td>adjacent / hypotenuse</td>
+</tr>
+<tr>
+<td>tan A</td>
+<td>opposite / adjacent</td>
+</tr>
+<tr>
+<td>sin²+cos²</td>
+<td>= 1 always</td>
+</tr>
+<tr>
+<td>Law of Sines</td>
+<td>a/sinA = b/sinB = c/sinC = 2R</td>
+</tr>
+<tr>
+<td>Law of Cosines</td>
+<td>c² = a²+b²−2ab·cosC</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="quick-check">
+<h2>Quick Check</h2>
+<ol>
+<li>In a right triangle, one leg is 5 and the angle opposite it is 30°. Find the hypotenuse.</li>
+<li>What is sin 60°?</li>
+<li>A triangle has sides 5, 7, and an included angle of 60°. Use the Law of Cosines to find the third side squared.</li>
+</ol>
+<details><summary>Answers</summary><div class="answer">
+<p>1. sin30° = 5/hyp = 1/2 → hyp = <strong>10</strong>.</p>
+<p>2. sin60° = <strong>√3/2</strong>.</p>
+<p>3. c² = 25+49−2(5)(7)cos60° = 74−70(1/2) = 74−35 = <strong>39</strong>.</p></div></details>
+<p class="footer-note">This is a new, optional/advanced unit added from book scans (2026-07-22) — no quiz-app problems are linked to it yet. Builds on the special right triangles in <a class="cx" href="02_Angles_Similarity_Circles.html">02 Angles Similarity Circles</a>. Most SMO/NMOS problems don't need this — only use it if a problem gives an "ugly" angle that resists angle-chasing.</p>
+</section>
+<a class="backlink" href="index.html">← All units</a>
+</div>

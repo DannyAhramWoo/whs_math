@@ -1,0 +1,359 @@
+<title>01. Ratio and Proportion — Math Competition Notes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="shared.css">
+<div class="wrap">
+<a class="backlink" href="index.html">← All units</a>
+<header class="chapter-head">
+<p class="eyebrow">Unit 01</p>
+<h1>Ratio and Proportion</h1>
+<p class="standfirst">This is the single biggest weak spot. Most of the linked problems are "side ratio → area ratio" geometry problems. Once the three area tricks and the proportion setup below are automatic, a whole page of these problems becomes routine.</p>
+</header>
+<p class="src-note" style="border-left-color:var(--rule);color:var(--ink-faint)"><strong>Unit:</strong> Ratio / Proportion (Unit 01 of 14) · <strong>19 linked problems</strong> · <strong>For:</strong> primary competition students (SMO · NMOS · IMSO) — concepts go up to <strong>Secondary 2</strong> level</p>
+<section id="lesson-overview">
+<h2>Lesson Overview</h2>
+<p>What this note covers:</p>
+<ol>
+<li>What a Ratio Really Means</li>
+<li>Simplifying Ratios (whole numbers, fractions, decimals)</li>
+<li>Multi-way Ratios (a : b : c)</li>
+<li>Part-of-the-Whole Thinking</li>
+<li>Proportions and Cross-Multiplication</li>
+<li>Side Ratio → Area Ratio (the big weapon)</li>
+<li>Share One Vertex → Multiply Ratios — <em>Sec 1</em></li>
+<li>Similarity: Ratio Squared, Ratio Cubed — <em>Sec 2</em></li>
+<li>Move an Amount, Then Ratio (invariants)</li>
+<li>Combined Ratio (Chaining)</li>
+<li>Rates, Conversions, Direct/Inverse/Joint Proportion</li>
+</ol>
+</section>
+<section id="s1">
+<span class="sec-num">1</span>
+<h2>What a Ratio Really Means</h2>
+<p class="src-note"><em>Source: AOPS Prealgebra §7.1 "What is a Ratio?"</em></p>
+<ul>
+<li>A <strong>ratio</strong> compares the <em>relative</em> sizes of two (or more) quantities. If a class has 10 girls and 7 boys, the ratio of girls to boys is <strong>10 to 7</strong>, written three ways:<br><span style="color:var(--ink-soft)"><code>10 to 7</code>, <code>10 : 7</code>, or <code>10/7</code>. The middle form <code>10 : 7</code> is the most common; it is spoken "10 to 7."</span></li>
+<li><strong>A ratio tells you nothing about the actual totals.</strong> If girls : boys = 2 : 3, there could be 2 &amp; 3, or 10 &amp; 15, or 200 &amp; 300. All you know is: if there are <code>2n</code> girls, there are <code>3n</code> boys — but you don't know <code>n</code>.</li>
+</ul>
+<div class="callout"><strong>Concept:</strong> A ratio is a <em>relative</em> comparison. By itself it never tells you the total amount — you always need one more piece of information (a total, a difference, or one actual value) to pin down the real numbers.</div>
+<ul>
+<li><strong>Ratios behave like fractions.</strong> The ratio <code>12 : 6</code> is the same comparison as the fraction <code>12/6</code>, and both simplify to <code>2 : 1</code>. Anything you can do to a fraction (scale up, reduce, cross-multiply), you can do to a ratio.</li>
+</ul>
+</section>
+<section id="s2">
+<span class="sec-num">2</span>
+<h2>Simplifying Ratios</h2>
+<p class="src-note"><em>Source: AOPS Prealgebra §7.1, Problem 7.1 (a)–(e)</em></p>
+<p><strong>To simplify a ratio</strong> means to write it using integers whose greatest common factor is 1.</p>
+<p><strong>(a) Whole-number ratios — divide out the GCF.</strong></p>
+<ul>
+<li><code>2 : 10</code> → divide both by 2 → <strong><code>1 : 5</code></strong>.</li>
+<li><code>9 : 6</code> → divide both by 3 → <strong><code>3 : 2</code></strong>.</li>
+</ul>
+<p><strong>(b) Fraction ratios — multiply by the LCM of the denominators.</strong></p>
+<ul>
+<li><code>½ : ⅓</code> → the denominators are 2 and 3, LCM = 6. Multiply both parts by 6:<br><span style="color:var(--ink-soft)"><code>(½·6) : (⅓·6) = 3 : 2</code>.</span></li>
+<li><strong>Mixed numbers first become improper fractions.</strong> <code>2⅓ : 1⁴⁄₉</code>:<br><span style="color:var(--ink-soft)"><code>2⅓ = 7/3</code>, <code>1⁴⁄₉ = 13/9</code>, so the ratio is <code>7/3 : 13/9</code>. Denominators 3 and 9 → LCM 9. Multiply by 9: <code>21 : 13</code>. (GCF of 21 and 13 is 1, so it's done.)</span></li>
+</ul>
+<p><strong>(c) Decimal ratios — multiply by a power of 10, then reduce.</strong></p>
+<ul>
+<li><code>1.4 : 2.4</code> → ×10 → <code>14 : 24</code> → ÷2 → <strong><code>7 : 12</code></strong>.</li>
+</ul>
+<p><strong>(d) Two tricky cases worth knowing (from the exercises):</strong></p>
+<ul>
+<li><strong>Powers — factor first.</strong> <code>6³ : 8³</code>. Write <code>6³ = (2·3)³ = 2³·3³</code> and <code>8³ = (2·4)³ = 2³·4³</code>; the common factor is <code>2³</code>, so <code>6³ : 8³ = 3³ : 4³ = 27 : 64</code>.</li>
+<li><strong>A zero part.</strong> <code>672 : 0</code> → divide both by 672 → <strong><code>1 : 0</code></strong>. A ratio can legitimately have a 0 part; it just means "none of the second thing."</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> A ratio is <em>not</em> in simplest form if the parts share a common factor (<code>6 : 4 : 8</code> still divides by 2) <strong>or</strong> if any part is not an integer (<code>½ : ⅓ : ⅔</code> — clear the fractions first). Check both conditions before you call it "done."</div>
+</section>
+<section id="s3">
+<span class="sec-num">3</span>
+<h2>Multi-way Ratios (a : b : c)</h2>
+<p class="src-note"><em>Source: AOPS Prealgebra §7.2 "Multi-way Ratios"</em></p>
+<ul>
+<li>The same rules extend to three or more quantities. If a pet store has 4 dogs, 5 cats, and 11 goldfish, that's <code>4 : 5 : 11</code> (already simplest — no common factor).</li>
+<li><code>9 : 12 : 21</code> → all divisible by 3 → <code>3 : 4 : 7</code>.</li>
+<li>A multi-way ratio still only gives relative sizes: <code>1 : 2 : 5</code> could be 1, 2, 5 or 6, 12, 30 — for any <code>n</code>, it's <code>n : 2n : 5n</code>.</li>
+</ul>
+<p><strong>Removing a term.</strong> You can drop parts of a multi-way ratio to compare just two of the quantities. From butter : flour : sugar : milk = <code>1 : 6 : 2 : 1</code>, the butter-to-sugar ratio alone is just <code>1 : 2</code>.</p>
+<div class="callout"><strong>Concept:</strong> You can pull any two terms out of a multi-way ratio to get a simpler two-part ratio between just those quantities.</div>
+</section>
+<section id="s4">
+<span class="sec-num">4</span>
+<h2>Part-of-the-Whole Thinking</h2>
+<p class="src-note"><em>Source: AOPS Prealgebra §7.2, Problems 7.7–7.9 (prize money, cake, paint)</em></p>
+<p>This is the most powerful single idea for ratio word problems where you're given a <strong>total</strong>.</p>
+<ul>
+<li>If quantities are in ratio <code>a : b : c</code>, then the total is split into <code>a + b + c</code> equal parts. Each quantity is its share of the whole:<br><span style="color:var(--ink-soft)">first quantity = <code>a/(a+b+c)</code> × total, and so on.</span></li>
+</ul>
+<p><strong>Worked example (prize money).</strong> A bowling tournament pays the top 3 in ratio <code>5 : 2 : 1</code>, total $1000.</p>
+<ul>
+<li>Total parts = 5 + 2 + 1 = 8. One part = $1000 / 8 = $125.</li>
+<li>First place = 5 parts = <strong>$625</strong>.</li>
+</ul>
+<p><strong>Worked example (paint).</strong> A mix is 2 parts blue, 3 parts white, 1 part red, total 3 gallons.</p>
+<ul>
+<li>Red is <code>1/(2+3+1) = 1/6</code> of the whole → <code>1/6 × 3 = ½</code> gallon of red.</li>
+</ul>
+<p><strong>Worked example (rope).</strong> A 10-ft rope is cut in ratio 1 : 4. The longer piece is <code>4/(1+4) = 4/5</code> of the whole → <code>4/5 × 10 = 8 ft</code>.</p>
+<p><strong>Worked example — three methods for one problem (worth studying).</strong> A cake needs butter : flour : sugar : milk = <code>1 : 6 : 2 : 1</code>, and you have ½ cup of sugar. How much of each other ingredient?</p>
+<ul>
+<li><strong>Method A — rescale so the known part matches.</strong> Sugar is the "2" slot but you have ½, so divide every term by 4: <code>1 : 6 : 2 : 1 = ¼ : 3/2 : ½ : ¼</code>. Read off: butter ¼, flour 3/2, milk ¼ cup.</li>
+<li><strong>Method B — split into two-part ratios.</strong> Butter : sugar = <code>1 : 2</code>, so butter = ½ × ½ = ¼. Flour : sugar = <code>6 : 2 = 3 : 1</code>, so flour = 3 × ½ = 3/2. Milk : sugar = <code>1 : 2</code>, so milk = ¼.</li>
+<li><strong>Method C — parts of the whole.</strong> Sugar is <code>2/(1+6+2+1) = 2/10 = 1/5</code> of the whole. Since ½ cup = 1/5 of the total, total = ½ ÷ 1/5 = 5/2 cups. Then butter = 1/10 × 5/2 = ¼, flour = 6/10 × 5/2 = 3/2, milk = ¼.</li>
+</ul>
+<div class="callout"><strong>Concept:</strong> No ratio method is "the right one." Ratios reward flexible thinking — pick whichever of "rescale / split / parts-of-whole" makes the given numbers easiest.</div>
+</section>
+<section id="s5">
+<span class="sec-num">5</span>
+<h2>Proportions and Cross-Multiplication</h2>
+<p class="src-note"><em>Source: AOPS Prealgebra §7.3 "Proportions" (Mario chocolate-milk intro), Problems 7.13–7.15 (shadow, map scale, blueprint)</em></p>
+<ul>
+<li>A <strong>proportion</strong> is a statement that two ratios are equal: <code>2 : 3 = 8 : 12</code>.</li>
+<li><strong>What a proportion is really for:</strong> it describes two changing quantities whose <strong>ratio stays constant</strong> as they grow or shrink together.<br><span style="color:var(--ink-soft)"><em>Mario's chocolate milk:</em> the recipe uses 8 oz milk to 2 oz syrup — a ratio of <code>8 : 2 = 4 : 1</code>. To make enough for 6 people he needs <code>6 × 8 = 48</code> oz milk and <code>6 × 2 = 12</code> oz syrup, and <code>48 : 12</code> is <strong>still</strong> <code>4 : 1</code>. No matter the batch size the ratio is always 4 : 1 — we say milk and syrup are <strong>proportional</strong> (or <em>in proportion</em>).</span></li>
+<li><strong>Cross-multiply rule:</strong> in <code>a : b = c : d</code>, the product of the means equals the product of the extremes → <strong><code>b × c = a × d</code></strong>.<br><span style="color:var(--ink-soft)"><code>2 : 3 = 8 : x</code> → <code>3 × 8 = 2 × x</code> → <code>x = 12</code>.</span></li>
+</ul>
+<p><strong>Where proportions hide (all the same idea):</strong></p>
+<ul>
+<li><strong>Shadows / heights.</strong> At a fixed time, an object's length is proportional to its shadow. Sadie is 3 ft tall with an 8 ft shadow (ratio 3 : 8). Nick is 5 ft tall — his shadow <code>x</code> satisfies <code>5 : x = 3 : 8</code>, so <code>40 = 3x</code>, <code>x = 13⅓ ft</code>.</li>
+<li><strong>Map scale.</strong> A scale <code>¼ inch = 5 miles</code> is the ratio <code>¼ : 5 = 1 : 20</code>. So 13 inches on the map means <code>13 × 20 = 260</code> miles.</li>
+<li><strong>Blueprints.</strong> Building : window = 30 ft : 8 ft = 15 : 4. On the blueprint the building is 8 in, so window height <code>x</code> solves <code>15 : 4 = 8 : x</code> → <code>15x = 32</code> → <code>x = 2²⁄₁₅</code> inches.</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> Almost every ratio word problem becomes a proportion <code>a : b = c : d</code>. Write it, cross-multiply, solve for the one unknown. The hard part is usually <em>setting it up correctly</em>, not the algebra.</div>
+</section>
+<section id="s6">
+<span class="sec-num">6</span>
+<h2>Side Ratio → Area Ratio (the big weapon)</h2>
+<p class="src-note"><em>Source: competition weakness analysis (<code>약점진단/01</code>); "fixed shape from area" example from AOPS Prealgebra §7.3, Problem 7.16 (enlarging a photo)</em></p>
+<p>This is the real weakness — <strong>9 of the 19 linked problems live here.</strong> Three tools handle almost all of them.</p>
+<p><strong>Tool 1 — Same height → area ratio = base ratio.</strong></p>
+<p>If two triangles sit on <strong>one straight line</strong> and share the <strong>same apex (top vertex)</strong>, they have the same height. So their area ratio equals their base ratio.</p>
+<ul>
+<li>Point D on BC with BD : DC = 2 : 3 → triangle ABD : triangle ACD = <strong>2 : 3</strong>.</li>
+<li>Why: area = ½ × base × height; the height is shared, so only the base matters.</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> Hunt for a point that splits one side. The two triangles it creates always inherit the split ratio as their area ratio (→ RI 2023 Q18 uses BD = DE = EC to chop a triangle into equal-area thirds).</div>
+<p><strong>Tool 2 — Width×height for rectangles / area = (linear)² for growth</strong> (see §8).</p>
+<p><strong>Tool 3 — The "fixed shape, given area" proportion (from the photo problem).</strong></p>
+<p>A wallet photo is 3 cm × 5 cm, so width : height = <code>3 : 5</code> always. To enlarge it to area 135 cm², let width = 3x, height = 5x:</p>
+<ul>
+<li>area = <code>(3x)(5x) = 15x² = 135</code> → <code>x² = 9</code> → <code>x = 3</code>. New photo is <code>3x = 9</code> cm wide, <code>5x = 15</code> cm tall.</li>
+</ul>
+<p>This is the algebra engine behind every "the shape stays similar, find the new size from the area" problem — including the geometry ones below.</p>
+</section>
+<section id="s7">
+<span class="sec-num">7</span>
+<h2>Share One Vertex → Multiply Ratios — <em>Sec 1</em></h2>
+<p class="src-note"><em>Source: competition technique (<code>약점진단/01</code>); related to the area-ratio lemma in AOPS Introduction to Geometry (similar triangles chapter)</em></p>
+<ul>
+<li>In triangle ABC, put D on AB and E on AC. Then the corner triangle ADE compares to ABC by <strong>multiplying the two side fractions</strong>:<br><span style="color:var(--ink-soft)"><strong>triangle ADE : triangle ABC = (AD × AE) : (AB × AC)</strong>.</span></li>
+<li>If AD : DB = m : 1 and AE : EC = n : 1, then AD : AB = m : (m+1), AE : AC = n : (n+1), so<br><span style="color:var(--ink-soft)">triangle ADE : triangle ABC = <strong>(m·n) : ((m+1)(n+1))</strong>.</span></li>
+<li>Numbers: AD : DB = 2 : 1, AE : EC = 3 : 1 → ratio = (2·3) : (3·4) = 6 : 12 = <strong>1 : 2</strong>.</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> When a small triangle sits in a corner sharing one vertex, multiply the two side fractions to get its share of the big triangle (→ Mock Q2-26, Mock Q1-26).</div>
+</section>
+<section id="s8">
+<span class="sec-num">8</span>
+<h2>Similarity: Ratio Squared, Ratio Cubed — <em>Sec 2</em></h2>
+<p class="src-note"><em>Source: AOPS Introduction to Geometry (similarity chapter — "ratio of areas = square of ratio"); volume version from AOPS Prealgebra Ch.11 (solids)</em></p>
+<ul>
+<li><strong>Similar shapes</strong> have the same shape but different size; every matching length is in the same ratio (the <em>similarity ratio</em>).</li>
+<li><strong>Area scales as the ratio squared.</strong> Side ratio <code>2 : 3</code> → area ratio <code>2² : 3² = 4 : 9</code>.<br><span style="color:var(--ink-soft)">Doubling every side (ratio <code>1 : 2</code>) makes area <strong>4×</strong> bigger — never "2× bigger."</span></li>
+<li><strong>Volume scales as the ratio cubed.</strong> Side ratio <code>2 : 3</code> → volume ratio <code>2³ : 3³ = 8 : 27</code>.</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> "All sides doubled" means <strong>area × 4</strong> and <strong>volume × 8</strong> (→ Mock Q4-21, hexagon with every side doubled). Whenever a problem enlarges a whole figure, square the ratio for area, cube it for volume.</div>
+</section>
+<section id="s9">
+<span class="sec-num">9</span>
+<h2>Move an Amount, Then Ratio (invariants)</h2>
+<p class="src-note"><em>Source: competition technique (<code>약점진단/01</code>); "add to reach a target ratio" mirrors AOPS Prealgebra §7.1, Problem 7.5 (candy jar)</em></p>
+<p>These problems shift something around and ask for the new ratio (5 of the linked problems). The trick is always the same:</p>
+<ul>
+<li><strong>Find the invariant — ask "what does NOT change?"</strong><br><span style="color:var(--ink-soft)">If you only <strong>move</strong> things around → the <strong>total</strong> stays fixed.</span><br><span style="color:var(--ink-soft)">If you only <strong>add or remove one kind</strong> → the <strong>other kind</strong> stays fixed.</span></li>
+<li><strong>Let the fixed part be your anchor.</strong> Give the ratio parts a single variable (like 4x and 1x), write the after-change amounts, match the new given ratio, cross-multiply.</li>
+</ul>
+<p><strong>Worked example.</strong> A box has red : white = 4 : 1. After adding 30 red balls it's 7 : 1. How many white?</p>
+<ul>
+<li>White is untouched → white = w, red starts at 4w. After: (4w + 30) : w = 7 : 1 → 4w + 30 = 7w → 3w = 30 → <strong>w = 10</strong>.</li>
+</ul>
+<p><strong>Worked example (candy — add to hit a target ratio).</strong> A jar has butterscotch : jelly beans = 5 : 2, total 56. You add only jelly beans until the ratio is 2 : 1. How many to add?</p>
+<ul>
+<li>Butterscotch is untouched. 5 + 2 = 7 parts share 56 → 1 part = 8. So butterscotch = 40, jelly = 16.</li>
+<li>Want butterscotch : jelly = 2 : 1, butterscotch fixed at 40 → jelly must become 20. Add <strong>20 − 16 = 4</strong>.</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> Lock the invariant first, then use one variable for the changing side (→ Mock Q2-25 oil poured P→Q→P; RI 2024 Q14 with two ratio conditions).</div>
+</section>
+<section id="s10">
+<span class="sec-num">10</span>
+<h2>Combined Ratio (Chaining)</h2>
+<p class="src-note"><em>Source: AOPS Prealgebra §7.2, Problem 7.10 (blots : bleets : blits)</em></p>
+<ul>
+<li><strong>Match the common middle term.</strong> Join A : B = 2 : 3 and B : C = 4 : 5 by making <strong>B equal</strong> in both. LCM(3, 4) = 12 → A : B = 8 : 12 and B : C = 12 : 15 → <strong>A : B : C = 8 : 12 : 15</strong>.</li>
+</ul>
+<p><strong>Worked example (chart method).</strong> blots : bleets = 3 : 4 and bleets : blits = 5 : 6. Find blots : blits.</p>
+<ul>
+<li>Make bleets equal: multiply the first by 5, the second by 4:<br><span style="color:var(--ink-soft)">blots : bleets = 15 : 20, bleets : blits = 20 : 24 → <strong>blots : blits = 15 : 24 = 5 : 8</strong>.</span></li>
+</ul>
+<ul>
+<li><strong>Adding property.</strong> If a : b = c : d then also <code>(a + c) : (b + d) = a : b</code>.<br><span style="color:var(--ink-soft)"><code>2 : 3 = 4 : 6</code> → <code>(2+4) : (3+6) = 6 : 9 = 2 : 3</code> ✓.</span></li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> Chain three or four ratios by lining up shared terms, then read off the whole ratio in one line (→ AP 2025 Q10, four parts summing to 2158).</div>
+</section>
+<section id="s11">
+<span class="sec-num">11</span>
+<h2>Rates, Conversions, Direct/Inverse/Joint Proportion</h2>
+<p class="src-note"><em>Source: AOPS Prealgebra §7.4 (Conversions), §7.5 (Speed), §7.6 (Other Rates), plus AOPS Volume 1 (proportion / variation section)</em></p>
+<ul>
+<li><strong>Direct proportion (y ∝ x):</strong> the <strong>quotient</strong> is constant, <code>y/x = k</code>. Double x → double y.</li>
+<li><strong>Inverse proportion (y ∝ 1/x):</strong> the <strong>product</strong> is constant, <code>xy = k</code>. Double x → halve y.<br><span style="color:var(--ink-soft)">8 workers finish in 6 days → workers × days = constant → <code>8 × 6 = 12 × d</code> → <code>d = 4</code> days for 12 workers.</span></li>
+<li><strong>Joint proportion:</strong> one quantity depends on two or more at once, e.g. <code>x ∝ yz</code> or <code>x ∝ y/w</code>. Find <code>k</code> from one full data point, then reuse it.</li>
+<li><strong>Chain rule for equal ratios:</strong> if <code>a₁/b₁ = a₂/b₂ = a₃/b₃</code>, each fraction also equals <code>(a₁+a₂+a₃)/(b₁+b₂+b₃)</code>.<br><span style="color:var(--ink-soft)"><code>x/4 = y/6 = z/9</code> with <code>x+y+z = 38</code> → each ratio = <code>38/(4+6+9) = 2</code>, so x=8, y=12, z=18.</span></li>
+</ul>
+<p><strong>Unit conversion — the "conversion factor" idea.</strong> A conversion is just a special ratio. Since 12 inches and 1 foot are the <em>same length</em>, we can write <code>12 inches = 1 foot</code>, which turns into a fraction equal to 1:</p>
+<ul>
+<li><code>(12 inches)/(1 foot) = 1</code>, and its reciprocal <code>(1 foot)/(12 inches) = 1</code> is also valid.</li>
+</ul>
+<div class="callout"><strong>Concept:</strong> Think of every conversion factor as a <strong>fraction that equals 1</strong>. Multiplying by 1 never changes the true amount — it only rewrites it in new units.</div>
+<div class="callout"><strong>Concept:</strong> <strong>Multiply conversion factors to cancel units.</strong> Arrange each factor so the unit you want to get rid of appears once on top and once on the bottom, then it cancels like a common factor.</div>
+<ul>
+<li>Chaining example: how many inches in a yard? <code>(12 inches / 1 foot) × (3 feet / 1 yard) = 36 inches / 1 yard</code> — the "feet" cancel, leaving 36 inches per yard.</li>
+<li>Bigger chain: <code>1 gallon → tablespoons</code> (1 gal = 16 cups, 1 cup = 8 oz, 1 tbsp = ½ oz): <code>1 × (16 cups/1 gal) × (8 oz/1 cup) × (1 tbsp / ½ oz) = 256 tbsp</code>. Chain as many factors as needed, as long as each equals 1 and units cancel.</li>
+<li>Bigger chain: <code>45 mi/hr → ft/s</code>: <code>45 × (5280 ft / 1 mi) × (1 hr / 3600 s) = 66 ft/s</code>.</li>
+<li><strong>Currency is a conversion factor too.</strong> If $1 = ¥90, then <code>¥90/$1 = 1</code>. Will takes $1000 to Japan → <code>$1000 × (¥90/$1) = ¥90,000</code>; converting leftover yen back uses the reciprocal <code>$1/¥90</code>.</li>
+</ul>
+<p><strong>Speed and other rates (a rate is a ratio between two units).</strong></p>
+<ul>
+<li><strong>Speed is the ratio of distance to time:</strong> <code>speed = distance / time</code>, which rearranges to <code>distance = speed × time</code> and <code>time = distance / speed</code>. The word <strong>"per"</strong> ("miles <em>per</em> hour") literally means "divided by."<br><span style="color:var(--ink-soft)">A car going 110 miles in 2 hours travels <code>110/2 = 55 mph</code>; at 70 mph for 2 hours it covers <code>70 × 2 = 140 miles</code>.</span></li>
+<li><strong>Speed acts like a conversion factor</strong> between time and distance: <code>2 hours × (70 miles / 1 hour) = 140 miles</code>.</li>
+<li><strong>Any "per" quantity is a rate:</strong> typing 40 words/minute, a hose filling 0.5 gallons/second, water's density 8.3 pounds/gallon. Treat them exactly like conversion factors — write the units in and let them cancel.</li>
+</ul>
+<div class="callout warn"><strong>Warning — you cannot just average two speeds.</strong> For a round trip of 50 miles at 75 mph then 50 miles at 50 mph, the average is <strong>NOT</strong> (75+50)/2 = 62.5. You must find the <em>times</em>: <code>50/75 = ⅔ hr</code> and <code>50/50 = 1 hr</code>, total 100 miles in <code>1⅔ hr</code> → <code>100 / (5/3) = 60 mph</code>. (For equal distances the true average is the <strong>harmonic mean</strong> <code>2/(1/a + 1/b)</code>, not the ordinary mean.)</div>
+<div class="cp"><strong>Competition point:</strong> For any "workers/days" or "speed/time" problem, first decide whether the <strong>product</strong> stays constant (inverse) or the <strong>quotient</strong> stays constant (direct) — choosing wrong flips the whole equation. Write the units into your fractions and let them cancel; if the leftover units aren't the ones you want, a factor is upside-down. (Full speed/distance/time problems live in <a class="cx" href="10_Distance_Speed_Time.html">10 Distance Speed Time</a>; work-rate problems in <a class="cx" href="11_Work_Percent_Concentration_Profit.html">11 Work Percent Concentration Profit</a>.)</div>
+</section>
+<section id="cheat-sheet">
+<h2>Cheat Sheet</h2>
+<div class="tbl-scroll"><table><thead><tr>
+<th>Idea</th>
+<th>Key point</th>
+</tr></thead><tbody>
+<tr>
+<td>Simplify whole-number ratio</td>
+<td>divide by the GCF</td>
+</tr>
+<tr>
+<td>Simplify fraction ratio</td>
+<td>×LCM of denominators, then reduce</td>
+</tr>
+<tr>
+<td>Simplify decimal ratio</td>
+<td>×10ⁿ, then reduce</td>
+</tr>
+<tr>
+<td>Given the total</td>
+<td>each part = (its parts)/(total parts) × total</td>
+</tr>
+<tr>
+<td>Ratio word problem</td>
+<td>write a proportion, cross-multiply</td>
+</tr>
+<tr>
+<td>Same height triangles</td>
+<td>area ratio = base ratio</td>
+</tr>
+<tr>
+<td>Corner triangle, shared vertex</td>
+<td>multiply the two side fractions</td>
+</tr>
+<tr>
+<td>Similar shapes, side ratio 2 : 3</td>
+<td>area 4 : 9, volume 8 : 27</td>
+</tr>
+<tr>
+<td>Sides doubled</td>
+<td>area × 4, volume × 8</td>
+</tr>
+<tr>
+<td>Moving things around</td>
+<td>the <strong>total</strong> stays fixed</td>
+</tr>
+<tr>
+<td>Adding one kind only</td>
+<td>the <strong>other kind</strong> stays fixed</td>
+</tr>
+<tr>
+<td>Chaining ratios</td>
+<td>match the common middle term (LCM)</td>
+</tr>
+<tr>
+<td>Direct proportion</td>
+<td>quotient y/x constant</td>
+</tr>
+<tr>
+<td>Inverse proportion</td>
+<td>product xy constant</td>
+</tr>
+<tr>
+<td>Unit conversion</td>
+<td>multiply by fractions equal to 1</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="linked-competition-problems">
+<h2>🔗 Linked Competition Problems</h2>
+<p>These concepts appear in real problems on the quiz app. Learn the idea, then click a problem and try it.</p>
+<p><strong>① Side ratio → Area ratio</strong></p>
+<ul>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/2_4.png">Mock Q2-4</a> — rectangle split into 4 parts (areas 65, 35, 49 m²); find the last one</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/2_26.png">Mock Q2-26</a> — inner triangle DEF = 7; find the area of triangle ABC</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/1_26.png">Mock Q1-26</a> — interior points give triangle EFG; find its area</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/4_15.png">Mock Q4-15</a> — trapezium ABCD; find the shaded area</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/4_21.png">Mock Q4-21</a> — hexagon with every side doubled; find the big hexagon</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/02.%20NM%202010/25.png">NM 2010 Q25</a> — triangle BEF area → area of quadrilateral AEFC</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/53.%20RI%202023/18.png">RI 2023 Q18</a> — mass points; BD = DE = EC, CF : AC = 1 : 3</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/54.%20RI%202024/11.png">RI 2024 Q11</a> — BD = 3/7 of BC, AF = FD; find the shaded area</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/55.%20RMO%202025/03.png">RMO 2025 Q03</a> — rhombus inside a square; find the area ratio</li>
+</ul>
+<p><strong>② Move/change an amount, then ratio</strong></p>
+<ul>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/2_25.png">Mock Q2-25</a> — oil poured P → Q → P; final ratio 11 : 7</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/4_6.png">Mock Q4-6</a> — red and white balls; the extra difference is 64</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/4_28.png">Mock Q4-28</a> — price change gives a new mass ratio m : n</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/53.%20RI%202023/12.png">RI 2023 Q12</a> — people move from B to A; the male ratio changes</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/54.%20RI%202024/14.png">RI 2024 Q14</a> — marbles moved; two ratio conditions given</li>
+</ul>
+<p><strong>③ Combined ratio (chaining)</strong></p>
+<ul>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/53.%20RI%202023/07.png">RI 2023 Q07</a> — income 4 : 3, spending 11 : 7, savings equal; find the monthly income</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/60.%20AP%202025/10.png">AP 2025 Q10</a> — parts S1 : S2 : S3 : S4 combined; total is 2158</li>
+</ul>
+</section>
+<section id="quick-check">
+<h2>Quick Check</h2>
+<ol>
+<li>In triangle ABC, D is on BC with BD : DC = 3 : 5. What is triangle ABD : triangle ACD?</li>
+<li>Two similar squares have sides in ratio 3 : 4. What is the ratio of their areas?</li>
+<li>In triangle ABC, AD : AB = 1 : 3 and AE : AC = 1 : 2. What fraction of triangle ABC is triangle ADE?</li>
+<li>A : B = 2 : 5 and B : C = 3 : 4. Write A : B : C.</li>
+<li>A box has red : white = 4 : 1. After adding 30 red balls the ratio is 7 : 1. How many white balls are there?</li>
+<li>Simplify the ratio <code>1½ : 2¼</code>.</li>
+<li>Prize money $2400 is split 5 : 4 : 3. How much does the biggest share get?</li>
+<li>A photo is 4 cm × 6 cm. Enlarged to keep its shape, its area becomes 216 cm². How wide is it now?</li>
+<li>A car travels 150 miles in 2.5 hours. What is its speed? At that speed, how far in 4 hours?</li>
+<li>If $1 = ¥90, how many yen is $40? (Use a conversion factor.)</li>
+<li>You drive 60 miles at 30 mph, then the same 60 miles back at 60 mph. What is your average speed for the whole trip? (Careful!)</li>
+</ol>
+<details><summary>Answers</summary><div class="answer">
+<p>1. Same height, so area ratio = base ratio = <strong>3 : 5</strong></p>
+<p>2. Square the side ratio → 3² : 4² = <strong>9 : 16</strong></p>
+<p>3. Share vertex A → multiply: (1/3) × (1/2) = <strong>1/6</strong></p>
+<p>4. Make B the same (LCM of 5 and 3 = 15): A : B = 6 : 15, B : C = 15 : 20 → <strong>6 : 15 : 20</strong></p>
+<p>5. White stays fixed = w, red starts 4w. 4w + 30 = 7w → 3w = 30 → w = <strong>10</strong></p>
+<p>6. <code>1½ : 2¼ = 3/2 : 9/4</code> → ×4 → <code>6 : 9</code> → <strong>2 : 3</strong></p>
+<p>7. Parts = 5+4+3 = 12; one part = 2400/12 = 200; biggest = 5×200 = <strong>$1000</strong></p>
+<p>8. width : height = 4 : 6 = 2 : 3. Let width 2x, height 3x → area 6x² = 216 → x² = 36 → x = 6 → width = 2x = <strong>12 cm</strong></p>
+<p>9. speed = 150/2.5 = <strong>60 mph</strong>; distance = 60 × 4 = <strong>240 miles</strong></p>
+<p>10. $40 × (¥90/$1) = <strong>¥3600</strong></p>
+<p>11. NOT 45. Time out = 60/30 = 2 hr, time back = 60/60 = 1 hr → 120 miles in 3 hr → average = 120/3 = <strong>40 mph</strong></p></div></details>
+<p class="footer-note">Source map: <code>약점진단/01_비율활용_세부분석.md</code>; concepts expanded from AOPS Prealgebra Ch.7 (Ratios, Conversions, Rates). Geometry continues in <a class="cx" href="02_Angles_Similarity_Circles.html">02 Angles Similarity Circles</a>; the "similar shapes, area from ratio" idea reappears in <a class="cx" href="03_Special_Theorems_Coordinates_Solids.html">03 Special Theorems Coordinates Solids</a>. For the general area-ratio formula on a triangle, look up <strong>Routh's theorem</strong>.</p>
+</section>
+<a class="backlink" href="index.html">← All units</a>
+</div>

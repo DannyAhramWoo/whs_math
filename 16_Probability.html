@@ -1,0 +1,132 @@
+<title>16. Probability &amp; Expected Value — Math Competition Notes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="shared.css">
+<div class="wrap">
+<a class="backlink" href="index.html">← All units</a>
+<header class="chapter-head">
+<p class="eyebrow">Unit 16</p>
+<h1>Probability &amp; Expected Value</h1>
+<p class="standfirst">Probability questions ("what is the chance that...") are common in NMOS/IMSO and connect directly to the counting tools in <a class="cx" href="08_Permutations_Combinations_Counting.html">08 Permutations Combinations Counting</a>. This unit turns those counting skills into probability answers.</p>
+</header>
+<p class="src-note" style="border-left-color:var(--rule);color:var(--ink-faint)"><strong>Unit:</strong> Probability (Unit 16 · extra unit from book scans, no linked quiz-app problems yet) · <strong>For:</strong> primary competition students (SMO · NMOS · IMSO) — concepts go up to <strong>Secondary 2</strong> level</p>
+<section id="lesson-overview">
+<h2>Lesson Overview</h2>
+<p>What this note covers:</p>
+<ol>
+<li>Basic Probability</li>
+<li>Complement and "At Least One"</li>
+<li>Independent vs Dependent Events</li>
+<li>Addition Rule (Overlapping Events)</li>
+<li>Geometric Probability</li>
+<li>Expected Value</li>
+</ol>
+</section>
+<section id="s1">
+<span class="sec-num">1</span>
+<h2>Basic Probability</h2>
+<ul>
+<li><strong>Probability formula:</strong> P(event) = (number of ways it happens) ÷ (number of ways total) — <strong>only valid when every outcome is equally likely.</strong><br><span style="color:var(--ink-soft)">Example: rolling a fair die, P(even number) = 3/6 = 1/2.</span></li>
+<li>Probability is always between 0 (never happens) and 1 (always happens).</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> The #1 mistake is treating outcomes as equally likely when they're not (e.g. treating "sum of two dice" as 11 equally likely values 2–12 — it's not! You must count the 36 equally likely dice-pairs instead, since sum=7 has 6 ways but sum=2 has only 1).</div>
+<ul>
+<li><strong>Consistency rule:</strong> when counting the successful outcomes AND the total outcomes, use the SAME method for both (both ordered, or both unordered). Mixing the two gives a wrong answer.</li>
+</ul>
+</section>
+<section id="s2">
+<span class="sec-num">2</span>
+<h2>Complement and "At Least One"</h2>
+<ul>
+<li><strong>Complement rule:</strong> P(event happens) = 1 − P(event does NOT happen). Very useful when "at least one" is hard to count directly but "none" is easy.<br><span style="color:var(--ink-soft)">Example: rolling a die 4 times, P(at least one 6) = 1 − P(no 6 in 4 rolls) = 1 − (5/6)⁴.</span></li>
+</ul>
+</section>
+<section id="s3">
+<span class="sec-num">3</span>
+<h2>Independent vs Dependent Events</h2>
+<ul>
+<li><strong>Independent events</strong> (neither affects the other): P(A and B) = P(A) × P(B).<br><span style="color:var(--ink-soft)">Example: two coin flips, P(both heads) = 1/2 × 1/2 = 1/4.</span></li>
+<li><strong>Dependent events</strong> (one changes the pool for the next, like drawing without replacement): multiply the changing probabilities step by step.<br><span style="color:var(--ink-soft)">Example: drawing 2 red socks in a row (no replacement) from a drawer of 5 red, 3 blue: P = 5/8 × 4/7 = 20/56 = 5/14.</span></li>
+</ul>
+</section>
+<section id="s4">
+<span class="sec-num">4</span>
+<h2>Addition Rule (Overlapping Events)</h2>
+<ul>
+<li>P(A or B) = P(A) + P(B) − P(A and B) — same idea as <a class="cx" href="07_Inclusion_Exclusion.html">07 Inclusion Exclusion</a>, applied to probabilities instead of counts. For mutually exclusive events (can't both happen), just add: P(A or B) = P(A) + P(B).<br><span style="color:var(--ink-soft)">Example: rolling a die, P(even or greater than 4) = 3/6 + 2/6 − 1/6 = 4/6 = 2/3 (subtract the overlap: rolling a 6 is counted in both groups).</span></li>
+</ul>
+</section>
+<section id="s5">
+<span class="sec-num">5</span>
+<h2>Geometric Probability</h2>
+<p>When outcomes form a continuous range (a random point on a segment, a random arrival time) instead of a countable list, probability = (favorable length/area) ÷ (total length/area).</p>
+<ul>
+<li>Example: a point is picked at random on a 10-unit segment. P(point is within the last 3 units) = 3/10.</li>
+<li><strong>Classic "meeting problem":</strong> two people each arrive at a random time in a 1-hour window and wait 15 minutes for each other. Plot both arrival times on a square (one axis per person); the region where they overlap is a diagonal band. P(they meet) = (area of the band) ÷ (area of the whole square) — found by subtracting the two unmet corner triangles from the full square, same "whole minus holes" idea from <a class="cx" href="02_Angles_Similarity_Circles.html">02 Angles Similarity Circles</a>.</li>
+</ul>
+</section>
+<section id="s6">
+<span class="sec-num">6</span>
+<h2>Expected Value</h2>
+<ul>
+<li><strong>Expected value (E):</strong> the probability-weighted average of all possible outcomes: E = p₁x₁ + p₂x₂ + ... + pₙxₙ, where each xᵢ is an outcome's value and pᵢ its probability.<br><span style="color:var(--ink-soft)">Example: a standard die roll has E = (1+2+3+4+5+6)/6 = 3.5 (note: the expected value doesn't have to be an outcome you can actually roll!).</span></li>
+<li><strong>Fair price of a game:</strong> the amount that makes the game break even in the long run = its expected winnings. Charging more than that gives the house an expected profit.<br><span style="color:var(--ink-soft)">Example: a weighted coin (heads 3/4 of the time, wins $2; tails 1/4, loses $1): E = (3/4)(2) + (1/4)(−1) = $1.25. That's the "fair" price to play.</span></li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> For "find the unknown given the expected value" problems, set up E as an algebraic expression with the unknown, set it equal to the given value, and solve like a normal equation.</div>
+</section>
+<section id="cheat-sheet">
+<h2>Cheat Sheet</h2>
+<div class="tbl-scroll"><table><thead><tr>
+<th>Idea</th>
+<th>Key point</th>
+</tr></thead><tbody>
+<tr>
+<td>Basic probability</td>
+<td>favorable ÷ total, only if equally likely</td>
+</tr>
+<tr>
+<td>Complement</td>
+<td>P(not A) = 1 − P(A)</td>
+</tr>
+<tr>
+<td>Independent events</td>
+<td>multiply P(A) × P(B)</td>
+</tr>
+<tr>
+<td>Dependent events</td>
+<td>multiply changing probabilities step by step</td>
+</tr>
+<tr>
+<td>A or B (overlap)</td>
+<td>P(A) + P(B) − P(A and B)</td>
+</tr>
+<tr>
+<td>Geometric probability</td>
+<td>favorable length/area ÷ total length/area</td>
+</tr>
+<tr>
+<td>Expected value</td>
+<td>Σ (outcome × its probability)</td>
+</tr>
+<tr>
+<td>Fair price</td>
+<td>equals the expected value</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="quick-check">
+<h2>Quick Check</h2>
+<ol>
+<li>A bag has 4 red and 6 blue marbles. What's the probability of drawing a red marble?</li>
+<li>Two dice are rolled. What's the probability the sum is 7?</li>
+<li>A box has 3 red and 2 blue balls. Two are drawn without replacement. What's the probability both are red?</li>
+<li>A game gives $10 with probability 1/5 and $0 otherwise. What's the expected value?</li>
+</ol>
+<details><summary>Answers</summary><div class="answer">
+<p>1. 4/10 = <strong>2/5</strong>.</p>
+<p>2. 6 ways out of 36 total (1-6,2-5,3-4,4-3,5-2,6-1) = <strong>1/6</strong>.</p>
+<p>3. 3/5 × 2/4 = 6/20 = <strong>3/10</strong>.</p>
+<p>4. E = (1/5)(10) + (4/5)(0) = <strong>$2</strong>.</p></div></details>
+<p class="footer-note">This is a new unit added from book scans (2026-07-22) — no quiz-app problems are linked to it yet. Builds directly on <a class="cx" href="08_Permutations_Combinations_Counting.html">08 Permutations Combinations Counting</a> (counting tools) and <a class="cx" href="07_Inclusion_Exclusion.html">07 Inclusion Exclusion</a> (the addition rule). See <a class="cx" href="15_Statistics.html">15 Statistics</a> for the mean/median/mode unit.</p>
+</section>
+<a class="backlink" href="index.html">← All units</a>
+</div>

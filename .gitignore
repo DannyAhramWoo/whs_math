@@ -1,0 +1,8 @@
+# Reference books (large PDFs — must NOT be committed)
+math books/
+
+# Working / planning files
+_NEXT_SESSION_TODO.md
+
+# macOS
+.DS_Store

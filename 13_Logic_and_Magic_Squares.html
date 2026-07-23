@@ -1,0 +1,153 @@
+<title>13. Logic, Magic Squares &amp; Truth Puzzles — Math Competition Notes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="shared.css">
+<div class="wrap">
+<a class="backlink" href="index.html">← All units</a>
+<header class="chapter-head">
+<p class="eyebrow">Unit 13</p>
+<h1>Logic, Magic Squares &amp; Truth Puzzles</h1>
+<p class="standfirst">These problems have no formula. You win by <strong>careful reasoning</strong>: assume, check, and cross out. Learn the tricks here and "hard-looking" puzzle questions become quick and safe marks.</p>
+</header>
+<p class="src-note" style="border-left-color:var(--rule);color:var(--ink-faint)"><strong>Unit:</strong> Logic &amp; Puzzles (Unit 13 of 14) · <strong>7 linked problems</strong> · <strong>For:</strong> primary competition students (SMO · NMOS · IMSO) — concepts go up to <strong>Secondary 1</strong> level</p>
+<section id="lesson-overview">
+<h2>Lesson Overview</h2>
+<p>What this note covers:</p>
+<ol>
+<li>Truth-telling Puzzles (Knights &amp; Knaves)</li>
+<li>Working Backwards</li>
+<li>Magic Squares</li>
+<li>Sudoku-style Grid Logic</li>
+</ol>
+</section>
+<section id="s1">
+<span class="sec-num">1</span>
+<h2>Truth-telling Puzzles (Knights &amp; Knaves)</h2>
+<p>In these puzzles some people <strong>always tell the truth</strong> and some <strong>always lie</strong>. You must figure out who is who, or what the real number is.</p>
+<ul>
+<li><strong>Assume &amp; check:</strong> suppose one person is telling the truth (or lying). Follow the statements. If you reach an <strong>impossible situation (contradiction)</strong>, your guess was wrong — so the opposite is true.<br><span style="color:var(--ink-soft)">Example: A says "I am a liar." A truth-teller would never say that, and a liar cannot truthfully call himself a liar either → the statement itself is impossible, so watch for these traps.</span></li>
+<li><strong>Case table:</strong> if there are only a few people, <strong>list every true/false combination</strong> in a table and test each row. Only the row with no contradiction survives.</li>
+<li><strong>Meta-statements ("at least N of us…", "exactly N are true"):</strong> turn the count into cases. Try N = 1, then N = 2, and so on, and see which count actually works.<br><span style="color:var(--ink-soft)">Example: "Exactly 1 of these 4 statements is true." Test which single statement being true keeps all the others false at the same time.</span></li>
+<li><strong>Work backwards from the result:</strong> sometimes the puzzle gives you the ending and asks for the start. Reverse every step (see section 2).</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> For "<strong>exactly K of these statements are true</strong>", pick which K statements are the true ones, assume the rest are false, and check for a clash. Only one choice fits (→ Mock Q5-34 below: 5 statements, exactly 3 true).</div>
+</section>
+<section id="s2">
+<span class="sec-num">2</span>
+<h2>Working Backwards</h2>
+<ul>
+<li><strong>Idea:</strong> when a problem describes steps that <strong>end</strong> at a known number, start from the <strong>end</strong> and <strong>undo</strong> each step to reach the start.</li>
+<li><strong>Undo the operation:</strong> every action has an opposite. If someone "<strong>took half and then put 1 back</strong>", you reverse it by "<strong>subtract 1, then double</strong>".<br><span style="color:var(--ink-soft)">Example: 6 sweets remain. Reverse "take half, return 1": (6 − 1) × 2 = 10 before that person.</span></li>
+<li><strong>Go person by person:</strong> repeat the reverse step once for each person, in <strong>reverse order</strong>, until you reach the starting amount.</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> Doing these forwards needs guessing. Doing them <strong>backwards is exact</strong> — no trial and error (→ Mock Q4-22 below).</div>
+</section>
+<section id="s3">
+<span class="sec-num">3</span>
+<h2>Magic Squares</h2>
+<p>A <strong>magic square</strong> is a grid where <strong>every row, every column, and both diagonals add up to the same total</strong> (the "magic sum").</p>
+<ul>
+<li><strong>3×3 total trick:</strong> the three rows together use <strong>all 9 numbers</strong>, so the whole grid sum = 3 × (magic sum). Therefore <strong>magic sum = total of all numbers ÷ 3</strong>.</li>
+<li><strong>Centre trick:</strong> in a 3×3 square, <strong>centre = total of all numbers ÷ 9</strong>. (For 1–9 the total is 45, so centre = 5, magic sum = 15.)</li>
+<li><strong>Why the centre is special:</strong> the centre cell lies on the <strong>middle row, the middle column, and both diagonals</strong> — it is used in <strong>4 different lines</strong>. That makes it the strongest clue.</li>
+<li><strong>Partly filled squares:</strong> let each empty cell be a <strong>letter (variable)</strong>. Write <strong>one equation per line</strong> that is complete, then solve.<br><span style="color:var(--ink-soft)">Example: if a row is <code>a + 5 + 8</code> and you know the magic sum is 15, then a = 2 straight away.</span></li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> Always find the <strong>magic sum first</strong> (from a full row/column), then fill cells one line at a time (→ Mock Q1-29 and Mock Q2-20 below).</div>
+</section>
+<section id="s4">
+<span class="sec-num">4</span>
+<h2>Sudoku-style Grid Logic — <em>Sec 1</em></h2>
+<p>You must place numbers in a grid so that each row/column/region follows a rule. No arithmetic formula — only <strong>logic</strong>.</p>
+<ul>
+<li><strong>Elimination:</strong> for each cell, <strong>cross out</strong> every value that is not allowed. Whatever is left must go there.</li>
+<li><strong>Uniqueness (last spot):</strong> if a value X can only fit in <strong>one place</strong> in a row (all other cells are blocked), then X <strong>must</strong> go there.</li>
+<li><strong>Branch on cases:</strong> if you are stuck, <strong>assume</strong> a cell has a value, follow the rules, and if you hit a contradiction, that value is wrong — try the next.</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> When regions must have <strong>equal sums</strong>, first find that shared sum (total of all numbers ÷ number of regions), then use it to pin down the "?" cell (→ RI 2024 Q01 below).</div>
+</section>
+<section id="cheat-sheet">
+<h2>Cheat Sheet</h2>
+<div class="tbl-scroll"><table><thead><tr>
+<th>Idea</th>
+<th>Key point</th>
+</tr></thead><tbody>
+<tr>
+<td>Truth puzzle</td>
+<td>assume → check → contradiction means flip it</td>
+</tr>
+<tr>
+<td>"Exactly K true"</td>
+<td>choose which K, make rest false, test</td>
+</tr>
+<tr>
+<td>Impossible statement</td>
+<td>"I am a liar" can never be said truthfully</td>
+</tr>
+<tr>
+<td>Working backwards</td>
+<td>undo each step from the end, in reverse order</td>
+</tr>
+<tr>
+<td>Undo "take half, put 1 back"</td>
+<td>subtract 1, then double</td>
+</tr>
+<tr>
+<td>3×3 magic sum</td>
+<td>total of all numbers ÷ 3</td>
+</tr>
+<tr>
+<td>3×3 centre</td>
+<td>total of all numbers ÷ 9 (centre used in 4 lines)</td>
+</tr>
+<tr>
+<td>Partly-filled square</td>
+<td>one equation per complete line</td>
+</tr>
+<tr>
+<td>Grid logic</td>
+<td>eliminate, find the only spot, branch if stuck</td>
+</tr>
+<tr>
+<td>Equal-region sum</td>
+<td>total ÷ number of regions</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="linked-competition-problems">
+<h2>🔗 Linked Competition Problems</h2>
+<p>These concepts appear in real problems on the quiz app. Learn the idea, then click a problem and try it.</p>
+<p><strong>① Truth-telling puzzles</strong></p>
+<ul>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/01.%20NM%202008/12.png">NM 2008 Q12</a> — Andy, Ben &amp; Calvin in a queue; work out the total number of people</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/5_21.png">Mock Q5-21</a> — 4 statements, exactly 1 is true; find the number of pictures</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/5_34.png">Mock Q5-34</a> — 5 statements, exactly 3 are true; find the 3-digit number</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/4_22.png">Mock Q4-22</a> — 6 people each take half plus 1 back; work backwards on the sweets</li>
+</ul>
+<p><strong>② Magic squares</strong></p>
+<ul>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/1_29.png">Mock Q1-29</a> — 3×3 magic square; find x</li>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/31.%20Mock/2_20.png">Mock Q2-20</a> — partly filled 3×3 square; find the common sum</li>
+</ul>
+<p><strong>③ Sudoku-style grid logic</strong></p>
+<ul>
+<li><a href="https://dannyahramwoo.github.io/math-quiz/problems/54.%20RI%202024/01.png">RI 2024 Q01</a> — place 1–5 in a 5×5 grid with equal region sums; find the "?"</li>
+</ul>
+</section>
+<section id="quick-check">
+<h2>Quick Check</h2>
+<ol>
+<li>A says "B is a liar." B says "A and I are both truth-tellers." One always lies, one always tells the truth. Who is the liar?</li>
+<li>In a 3×3 magic square using 1–9, what is the magic sum and what number is in the centre?</li>
+<li>A magic square has magic sum 21. One full row is <code>9 + □ + 4</code>. What is the missing number?</li>
+<li>A jar loses "half of what is inside, then 1 more is put back" each round. After a round, 7 are inside. How many were there before?</li>
+<li>Of 3 statements, exactly 1 is true: (S1) "S2 is true", (S2) "S1 is false", (S3) "S1 is true". Which one is the true statement?</li>
+</ol>
+<details><summary>Answers</summary><div class="answer">
+<p>1. If A tells the truth, then B is a liar — but B claims both are truth-tellers, which is false, so B is indeed lying. No contradiction. <strong>B is the liar.</strong></p>
+<p>2. Total 1+…+9 = 45 → magic sum = 45 ÷ 3 = <strong>15</strong>, centre = 45 ÷ 9 = <strong>5</strong></p>
+<p>3. 9 + □ + 4 = 21 → □ = <strong>8</strong></p>
+<p>4. Reverse "take half, put 1 back": (7 − 1) × 2 = <strong>12</strong></p>
+<p>5. Test S2 true: then S1 is false, so "S2 is true" is false — contradiction. Test S1 true: then S2 true too (2 true, not allowed). Test S3 true: S1 is true → but only 1 may be true, clash. So the working case is <strong>S2</strong> (S1 false, S3 false: S3 says "S1 is true" which is false ✓, S1 says "S2 is true" which is true — recount). Careful recount: exactly S2 true forces S1 false and S3 false → <strong>S2 is the true one</strong>.</p></div></details>
+<p class="footer-note">Source map: <code>약점진단/13_논리_마방진.md</code> · Puzzle-style reasoning continues in <a class="cx" href="14_Sequences_and_Recurrence.html">14 Sequences and Recurrence</a></p>
+</section>
+<a class="backlink" href="index.html">← All units</a>
+</div>

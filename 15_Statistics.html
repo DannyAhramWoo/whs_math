@@ -1,0 +1,122 @@
+<title>15. Statistics — Math Competition Notes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="shared.css">
+<div class="wrap">
+<a class="backlink" href="index.html">← All units</a>
+<header class="chapter-head">
+<p class="eyebrow">Unit 15</p>
+<h1>Statistics</h1>
+<p class="standfirst">Mean, median, mode, and range show up in NMOS/IMSO word problems and data-table questions. None of the other 13 units cover this — it's a completely separate skill.</p>
+</header>
+<p class="src-note" style="border-left-color:var(--rule);color:var(--ink-faint)"><strong>Unit:</strong> Statistics (Unit 15 · extra unit from book scans, no linked quiz-app problems yet) · <strong>For:</strong> primary competition students (SMO · NMOS · IMSO) — concepts go up to <strong>Secondary 1</strong> level</p>
+<section id="lesson-overview">
+<h2>Lesson Overview</h2>
+<p>What this note covers:</p>
+<ol>
+<li>Mean, Median, Mode, Range</li>
+<li>Using a "Guessed Mean" Shortcut</li>
+<li>Harmonic Mean and Geometric Mean</li>
+<li>Mean/Median/Mode Together (harder problems)</li>
+</ol>
+</section>
+<section id="s1">
+<span class="sec-num">1</span>
+<h2>Mean, Median, Mode, Range</h2>
+<ul>
+<li><strong>Mean (average):</strong> sum of all values ÷ how many values there are.<br><span style="color:var(--ink-soft)">Example: 3, 5, 6, 10 → mean = (3+5+6+10)/4 = 6.</span></li>
+<li><strong>Median:</strong> the middle value once the list is sorted. If there's an even number of values, average the two middle ones.<br><span style="color:var(--ink-soft)">Example: 4, 5, 7, 8, 11 → median = 7 (the middle one).</span><br><span style="color:var(--ink-soft)">Example (even count): 4, 5, 7, 8 → median = (5+7)/2 = 6.</span></li>
+<li><strong>Mode:</strong> the value(s) that appear most often. A list can have no mode, one mode, or several (if tied).</li>
+<li><strong>Range:</strong> biggest value − smallest value.</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> An <strong>outlier</strong> (one value far from the rest) swings the <strong>mean</strong> a lot but barely moves the <strong>median</strong>. If a data set has one extreme value, the median is the more "honest" summary.</div>
+</section>
+<section id="s2">
+<span class="sec-num">2</span>
+<h2>Using a "Guessed Mean" Shortcut</h2>
+<p>Instead of adding up a long list of numbers, guess a nearby round number as your "trial mean," then sum the <strong>deviations</strong> (how far each number is above/below the guess) and adjust.</p>
+<ul>
+<li>Example: for 97, 102, 99, 105, 101, guess mean = 100. Deviations: −3, +2, −1, +5, +1 → sum = +4. True mean = 100 + 4/5 = 100.8.</li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> This trick turns big-number addition into small-number addition — very useful when values are clustered close together.</div>
+</section>
+<section id="s3">
+<span class="sec-num">3</span>
+<h2>Harmonic Mean and Geometric Mean</h2>
+<ul>
+<li><strong>Geometric mean</strong> of n numbers = the nth root of their product. For two numbers a and b: geometric mean = √(ab).<br><span style="color:var(--ink-soft)">Example: geometric mean of 4 and 9 = √36 = 6.</span></li>
+<li><strong>Harmonic mean</strong> of n numbers = n ÷ (sum of the reciprocals of the numbers).<br><span style="color:var(--ink-soft)">Example: harmonic mean of 1, 2, 4 = 3 ÷ (1/1 + 1/2 + 1/4) = 3 ÷ (7/4) = 12/7.</span></li>
+</ul>
+<div class="cp"><strong>Competition point:</strong> The classic "average speed for a round trip" problem (same distance there and back, different speeds) is really a <strong>harmonic mean</strong> in disguise — see <a class="cx" href="10_Distance_Speed_Time.html">10 Distance Speed Time</a> for the speed version of this formula.</div>
+</section>
+<section id="s4">
+<span class="sec-num">4</span>
+<h2>Mean/Median/Mode Together (harder problems)</h2>
+<p>Some problems fix the mean, median, AND range (or mode) all at once, and ask you to find missing numbers. The method:</p>
+<ol>
+<li>Use the <strong>median</strong> to pin down the middle value(s) — this bounds what the sorted list can look like.</li>
+<li>Use the <strong>mean</strong> to find the total sum of all numbers, then subtract the known values to find what's left.</li>
+<li><strong>Case-check</strong>: try the different orderings/digit choices that fit the constraints, and eliminate any that break a rule (like all numbers needing to be distinct, or a specific mode).</li>
+</ol>
+<div class="cp"><strong>Competition point:</strong> These problems reward careful bounding before guessing — figure out the tightest range for each unknown first, then check a short list of candidates rather than guessing randomly.</div>
+</section>
+<section id="cheat-sheet">
+<h2>Cheat Sheet</h2>
+<div class="tbl-scroll"><table><thead><tr>
+<th>Idea</th>
+<th>Key point</th>
+</tr></thead><tbody>
+<tr>
+<td>Mean</td>
+<td>sum ÷ count</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>middle value after sorting (average of 2 middles if even count)</td>
+</tr>
+<tr>
+<td>Mode</td>
+<td>most frequent value(s)</td>
+</tr>
+<tr>
+<td>Range</td>
+<td>max − min</td>
+</tr>
+<tr>
+<td>Outlier</td>
+<td>swings mean a lot, median barely moves</td>
+</tr>
+<tr>
+<td>Guessed mean</td>
+<td>sum deviations from a round number, then adjust</td>
+</tr>
+<tr>
+<td>Geometric mean (2 numbers)</td>
+<td>√(a×b)</td>
+</tr>
+<tr>
+<td>Harmonic mean (2 numbers)</td>
+<td>2ab/(a+b) — same idea as round-trip average speed</td>
+</tr>
+<tr>
+<td>Mean+median+range problems</td>
+<td>bound with median first, then use mean for the total, then case-check</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="quick-check">
+<h2>Quick Check</h2>
+<ol>
+<li>Find the mean, median, and mode of: 2, 4, 4, 5, 6, 10, 4.</li>
+<li>A list has mean 6 and 5 numbers. What is their total sum?</li>
+<li>Find the geometric mean of 8 and 18.</li>
+<li>Find the harmonic mean of 6 and 12.</li>
+</ol>
+<details><summary>Answers</summary><div class="answer">
+<p>1. Mean = (2+4+4+5+6+10+4)/7 = 35/7 = <strong>5</strong>. Sorted: 2,4,4,4,5,6,10 → median = <strong>4</strong>. Mode = <strong>4</strong> (appears 3 times).</p>
+<p>2. Sum = mean × count = 6 × 5 = <strong>30</strong>.</p>
+<p>3. √(8×18) = √144 = <strong>12</strong>.</p>
+<p>4. 2×6×12/(6+12) = 144/18 = <strong>8</strong>.</p></div></details>
+<p class="footer-note">This is a new unit added from book scans (2026-07-22) — no quiz-app problems are linked to it yet. See <a class="cx" href="08_Permutations_Combinations_Counting.html">08 Permutations Combinations Counting</a> for the closely related unit on probability, and <a class="cx" href="10_Distance_Speed_Time.html">10 Distance Speed Time</a> for the harmonic-mean speed formula.</p>
+</section>
+<a class="backlink" href="index.html">← All units</a>
+</div>
