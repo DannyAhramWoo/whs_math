@@ -14,12 +14,14 @@
 <li><span class="n">2</span><a href="#s2">Percentage</a></li>
 <li><span class="n">3</span><a href="#s3">Concentration (salt water / mixtures) — <em>Sec 1</em></a></li>
 <li><span class="n">4</span><a href="#s4">Profit &amp; Loss</a></li>
-<li><span class="n">5</span><a href="#s5">Average &amp; Total</a></li>
+<li><span class="n">5</span><a href="#s5">Average, Median &amp; Mode</a></li>
 </ol></nav>
 <section id="s1">
 <span class="sec-num">1</span>
 <h2>Work Rate (working together)</h2>
+<p class="src-note"><em>Source: AOPS Prealgebra §7.6 "Other Rates" — work as a rate (job per unit time); the fence-painting "add the rates" problem.</em></p>
 <ul>
+<li><strong>A rate is just "how much per one unit of time".</strong> Speed is distance per hour; a work rate is jobs per hour. Find each worker's per-hour (or per-day) amount, then combine.</li>
 <li><strong>Let the whole job = 1:</strong> treat the whole task (a wall, a report, filling a tank) as <strong>1</strong>.<br><span style="color:var(--ink-soft)">If A finishes alone in <strong>n</strong> days, then A does <strong>1/n</strong> of the job each day. This is A's <strong>rate</strong>.</span><br><span style="color:var(--ink-soft)">Example: A paints a wall in 4 days → A's rate = <strong>1/4</strong> per day.</span></li>
 <li><strong>Add the rates:</strong> when people work together, <strong>add their rates</strong>.<br><span style="color:var(--ink-soft)">A's rate + B's rate + … = <strong>total rate</strong> per day.</span><br><span style="color:var(--ink-soft)">Example: A = 1/4, B = 1/6 → together = 1/4 + 1/6 = <strong>5/12</strong> per day.</span></li>
 <li><strong>Time = 1 ÷ total rate:</strong> to find how long the whole job takes, flip the total rate over.<br><span style="color:var(--ink-soft)">Example: total rate 5/12 → time = 12/5 = <strong>2.4 days</strong>.</span></li>
@@ -29,17 +31,23 @@
 <section id="s2">
 <span class="sec-num">2</span>
 <h2>Percentage</h2>
+<p class="src-note"><em>Source: AOPS Prealgebra Ch.8 "Percents" — §8.1 (percent = per 100), §8.2 (word problems, "what percent of"), §8.3 (percent increase/decrease).</em></p>
 <ul>
-<li><strong>Percent means "out of 100".</strong> 25% = 25/100 = 0.25.</li>
+<li><strong>Percent means "out of 100".</strong> 25% = 25/100 = 0.25. <strong>Handy conversions:</strong> 10% = 1/10, 25% = ¼, 50% = ½, 75% = ¾, 20% = 1/5.</li>
+<li><strong>"What percent is A of B?"</strong> = <strong>(A ÷ B) × 100%</strong>. This is the <em>reverse</em> direction — you're finding the rate, not applying it.<br><span style="color:var(--ink-soft)">Example: 12 out of 48 → 12/48 = 0.25 = <strong>25%</strong>.</span></li>
 <li><strong>Increase by a rate:</strong> new value = <strong>x × (1 + rate)</strong>.<br><span style="color:var(--ink-soft)">Example: 200 up 15% → 200 × 1.15 = <strong>230</strong>.</span></li>
 <li><strong>Decrease by a rate:</strong> new value = <strong>x × (1 − rate)</strong>.<br><span style="color:var(--ink-soft)">Example: 200 down 20% → 200 × 0.80 = <strong>160</strong>.</span></li>
+<li><strong>"n% more than x" vs "n% of x" — not the same!</strong> "40% <em>of</em> 50" = 20, but "40% <em>more than</em> 50" = 50 × 1.40 = <strong>70</strong>. Read the wording carefully.</li>
+<li><strong>"What percent change from A to B?"</strong> = <strong>(B − A) ÷ A × 100%</strong> — always over the <strong>original</strong> A. (A <strong>100% increase = doubling</strong>.)<br><span style="color:var(--ink-soft)">Example: 40 → 50 is (50−40)/40 = 25% <strong>increase</strong>; 50 → 40 is (50−40)/50 = 20% <strong>decrease</strong> (different because the base changed).</span></li>
 <li><strong>Successive changes — multiply, don't add:</strong> apply each change one after another.<br><span style="color:var(--ink-soft)">Example: up 15% <strong>then</strong> down 20% → x × 1.15 × 0.80 = <strong>x × 0.92</strong> (a 8% drop overall, not 5%).</span></li>
 </ul>
+<div class="callout warn"><strong>Warning (the book's "Bogus Solution"):</strong> a percent must be taken over the <strong>right whole</strong>. If 60 of 200 are girls, the girls are 60/200 = <strong>30%</strong>, <em>not</em> 60/(200−60) = 42.9%. Always divide by the correct total.</div>
 <div class="cp"><strong>Competition point:</strong> "Up 15% then down 20%" is <strong>not</strong> "down 5%." The two percents are taken from <strong>different totals</strong>, so you must multiply the factors (→ Mock Q1-18 below).</div>
 </section>
 <section id="s3">
 <span class="sec-num">3</span>
 <h2>Concentration (salt water / mixtures) — <em>Sec 1</em></h2>
+<p class="src-note"><em>Source: AOPS Prealgebra §8.2 (Percent word problems, Problem 8.14 — the oil/vinegar salad-dressing mixture, computing the % of the whole).</em></p>
 <ul>
 <li><strong>Basic formula:</strong> concentration = <strong>(salt ÷ solution) × 100%</strong>.<br><span style="color:var(--ink-soft)">"Solution" = salt + water (the whole liquid).</span><br><span style="color:var(--ink-soft)">Example: 20 g salt in 80 g water → solution = 100 g → 20/100 = <strong>20%</strong>.</span></li>
 <li><strong>Mixing two liquids:</strong> the mixed concentration = <strong>(total salt) ÷ (total solution)</strong>.<br><span style="color:var(--ink-soft)">Add up all the salt on top, add up all the liquid on the bottom, then divide.</span></li>
@@ -51,6 +59,7 @@
 <section id="s4">
 <span class="sec-num">4</span>
 <h2>Profit &amp; Loss</h2>
+<p class="src-note"><em>Source: standard retail word-problem framing (cost / marked / selling). AOPS Prealgebra doesn't have a profit chapter, but its §8.2–8.3 give the pieces: discount = percent decrease, markup = percent increase, plus sales tax and commission.</em></p>
 <ul>
 <li><strong>Marked price (label price):</strong> the price on the tag.<br><span style="color:var(--ink-soft)">Marked price = <strong>cost × (1 + profit rate)</strong> when the shop plans a profit on top of cost.</span></li>
 <li><strong>Selling price after a discount:</strong> selling price = <strong>marked price × (1 − discount)</strong>.<br><span style="color:var(--ink-soft)">Example: marked $200, 10% off → 200 × 0.90 = <strong>$180</strong>.</span></li>
@@ -60,9 +69,12 @@
 </section>
 <section id="s5">
 <span class="sec-num">5</span>
-<h2>Average &amp; Total</h2>
+<h2>Average, Median &amp; Mode</h2>
+<p class="src-note"><em>Source: AOPS Prealgebra §13.1 "Basic Statistics" — mean/median/mode/range, and the "balance" view of the average.</em></p>
 <ul>
-<li><strong>Total = average × count.</strong> This one line solves most average problems.<br><span style="color:var(--ink-soft)">Example: average 80 over 5 tests → total = 80 × 5 = <strong>400</strong>.</span></li>
+<li><strong>Mean (average) = total ÷ count</strong>, so <strong>total = average × count.</strong> This one line solves most average problems.<br><span style="color:var(--ink-soft)">Example: average 80 over 5 tests → total = 80 × 5 = <strong>400</strong>.</span></li>
+<li><strong>Median = the middle value</strong> once the numbers are <strong>sorted</strong> (for an even count, the average of the two middle ones). <strong>Mode = the value that appears most often.</strong> <strong>Range = largest − smallest.</strong><br><span style="color:var(--ink-soft)">Example: 3, 7, 7, 9, 20 → mean = 46/5 = 9.2, median = <strong>7</strong>, mode = <strong>7</strong>, range = 20 − 3 = <strong>17</strong>. (Note the one big value 20 pulls the <em>mean</em> up but not the <em>median</em> — that's why median resists outliers.)</span></li>
+<li><strong>The "balance" idea:</strong> the average is the balance point — the total amount <strong>above</strong> it equals the total amount <strong>below</strong> it. Adding the <strong>same amount to every value</strong> shifts the mean by exactly that amount.</li>
 <li><strong>When one value changes:</strong> the average shifts by <strong>(change in that value) ÷ count</strong>.<br><span style="color:var(--ink-soft)">Example: one score goes up by 6, with 12 students → average rises by 6 ÷ 12 = <strong>0.5</strong>.</span></li>
 <li><strong>Going backwards:</strong> if the average moved by a known amount, then <strong>count = (change in the value) ÷ (change in average)</strong>.</li>
 </ul>
@@ -87,8 +99,20 @@
 <td>add the rates, then flip for time</td>
 </tr>
 <tr>
+<td>What percent is A of B</td>
+<td>(A ÷ B) × 100%</td>
+</tr>
+<tr>
 <td>Increase / decrease</td>
 <td>× (1 + rate) / × (1 − rate)</td>
+</tr>
+<tr>
+<td>n% more than x</td>
+<td>x × (1 + n%), not n% of x</td>
+</tr>
+<tr>
+<td>% change A→B</td>
+<td>(B − A) ÷ A (over the original)</td>
 </tr>
 <tr>
 <td>Two changes in a row</td>
@@ -111,8 +135,12 @@
 <td>marked × (1 − discount)</td>
 </tr>
 <tr>
-<td>Average</td>
+<td>Mean</td>
 <td>total = average × count</td>
+</tr>
+<tr>
+<td>Median / Mode / Range</td>
+<td>middle (sorted) / most common / max − min</td>
 </tr>
 <tr>
 <td>Average shift</td>
@@ -156,13 +184,17 @@
 <li>Mix 100 g of 30% salt water with 100 g of pure water. What is the new concentration?</li>
 <li>A toy costs $80. The marked price is cost plus 25%, then it is sold at 10% off. What is the profit?</li>
 <li>Correcting one student's mark by +12 raised the class average by 0.5. How many students are there?</li>
+<li>In a test, 18 of 24 students passed. What percent passed?</li>
+<li>Find the mean, median, mode and range of: 4, 8, 8, 10, 15.</li>
 </ol>
 <details><summary>Answers</summary><div class="answer">
 <p>1. Rates: 1/6 + 1/3 = 1/6 + 2/6 = 3/6 = 1/2 per day → time = <strong>2 days</strong></p>
 <p>2. 250 × 1.20 × 0.90 = 300 × 0.90 = <strong>$270</strong></p>
 <p>3. Salt = 30 g, total liquid = 200 g → 30/200 = <strong>15%</strong></p>
 <p>4. Marked = 80 × 1.25 = 100; selling = 100 × 0.90 = 90; profit = 90 − 80 = <strong>$10</strong></p>
-<p>5. Number = 12 ÷ 0.5 = <strong>24 students</strong></p></div></details>
+<p>5. Number = 12 ÷ 0.5 = <strong>24 students</strong></p>
+<p>6. 18/24 = 0.75 = <strong>75%</strong></p>
+<p>7. total 45 → mean = 45/5 = <strong>9</strong>; sorted 4,8,8,10,15 → median = <strong>8</strong>; mode = <strong>8</strong>; range = 15 − 4 = <strong>11</strong></p></div></details>
 <p class="footer-note">Source map: <code>약점진단/11_일률_백분율_농도_손익.md</code> · Word problems turn into equations in <a class="cx" href="12_Equations_Algebra_Factoring.html">12 Equations Algebra Factoring</a></p>
 </section>
 <a class="backlink" href="index.html">← All units</a>
