@@ -106,7 +106,7 @@
 <ul>
 <li>A <strong>proportion</strong> is a statement that two ratios are equal: <code>2 : 3 = 8 : 12</code>.</li>
 <li><strong>What a proportion is really for:</strong> it describes two changing quantities whose <strong>ratio stays constant</strong> as they grow or shrink together.<br><span style="color:var(--ink-soft)"><em>Mario's chocolate milk:</em> the recipe uses 8 oz milk to 2 oz syrup — a ratio of <code>8 : 2 = 4 : 1</code>. To make enough for 6 people he needs <code>6 × 8 = 48</code> oz milk and <code>6 × 2 = 12</code> oz syrup, and <code>48 : 12</code> is <strong>still</strong> <code>4 : 1</code>. No matter the batch size the ratio is always 4 : 1 — we say milk and syrup are <strong>proportional</strong> (or <em>in proportion</em>).</span></li>
-<li><strong>Cross-multiply rule:</strong> in <code>a : b = c : d</code>, the product of the means equals the product of the extremes → <strong><code>b × c = a × d</code></strong>.<br><span style="color:var(--ink-soft)"><code>2 : 3 = 8 : x</code> → <code>3 × 8 = 2 × x</code> → <code>x = 12</code>.</span></li>
+<li><strong>Two ways to solve any proportion</strong> (the book teaches both — pick whichever is quicker):<br><span style="color:var(--ink-soft)"><strong>Method 1 — cross-multiply.</strong> In <code>a : b = c : d</code>, the product of the means equals the product of the extremes → <strong><code>b × c = a × d</code></strong>.</span><br><span style="color:var(--ink-soft)"><code>2 : 3 = 8 : x</code> → <code>3 × 8 = 2 × x</code> → <code>x = 12</code>.</span><br><span style="color:var(--ink-soft)"><strong>Method 2 — scale directly.</strong> Spot how one side was multiplied and apply the same factor to the other. In <code>2 : 3 = 8 : x</code>, the left number went 2 → 8 (×4), so <code>x = 3 × 4 = 12</code> — no equation needed. (For a recipe scaled to ¾ size, just multiply every amount by ¾.)</span></li>
 </ul>
 <p><strong>Where proportions hide (all the same idea):</strong></p>
 <ul>
@@ -215,7 +215,9 @@
 <li>Bigger chain: <code>1 gallon → tablespoons</code> (1 gal = 16 cups, 1 cup = 8 oz, 1 tbsp = ½ oz): <code>1 × (16 cups/1 gal) × (8 oz/1 cup) × (1 tbsp / ½ oz) = 256 tbsp</code>. Chain as many factors as needed, as long as each equals 1 and units cancel.</li>
 <li>Bigger chain: <code>45 mi/hr → ft/s</code>: <code>45 × (5280 ft / 1 mi) × (1 hr / 3600 s) = 66 ft/s</code>.</li>
 <li><strong>Currency is a conversion factor too.</strong> If $1 = ¥90, then <code>¥90/$1 = 1</code>. Will takes $1000 to Japan → <code>$1000 × (¥90/$1) = ¥90,000</code>; converting leftover yen back uses the reciprocal <code>$1/¥90</code>.</li>
+<li><strong>Squared and cubed units — multiply the factor twice (or three times).</strong> For <strong>area</strong> you apply the length conversion <strong>twice</strong>; for <strong>volume</strong>, three times. Since 1 in = 2.5 cm, <code>1 in² = (2.5)² cm² = 6.25 cm²</code>, and <code>1 in³ = (2.5)³ = 15.625 cm³</code>. This is a very common trap — converting an area with a single factor is wrong.</li>
 </ul>
+<div class="callout warn"><strong>Warning:</strong> When converting an <strong>area</strong> (cm² → m², in² → cm², …), the conversion factor must be applied <strong>twice</strong>, not once. 1 m = 100 cm, so 1 m² = 100² = <strong>10,000</strong> cm² — not 100 cm². For volumes, three times.</div>
 <p><strong>Speed and other rates (a rate is a ratio between two units).</strong></p>
 <ul>
 <li><strong>Speed is the ratio of distance to time:</strong> <code>speed = distance / time</code>, which rearranges to <code>distance = speed × time</code> and <code>time = distance / speed</code>. The word <strong>"per"</strong> ("miles <em>per</em> hour") literally means "divided by."<br><span style="color:var(--ink-soft)">A car going 110 miles in 2 hours travels <code>110/2 = 55 mph</code>; at 70 mph for 2 hours it covers <code>70 × 2 = 140 miles</code>.</span></li>
@@ -291,6 +293,14 @@
 <td>Unit conversion</td>
 <td>multiply by fractions equal to 1</td>
 </tr>
+<tr>
+<td>Solve a proportion</td>
+<td>cross-multiply OR scale directly</td>
+</tr>
+<tr>
+<td>Area / volume units</td>
+<td>apply the length factor twice / three times</td>
+</tr>
 </tbody></table></div>
 </section>
 <section id="linked-competition-problems">
@@ -336,6 +346,8 @@
 <li>A car travels 150 miles in 2.5 hours. What is its speed? At that speed, how far in 4 hours?</li>
 <li>If $1 = ¥90, how many yen is $40? (Use a conversion factor.)</li>
 <li>You drive 60 miles at 30 mph, then the same 60 miles back at 60 mph. What is your average speed for the whole trip? (Careful!)</li>
+<li>A room is 3 m by 4 m. How many square <strong>centimetres</strong> is its floor? (Careful — area!)</li>
+<li>Solve <code>5 : 8 = 15 : x</code> by scaling directly (not cross-multiplying).</li>
 </ol>
 <details><summary>Answers</summary><div class="answer">
 <p>1. Same height, so area ratio = base ratio = <strong>3 : 5</strong></p>
@@ -348,7 +360,9 @@
 <p>8. width : height = 4 : 6 = 2 : 3. Let width 2x, height 3x → area 6x² = 216 → x² = 36 → x = 6 → width = 2x = <strong>12 cm</strong></p>
 <p>9. speed = 150/2.5 = <strong>60 mph</strong>; distance = 60 × 4 = <strong>240 miles</strong></p>
 <p>10. $40 × (¥90/$1) = <strong>¥3600</strong></p>
-<p>11. NOT 45. Time out = 60/30 = 2 hr, time back = 60/60 = 1 hr → 120 miles in 3 hr → average = 120/3 = <strong>40 mph</strong></p></div></details>
+<p>11. NOT 45. Time out = 60/30 = 2 hr, time back = 60/60 = 1 hr → 120 miles in 3 hr → average = 120/3 = <strong>40 mph</strong></p>
+<p>12. Area = 3 × 4 = 12 m². Since 1 m² = 100² = 10,000 cm² (factor applied <strong>twice</strong>), 12 m² = <strong>120,000 cm²</strong></p>
+<p>13. Left side went 5 → 15 (×3), so x = 8 × 3 = <strong>24</strong></p></div></details>
 <p class="footer-note">Source map: <code>약점진단/01_비율활용_세부분석.md</code>; concepts expanded from AOPS Prealgebra Ch.7 (Ratios, Conversions, Rates). Geometry continues in <a class="cx" href="02_Angles_Similarity_Circles.html">02 Angles Similarity Circles</a>; the "similar shapes, area from ratio" idea reappears in <a class="cx" href="03_Special_Theorems_Coordinates_Solids.html">03 Special Theorems Coordinates Solids</a>. For the general area-ratio formula on a triangle, look up <strong>Routh's theorem</strong>.</p>
 </section>
 <a class="backlink" href="index.html">← All units</a>

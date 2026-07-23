@@ -112,8 +112,10 @@ This is the most powerful single idea for ratio word problems where you're given
 - A **proportion** is a statement that two ratios are equal: `2 : 3 = 8 : 12`.
 - **What a proportion is really for:** it describes two changing quantities whose **ratio stays constant** as they grow or shrink together.
   - *Mario's chocolate milk:* the recipe uses 8 oz milk to 2 oz syrup — a ratio of `8 : 2 = 4 : 1`. To make enough for 6 people he needs `6 × 8 = 48` oz milk and `6 × 2 = 12` oz syrup, and `48 : 12` is **still** `4 : 1`. No matter the batch size the ratio is always 4 : 1 — we say milk and syrup are **proportional** (or *in proportion*).
-- **Cross-multiply rule:** in `a : b = c : d`, the product of the means equals the product of the extremes → **`b × c = a × d`**.
-  - `2 : 3 = 8 : x` → `3 × 8 = 2 × x` → `x = 12`.
+- **Two ways to solve any proportion** (the book teaches both — pick whichever is quicker):
+  - **Method 1 — cross-multiply.** In `a : b = c : d`, the product of the means equals the product of the extremes → **`b × c = a × d`**.
+    - `2 : 3 = 8 : x` → `3 × 8 = 2 × x` → `x = 12`.
+  - **Method 2 — scale directly.** Spot how one side was multiplied and apply the same factor to the other. In `2 : 3 = 8 : x`, the left number went 2 → 8 (×4), so `x = 3 × 4 = 12` — no equation needed. (For a recipe scaled to ¾ size, just multiply every amount by ¾.)
 
 **Where proportions hide (all the same idea):**
 - **Shadows / heights.** At a fixed time, an object's length is proportional to its shadow. Sadie is 3 ft tall with an 8 ft shadow (ratio 3 : 8). Nick is 5 ft tall — his shadow `x` satisfies `5 : x = 3 : 8`, so `40 = 3x`, `x = 13⅓ ft`.
@@ -235,6 +237,9 @@ These problems shift something around and ask for the new ratio (5 of the linked
 - Bigger chain: `1 gallon → tablespoons` (1 gal = 16 cups, 1 cup = 8 oz, 1 tbsp = ½ oz): `1 × (16 cups/1 gal) × (8 oz/1 cup) × (1 tbsp / ½ oz) = 256 tbsp`. Chain as many factors as needed, as long as each equals 1 and units cancel.
 - Bigger chain: `45 mi/hr → ft/s`: `45 × (5280 ft / 1 mi) × (1 hr / 3600 s) = 66 ft/s`.
 - **Currency is a conversion factor too.** If \$1 = ¥90, then `¥90/\$1 = 1`. Will takes \$1000 to Japan → `\$1000 × (¥90/\$1) = ¥90,000`; converting leftover yen back uses the reciprocal `\$1/¥90`.
+- **Squared and cubed units — multiply the factor twice (or three times).** For **area** you apply the length conversion **twice**; for **volume**, three times. Since 1 in = 2.5 cm, `1 in² = (2.5)² cm² = 6.25 cm²`, and `1 in³ = (2.5)³ = 15.625 cm³`. This is a very common trap — converting an area with a single factor is wrong.
+
+> ⚠️ **Warning:** When converting an **area** (cm² → m², in² → cm², …), the conversion factor must be applied **twice**, not once. 1 m = 100 cm, so 1 m² = 100² = **10,000** cm² — not 100 cm². For volumes, three times.
 
 **Speed and other rates (a rate is a ratio between two units).**
 
@@ -268,6 +273,8 @@ These problems shift something around and ask for the new ratio (5 of the linked
 | Direct proportion | quotient y/x constant |
 | Inverse proportion | product xy constant |
 | Unit conversion | multiply by fractions equal to 1 |
+| Solve a proportion | cross-multiply OR scale directly |
+| Area / volume units | apply the length factor twice / three times |
 
 ---
 
@@ -312,6 +319,8 @@ These concepts appear in real problems on the quiz app. Learn the idea, then cli
 9. A car travels 150 miles in 2.5 hours. What is its speed? At that speed, how far in 4 hours?
 10. If \$1 = ¥90, how many yen is \$40? (Use a conversion factor.)
 11. You drive 60 miles at 30 mph, then the same 60 miles back at 60 mph. What is your average speed for the whole trip? (Careful!)
+12. A room is 3 m by 4 m. How many square **centimetres** is its floor? (Careful — area!)
+13. Solve `5 : 8 = 15 : x` by scaling directly (not cross-multiplying).
 
 <details>
 <summary>Answers</summary>
@@ -327,6 +336,8 @@ These concepts appear in real problems on the quiz app. Learn the idea, then cli
 9. speed = 150/2.5 = **60 mph**; distance = 60 × 4 = **240 miles**
 10. \$40 × (¥90/\$1) = **¥3600**
 11. NOT 45. Time out = 60/30 = 2 hr, time back = 60/60 = 1 hr → 120 miles in 3 hr → average = 120/3 = **40 mph**
+12. Area = 3 × 4 = 12 m². Since 1 m² = 100² = 10,000 cm² (factor applied **twice**), 12 m² = **120,000 cm²**
+13. Left side went 5 → 15 (×3), so x = 8 × 3 = **24**
 
 </details>
 
