@@ -29,8 +29,9 @@ What this note covers:
 - **Four ways to say the same thing** (for d ≠ 0): "n is a multiple of d" = "n is divisible by d" = "d is a divisor of n" = "d divides n."
 - **Multiple:** a number you reach by multiplying. Multiples of 3 → 3, 6, 9, 12, … (never ending).
 - **Every integer (except 0) is a divisor of itself** (n = n·1), and **every integer is a divisor of 0** (0 ÷ n = 0).
-- **You only need to test 1 up to n** for divisors: a number bigger than n can't divide n (e.g. 0 < 14/36 < 1 means 36 is not a divisor of 14).
+- **To list divisors you only need to test up to √n**, not all the way to n: divisors come in pairs (d and n/d), and the smaller of each pair is ≤ √n — so once you pass √n you've already found every pair. (For 36: test 1,2,3,4,5,6 → pairs 1·36, 2·18, 3·12, 4·9, 6·6 — done at √36 = 6.)
 - **Divisibility is "transitive":** if a divides b and b divides c, then **a divides c**. (Every divisor of 6 is automatically a divisor of 18, because 6 divides 18.)
+- **The Division Theorem** (the formal rule behind remainders): for any integer *a* and positive integer *b*, there is **exactly one** pair of integers *q* (quotient) and *r* (remainder) with **a = bq + r** and **0 ≤ r < b**. The four names: *a* = dividend, *b* = divisor, *q* = quotient, *r* = remainder. "d divides n" is just the case r = 0. This uniqueness is what makes the division form of the Euclidean Algorithm (§6) work.
 
 **A key competition tool — sums and differences of multiples.** If n divides both a and b, then n divides **a + b** and **a − b**.
 
@@ -43,10 +44,13 @@ What this note covers:
 
 ## 2. Primes, Composites & Divisibility Rules
 
-> 📖 *Source: AOPS Introduction to Number Theory §2.3 "Identifying Primes" (Sieve of Eratosthenes) and the divisibility-rule sections of Ch.2*
+> 📖 *Source: AOPS Introduction to Number Theory §2.3 "Identifying Primes I" (Sieve of Eratosthenes) and §2.4–2.5 "Identifying Primes II" (the √n test).*
 
 - **Prime:** a natural number (> 1) whose only divisors are 1 and itself (2, 3, 5, 7, 11, 13, …). **Composite:** more than two divisors (4, 6, 8, 9, …). **1 is neither** prime nor composite. **2 is the only even prime.**
-- **Sieve of Eratosthenes** (finding all primes up to N): list 2, 3, 4, …, N; circle 2 and cross out every larger multiple of 2; circle the next uncrossed number (3) and cross out its multiples; repeat. Whatever's circled is prime. (Named for Eratosthenes, ~230 BC.)
+- **Sieve of Eratosthenes** (finding all primes up to N): list 2, 3, 4, …, N; circle 2 and cross out every larger multiple of 2; circle the next uncrossed number (3) and cross out its multiples; repeat. Whatever's circled is prime. Each composite gets crossed off at its **smallest** prime factor — that's why the Sieve catches every composite. (Named for Eratosthenes, ~230 BC.)
+- **The √n test (the fast way to check one number):** to decide whether *n* is prime, you only need to try **prime divisors up to √n**. If none divides *n*, it's prime.
+  - *Why:* if n = a·b with a ≤ b, then a ≤ √n. So any composite has a prime factor **at most √n** — no need to test higher.
+  - Example: is 149 prime? √149 ≈ 12.2, so test 2, 3, 5, 7, 11. None divides 149 → **prime**. (Just 5 checks instead of 148.)
 - **There are infinitely many primes** (Euclid's proof): if there were only finitely many p₁,…,pₙ, then p₁p₂…pₙ + 1 leaves remainder 1 when divided by each pᵢ, so it has a *new* prime divisor — contradiction.
 
 **Divisibility rules:**
@@ -84,6 +88,9 @@ What this note covers:
   - Example: 72 = 2³×3² → (3+1)(2+1) = **12 divisors**
 - **Sum of divisors (advanced):** σ(n) = (1+p+…+pᵃ)(1+q+…+qᵇ)…
   - Example: 12 = 2²×3 → (1+2+4)(1+3) = 7×4 = **28**
+- **Product of all divisors:** if *n* has **t** divisors, their product is **n^(t/2)**. (Pair each divisor d with n/d; each pair multiplies to n, and there are t/2 pairs.)
+  - Example: 12 has 6 divisors → product = 12³ = **1728** (check: 1·2·3·4·6·12 = 1728 ✓).
+- **Proper divisors** = all divisors **except n itself** (so the proper divisors of 12 are 1, 2, 3, 4, 6). Used in perfect/abundant/deficient numbers (see [[06_Primes_Modular_Factorial]] §7).
 - **Coprime:** two numbers whose GCD is 1, i.e. they **share no prime factor**.
 
 > 💡 **Competition point:** "9 divisors" → 9 = 3×3 = (2+1)(2+1) → the number is **p²q²**. "Exactly 3 divisors" → a prime squared (4, 9, 25, …).
@@ -94,10 +101,13 @@ What this note covers:
 
 > 📖 *Source: AOPS Introduction to Number Theory Ch.3 (Multiples and Divisors — common divisors) & Ch.6 (GCD/LCM from prime factorization)*
 
-- **GCD (Greatest Common Divisor):** the **biggest** shared divisor. From prime factors, take **each shared prime with the smaller power**.
-- **LCM (Lowest Common Multiple):** the **smallest** shared multiple. Take **every prime with the larger power**.
+- **GCD (Greatest Common Divisor):** the **biggest** shared divisor. From prime factors, take **each shared prime with the smaller power**. Written **gcd(m, n)**.
+- **LCM (Lowest Common Multiple):** the **smallest** shared multiple. Take **every prime with the larger power**. Written **lcm[m, n]**.
+- **The deeper characterisation (not just "biggest"/"smallest"):** **every** common divisor of m and n divides gcd(m, n); and **every** common multiple of m and n is a multiple of lcm[m, n]. So the GCD/LCM aren't merely the extreme ones — they *organise* all the others.
 - **Example:** 12 = 2²×3, 18 = 2×3² → GCD = 2×3 = **6**, LCM = 2²×3² = **36**
 - **Golden formula:** **GCD × LCM = product of the two numbers** → 6×36 = 216 = 12×18 ✓
+
+> ⚠️ **Warning:** GCD × LCM = product works for **exactly two numbers** — never for three or more. Check: gcd(8,10,14)·lcm(8,10,14) = 2·280 = 560, but 8·10·14 = 1120. Don't apply the golden formula to three numbers.
 - **Letting variables (must-know):** if GCD = k, then A = k·a and B = k·b (where a and b are coprime).
   - Then **A + B = k(a+b)** and **LCM = k·a·b** → the condition breaks apart nicely.
 
@@ -132,6 +142,8 @@ What this note covers:
 - **Divisibility by 13 (advanced trick):** remove the last digit, subtract **9×** that digit from what's left, repeat if needed.
 - **Counting divisors with a condition:** for "even divisors" / "multiples of m" / "perfect square divisors" etc., **factor out** the required piece first, then apply the (power+1) rule to what remains.
   - Example: 72 = 2³×3² → even divisors → factor out one 2, leaving 2²×3² → (2+1)(2+1) = **9 even divisors**
+- **Complementary counting (count the opposite, then subtract):** when "at least one" or "not this" is awkward, count the total and subtract the unwanted ones.
+  - Example: how many divisors of 72 are **odd**? Total 12 − even 9 = **3** (namely 1, 3, 9). For "divisible by 2 **or** 7 but **not both**", count each set and subtract the overlap twice — often easier than listing (→ AP 2021 Q13).
 - **Perfect-square divisors:** a divisor is a perfect square only if **every prime's power in it is even**.
 - **LCM or GCD — which one?** Things **recurring/coinciding again** (flashing lights, buses meeting, gears lining up) → **LCM** of the cycle lengths. Things being **cut/split into equal pieces** → **GCD**.
 - **GCD/LCM of fractions (Sec):** LCM(a/b, c/d) = LCM(a,c) / GCD(b,d), and GCD(a/b, c/d) = GCD(a,c) / LCM(b,d). Same prime-power idea also works for GCD/LCM of **algebraic terms** (treat each variable's exponent like a prime's power).
@@ -145,15 +157,19 @@ What this note covers:
 | Odd number of divisors | perfect square only |
 | Only even prime | 2 |
 | The number 1 | neither prime nor composite |
+| Is n prime? | test prime divisors up to √n only |
+| Division Theorem | a = bq + r, unique, 0 ≤ r < b |
 | d divides a and b | then d divides a+b and a−b |
 | a\|b and b\|c | then a\|c (transitive) |
 | Sieve of Eratosthenes | cross out multiples to find primes |
 | Number-of-divisors formula | multiply (power + 1) |
 | Sum of divisors | (1+p+…+pᵃ)(1+q+…+qᵇ)… |
+| Product of divisors | n^(t/2), t = number of divisors |
 | 9 divisors | of the form p²q² |
-| GCD × LCM | = product of the two numbers |
+| GCD × LCM | = product of the two numbers (**two numbers only!**) |
 | GCD/LCM problem | set A = ka, B = kb (a, b coprime) |
 | Euclidean algorithm | gcd(m,n) = gcd(m−n, n) |
+| Awkward "or / not" count | complementary: total − unwanted |
 | "coincide again" / "equal pieces" | LCM / GCD |
 
 ---
@@ -192,6 +208,9 @@ These concepts appear in real problems on the quiz app. Learn the idea, then cli
 8. Is 1 prime? Is 2? Why is 2 special among primes?
 9. What is the sum of all divisors of 12?
 10. A light flashes every 12 s, another every 18 s. They just flashed together. When do they next flash together?
+11. To test whether 173 is prime, which prime divisors do you actually need to try?
+12. What is the product of all divisors of 12?
+13. Does gcd × lcm = product work for the three numbers 4, 6, 9? Show why or why not.
 
 <details>
 <summary>Answers</summary>
@@ -206,6 +225,9 @@ These concepts appear in real problems on the quiz app. Learn the idea, then cli
 8. 1 is **not** prime (a prime needs exactly two divisors). 2 **is** prime, and it's the **only even prime**.
 9. σ(12) = (1+2+4)(1+3) = 7×4 = **28**
 10. LCM(12, 18) = 2²×3² = **36 s**
+11. √173 ≈ 13.2 → test **2, 3, 5, 7, 11, 13** only (173 is prime)
+12. 12 has 6 divisors → product = 12^(6/2) = 12³ = **1728**
+13. **No.** gcd(4,6,9) = 1, lcm(4,6,9) = 36 → 1×36 = 36, but 4·6·9 = 216. The golden formula only holds for **two** numbers.
 
 </details>
 
