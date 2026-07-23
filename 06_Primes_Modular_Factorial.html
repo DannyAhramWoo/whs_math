@@ -39,8 +39,8 @@
 <p class="src-note"><em>Source: AOPS</em> Introduction to Number Theory <em>§6.2 "Some Special Primes" (pp.109–110).</em></p>
 <p>Mathematicians have studied a few families of primes for centuries.</p>
 <ul>
-<li><strong>Mersenne primes:</strong> primes of the form <strong>2ᵖ − 1</strong>. Long ago some people believed 2ᵖ − 1 was <em>always</em> prime when <em>p</em> is prime — but it can fail. Still, this form gives many of the largest primes ever found.<br><span style="color:var(--ink-soft)">Example: 2² − 1 = 3, 2³ − 1 = 7, 2⁵ − 1 = 31 are prime; but 2¹¹ − 1 = 2047 = <strong>23 × 89</strong> is <em>not</em>.</span></li>
-<li><strong>Fermat primes:</strong> primes of the form <strong>2^(2ⁿ) + 1</strong>. Fermat <em>conjectured</em> these are always prime. About a century later <strong>Euler</strong> showed 2^(2⁵) + 1 = 4 294 967 297 = <strong>641 × 6 700 417</strong> is composite. The only Fermat primes known are the five: <strong>3, 5, 17, 257, 65537</strong>.</li>
+<li><strong>Mersenne primes:</strong> primes of the form <strong>2ᵖ − 1</strong>, named after the French monk <strong>Marin Mersenne</strong>. Plugging in small primes <em>does</em> give primes — 2² − 1 = 3, 2³ − 1 = 7, 2⁵ − 1 = 31, 2⁷ − 1 = 127 — but it can fail: 2¹¹ − 1 = 2047 = <strong>23 × 89</strong> is <em>not</em> prime.<br><span style="color:var(--ink-soft)"><strong>Key fact:</strong> if 2ⁿ − 1 is prime, then <strong>n itself must be prime</strong> (so it is enough to test prime exponents).</span><br><span style="color:var(--ink-soft)">Mersenne primes give the <strong>largest primes ever found</strong> — for many years the biggest known prime was a Mersenne prime (as of the book's writing, 2⁴³¹¹²⁶⁰⁹ − 1, which has <strong>12 978 189 digits</strong>).</span></li>
+<li><strong>Fermat primes:</strong> primes of the form <strong>2^(2ⁿ) + 1</strong>. Plugging in n = 0,1,2,3,4 gives 3, 5, 17, 257, 65537 — all prime. Fermat <em>conjectured</em> they are <em>always</em> prime. About a century later <strong>Euler</strong> showed the very next one, 2^(2⁵) + 1 = 4 294 967 297 = <strong>641 × 6 700 417</strong>, is composite. The only Fermat primes known are still those five: <strong>3, 5, 17, 257, 65537</strong>.</li>
 <li><strong>Twin primes:</strong> a pair of primes that <strong>differ by 2</strong>, like 3 &amp; 5, 5 &amp; 7, 11 &amp; 13, 17 &amp; 19, 29 &amp; 31. The <strong>twin prime conjecture</strong> says there are infinitely many such pairs — believed true but never proven.<br><span style="color:var(--ink-soft)">Smallest twin-prime pair greater than 100: <strong>101 and 103</strong> (the first two odd numbers past 100, both prime).</span></li>
 </ul>
 <div class="callout"><strong>Concept:</strong> A <strong>conjecture</strong> is a statement believed true but <strong>not yet proven</strong>. Once it is proven, it becomes a <strong>theorem</strong>. Fermat's "conjecture" about 2^(2ⁿ)+1 was disproved; the twin-prime and Goldbach conjectures are still open.</div>
@@ -112,9 +112,11 @@
 <p>Let <strong>s(n)</strong> = the <strong>sum of the proper divisors</strong> of <em>n</em> (all divisors <em>except n itself</em>). We classify <em>n</em> by comparing s(n) to n:</p>
 <ul>
 <li><strong>Perfect:</strong> s(n) = n. Example: s(6) = 1 + 2 + 3 = 6, and s(28) = 1 + 2 + 4 + 7 + 14 = 28. The three smallest perfect numbers are <strong>6, 28, 496</strong>.</li>
-<li><strong>Abundant:</strong> s(n) &gt; n. The smallest is <strong>12</strong>: s(12) = 1 + 2 + 3 + 4 + 6 = 16 &gt; 12.</li>
-<li><strong>Deficient:</strong> s(n) &lt; n. <strong>Every prime is deficient</strong>, since s(p) = 1.</li>
+<li><strong>Abundant:</strong> s(n) &gt; n. The smallest is <strong>12</strong>: s(12) = 1 + 2 + 3 + 4 + 6 = 16 &gt; 12. (More examples: s(24) = 36 &gt; 24.)</li>
+<li><strong>Deficient:</strong> s(n) &lt; n. <strong>Every prime is deficient</strong>, since s(p) = 1. (Example: s(44) = 1 + 2 + 4 + 11 + 22 = 40 &lt; 44.)</li>
+<li><strong>Euclid's perfect-number formula:</strong> <strong>Euclid</strong> proved that <strong>2^(p−1) · (2ᵖ − 1)</strong> is a perfect number <strong>whenever 2ᵖ − 1 is a Mersenne prime</strong>. Every known perfect number has this form — so perfect numbers and Mersenne primes are two sides of the same coin.<br><span style="color:var(--ink-soft)">Check: p = 2 → 2¹·(2² − 1) = 2·3 = <strong>6</strong>; p = 3 → 2²·(2³ − 1) = 4·7 = <strong>28</strong>; p = 5 → 2⁴·31 = <strong>496</strong>.</span></li>
 </ul>
+<div class="callout warn"><strong>Warning:</strong> Every perfect number found so far is <strong>even</strong>. Whether an <strong>odd perfect number</strong> exists is one of the oldest <strong>unsolved</strong> problems in mathematics — still open today.</div>
 <div class="cp"><strong>Competition point:</strong> To classify a number fast, list its proper divisors and add. Perfect numbers are rare and famous (6, 28, 496, 8128) — recognising them saves time.</div>
 </section>
 <section id="s8">
@@ -138,7 +140,7 @@
 <li><strong>Goldbach's conjecture:</strong> every even number &gt; 2 is a sum of two primes — never proven, but useful for "write X as a sum of two primes" questions.</li>
 <li><strong>Division Algorithm (formal remainder rule):</strong> for integer <em>a</em> and positive integer <em>b</em>, <strong>a = bq + r</strong> with 0 ≤ r &lt; b (q = quotient, r = remainder). This is "long division" written properly.</li>
 <li><strong>Same-remainder trick (mini CRT):</strong> if <em>x</em> leaves the <strong>same remainder r</strong> for several divisors, then <strong>x − r is a common multiple</strong> of all of them — so <em>x − r</em> is a multiple of their <strong>LCM</strong>.<br><span style="color:var(--ink-soft)">Example: x leaves remainder 1 when divided by 2, 3, 4, or 5 → x − 1 is a multiple of LCM(2,3,4,5) = 60 → smallest such x = <strong>61</strong>.</span></li>
-<li><strong>Palindromes:</strong> a number reading the same forwards and backwards (434, 13731). Fun fact: <strong>every 2-digit palindrome</strong> (11, 22, …, 99) is a multiple of 11.</li>
+<li><strong>Palindromes:</strong> a number reading the same forwards and backwards (7, 22, 434, 13731). Counting them is just counting the free digits:<br><span style="color:var(--ink-soft)"><strong>2-digit palindromes:</strong> both digits equal → 11, 22, …, 99 = <strong>9</strong> of them, and each is a multiple of 11. So the <em>only</em> 2-digit palindromic prime is <strong>11</strong>.</span><br><span style="color:var(--ink-soft)"><strong>3-digit palindromes:</strong> the last digit is forced to equal the first, so you freely pick the hundreds digit (9 ways, can't be 0) and the tens digit (10 ways) → <strong>9 × 10 = 90</strong> of them.</span></li>
 <li><strong>Calendar problems:</strong> divide the number of days by <strong>7</strong>, then use the remainder to step forward/backward through the days of the week — modular arithmetic in disguise.</li>
 </ul>
 <div class="cp"><strong>Competition point:</strong> "sum of primes is odd" and "a² − b² = N" are two of the fastest tricks in a contest — they turn a <em>search</em> into a one-line <em>factoring</em> problem.</div>
@@ -171,7 +173,7 @@
 </tr>
 <tr>
 <td>Mersenne prime</td>
-<td>2ᵖ − 1 (not always prime)</td>
+<td>2ᵖ − 1 (n must be prime; gives largest known primes)</td>
 </tr>
 <tr>
 <td>Fermat prime</td>
@@ -235,7 +237,15 @@
 </tr>
 <tr>
 <td>Perfect numbers</td>
-<td>6, 28, 496, 8128</td>
+<td>6, 28, 496, 8128 (all even; odd perfect unknown)</td>
+</tr>
+<tr>
+<td>Euclid's formula</td>
+<td>2^(p−1)(2ᵖ − 1) is perfect when 2ᵖ − 1 is prime</td>
+</tr>
+<tr>
+<td>2-/3-digit palindromes</td>
+<td>9 / 90 of them; only palindromic prime with 2 digits is 11</td>
 </tr>
 <tr>
 <td>Product magic square</td>
@@ -283,6 +293,8 @@
 <li>Is 12 perfect, abundant, or deficient?</li>
 <li>Factor 6! + 7! and give its largest prime factor.</li>
 <li>Two primes add up to 45. What are they?</li>
+<li>How many three-digit palindromes are there?</li>
+<li>Use Euclid's formula with p = 7 (2⁷ − 1 = 127 is prime) to build a perfect number.</li>
 </ol>
 <details><summary>Answers</summary><div class="answer">
 <p>1. Test 2, 3, 5, 7, 11 → 143 = 11 × 13, so <strong>not prime (composite)</strong></p>
@@ -294,7 +306,9 @@
 <p>7. 6! = 6 · 5! = 6 · 120 = <strong>720</strong></p>
 <p>8. s(12) = 1 + 2 + 3 + 4 + 6 = 16 &gt; 12 → <strong>abundant</strong></p>
 <p>9. 6! + 7! = 6! + 7·6! = (1 + 7)·6! = 8·6! = 8 · 720 = 5760; largest prime factor comes from 8·6! = 2⁶·3²·5 → largest prime is <strong>5</strong></p>
-<p>10. Odd sum → one prime is 2, the other is <strong>43</strong></p></div></details>
+<p>10. Odd sum → one prime is 2, the other is <strong>43</strong></p>
+<p>11. hundreds digit 9 ways × tens digit 10 ways (units is forced) → <strong>90</strong></p>
+<p>12. 2^(7−1)·(2⁷ − 1) = 2⁶ · 127 = 64 · 127 = <strong>8128</strong> (the 4th perfect number)</p></div></details>
 <p class="footer-note">Source map: <code>약점진단/06_소수_모듈러_팩토리얼.md</code>. Book sources tagged per section (AOPS<em> Introduction to Number Theory </em>Ch.6). Modular-arithmetic chapters (Ch.12–14) are absent from our book scan, so those sections are written from standard number theory and tagged as such. Number theory continues in <a class="cx" href="07_Inclusion_Exclusion.html">07 Inclusion Exclusion</a>.</p>
 </section>
 <a class="backlink" href="index.html">← All units</a>

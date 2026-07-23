@@ -42,9 +42,10 @@ What this note covers:
 
 Mathematicians have studied a few families of primes for centuries.
 
-- **Mersenne primes:** primes of the form **2ᵖ − 1**. Long ago some people believed 2ᵖ − 1 was *always* prime when *p* is prime — but it can fail. Still, this form gives many of the largest primes ever found.
-  - Example: 2² − 1 = 3, 2³ − 1 = 7, 2⁵ − 1 = 31 are prime; but 2¹¹ − 1 = 2047 = **23 × 89** is *not*.
-- **Fermat primes:** primes of the form **2^(2ⁿ) + 1**. Fermat *conjectured* these are always prime. About a century later **Euler** showed 2^(2⁵) + 1 = 4 294 967 297 = **641 × 6 700 417** is composite. The only Fermat primes known are the five: **3, 5, 17, 257, 65537**.
+- **Mersenne primes:** primes of the form **2ᵖ − 1**, named after the French monk **Marin Mersenne**. Plugging in small primes *does* give primes — 2² − 1 = 3, 2³ − 1 = 7, 2⁵ − 1 = 31, 2⁷ − 1 = 127 — but it can fail: 2¹¹ − 1 = 2047 = **23 × 89** is *not* prime.
+  - **Key fact:** if 2ⁿ − 1 is prime, then **n itself must be prime** (so it is enough to test prime exponents).
+  - Mersenne primes give the **largest primes ever found** — for many years the biggest known prime was a Mersenne prime (as of the book's writing, 2⁴³¹¹²⁶⁰⁹ − 1, which has **12 978 189 digits**).
+- **Fermat primes:** primes of the form **2^(2ⁿ) + 1**. Plugging in n = 0,1,2,3,4 gives 3, 5, 17, 257, 65537 — all prime. Fermat *conjectured* they are *always* prime. About a century later **Euler** showed the very next one, 2^(2⁵) + 1 = 4 294 967 297 = **641 × 6 700 417**, is composite. The only Fermat primes known are still those five: **3, 5, 17, 257, 65537**.
 - **Twin primes:** a pair of primes that **differ by 2**, like 3 & 5, 5 & 7, 11 & 13, 17 & 19, 29 & 31. The **twin prime conjecture** says there are infinitely many such pairs — believed true but never proven.
   - Smallest twin-prime pair greater than 100: **101 and 103** (the first two odd numbers past 100, both prime).
 
@@ -138,8 +139,12 @@ Mathematicians have studied a few families of primes for centuries.
 Let **s(n)** = the **sum of the proper divisors** of *n* (all divisors *except n itself*). We classify *n* by comparing s(n) to n:
 
 - **Perfect:** s(n) = n. Example: s(6) = 1 + 2 + 3 = 6, and s(28) = 1 + 2 + 4 + 7 + 14 = 28. The three smallest perfect numbers are **6, 28, 496**.
-- **Abundant:** s(n) > n. The smallest is **12**: s(12) = 1 + 2 + 3 + 4 + 6 = 16 > 12.
-- **Deficient:** s(n) < n. **Every prime is deficient**, since s(p) = 1.
+- **Abundant:** s(n) > n. The smallest is **12**: s(12) = 1 + 2 + 3 + 4 + 6 = 16 > 12. (More examples: s(24) = 36 > 24.)
+- **Deficient:** s(n) < n. **Every prime is deficient**, since s(p) = 1. (Example: s(44) = 1 + 2 + 4 + 11 + 22 = 40 < 44.)
+- **Euclid's perfect-number formula:** **Euclid** proved that **2^(p−1) · (2ᵖ − 1)** is a perfect number **whenever 2ᵖ − 1 is a Mersenne prime**. Every known perfect number has this form — so perfect numbers and Mersenne primes are two sides of the same coin.
+  - Check: p = 2 → 2¹·(2² − 1) = 2·3 = **6**; p = 3 → 2²·(2³ − 1) = 4·7 = **28**; p = 5 → 2⁴·31 = **496**.
+
+> ⚠️ **Warning:** Every perfect number found so far is **even**. Whether an **odd perfect number** exists is one of the oldest **unsolved** problems in mathematics — still open today.
 
 > 💡 **Competition point:** To classify a number fast, list its proper divisors and add. Perfect numbers are rare and famous (6, 28, 496, 8128) — recognising them saves time.
 
@@ -169,7 +174,9 @@ Let **s(n)** = the **sum of the proper divisors** of *n* (all divisors *except n
 - **Division Algorithm (formal remainder rule):** for integer *a* and positive integer *b*, **a = bq + r** with 0 ≤ r < b (q = quotient, r = remainder). This is "long division" written properly.
 - **Same-remainder trick (mini CRT):** if *x* leaves the **same remainder r** for several divisors, then **x − r is a common multiple** of all of them — so *x − r* is a multiple of their **LCM**.
   - Example: x leaves remainder 1 when divided by 2, 3, 4, or 5 → x − 1 is a multiple of LCM(2,3,4,5) = 60 → smallest such x = **61**.
-- **Palindromes:** a number reading the same forwards and backwards (434, 13731). Fun fact: **every 2-digit palindrome** (11, 22, …, 99) is a multiple of 11.
+- **Palindromes:** a number reading the same forwards and backwards (7, 22, 434, 13731). Counting them is just counting the free digits:
+  - **2-digit palindromes:** both digits equal → 11, 22, …, 99 = **9** of them, and each is a multiple of 11. So the *only* 2-digit palindromic prime is **11**.
+  - **3-digit palindromes:** the last digit is forced to equal the first, so you freely pick the hundreds digit (9 ways, can't be 0) and the tens digit (10 ways) → **9 × 10 = 90** of them.
 - **Calendar problems:** divide the number of days by **7**, then use the remainder to step forward/backward through the days of the week — modular arithmetic in disguise.
 
 > 💡 **Competition point:** "sum of primes is odd" and "a² − b² = N" are two of the fastest tricks in a contest — they turn a *search* into a one-line *factoring* problem.
@@ -185,7 +192,7 @@ Let **s(n)** = the **sum of the proper divisors** of *n* (all divisors *except n
 | The number 1 | neither prime nor composite |
 | Primes under 100 | there are exactly 25 |
 | Fundamental Thm of Arithmetic | one prime factorisation, up to order |
-| Mersenne prime | 2ᵖ − 1 (not always prime) |
+| Mersenne prime | 2ᵖ − 1 (n must be prime; gives largest known primes) |
 | Fermat prime | 2^(2ⁿ) + 1 (only 3, 5, 17, 257, 65537 known) |
 | Twin primes | differ by 2 (11 & 13); 101 & 103 first past 100 |
 | Conjecture vs theorem | believed vs proven |
@@ -201,7 +208,9 @@ Let **s(n)** = the **sum of the proper divisors** of *n* (all divisors *except n
 | Power of p in n! | ⌊n/p⌋ + ⌊n/p²⌋ + … |
 | Trailing zeros of n! | count the 5s (Legendre) |
 | s(n) < / = / > n | deficient / perfect / abundant |
-| Perfect numbers | 6, 28, 496, 8128 |
+| Perfect numbers | 6, 28, 496, 8128 (all even; odd perfect unknown) |
+| Euclid's formula | 2^(p−1)(2ᵖ − 1) is perfect when 2ᵖ − 1 is prime |
+| 2-/3-digit palindromes | 9 / 90 of them; only palindromic prime with 2 digits is 11 |
 | Product magic square | logs → sum square; centre³ = full product |
 
 ---
@@ -243,6 +252,8 @@ These concepts appear in real problems on the quiz app. Learn the idea, then cli
 8. Is 12 perfect, abundant, or deficient?
 9. Factor 6! + 7! and give its largest prime factor.
 10. Two primes add up to 45. What are they?
+11. How many three-digit palindromes are there?
+12. Use Euclid's formula with p = 7 (2⁷ − 1 = 127 is prime) to build a perfect number.
 
 <details>
 <summary>Answers</summary>
@@ -257,6 +268,8 @@ These concepts appear in real problems on the quiz app. Learn the idea, then cli
 8. s(12) = 1 + 2 + 3 + 4 + 6 = 16 > 12 → **abundant**
 9. 6! + 7! = 6! + 7·6! = (1 + 7)·6! = 8·6! = 8 · 720 = 5760; largest prime factor comes from 8·6! = 2⁶·3²·5 → largest prime is **5**
 10. Odd sum → one prime is 2, the other is **43**
+11. hundreds digit 9 ways × tens digit 10 ways (units is forced) → **90**
+12. 2^(7−1)·(2⁷ − 1) = 2⁶ · 127 = 64 · 127 = **8128** (the 4th perfect number)
 
 </details>
 
