@@ -18,40 +18,49 @@
 <section id="s1">
 <span class="sec-num">1</span>
 <h2>Truth-telling Puzzles (Knights &amp; Knaves)</h2>
+<p class="src-note"><em>Source: AMC 8 Preparation Vol.1 Ch.3 "Logical Reasoning" — statements &amp; negation, contradictory/agreeing statements, and the "exactly K statements are true" method.</em></p>
 <p>In these puzzles some people <strong>always tell the truth</strong> and some <strong>always lie</strong>. You must figure out who is who, or what the real number is.</p>
 <ul>
+<li><strong>A statement is either true or false</strong> (never both). Commands, questions, and opinions aren't statements. To <strong>negate</strong> "all are red" you say "at least one is not red" (not "none are red").</li>
 <li><strong>Assume &amp; check:</strong> suppose one person is telling the truth (or lying). Follow the statements. If you reach an <strong>impossible situation (contradiction)</strong>, your guess was wrong — so the opposite is true.<br><span style="color:var(--ink-soft)">Example: A says "I am a liar." A truth-teller would never say that, and a liar cannot truthfully call himself a liar either → the statement itself is impossible, so watch for these traps.</span></li>
+<li><strong>Shortcut — find two statements that contradict each other.</strong> If statement P and statement Q <strong>can't both be true and can't both be false</strong>, then <strong>exactly one of them is the true one</strong>. In a "only one is true" puzzle, every <em>other</em> statement is then automatically false — no need to test all cases.</li>
+<li><strong>Shortcut — statements that agree.</strong> If two statements are true together or false together, and only one may be true, then <strong>neither</strong> can be the single true one — cross both out.</li>
+<li><strong>Contrapositive (equivalent restatement):</strong> "if P then Q" is exactly equivalent to "if <strong>not Q</strong> then <strong>not P</strong>". (Its <em>converse</em> "if Q then P" is <strong>not</strong> equivalent — a classic trap.)</li>
 <li><strong>Case table:</strong> if there are only a few people, <strong>list every true/false combination</strong> in a table and test each row. Only the row with no contradiction survives.</li>
-<li><strong>Meta-statements ("at least N of us…", "exactly N are true"):</strong> turn the count into cases. Try N = 1, then N = 2, and so on, and see which count actually works.<br><span style="color:var(--ink-soft)">Example: "Exactly 1 of these 4 statements is true." Test which single statement being true keeps all the others false at the same time.</span></li>
-<li><strong>Work backwards from the result:</strong> sometimes the puzzle gives you the ending and asks for the start. Reverse every step (see section 2).</li>
+<li><strong>Meta-statements ("at least N of us…", "exactly N are true"):</strong> turn the count into cases. Try N = 1, then N = 2, and so on, and see which count actually works.</li>
 </ul>
-<div class="cp"><strong>Competition point:</strong> For "<strong>exactly K of these statements are true</strong>", pick which K statements are the true ones, assume the rest are false, and check for a clash. Only one choice fits (→ Mock Q5-34 below: 5 statements, exactly 3 true).</div>
+<div class="cp"><strong>Competition point:</strong> For "<strong>exactly K of these statements are true</strong>", first hunt for a <strong>contradicting pair</strong> (that pins one true statement fast); otherwise pick which K statements are the true ones, assume the rest are false, and check for a clash (→ Mock Q5-34 below: 5 statements, exactly 3 true).</div>
 </section>
 <section id="s2">
 <span class="sec-num">2</span>
 <h2>Working Backwards</h2>
+<p class="src-note"><em>Source: AOPS Prealgebra §15.4 "Work Backwards" (one of the four problem-solving strategies: Find a Pattern, Make a List, Draw a Picture, Work Backwards).</em></p>
 <ul>
 <li><strong>Idea:</strong> when a problem describes steps that <strong>end</strong> at a known number, start from the <strong>end</strong> and <strong>undo</strong> each step to reach the start.</li>
 <li><strong>Undo the operation:</strong> every action has an opposite. If someone "<strong>took half and then put 1 back</strong>", you reverse it by "<strong>subtract 1, then double</strong>".<br><span style="color:var(--ink-soft)">Example: 6 sweets remain. Reverse "take half, return 1": (6 − 1) × 2 = 10 before that person.</span></li>
+<li><strong>The "undo table" method:</strong> write two columns — each <strong>action</strong> and its <strong>undoing action</strong> (+3 ↔ −3, ×2 ↔ ÷2). Then apply the undo actions from the <strong>last step to the first</strong>. Keeping the table straight stops sign slips.</li>
 <li><strong>Go person by person:</strong> repeat the reverse step once for each person, in <strong>reverse order</strong>, until you reach the starting amount.</li>
 </ul>
-<div class="cp"><strong>Competition point:</strong> Doing these forwards needs guessing. Doing them <strong>backwards is exact</strong> — no trial and error (→ Mock Q4-22 below).</div>
+<div class="cp"><strong>Competition point:</strong> Working backwards is exact (no guessing) when you <strong>know the ending and must find the start</strong>. But it isn't always best — sometimes <strong>setting up an equation</strong> (let x = the start, write the forward process, solve) is cleaner. Try both if one gets messy (→ Mock Q4-22 below).</div>
 </section>
 <section id="s3">
 <span class="sec-num">3</span>
 <h2>Magic Squares</h2>
+<p class="src-note"><em>Source: standard competition topic (not in the AOPS/AMC reference books). The magic-sum arithmetic below is self-contained.</em></p>
 <p>A <strong>magic square</strong> is a grid where <strong>every row, every column, and both diagonals add up to the same total</strong> (the "magic sum").</p>
 <ul>
 <li><strong>3×3 total trick:</strong> the three rows together use <strong>all 9 numbers</strong>, so the whole grid sum = 3 × (magic sum). Therefore <strong>magic sum = total of all numbers ÷ 3</strong>.</li>
 <li><strong>Centre trick:</strong> in a 3×3 square, <strong>centre = total of all numbers ÷ 9</strong>. (For 1–9 the total is 45, so centre = 5, magic sum = 15.)</li>
 <li><strong>Why the centre is special:</strong> the centre cell lies on the <strong>middle row, the middle column, and both diagonals</strong> — it is used in <strong>4 different lines</strong>. That makes it the strongest clue.</li>
 <li><strong>Partly filled squares:</strong> let each empty cell be a <strong>letter (variable)</strong>. Write <strong>one equation per line</strong> that is complete, then solve.<br><span style="color:var(--ink-soft)">Example: if a row is <code>a + 5 + 8</code> and you know the magic sum is 15, then a = 2 straight away.</span></li>
+<li><strong>Building a 3×3 from scratch (the staircase / Siamese method for odd squares):</strong> put <strong>1</strong> in the top-middle cell. Each next number goes <strong>up one and right one</strong>; if that lands off the grid, wrap around to the other side; if the cell is already filled, drop <strong>down one</strong> instead. This fills a 3×3 with 1–9 as a magic square automatically.</li>
 </ul>
 <div class="cp"><strong>Competition point:</strong> Always find the <strong>magic sum first</strong> (from a full row/column), then fill cells one line at a time (→ Mock Q1-29 and Mock Q2-20 below).</div>
 </section>
 <section id="s4">
 <span class="sec-num">4</span>
 <h2>Sudoku-style Grid Logic — <em>Sec 1</em></h2>
+<p class="src-note"><em>Source: standard competition topic (grid/constraint logic — not in the reference books).</em></p>
 <p>You must place numbers in a grid so that each row/column/region follows a rule. No arithmetic formula — only <strong>logic</strong>.</p>
 <ul>
 <li><strong>Elimination:</strong> for each cell, <strong>cross out</strong> every value that is not allowed. Whatever is left must go there.</li>
@@ -71,8 +80,16 @@
 <td>assume → check → contradiction means flip it</td>
 </tr>
 <tr>
+<td>Contradicting pair</td>
+<td>exactly one of the two is true → others false</td>
+</tr>
+<tr>
 <td>"Exactly K true"</td>
-<td>choose which K, make rest false, test</td>
+<td>find a contradicting pair first, else test cases</td>
+</tr>
+<tr>
+<td>Contrapositive</td>
+<td>"if P then Q" ≡ "if not Q then not P" (converse ≠)</td>
 </tr>
 <tr>
 <td>Impossible statement</td>
@@ -80,7 +97,7 @@
 </tr>
 <tr>
 <td>Working backwards</td>
-<td>undo each step from the end, in reverse order</td>
+<td>undo table; apply undos last-step-first</td>
 </tr>
 <tr>
 <td>Undo "take half, put 1 back"</td>
@@ -93,6 +110,10 @@
 <tr>
 <td>3×3 centre</td>
 <td>total of all numbers ÷ 9 (centre used in 4 lines)</td>
+</tr>
+<tr>
+<td>Build a 3×3 (odd)</td>
+<td>staircase: 1 top-middle, up-right, wrap or drop down</td>
 </tr>
 <tr>
 <td>Partly-filled square</td>
@@ -135,14 +156,16 @@
 <li>In a 3×3 magic square using 1–9, what is the magic sum and what number is in the centre?</li>
 <li>A magic square has magic sum 21. One full row is <code>9 + □ + 4</code>. What is the missing number?</li>
 <li>A jar loses "half of what is inside, then 1 more is put back" each round. After a round, 7 are inside. How many were there before?</li>
-<li>Of 3 statements, exactly 1 is true: (S1) "S2 is true", (S2) "S1 is false", (S3) "S1 is true". Which one is the true statement?</li>
+<li>Of 3 statements, exactly 1 is true: (S1) "all three are false", (S2) "exactly one is true", (S3) "S1 is true". Which statement is the true one?</li>
+<li>"If it rains, the match is cancelled." Write the equivalent contrapositive.</li>
 </ol>
 <details><summary>Answers</summary><div class="answer">
 <p>1. If A tells the truth, then B is a liar — but B claims both are truth-tellers, which is false, so B is indeed lying. No contradiction. <strong>B is the liar.</strong></p>
 <p>2. Total 1+…+9 = 45 → magic sum = 45 ÷ 3 = <strong>15</strong>, centre = 45 ÷ 9 = <strong>5</strong></p>
 <p>3. 9 + □ + 4 = 21 → □ = <strong>8</strong></p>
 <p>4. Reverse "take half, put 1 back": (7 − 1) × 2 = <strong>12</strong></p>
-<p>5. Test S2 true: then S1 is false, so "S2 is true" is false — contradiction. Test S1 true: then S2 true too (2 true, not allowed). Test S3 true: S1 is true → but only 1 may be true, clash. So the working case is <strong>S2</strong> (S1 false, S3 false: S3 says "S1 is true" which is false ✓, S1 says "S2 is true" which is true — recount). Careful recount: exactly S2 true forces S1 false and S3 false → <strong>S2 is the true one</strong>.</p></div></details>
+<p>5. If S1 ("all three are false") were true, it would call itself false — impossible, so <strong>S1 is false</strong>. Then S3 ("S1 is true") is also <strong>false</strong>. That leaves S2 ("exactly one is true"), and with S1 and S3 both false, S2 being the single true one is consistent → <strong>S2 is the true statement</strong>.</p>
+<p>6. Contrapositive: <strong>"If the match is not cancelled, then it did not rain."</strong> (Equivalent to the original.)</p></div></details>
 <p class="footer-note">Source map: <code>약점진단/13_논리_마방진.md</code> · Puzzle-style reasoning continues in <a class="cx" href="14_Sequences_and_Recurrence.html">14 Sequences and Recurrence</a></p>
 </section>
 <a class="backlink" href="index.html">← All units</a>
