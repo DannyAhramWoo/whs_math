@@ -19,10 +19,12 @@
 <section id="s1">
 <span class="sec-num">1</span>
 <h2>The Basic Rule (d = v × t)</h2>
+<p class="src-note"><em>Source: AOPS Prealgebra §7.5 "Speed" — speed = distance ÷ time, and the rule that "<strong>per</strong> means divided by".</em></p>
 <ul>
 <li><strong>Distance:</strong> how far you travel. <strong>Speed:</strong> how fast. <strong>Time:</strong> how long.</li>
 <li><strong>Golden triangle:</strong> <strong>distance = speed × time</strong>. Cover the one you want:<br><span style="color:var(--ink-soft)">speed = distance ÷ time</span><br><span style="color:var(--ink-soft)">time = distance ÷ speed</span><br><span style="color:var(--ink-soft)">Example: 90 km/h for 2 h → distance = 90 × 2 = <strong>180 km</strong>.</span></li>
-<li><strong>Units must match:</strong> if speed is km/h, time must be in hours, not minutes. 30 min = <strong>0.5 h</strong>.</li>
+<li><strong>"Per" means "divided by".</strong> "Miles <em>per</em> hour" literally means miles ÷ hours. Any units work — km/h, m/s, ft/min — the rule is the same, so <strong>always check your units match</strong> before plugging in. 30 min = <strong>0.5 h</strong>.</li>
+<li><strong>Speed is a conversion factor between time and distance.</strong> Because 70 km/h means "70 km per 1 h", you can multiply to cancel units: <code>2 h × (70 km / 1 h) = 140 km</code>. Writing it this way makes it obvious whether to multiply or divide.</li>
 <li><strong>Same time, then compare distance:</strong> if two people travel for the <strong>same time</strong>, their distances are in the <strong>same ratio as their speeds</strong>.</li>
 </ul>
 <div class="cp"><strong>Competition point:</strong> When two people set off and meet, they have both travelled for the <strong>same time</strong>. Write both distances as speed × (that same time) — this is the key that unlocks most "when do they meet" problems (→ NM 2010 Q15 below).</div>
@@ -30,9 +32,10 @@
 <section id="s2">
 <span class="sec-num">2</span>
 <h2>Average Speed</h2>
+<p class="src-note"><em>Source: AOPS Prealgebra §7.5 "Speed" — average speed = total distance ÷ total time, the "Bogus Solution" trap, and the harmonic-mean Sidenote.</em></p>
 <ul>
 <li><strong>Average speed = total distance ÷ total time.</strong> Never just average the two speeds!</li>
-<li><strong>Example:</strong> 60 km at 60 km/h (1 h), then 60 km at 30 km/h (2 h) → total 120 km in 3 h → average = <strong>40 km/h</strong> (not 45).</li>
+<li><strong>⚠️ The book's "Bogus Solution":</strong> for 60 km at 60 km/h then 60 km at 30 km/h, averaging the speeds gives the <strong>wrong</strong> (60+30)/2 = 45 km/h. The <strong>right</strong> way: total 120 km ÷ total 3 h = <strong>40 km/h</strong>. The two answers differ because you spend <strong>more time</strong> at the slower speed, so it counts for more.</li>
 <li><strong>Round trip, equal distances (must-know):</strong> go at v₁, return at v₂ over the <strong>same distance</strong>. The average is the <strong>harmonic mean</strong>:<br><span style="color:var(--ink-soft)"><strong>average = 2 × v₁ × v₂ ÷ (v₁ + v₂)</strong></span><br><span style="color:var(--ink-soft)">Example: 60 km/h out, 40 km/h back → 2×60×40 ÷ 100 = <strong>48 km/h</strong>.</span></li>
 <li><strong>Split trip (fractions):</strong> if part of the journey is at one speed and part at another, work out the <strong>time for each part</strong> and add them, then divide total distance by total time.</li>
 </ul>
@@ -41,10 +44,12 @@
 <section id="s3">
 <span class="sec-num">3</span>
 <h2>Meeting &amp; Overtaking (Relative Speed)</h2>
+<p class="src-note"><em>Source: AOPS Prealgebra §7.5 "Speed" — relative/closing speed (meeting, chasing, and the circular-track problem). The train-length trap below is also §7.5 (the tunnel exercise).</em></p>
 <ul>
 <li><strong>Relative speed</strong> is how fast the gap between two movers changes.</li>
 <li><strong>Opposite directions (moving toward each other):</strong> the gap closes at <strong>v₁ + v₂</strong>.<br><span style="color:var(--ink-soft)">Time to meet = starting gap ÷ (v₁ + v₂).</span></li>
 <li><strong>Same direction (one chasing / overtaking):</strong> the gap closes at <strong>|v₁ − v₂|</strong> (the difference).<br><span style="color:var(--ink-soft)">Time to catch up = starting gap ÷ (v₁ − v₂).</span></li>
+<li><strong>Circular track (the book's example):</strong> two runners on a loop of length L. <strong>Opposite ways</strong> → they meet every L ÷ (v₁ + v₂). <strong>Same way</strong> → the faster one <strong>laps</strong> the slower, gaining a full track L each time, so they meet every L ÷ |v₁ − v₂|.</li>
 <li><strong>Round-trip meetings:</strong> on a there-and-back path, a mover can turn around at the end and meet the other one again. Track <strong>total distance each has covered</strong> since the start, not just their position.</li>
 </ul>
 <div class="cp"><strong>Competition point:</strong> For a <strong>second meeting</strong> on a round trip, the two together have often covered <strong>3 × the full path</strong> by the second meet (1 path for the first meet, 2 more paths for the second). Compare distances to pin the exact spot (→ RI 2023 Q11 below).</div>
@@ -52,6 +57,7 @@
 <section id="s4">
 <span class="sec-num">4</span>
 <h2>Trains, Bridges &amp; Escalators</h2>
+<p class="src-note"><em>Source: the train-length trap (a train clears its own length plus the bridge) is in AOPS Prealgebra §7.5 (the tunnel exercise). Train-overtaking-train and escalators are standard competition extensions, not in Prealgebra.</em></p>
 <ul>
 <li><strong>Train crossing a bridge/tunnel:</strong> the train must clear its <strong>own length too</strong>.<br><span style="color:var(--ink-soft)"><strong>distance travelled = bridge length + train length.</strong></span><br><span style="color:var(--ink-soft)">Example: 100 m train, 200 m bridge → the train moves <strong>300 m</strong> from nose-on to tail-off.</span></li>
 <li><strong>Train overtaking another train (same direction):</strong> the faster train must cover the <strong>sum of both train lengths</strong> at the <strong>relative speed</strong> |v₁ − v₂|.</li>
@@ -62,11 +68,13 @@
 <section id="s5">
 <span class="sec-num">5</span>
 <h2>Streams &amp; Boats — <em>Sec 1</em></h2>
+<p class="src-note"><em>Source: standard competition topic (rate addition/subtraction). Not in Prealgebra §7.5, but it's the same idea as the book's combined-rate work problems in §7.6 — a rate helping (add) or opposing (subtract), just like a faucet-and-drain.</em></p>
 <ul>
 <li><strong>Downstream (going with the current):</strong> the water pushes you → <strong>effective speed = boat + current</strong>.</li>
 <li><strong>Upstream (going against the current):</strong> the water slows you → <strong>effective speed = boat − current</strong>.</li>
 <li><strong>Split them apart with two facts:</strong><br><span style="color:var(--ink-soft)"><strong>boat speed = (downstream + upstream) ÷ 2</strong></span><br><span style="color:var(--ink-soft)"><strong>current speed = (downstream − upstream) ÷ 2</strong></span><br><span style="color:var(--ink-soft)">Example: down 12 km/h, up 8 km/h → boat = 10, current = <strong>2 km/h</strong>.</span></li>
 <li><strong>Same idea for wind:</strong> a plane with a tailwind vs a headwind works exactly the same way.</li>
+<li><strong>Same idea for any rate:</strong> speed is just a <em>rate</em> (something per unit time). The book (Prealgebra §7.6) extends this to <strong>work rates</strong> — a tap filling and a drain emptying add and subtract exactly like boat and current. Those combined-rate problems live in <a class="cx" href="11_Work_Percent_Concentration_Profit.html">11 Work Percent Concentration Profit</a>.</li>
 </ul>
 <div class="cp"><strong>Competition point:</strong> If the current changes and the <strong>meeting point shifts</strong>, set up the down/up speeds with the current as an unknown, then solve (→ Mock Q1-33 below).</div>
 </section>
@@ -81,8 +89,18 @@
 <td>distance = speed × time</td>
 </tr>
 <tr>
+<td>"Per"</td>
+<td>means "divided by"; speed = a conversion factor</td>
+</tr>
+<tr>
 <td>Average speed</td>
 <td>total distance ÷ total time (never average the two speeds)</td>
+</tr>
+<tr>
+<td>Circular track, same way</td>
+<td>meet every L ÷ \</td>
+<td>v₁−v₂\</td>
+<td>(lapping)</td>
 </tr>
 <tr>
 <td>Round trip, equal distance</td>
@@ -152,13 +170,17 @@
 <li>Two people 300 m apart walk toward each other at 3 m/s and 2 m/s. How long until they meet?</li>
 <li>A 150 m train passes over a 350 m bridge at 20 m/s. How long does it take from nose-on to tail-off?</li>
 <li>A boat goes 15 km/h downstream and 9 km/h upstream. Find the boat's own speed and the current speed.</li>
+<li>Two runners on a 400 m circular track go the <strong>same way</strong> at 6 m/s and 4 m/s. How often does the fast one lap the slow one?</li>
+<li>A cyclist rides for 90 minutes at 16 km/h. Using speed as a conversion factor, how far does she go?</li>
 </ol>
 <details><summary>Answers</summary><div class="answer">
 <p>1. speed = 240 ÷ 3 = <strong>80 km/h</strong></p>
 <p>2. times: 0.5 h + 1.5 h = 2 h for 60 km → 60 ÷ 2 = <strong>30 km/h</strong> (not 40!)</p>
 <p>3. relative speed = 3 + 2 = 5 m/s → 300 ÷ 5 = <strong>60 s</strong></p>
 <p>4. distance = 350 + 150 = 500 m → 500 ÷ 20 = <strong>25 s</strong></p>
-<p>5. boat = (15+9)/2 = <strong>12 km/h</strong>, current = (15−9)/2 = <strong>3 km/h</strong></p></div></details>
+<p>5. boat = (15+9)/2 = <strong>12 km/h</strong>, current = (15−9)/2 = <strong>3 km/h</strong></p>
+<p>6. lapping speed = 6 − 4 = 2 m/s → 400 ÷ 2 = <strong>every 200 s</strong></p>
+<p>7. 90 min = 1.5 h; 1.5 h × (16 km / 1 h) = <strong>24 km</strong></p></div></details>
 <p class="footer-note">Source map: <code>약점진단/10_거리_속도_시간.md</code> · Rate problems continue in <a class="cx" href="11_Work_Percent_Concentration_Profit.html">11 Work Percent Concentration Profit</a></p>
 </section>
 <a class="backlink" href="index.html">← All units</a>
