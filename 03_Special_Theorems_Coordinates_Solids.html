@@ -28,14 +28,15 @@
 <section id="s2">
 <span class="sec-num">2</span>
 <h2>Coordinate Geometry — <em>Sec 1</em></h2>
-<p class="src-note"><em>Source: AOPS Introduction to Algebra Ch.8 (Graphing Lines) — §8.1 (Number Line &amp; Cartesian Plane / distance formula), §8.2 (slope, slope-intercept form)</em></p>
+<p class="src-note"><em>Source: AOPS Introduction to Algebra Ch.8 (Graphing Lines) — §8.1 (Number Line &amp; Cartesian Plane / distance formula), §8.2 (slope, slope-intercept form), §8.7 Summary (point-slope &amp; standard form, systems of two lines).</em></p>
 <p><strong>The plane and a point's coordinates.</strong> The Cartesian plane locates a point by (x, y): x is how far right of the y-axis, y is how far above the x-axis. The little numbers in (x₁, y₁) and (x₂, y₂) are <strong>subscripts</strong> — they tag <em>which</em> point each coordinate belongs to.</p>
 <ul>
 <li><strong>Distance formula:</strong> the distance from (x₁, y₁) to (x₂, y₂) is <strong>√((x₂−x₁)² + (y₂−y₁)²)</strong>.<br><span style="color:var(--ink-soft)">This is <strong>just the Pythagorean theorem</strong>: drop a horizontal and a vertical segment to make a right triangle with legs (x₂−x₁) and (y₂−y₁); the distance is the hypotenuse. So you never need to memorise it separately.</span><br><span style="color:var(--ink-soft)">Example: from (−3, −5) to (5, 1) → legs 8 and 6 → √(64 + 36) = √100 = <strong>10</strong>. From (0,0) to (3,4) → √(9+16) = <strong>5</strong>.</span></li>
 <li><strong>Slope</strong> measures steepness: <strong>m = (y₂−y₁)/(x₂−x₁) = rise/run</strong>.<br><span style="color:var(--ink-soft)"><strong>Positive slope</strong> goes up left-to-right; <strong>negative</strong> goes down. <strong>Slope 0</strong> is horizontal (y₂ = y₁); a <strong>vertical line has undefined slope</strong> (x₂ = x₁, division by zero).</span><br><span style="color:var(--ink-soft)">A large slope (like 10) is nearly vertical; a slope near 0 (like 1/10) is nearly horizontal.</span></li>
-<li><strong>Slope-intercept form: y = mx + b.</strong> Here <strong>m is the slope</strong> and <strong>b is the y-coordinate of the y-intercept</strong> (where the line crosses the y-axis). To read the slope off any linear equation, rearrange it into this form.<br><span style="color:var(--ink-soft)">Example: 3x − 5y = 7 → solve for y → y = (3/5)x − 7/5 → slope = <strong>3/5</strong>, y-intercept (0, −7/5).</span></li>
+<li><strong>Three ways to write a line</strong> (know all three — problems hand you whichever is convenient):<br><span style="color:var(--ink-soft)"><strong>Slope-intercept form: y = mx + b.</strong> <strong>m</strong> is the slope, <strong>b</strong> the y-coordinate of the y-intercept. Best for reading off the slope.</span><br><span style="color:var(--ink-soft)">Example: 3x − 5y = 7 → y = (3/5)x − 7/5 → slope = <strong>3/5</strong>, y-intercept (0, −7/5).</span><br><span style="color:var(--ink-soft)"><strong>Point-slope form: y − y₁ = m(x − x₁).</strong> Best when you know the slope <strong>m</strong> and one point (x₁, y₁) — write it straight down, no solving for b.</span><br><span style="color:var(--ink-soft)">Example: slope 2 through (3, 1) → y − 1 = 2(x − 3).</span><br><span style="color:var(--ink-soft)"><strong>Standard form: Ax + By = C</strong> (A, B, C integers, A &gt; 0, no common factor). Every such equation is a straight line, with <strong>slope = −A/B</strong>. Best for grid/intercept work.</span></li>
 <li><strong>Quick graphing:</strong> find the <strong>x- and y-intercepts</strong> (set y=0, then x=0), plot those two points, draw the line through them.</li>
-<li><strong>Parallel &amp; perpendicular:</strong> parallel lines have <strong>equal slopes</strong>; perpendicular lines have slopes whose product is <strong>−1</strong> (each is the negative reciprocal of the other).</li>
+<li><strong>Parallel &amp; perpendicular:</strong> parallel lines have <strong>equal slopes</strong> (careful: equal slopes could also mean the <em>same</em> line); perpendicular lines have slopes whose product is <strong>−1</strong> (each is the negative reciprocal of the other).</li>
+<li><strong>Two lines / two equations — three outcomes:</strong> solving a pair of linear equations gives either <strong>one solution</strong> (lines cross — different slopes), <strong>no solution</strong> (parallel — same slope, different intercept), or <strong>infinitely many</strong> (the <em>same</em> line — same slope <em>and</em> intercept). Checking slopes and intercepts tells you which case before you solve.</li>
 <li><strong>Triangle area (Shoelace formula):</strong> for corners (x₁,y₁), (x₂,y₂), (x₃,y₃), area = <strong>½ × |x₁(y₂−y₃) + x₂(y₃−y₁) + x₃(y₁−y₂)|</strong>. The bars | | mean "take the positive value."</li>
 </ul>
 <div class="cp"><strong>Competition point:</strong> When a shape sits on a grid, <strong>give every corner coordinates</strong> — then distances and areas come from formulas, not guessing (→ AP 2025 Q21). Always be ready to <strong>rearrange an equation into a handier form</strong> (e.g. into y = mx + b to read the slope instantly).</div>
@@ -107,6 +108,18 @@
 <tr>
 <td>Slope-intercept</td>
 <td>y = mx + b (m = slope, b = y-intercept)</td>
+</tr>
+<tr>
+<td>Point-slope</td>
+<td>y − y₁ = m(x − x₁)</td>
+</tr>
+<tr>
+<td>Standard form</td>
+<td>Ax + By = C (slope = −A/B)</td>
+</tr>
+<tr>
+<td>Two lines: cases</td>
+<td>1 solution / none (parallel) / infinite (same line)</td>
 </tr>
 <tr>
 <td>Parallel / perpendicular</td>
@@ -197,6 +210,8 @@
 <li>A square pyramid has a 6×6 base and height 10. Find its volume.</li>
 <li>A convex polyhedron has 6 faces and 8 vertices. How many edges does it have?</li>
 <li>A lattice polygon has 7 interior points and 10 boundary points. Find its area (Pick's Theorem).</li>
+<li>Write the line through (2, 5) with slope 3 in point-slope form, then convert to slope-intercept form.</li>
+<li>The lines y = 2x + 1 and y = 2x − 4 — how many points do they share?</li>
 </ol>
 <details><summary>Answers</summary><div class="answer">
 <p>1. PA² + PC² = PB² + PD² → 36 + 81 = 49 + PD² → 117 − 49 = <strong>68</strong></p>
@@ -208,7 +223,9 @@
 <p>7. V = πr²h = π·9·10 = <strong>90π</strong></p>
 <p>8. V = ⅓ × base × height = ⅓ × 36 × 10 = <strong>120</strong></p>
 <p>9. Euler: F + V = E + 2 → 6 + 8 = E + 2 → E = <strong>12</strong></p>
-<p>10. Area = I + B/2 − 1 = 7 + 5 − 1 = <strong>11</strong></p></div></details>
+<p>10. Area = I + B/2 − 1 = 7 + 5 − 1 = <strong>11</strong></p>
+<p>11. y − 5 = 3(x − 2); expand → y = 3x − 6 + 5 → <strong>y = 3x − 1</strong></p>
+<p>12. Same slope (2) but different intercepts → parallel → <strong>0 points</strong> (no solution)</p></div></details>
 <p class="footer-note">Source map: <code>약점진단/03_특수정리_좌표_입체.md</code> · Puzzle-style reasoning continues in <a class="cx" href="13_Logic_and_Magic_Squares.html">13 Logic and Magic Squares</a></p>
 </section>
 <a class="backlink" href="index.html">← All units</a>

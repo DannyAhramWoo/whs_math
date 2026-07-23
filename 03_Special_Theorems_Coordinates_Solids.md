@@ -32,7 +32,7 @@ What this note covers:
 
 ## 2. Coordinate Geometry — *Sec 1*
 
-> 📖 *Source: AOPS Introduction to Algebra Ch.8 (Graphing Lines) — §8.1 (Number Line & Cartesian Plane / distance formula), §8.2 (slope, slope-intercept form)*
+> 📖 *Source: AOPS Introduction to Algebra Ch.8 (Graphing Lines) — §8.1 (Number Line & Cartesian Plane / distance formula), §8.2 (slope, slope-intercept form), §8.7 Summary (point-slope & standard form, systems of two lines).*
 
 **The plane and a point's coordinates.** The Cartesian plane locates a point by (x, y): x is how far right of the y-axis, y is how far above the x-axis. The little numbers in (x₁, y₁) and (x₂, y₂) are **subscripts** — they tag *which* point each coordinate belongs to.
 
@@ -42,10 +42,15 @@ What this note covers:
 - **Slope** measures steepness: **m = (y₂−y₁)/(x₂−x₁) = rise/run**.
   - **Positive slope** goes up left-to-right; **negative** goes down. **Slope 0** is horizontal (y₂ = y₁); a **vertical line has undefined slope** (x₂ = x₁, division by zero).
   - A large slope (like 10) is nearly vertical; a slope near 0 (like 1/10) is nearly horizontal.
-- **Slope-intercept form: y = mx + b.** Here **m is the slope** and **b is the y-coordinate of the y-intercept** (where the line crosses the y-axis). To read the slope off any linear equation, rearrange it into this form.
-  - Example: 3x − 5y = 7 → solve for y → y = (3/5)x − 7/5 → slope = **3/5**, y-intercept (0, −7/5).
+- **Three ways to write a line** (know all three — problems hand you whichever is convenient):
+  - **Slope-intercept form: y = mx + b.** **m** is the slope, **b** the y-coordinate of the y-intercept. Best for reading off the slope.
+    - Example: 3x − 5y = 7 → y = (3/5)x − 7/5 → slope = **3/5**, y-intercept (0, −7/5).
+  - **Point-slope form: y − y₁ = m(x − x₁).** Best when you know the slope **m** and one point (x₁, y₁) — write it straight down, no solving for b.
+    - Example: slope 2 through (3, 1) → y − 1 = 2(x − 3).
+  - **Standard form: Ax + By = C** (A, B, C integers, A > 0, no common factor). Every such equation is a straight line, with **slope = −A/B**. Best for grid/intercept work.
 - **Quick graphing:** find the **x- and y-intercepts** (set y=0, then x=0), plot those two points, draw the line through them.
-- **Parallel & perpendicular:** parallel lines have **equal slopes**; perpendicular lines have slopes whose product is **−1** (each is the negative reciprocal of the other).
+- **Parallel & perpendicular:** parallel lines have **equal slopes** (careful: equal slopes could also mean the *same* line); perpendicular lines have slopes whose product is **−1** (each is the negative reciprocal of the other).
+- **Two lines / two equations — three outcomes:** solving a pair of linear equations gives either **one solution** (lines cross — different slopes), **no solution** (parallel — same slope, different intercept), or **infinitely many** (the *same* line — same slope *and* intercept). Checking slopes and intercepts tells you which case before you solve.
 - **Triangle area (Shoelace formula):** for corners (x₁,y₁), (x₂,y₂), (x₃,y₃), area = **½ × |x₁(y₂−y₃) + x₂(y₃−y₁) + x₃(y₁−y₂)|**. The bars | | mean "take the positive value."
 
 > 💡 **Competition point:** When a shape sits on a grid, **give every corner coordinates** — then distances and areas come from formulas, not guessing (→ AP 2025 Q21). Always be ready to **rearrange an equation into a handier form** (e.g. into y = mx + b to read the slope instantly).
@@ -126,6 +131,9 @@ What this note covers:
 | Distance formula | √((dx)² + (dy)²) — it's Pythagoras |
 | Slope | m = (y₂−y₁)/(x₂−x₁); horizontal 0, vertical undefined |
 | Slope-intercept | y = mx + b (m = slope, b = y-intercept) |
+| Point-slope | y − y₁ = m(x − x₁) |
+| Standard form | Ax + By = C (slope = −A/B) |
+| Two lines: cases | 1 solution / none (parallel) / infinite (same line) |
 | Parallel / perpendicular | equal slopes / product = −1 |
 | Triangle area (shoelace) | ½ \|x₁(y₂−y₃) + x₂(y₃−y₁) + x₃(y₁−y₂)\| |
 | Cube | V = a³, S = 6a², diagonal = a√3 |
@@ -173,6 +181,8 @@ These concepts appear in real problems on the quiz app. Learn the idea, then cli
 8. A square pyramid has a 6×6 base and height 10. Find its volume.
 9. A convex polyhedron has 6 faces and 8 vertices. How many edges does it have?
 10. A lattice polygon has 7 interior points and 10 boundary points. Find its area (Pick's Theorem).
+11. Write the line through (2, 5) with slope 3 in point-slope form, then convert to slope-intercept form.
+12. The lines y = 2x + 1 and y = 2x − 4 — how many points do they share?
 
 <details>
 <summary>Answers</summary>
@@ -187,6 +197,8 @@ These concepts appear in real problems on the quiz app. Learn the idea, then cli
 8. V = ⅓ × base × height = ⅓ × 36 × 10 = **120**
 9. Euler: F + V = E + 2 → 6 + 8 = E + 2 → E = **12**
 10. Area = I + B/2 − 1 = 7 + 5 − 1 = **11**
+11. y − 5 = 3(x − 2); expand → y = 3x − 6 + 5 → **y = 3x − 1**
+12. Same slope (2) but different intercepts → parallel → **0 points** (no solution)
 
 </details>
 
