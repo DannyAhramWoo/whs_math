@@ -18,11 +18,15 @@
 <section id="s1">
 <span class="sec-num">1</span>
 <h2>Permutations — order matters</h2>
+<p class="src-note"><em>Source: AOPS Introduction to Counting &amp; Probability §1.4 "Counting Multiple Events" (product rule, p.13) &amp; §1.5 "Permutations" (p.19–20). Repeated-element division is §3.2 (p.49); circular/round-table is §3.4 (p.57); "must/not together" restrictions are §2.5 (p.41).</em></p>
 <ul>
+<li><strong>The product rule (the engine underneath everything):</strong> if a task is made of several <strong>independent steps</strong>, multiply the choices for each step. Choosing an outfit from 5 shirts <strong>and</strong> 4 skirts <strong>and</strong> 3 shoes → 5 × 4 × 3 = 60.</li>
 <li><strong>Permutation:</strong> an <strong>ordered</strong> arrangement. "ABC" and "CBA" count as <strong>different</strong>.</li>
 <li><strong>P(n, r) formula:</strong> the number of ways to line up <strong>r</strong> items chosen from <strong>n</strong>.<br><span style="color:var(--ink-soft)"><strong>P(n, r) = n! / (n−r)! = n(n−1)(n−2)…</strong> (r factors, counting down).</span><br><span style="color:var(--ink-soft)">Example: seat 3 of 5 people in a row → P(5,3) = 5×4×3 = <strong>60</strong>.</span></li>
+<li><strong>With vs. without replacement (don't mix these up):</strong> if each choice <strong>can repeat</strong> (a 4-digit PIN from 0–9), multiply 10×10×10×10 = 10⁴. If each item is <strong>used up</strong> (line up 4 of 25 students), it counts <em>down</em>: 25×24×23×22. Permutations are the <em>without-replacement</em> case.</li>
 <li><strong>With repeats (repeated letters):</strong> if some items are the same, divide by the factorial of each repeat.<br><span style="color:var(--ink-soft)"><strong>Arrangements = n! / (a! b! c! …)</strong></span><br><span style="color:var(--ink-soft)">Example: the word "hello" has 5 letters with <strong>two l's</strong> → 5! / 2! = 120 / 2 = <strong>60</strong>.</span></li>
-<li><strong>Circular arrangement:</strong> n people around a <strong>circle</strong> = <strong>(n − 1)!</strong>. Fix one person; only the others' order matters (rotations are the same).<br><span style="color:var(--ink-soft)">Example: 5 people at a round table → (5−1)! = 4! = <strong>24</strong>.</span></li>
+<li><strong>Circular arrangement:</strong> n people around a <strong>circle</strong> = <strong>(n − 1)!</strong>. The book's reasoning: arrange all n in a line (n! ways), but every circle has been counted <strong>n times</strong> (one per rotation), so divide by n → n!/n = (n−1)!.<br><span style="color:var(--ink-soft)">Example: 5 people at a round table → (5−1)! = 4! = <strong>24</strong>.</span></li>
+<li>**Bracelet / keychain (rotations <em>and</em> flips):<strong> if the ring can also be </strong>flipped over<strong>, two arrangements that are mirror images are the same too — divide by </strong>2n** instead of n. (A round table can't flip; a bracelet can.)</li>
 <li><strong>"Must be together" (glue rule):</strong> treat the group as <strong>one block</strong>, arrange, then multiply by the ways <strong>inside</strong> the block.</li>
 <li><strong>"Not together":</strong> first arrange the others, then <strong>place the special ones in the gaps</strong> between them.</li>
 </ul>
@@ -31,11 +35,14 @@
 <section id="s2">
 <span class="sec-num">2</span>
 <h2>Combinations — order does not matter — <em>Sec 1</em></h2>
+<p class="src-note"><em>Source: AOPS Introduction to Counting &amp; Probability §4.2 "Committee Forming" &amp; §4.3 "How to Compute Combinations" (p.65–71); the symmetry identity is §4.4 "Our First Combinatorial Identity" (p.72–75). Pascal's identity is from Ch.7 (p.182), later in the book.</em></p>
 <ul>
 <li><strong>Combination:</strong> a <strong>choice</strong> where order does <strong>not</strong> matter. Picking {A, B, C} is the same as {C, B, A}.</li>
 <li><strong>C(n, r) formula:</strong> the number of ways to <strong>choose r</strong> from <strong>n</strong>.<br><span style="color:var(--ink-soft)"><strong>C(n, r) = n! / (r! (n−r)!)</strong></span><br><span style="color:var(--ink-soft)">Example: choose 2 from 5 → C(5,2) = 10.</span></li>
-<li><strong>Symmetry:</strong> C(n, r) = C(n, n−r). Choosing what to keep = choosing what to leave out.</li>
-<li><strong>Pascal's identity:</strong> <strong>C(n, r) = C(n−1, r−1) + C(n−1, r)</strong>. Each entry in Pascal's triangle is the sum of the two above it.</li>
+<li><strong>Committee vs. officers (the classic pitfall):</strong> choosing a <strong>committee</strong> of r people (all equal) is a <em>combination</em>; choosing r people for <em>distinct roles</em> (president, VP, …) is a <em>permutation</em>. Ask "does order matter?" every time.</li>
+<li><strong>Compute it the short way:</strong> don't expand full factorials. C(n, r) = (n · (n−1) · … , r terms) ÷ r!. E.g. C(10,3) = (10·9·8)/(3·2·1) = 120.</li>
+<li><strong>Symmetry:</strong> C(n, r) = C(n, n−r). <em>Why (committee argument):</em> choosing the <strong>r</strong> people to include is the same as choosing the <strong>n−r</strong> to leave out — a perfect one-to-one match, so the counts are equal.</li>
+<li><strong>Pascal's identity:</strong> <strong>C(n, r) = C(n−1, r−1) + C(n−1, r)</strong>. Each entry in Pascal's triangle is the sum of the two above it. (The book develops Pascal's triangle in Ch.7 — see the book-tricks section below.)</li>
 <li><strong>Subtract-the-bad:</strong> count <strong>everything</strong>, then take away the cases that break the rule.<br><span style="color:var(--ink-soft)">Example: triangles from points = C(all, 3) − (sets of 3 that lie <strong>on one line</strong>).</span></li>
 <li><strong>Conditional ("A and B both hold"):</strong> count only the arrangements that satisfy <strong>every</strong> condition at once, often by combining a choice with a rule.</li>
 </ul>
@@ -44,6 +51,7 @@
 <section id="s3">
 <span class="sec-num">3</span>
 <h2>Geometric Counting — points, lines, triangles</h2>
+<p class="src-note"><em>Source: standard competition technique applying the combination C(N,3). (This "count all, subtract collinear" idea is not in the C&amp;P counting chapters Ch.1–5; it's a geometry application of §4.2 combinations.)</em></p>
 <ul>
 <li><strong>Triangles from N points:</strong> choose any 3 points → C(N, 3). But 3 points <strong>on a straight line</strong> make <strong>no</strong> triangle.<br><span style="color:var(--ink-soft)"><strong>Number of triangles = C(N, 3) − (number of collinear 3-point sets).</strong></span></li>
 <li><strong>Finding collinear sets on a grid/array:</strong> scan every <strong>row</strong>, <strong>column</strong>, and <strong>diagonal</strong>; for a line with k points count C(k, 3) bad sets.</li>
@@ -54,7 +62,10 @@
 <section id="s4">
 <span class="sec-num">4</span>
 <h2>Burnside's Lemma — counting with symmetry — <em>Sec, advanced</em></h2>
+<p class="src-note"><em>Source: Burnside's Lemma is a standard olympiad result — it is <strong>not</strong> in AOPS Introduction to Counting &amp; Probability (which handles symmetry the simpler way, by overcounting then dividing, in §3.4). For primary contests the "divide by the number of symmetries" method below is usually enough.</em></p>
 <ul>
+<li><strong>The simple version first (the book's §3.4 method):</strong> when every arrangement has the <strong>same</strong> number of look-alikes (e.g. a plain ring where all n rotations are distinct), just <strong>divide by the number of symmetries</strong>: distinct = total ÷ |symmetries|. This is exactly the (n−1)! and the ÷2n bracelet rule from Section 1.</li>
+<li><strong>When does the simple version fail?</strong> If some arrangements are <strong>more symmetric than others</strong> (a bead pattern that looks the same after a half-turn), plain division over- or under-counts. That's the case Burnside's Lemma fixes.</li>
 <li><strong>The problem it solves:</strong> when rotations or flips make some arrangements <strong>look the same</strong>, plain counting <strong>over-counts</strong>.</li>
 <li><strong>Burnside's lemma:</strong> number of <strong>truly different</strong> arrangements = the <strong>average number of arrangements that stay unchanged</strong> across all the symmetries.<br><span style="color:var(--ink-soft)"><strong>Distinct = (1 / |G|) × (sum of fixed arrangements for each symmetry)</strong>, where <strong>|G|</strong> is how many symmetries there are.</span><br><span style="color:var(--ink-soft)">Example: 4 beads in a circle with only rotations → <strong>|G| = 4</strong> (turn by 0, 1, 2, 3 places); average the beads that "come back to themselves" for each turn.</span></li>
 </ul>
@@ -62,10 +73,18 @@
 </section>
 <section id="from-the-books-extra-tricks">
 <h2>📚 From the Books (extra tricks)</h2>
+<p class="src-note"><em>Source: AOPS Introduction to Counting &amp; Probability — Sum/Product rules §1.4 &amp; §2.6 (p.13, p.45); counting pairs §3.3 (p.53); "distinguishability" §5.4 (p.88); grid paths §5.2 (p.81). Pascal's Triangle, Hockey Stick, Binomial Theorem are Ch.7 (p.177–216). Named reasoning techniques (casework, complementary, constructive) are Ch.2 (p.27–45).</em></p>
 <ul>
+<li><strong>The named reasoning techniques (the book's toolbox):</strong><br><span style="color:var(--ink-soft)"><strong>Casework</strong> — split into non-overlapping cases, count each, <strong>add</strong> (§2.2).</span><br><span style="color:var(--ink-soft)"><strong>Complementary counting</strong> — count what you <strong>don't</strong> want and subtract; often far easier (§2.4). (Same idea as <a class="cx" href="07_Inclusion_Exclusion.html">07 Inclusion Exclusion</a>.)</span><br><span style="color:var(--ink-soft)"><strong>Constructive counting</strong> — build a valid object one decision at a time (§2.4).</span><br><span style="color:var(--ink-soft)"><strong>Concept (§2.6):</strong> deal with the <strong>most severe restriction first</strong>, and independent choices → <strong>multiply</strong>, exclusive options → <strong>add</strong>.</span></li>
 <li><strong>Sum Rule vs Product Rule:</strong> if a job can be done through separate alternatives joined by <strong>"OR"</strong>, <strong>add</strong> the ways. If a job needs several steps joined by <strong>"AND"</strong>, <strong>multiply</strong> the ways.<br><span style="color:var(--ink-soft)">Example: 1 book from 5 paperbacks OR 3 hardcovers → 5+3 = <strong>8</strong> (sum rule). An outfit from 5 shirts AND 4 skirts AND 3 shoes → 5×4×3 = <strong>60</strong> (product rule).</span></li>
+<li><strong>Strategic overcounting (§3.5) — the umbrella idea:</strong> when a direct count is hard, deliberately <strong>overcount</strong> in an easy way, then <strong>divide</strong> by how many times each object was counted. Repeated-letter division, circular (n−1)!, and pairs n(n−1)/2 are all this one idea.</li>
+<li><strong>Sum of the first n whole numbers:</strong> 1 + 2 + … + n = <strong>n(n+1)/2</strong> (Gauss's pairing: pair 1 with n, 2 with n−1, … each pair sums to n+1). Closely tied to the handshake count below.</li>
 <li><strong>Multinomial coefficient:</strong> splitting <strong>n distinct</strong> objects into groups of sizes n₁, n₂, … nᵣ, where the groups are <strong>distinguishable</strong> (e.g. named people) = <strong>n! / (n₁! n₂! … nᵣ!)</strong>.<br><span style="color:var(--ink-soft)">Example: give 6 different books to Alex, Bob, Catherine, 2 each → 6!/(2!2!2!) = <strong>90</strong>.</span></li>
+<li><strong>Distinguishability matters (§5.4).</strong> <em>Distinct</em> objects into <em>distinct</em> boxes, <em>identical</em> objects into <em>distinct</em> boxes, and <em>identical-into-identical</em> are all <strong>different</strong> counts — always ask which kind you have before picking a method.</li>
 <li><strong>Stars and Bars:</strong> placing <strong>n identical</strong> objects into <strong>k distinguishable</strong> bins = <strong>C(n+k−1, k−1)</strong>. If every bin needs <strong>at least one</strong>: <strong>C(n−1, k−1)</strong>.<br><span style="color:var(--ink-soft)">Example: 3 friends share 6 identical pencils, everyone gets ≥1 → C(5,2) = <strong>10</strong>. If 0 is allowed → C(8,2) = <strong>28</strong>.</span></li>
+</ul>
+<div class="callout warn"><strong>Warning (§5.4):</strong> the "divide by the arrangements" shortcut for <em>identical</em> boxes only works cleanly for <strong>2 boxes</strong> — it does <strong>not</strong> generalise to 3 or more identical boxes (you'd have to account for cases where some boxes are equal). Stars-and-bars needs the bins to be <strong>distinguishable</strong>.</div>
+<ul>
 <li><strong>Digit-pattern shortcuts:</strong> n-digit numbers with strictly <strong>increasing</strong> digits = <strong>C(9, n)</strong>. Strictly <strong>decreasing</strong> digits (a leading digit can pair with a trailing 0) = <strong>C(10, n)</strong>. n-digit <strong>palindromes</strong> = <strong>9 × 10^(⌈n/2⌉ − 1)</strong>.</li>
 <li><strong>Grid path counting:</strong> moving only right/up on a grid, the paths from corner to corner = <strong>C(m+n, n)</strong>, where m and n are the steps in each direction. Counting <strong>rectangles</strong> in a grid of m vertical and n horizontal lines = <strong>C(m,2) × C(n,2)</strong>.</li>
 <li><strong>Basic probability:</strong> <strong>P(event) = (ways it happens) ÷ (ways total)</strong>, when every outcome is equally likely. Don't mix ordered and unordered counting — count both the successes <strong>and</strong> the total the <strong>same way</strong>, never one ordered and the other not.</li>
@@ -83,6 +102,14 @@
 <th>Key point</th>
 </tr></thead><tbody>
 <tr>
+<td>AND vs OR</td>
+<td>multiply (AND) / add (OR)</td>
+</tr>
+<tr>
+<td>Repeat allowed?</td>
+<td>with replacement nⁿ vs without n(n−1)…</td>
+</tr>
+<tr>
 <td>Order matters</td>
 <td>use permutation P(n, r)</td>
 </tr>
@@ -99,12 +126,20 @@
 <td>n! / (r!(n−r)!)</td>
 </tr>
 <tr>
+<td>Committee vs officers</td>
+<td>combination vs permutation</td>
+</tr>
+<tr>
 <td>Repeated items</td>
 <td>divide by a! b! c!</td>
 </tr>
 <tr>
 <td>Circle of n</td>
-<td>(n−1)!</td>
+<td>(n−1)! (= n!/n)</td>
+</tr>
+<tr>
+<td>Bracelet (flips too)</td>
+<td>n!/(2n)</td>
 </tr>
 <tr>
 <td>Must be together</td>
@@ -115,6 +150,18 @@
 <td>place in the gaps</td>
 </tr>
 <tr>
+<td>Strategic overcount</td>
+<td>overcount easily, then divide</td>
+</tr>
+<tr>
+<td>1+2+…+n</td>
+<td>n(n+1)/2</td>
+</tr>
+<tr>
+<td>Handshakes / pairs</td>
+<td>n(n−1)/2</td>
+</tr>
+<tr>
 <td>Derangements</td>
 <td>3→2, 4→9, 5→44</td>
 </tr>
@@ -123,12 +170,16 @@
 <td>C(n,r) = C(n−1,r−1) + C(n−1,r)</td>
 </tr>
 <tr>
+<td>Distinguishability</td>
+<td>ask: distinct or identical objects/boxes?</td>
+</tr>
+<tr>
 <td>Triangles from points</td>
 <td>C(N,3) − collinear 3-sets</td>
 </tr>
 <tr>
 <td>Symmetry over-counts</td>
-<td>Burnside: average the fixed cases</td>
+<td>divide by #symmetries (Burnside for uneven cases)</td>
 </tr>
 </tbody></table></div>
 </section>
@@ -168,13 +219,19 @@
 <li>From 7 students, how many ways to choose a team of 3?</li>
 <li>6 friends sit around a round table. How many seatings are different?</li>
 <li>There are 10 points and no 3 are on one line. How many triangles can be drawn?</li>
+<li>How many 3-digit PIN codes are there if digits <strong>can</strong> repeat? And if they <strong>can't</strong> repeat?</li>
+<li>What is 1 + 2 + 3 + … + 20?</li>
+<li>6 people at a party each shake hands once with every other. How many handshakes?</li>
 </ol>
 <details><summary>Answers</summary><div class="answer">
 <p>1. 4! = <strong>24</strong></p>
 <p>2. "BANANA" has 3 A's and 2 N's → 6! / (3!·2!) = 720 / 12 = <strong>60</strong></p>
 <p>3. C(7,3) = 7!/(3!·4!) = <strong>35</strong></p>
 <p>4. (6−1)! = 5! = <strong>120</strong></p>
-<p>5. C(10,3) = <strong>120</strong> (no collinear sets to subtract)</p></div></details>
+<p>5. C(10,3) = <strong>120</strong> (no collinear sets to subtract)</p>
+<p>6. With repeats: 10×10×10 = <strong>1000</strong>. Without repeats: 10×9×8 = <strong>720</strong>.</p>
+<p>7. n(n+1)/2 = 20·21/2 = <strong>210</strong></p>
+<p>8. n(n−1)/2 = 6·5/2 = <strong>15</strong></p></div></details>
 <p class="footer-note">Source map: <code>약점진단/08_순열_조합_세기.md</code> · Counting continues in <a class="cx" href="09_Colouring_Partitions_Pigeonhole.html">09 Colouring Partitions Pigeonhole</a></p>
 </section>
 <a class="backlink" href="index.html">← All units</a>
