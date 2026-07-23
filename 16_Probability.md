@@ -1,8 +1,8 @@
 # 16. Probability & Expected Value
 
 > **Unit:** Probability (Unit 16 · extra unit from book scans, no linked quiz-app problems yet)
-> **For:** primary competition students (SMO · NMOS · IMSO) — concepts go up to **Secondary 2** level
-> **Why it matters:** Probability questions ("what is the chance that...") are common in NMOS/IMSO and connect directly to the counting tools in [[08_Permutations_Combinations_Counting]]. This unit turns those counting skills into probability answers.
+> **For:** primary students — concepts go up to **Secondary 2** level
+> **Why it matters:** Probability questions ("what is the chance that...") are common in exams and connect directly to the counting tools in [[08_Permutations_Combinations_Counting]]. This unit turns those counting skills into probability answers.
 
 ---
 

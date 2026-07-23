@@ -1,7 +1,7 @@
 # 11. Work Rate, Percentage, Concentration, Profit & Average
 
 > **Unit:** Rates & Real-World Word Problems (Unit 11 of 14) · **9 linked problems**
-> **For:** primary competition students (SMO · NMOS · IMSO) — concepts go up to **Secondary 1** level
+> **For:** primary students — concepts go up to **Secondary 1** level
 > **Why it matters:** These are the "real-life" word problems that show up every year. Once you learn to turn a story into a rate, a percentage, or a simple equation, all of them become easy and quick.
 
 ---

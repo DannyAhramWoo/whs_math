@@ -1,7 +1,7 @@
 # 12. Equations, Algebraic Manipulation & Factoring
 
 > **Unit:** Algebra Toolkit (Unit 12 of 14) · **13 linked problems**
-> **For:** primary competition students (SMO · NMOS · IMSO) — concepts go up to **Secondary 1** level
+> **For:** primary students — concepts go up to **Secondary 1** level
 > **Why it matters:** Word problems and puzzles almost always hide an **equation**. If you can name a variable, write the condition as an equation, and factor cleverly, hard-looking problems become short.
 
 ---

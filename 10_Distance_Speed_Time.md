@@ -1,7 +1,7 @@
 # 10. Distance, Speed & Time
 
 > **Unit:** Rate Word Problems (Unit 10 of 14) · **8 linked problems**
-> **For:** primary competition students (SMO · NMOS · IMSO) — concepts go up to **Secondary 1** level
+> **For:** primary students — concepts go up to **Secondary 1** level
 > **Why it matters:** Almost every competition has a "who meets whom" or "how fast is the train" question. Once you lock in the three-way rule *distance = speed × time* and know how to handle relative speed, these become fast, safe points.
 
 ---

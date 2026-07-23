@@ -1,7 +1,7 @@
 # 14. Sequences & Recurrence
 
 > **Unit:** Patterns & Sequences (Unit 14 of 14) · **5 linked problems**
-> **For:** primary competition students (SMO · NMOS · IMSO) — concepts go up to **Secondary 1** level
+> **For:** primary students — concepts go up to **Secondary 1** level
 > **Why it matters:** Many hard competition problems hide a **pattern**. If you can spot the rule of a sequence, or write a **recurrence** (each term from the ones before), a scary-looking problem turns into a short, safe calculation.
 
 ---

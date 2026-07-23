@@ -1,7 +1,7 @@
 # 06. Primes, Modular Arithmetic & Factorials
 
 > **Unit:** Number Theory Basics (Unit 06 of 14) · **11 linked problems**
-> **For:** primary competition students (SMO · NMOS · IMSO) — concepts go up to **Secondary 1** level
+> **For:** primary students — concepts go up to **Secondary 1** level
 > **Why it matters:** Primes are the building blocks of every number. Modular arithmetic ("clock maths") lets you find last digits and remainders of huge powers. Factorials hide primes inside them. These three ideas turn "impossible" big-number questions into quick ones.
 
 ---

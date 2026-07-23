@@ -1,7 +1,7 @@
 # 07. Inclusion-Exclusion Principle
 
 > **Unit:** Counting (Unit 07 of 14) · **9 linked problems**
-> **For:** primary competition students (SMO · NMOS · IMSO) — concepts go up to **Secondary 1** level
+> **For:** primary students — concepts go up to **Secondary 1** level
 > **Why it matters:** When you count things that **overlap** — people in two clubs, numbers that are multiples of both 2 and 3 — simple adding gives the wrong answer. Inclusion-Exclusion is the tool that fixes double-counting. It shows up in almost every counting problem.
 
 ---

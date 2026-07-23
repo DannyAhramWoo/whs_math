@@ -1,8 +1,8 @@
 # 15. Statistics
 
 > **Unit:** Statistics (Unit 15 · extra unit from book scans, no linked quiz-app problems yet)
-> **For:** primary competition students (SMO · NMOS · IMSO) — concepts go up to **Secondary 1** level
-> **Why it matters:** Mean, median, mode, and range show up in NMOS/IMSO word problems and data-table questions. None of the other 13 units cover this — it's a completely separate skill.
+> **For:** primary students — concepts go up to **Secondary 1** level
+> **Why it matters:** Mean, median, mode, and range show up in word problems and data-table questions. None of the other 13 units cover this — it's a completely separate skill.
 
 ---
 

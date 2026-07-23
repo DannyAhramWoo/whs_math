@@ -1,7 +1,7 @@
 # 13. Logic, Magic Squares & Truth Puzzles
 
 > **Unit:** Logic & Puzzles (Unit 13 of 14) · **7 linked problems**
-> **For:** primary competition students (SMO · NMOS · IMSO) — concepts go up to **Secondary 1** level
+> **For:** primary students — concepts go up to **Secondary 1** level
 > **Why it matters:** These problems have no formula. You win by **careful reasoning**: assume, check, and cross out. Learn the tricks here and "hard-looking" puzzle questions become quick and safe marks.
 
 ---

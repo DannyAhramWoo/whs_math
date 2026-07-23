@@ -1,7 +1,7 @@
 # 17. Coordinate Geometry
 
 > **Unit:** Coordinate Geometry (Unit 17 · extra unit from book scans, no linked quiz-app problems yet)
-> **For:** primary competition students (SMO · NMOS · IMSO) — concepts go up to **Secondary 2** level
+> **For:** primary students — concepts go up to **Secondary 2** level
 > **Why it matters:** Distance/midpoint/slope formulas let you solve geometry problems with pure algebra instead of drawing — a fast backup method when angle-chasing gets stuck. Builds on the coordinate basics already in [[03_Special_Theorems_Coordinates_Solids]].
 
 ---

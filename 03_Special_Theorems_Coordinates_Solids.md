@@ -1,7 +1,7 @@
 # 03. Special Theorems, Coordinates & Solids
 
 > **Unit:** Geometry Tools (Unit 03 of 14) · **7 linked problems**
-> **For:** primary competition students (SMO · NMOS · IMSO) — concepts go up to **Secondary 2** level
+> **For:** primary students — concepts go up to **Secondary 2** level
 > **Why it matters:** These are the "special weapons" of geometry. One clever theorem (like the British Flag Theorem), the coordinate method, or good solid-shape thinking can turn a scary problem into a one-line answer.
 
 ---

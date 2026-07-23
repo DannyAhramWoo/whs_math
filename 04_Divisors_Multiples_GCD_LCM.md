@@ -1,7 +1,7 @@
 # 04. Divisors, Multiples, GCD & LCM
 
 > **Unit:** Number Theory Basics (Unit 04 of 14) · **16 linked problems**
-> **For:** primary competition students (SMO · NMOS · IMSO) — concepts go up to **Secondary 1** level
+> **For:** primary students — concepts go up to **Secondary 1** level
 > **Why it matters:** This is the base of number theory. If you don't know the "number of divisors" formula and the GCD/LCM rule, half of all number theory problems get stuck.
 
 ---

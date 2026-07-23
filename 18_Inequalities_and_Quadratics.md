@@ -1,7 +1,7 @@
 # 18. Inequalities & Quadratic Graphs
 
 > **Unit:** Inequalities & Quadratic Graphs (Unit 18 · extra unit from book scans, no linked quiz-app problems yet)
-> **For:** primary competition students (SMO · NMOS · IMSO) — concepts go up to **Secondary 2** level
+> **For:** primary students — concepts go up to **Secondary 2** level
 > **Why it matters:** Inequalities appear whenever a problem says "at most," "at least," or "find the range of possible values." Quadratic graphs (parabolas) give a visual way to see the max/min facts already used in [[12_Equations_Algebra_Factoring]].
 
 ---

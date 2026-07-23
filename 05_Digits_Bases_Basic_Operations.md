@@ -1,7 +1,7 @@
 # 05. Digits, Bases & Basic Operations
 
 > **Unit:** Number Theory Basics (Unit 05 of 14) · **23 linked problems**
-> **For:** primary competition students (SMO · NMOS · IMSO) — concepts go up to **Secondary 1** level
+> **For:** primary students — concepts go up to **Secondary 1** level
 > **Why it matters:** So many problems talk about "a 3-digit number" or "swap the digits". If you know how to write digits as letters (abc = 100a+10b+c), these turn from tricky puzzles into simple equations.
 
 ---

@@ -1,7 +1,7 @@
 # 02. Angles, Similarity & Circles (Plane Geometry)
 
 > **Unit:** Plane Geometry (Unit 02 of 14) · **21 linked problems**
-> **For:** primary competition students (SMO · NMOS · IMSO) — concepts go up to **Secondary 2** level
+> **For:** primary students — concepts go up to **Secondary 2** level
 > **Why it matters:** Plane geometry is where the hardest "figure" questions live. If you can chase angles, spot similar triangles, and use the circle rules, you can crack most shape problems without guessing.
 
 ---

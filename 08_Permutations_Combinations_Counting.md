@@ -1,7 +1,7 @@
 # 08. Permutations, Combinations & Counting
 
 > **Unit:** Counting & Combinatorics (Unit 08 of 14) · **12 linked problems**
-> **For:** primary competition students (SMO · NMOS · IMSO) — concepts go up to **Secondary 1** level
+> **For:** primary students — concepts go up to **Secondary 1** level
 > **Why it matters:** Counting problems are everywhere. If you know when order matters (permutation) and when it does not (combination), you can turn a scary "how many ways" question into one clean multiplication.
 
 ---

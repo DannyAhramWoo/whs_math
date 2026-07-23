@@ -1,7 +1,7 @@
 # 01. Ratio and Proportion
 
 > **Unit:** Ratio / Proportion (Unit 01 of 14) · **19 linked problems**
-> **For:** primary competition students (SMO · NMOS · IMSO) — concepts go up to **Secondary 2** level
+> **For:** primary students — concepts go up to **Secondary 2** level
 > **Why it matters:** This is the single biggest weak spot. Most of the linked problems are "side ratio → area ratio" geometry problems. Once the three area tricks and the proportion setup below are automatic, a whole page of these problems becomes routine.
 
 ---

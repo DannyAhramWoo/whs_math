@@ -1,8 +1,8 @@
 # 20. Trigonometry Basics
 
 > **Unit:** Trigonometry (Unit 20 · extra unit from book scans, no linked quiz-app problems yet)
-> **For:** primary competition students (SMO · NMOS · IMSO) — concepts go up to **Secondary 3, advanced**
-> **Why it matters:** Most SMO/NMOS/IMSO problems avoid full trigonometry, but the Law of Sines/Cosines occasionally solve "awkward angle" triangle problems faster than angle-chasing. Treat this unit as *optional/advanced* — read [[02_Angles_Similarity_Circles]] first.
+> **For:** primary students — concepts go up to **Secondary 3, advanced**
+> **Why it matters:** Most primary problems avoid full trigonometry, but the Law of Sines/Cosines occasionally solve "awkward angle" triangle problems faster than angle-chasing. Treat this unit as *optional/advanced* — read [[02_Angles_Similarity_Circles]] first.
 
 ---
 
@@ -80,4 +80,4 @@ These come straight from the 45-45-90 and 30-60-90 triangles already in [[02_Ang
 </details>
 
 ---
-*This is a new, optional/advanced unit added from book scans (2026-07-22) — no quiz-app problems are linked to it yet. Builds on the special right triangles in [[02_Angles_Similarity_Circles]]. Most SMO/NMOS problems don't need this — only use it if a problem gives an "ugly" angle that resists angle-chasing.*
+*This is a new, optional/advanced unit added from book scans (2026-07-22) — no quiz-app problems are linked to it yet. Builds on the special right triangles in [[02_Angles_Similarity_Circles]]. Most primary problems don't need this — only use it if a problem gives an "ugly" angle that resists angle-chasing.*

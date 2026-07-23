@@ -1,7 +1,7 @@
 # 09. Colouring, Partitions, Pigeonhole & Grid Paths
 
 > **Unit:** Combinatorics (Unit 09 of 14) · **12 linked problems**
-> **For:** primary competition students (SMO · NMOS · IMSO) — concepts go up to **Secondary 1** level
+> **For:** primary students — concepts go up to **Secondary 1** level
 > **Why it matters:** These are the four big "counting" tools. Colouring counts arrangements, stars-and-bars shares things out, pigeonhole proves "two must be the same", and grid paths count routes. Together they crack most hard counting questions.
 
 ---

@@ -1,9 +1,8 @@
-# 📘 Math Competition Notes
+# 📘 Math Notes
 
-Study notes for Singapore primary math competitions (**SMO / NMOS / IMSO**, plus RI / RMO / APMOPS).
-Written in **simple English**, in the same style as the science notes. Concepts go up to **Secondary** level where needed (tagged *Sec 1* / *Sec 2* / *Sec, advanced*).
+Study notes for primary math, written in **simple English**, in the same style as the science notes. Concepts go up to **Secondary** level where needed (tagged *Sec 1* / *Sec 2* / *Sec, advanced*).
 
-Every note ends with **🔗 Linked Competition Problems** — clickable links to real problems on the quiz app:
+Every note ends with **🔗 Linked Problems** — clickable links to real problems on the quiz app:
 👉 **[dannyahramwoo.github.io/math-quiz](https://dannyahramwoo.github.io/math-quiz/)**
 
 These 14 units match the 14 learning units in the weakness-diagnosis folder (`약점진단/`), so notes ↔ problems ↔ weak spots all line up. **163 problems** are linked in total.

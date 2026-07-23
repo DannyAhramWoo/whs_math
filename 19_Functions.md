@@ -1,8 +1,8 @@
 # 19. Functions
 
 > **Unit:** Functions (Unit 19 · extra unit from book scans, no linked quiz-app problems yet)
-> **For:** primary competition students (SMO · NMOS · IMSO) — concepts go up to **Secondary 2** level
-> **Why it matters:** "Function" language (f(x), domain, floor/ceiling) shows up in harder RI/RMO word problems and custom-operator problems, which already appear in [[12_Equations_Algebra_Factoring]].
+> **For:** primary students — concepts go up to **Secondary 2** level
+> **Why it matters:** "Function" language (f(x), domain, floor/ceiling) shows up in harder word problems and custom-operator problems, which already appear in [[12_Equations_Algebra_Factoring]].
 
 ---
 
