@@ -27,6 +27,7 @@
 <ul>
 <li><strong>Angle:</strong> two rays sharing a common origin. The shared origin is the <strong>vertex</strong>; the two rays are the <strong>sides</strong>.<br><span style="color:var(--ink-soft)">We write ∠XOY with the <strong>vertex in the middle</strong> (∠XOY or ∠YOX, but never ∠XYO). When only one angle can be meant, just ∠O.</span><br><span style="color:var(--ink-soft)">When two lines cross at P, "∠P" is ambiguous — you must name three points (∠APC, ∠BPC, …) to say <em>which</em> angle.</span></li>
 <li><strong>Measuring — degrees.</strong> A full circle is <strong>360°</strong>; a half-circle (<strong>semicircle</strong>) is 180°. A protractor is a semicircle split into 180 equal degrees.</li>
+<li><strong>Naming angles by size:</strong> <strong>acute</strong> &lt; 90°, <strong>right</strong> = 90°, <strong>obtuse</strong> between 90° and 180°, <strong>straight</strong> = 180°, <strong>reflex</strong> &gt; 180°. Two lines that meet at a right angle are <strong>perpendicular</strong> (⊥).</li>
 <li><strong>The "fraction of a circle" view (very useful).</strong> An angle's measure = the fraction of a full circle it cuts off, times 360°.<br><span style="color:var(--ink-soft)">¼ of a circle = 90°, ⅓ = 120°, 1/12 = 30°, 1/8 = 45°.</span></li>
 </ul>
 <div class="cp"><strong>Competition point:</strong> The "fraction of a circle" idea turns pie-chart / clock / pizza-slice problems into a one-line calculation: (fraction) × 360°. A clock's hour marks are <code>360°/12 = 30°</code> apart.</div>
@@ -124,6 +125,7 @@
 <h2>Circle Properties — <em>Sec 2</em></h2>
 <p class="src-note"><em>Source: AOPS Introduction to Geometry §11.4 (Circle basics), Ch.12 §12.6 Summary (Circles and Angles) &amp; Ch.13 §13.3 Summary (Power of a Point)</em></p>
 <p><strong>Vocabulary.</strong> A <strong>circle</strong> is all points a fixed distance (the <strong>radius</strong> r) from a fixed <strong>center</strong>. A <strong>chord</strong> joins two points on the circle; a <strong>diameter</strong> is a chord through the center (length 2r). A <strong>secant</strong> is a line hitting the circle at two points; a <strong>tangent</strong> touches at exactly one point. An <strong>arc</strong> is a piece of the circle; a <strong>central angle</strong> (vertex at the center) equals the measure of the arc it cuts off.</p>
+<p><strong>Basic size formulas.</strong> <strong>Circumference = πd = 2πr</strong>, and <strong>area = πr²</strong>. A <strong>radius perpendicular to a chord bisects that chord</strong> (and vice versa) — a reflex move for chord problems.</p>
 <p><strong>The angle rules (this is the whole chapter in one place).</strong> Where an angle's vertex sits decides the rule:</p>
 <ul>
 <li><strong>Vertex ON the circle — inscribed angle = half its arc.</strong> An angle formed by two chords from a point on the circle equals <strong>half the arc it cuts off</strong>: ∠PQR = (arc PR)/2.<br><span style="color:var(--ink-soft)"><strong>Consequence 1:</strong> any angle inscribed in a <strong>semicircle is 90°</strong> (Thales — the arc is a full semicircle = 180°, half is 90°).</span><br><span style="color:var(--ink-soft)"><strong>Consequence 2:</strong> two angles inscribed in (standing on) the <strong>same arc are equal</strong>.</span><br><span style="color:var(--ink-soft)"><strong>Consequence 3:</strong> a <strong>central angle is twice</strong> any inscribed angle on the same arc.</span></li>
@@ -137,6 +139,7 @@
 <li>From an outside point you can draw <strong>two tangent segments, and they're equal in length</strong>.</li>
 </ul>
 <p><strong>Cyclic quadrilateral:</strong> if all 4 corners lie on a circle, <strong>opposite angles add to 180°</strong>.</p>
+<p><strong>Circular segment area</strong> (the region between a chord and its arc): compute the <strong>sector</strong> (pie slice) cut off by the two radii to the chord's ends, then <strong>subtract the triangle</strong> formed by those two radii and the chord. Segment = sector − triangle.</p>
 <p><strong>Power of a Point (Sec 2, advanced but very useful).</strong> For any line through a point P meeting the circle at U and V, the product <strong>(PU)(PV) is constant</strong> — the "power" of P.</p>
 <ul>
 <li><strong>P inside</strong> (two chords cross at X): (XA)(XB) = (XC)(XD).</li>
@@ -152,7 +155,9 @@
 <p class="src-note"><em>Source: AOPS Introduction to Geometry §6.2 (Two Special Right Triangles), §6.3 (Pythagorean Triples), §6.5★ (Heron's Formula), §6.7 Summary, and Ch.10 §10.3 (Triangle Inequality)</em></p>
 <ul>
 <li><strong>Pythagoras' theorem:</strong> in a <strong>right-angled triangle</strong>, <strong>a² + b² = c²</strong>, where <strong>c is the hypotenuse</strong> (longest side, opposite the right angle).</li>
-<li><strong>Pythagorean triples (memorise!):</strong> whole-number sides that fit a²+b²=c² — <strong>3-4-5</strong>, <strong>5-12-13</strong>, <strong>8-15-17</strong>, <strong>7-24-25</strong>. Any multiple works too (6-8-10, 9-12-15). Spotting one skips all calculation.<br><span style="color:var(--ink-soft)">Legs 3 and 4 → hypotenuse <strong>5</strong>, no working. (Note {1,2,3} is <em>not</em> a triple — you can't make the third from the other two.)</span></li>
+<li><strong>Pythagorean triples (memorise!):</strong> whole-number sides that fit a²+b²=c² — <strong>3-4-5</strong>, <strong>5-12-13</strong>, <strong>7-24-25</strong>, <strong>8-15-17</strong>, <strong>9-40-41</strong>. Any multiple works too (6-8-10, 9-12-15). Spotting one skips all calculation.<br><span style="color:var(--ink-soft)">Legs 3 and 4 → hypotenuse <strong>5</strong>, no working. (Note {1,2,3} is <em>not</em> a triple — you can't make the third from the other two.)</span></li>
+<li><strong>Acute / right / obtuse by the Pythagorean comparison:</strong> for a triangle with longest side <em>c</em>, compare c² with a²+b². If <strong>c² = a²+b²</strong> it's right; if <strong>c² &lt; a²+b²</strong> the angle opposite c is <strong>acute</strong> (whole triangle acute); if <strong>c² &gt; a²+b²</strong> that angle is <strong>obtuse</strong>. (Pythagoras is just the boundary case.)</li>
+<li><strong>Longest side faces the largest angle.</strong> In any triangle, the biggest angle is opposite the longest side and the smallest angle opposite the shortest side (∠A ≥ ∠B ≥ ∠C ⟺ a ≥ b ≥ c). Handy for ordering sides/angles without measuring.</li>
 </ul>
 <p><strong>Two special right triangles (know the side ratios cold):</strong></p>
 <ul>
@@ -177,12 +182,14 @@
 <h2>More Tools (advanced / competition extras)</h2>
 <p class="src-note"><em>Source: AOPS Introduction to Geometry Ch.7 (Special Parts of a Triangle — centers), Ch.8 (Quadrilaterals), Ch.9 (Polygons), Ch.11 (sector area), plus standard competition results (Ptolemy). These go beyond the core chapters above.</em></p>
 <ul>
-<li><strong>Right-triangle congruence shortcuts:</strong> besides SSS/SAS/ASA/AAS, right triangles also have <strong>HL</strong> (hypotenuse + one leg) and <strong>LL</strong> (two legs).</li>
+<li><strong>Right-triangle shortcuts:</strong> besides SSS/SAS/ASA/AAS, right triangles also have <strong>HL</strong> (hypotenuse + one leg) and <strong>LL</strong> (two legs) for <strong>congruence</strong> — and the matching <strong>HL similarity</strong> and <strong>LL similarity</strong> tests when the parts are in a constant ratio instead of equal.</li>
+<li><strong>A median equal to half the side it hits ⟺ right triangle</strong> (that side is then the hypotenuse and its midpoint is the circumcenter) — the converse of the "circumcenter = hypotenuse midpoint" fact.</li>
 <li><strong>Four triangle centers</strong> (Ch.7):<br><span style="color:var(--ink-soft)"><strong>Centroid</strong> — the three <strong>medians</strong> meet here, cutting each median <strong>2:1</strong> from the vertex; splits the triangle into <strong>6 equal-area</strong> pieces.</span><br><span style="color:var(--ink-soft)"><strong>Incenter</strong> — the three <strong>angle bisectors</strong> meet here, equidistant from the 3 <em>sides</em> (center of the incircle, radius r). <strong>Area = r × s</strong> (s = semiperimeter).</span><br><span style="color:var(--ink-soft)"><strong>Circumcenter</strong> — the three <strong>perpendicular bisectors</strong> meet here, equidistant from the 3 <em>vertices</em> (center of the circumcircle, radius R). For a <strong>right triangle</strong>, the circumcenter is the <strong>midpoint of the hypotenuse</strong>, so <strong>R = ½ · hypotenuse</strong>.</span><br><span style="color:var(--ink-soft)"><strong>Orthocenter</strong> — where the three <strong>altitudes</strong> meet.</span></li>
 <li><strong>Angle Bisector Theorem:</strong> if AD bisects ∠A (D on BC), then <strong>AB/BD = AC/DC</strong> — the bisector splits the opposite side in the ratio of the two adjacent sides.</li>
 <li><strong>Altitude-to-hypotenuse (right triangle):</strong> the altitude from the right angle to the hypotenuse at D gives three "geometric mean" facts: <strong>BD² = AD·DC</strong>, <strong>AB² = AD·AC</strong>, <strong>CB² = CD·CA</strong>.</li>
 <li><strong>Ptolemy's Theorem</strong> (cyclic quadrilateral ABCD): <strong>AC · BD = AB·CD + AD·BC</strong>.</li>
 <li><strong>Incircle/circumcircle radii:</strong> <strong>r = Area/s</strong>; for a right triangle <strong>r = (leg₁ + leg₂ − hypotenuse)/2</strong>; and <strong>R = abc/(4·Area)</strong>.</li>
+<li><strong>Incircle tangent lengths:</strong> the incircle touches the three sides so that the two tangent segments from each vertex are equal, giving <strong>(distance from a vertex to a touch-point) = s − (opposite side)</strong> — i.e. s−a, s−b, s−c from the three vertices. Very handy for "find the segment" problems.</li>
 <li><strong>Special quadrilaterals</strong> (Ch.8):<br><span style="color:var(--ink-soft)"><strong>Rhombus:</strong> area = (d₁ × d₂)/2, diagonals perpendicular.</span><br><span style="color:var(--ink-soft)"><strong>Isosceles trapezoid:</strong> base angles equal in pairs, legs equal, diagonals equal (any one forces the others).</span><br><span style="color:var(--ink-soft)"><strong>Trapezoid median</strong> (midpoints of the legs): parallel to both bases, <strong>median = (base₁+base₂)/2</strong>, <strong>Area = height × median</strong>.</span><br><span style="color:var(--ink-soft)"><strong>Kite:</strong> two pairs of <em>consecutive</em> equal sides; diagonals perpendicular.</span></li>
 </ul>
 <div class="cp"><strong>Competition point:</strong> for true/false "is every rhombus a rectangle?" traps, remember <strong>square ⊂ rectangle ⊂ parallelogram</strong> and <strong>square ⊂ rhombus ⊂ parallelogram</strong> — a rhombus is a rectangle only if it's a square.</div>
@@ -268,8 +275,40 @@
 <td>opposite angles add to 180°</td>
 </tr>
 <tr>
+<td>Angle sizes</td>
+<td>acute&lt;90, right=90, obtuse&lt;180, straight=180, reflex&gt;180</td>
+</tr>
+<tr>
+<td>Circle size</td>
+<td>C = 2πr, area = πr²</td>
+</tr>
+<tr>
+<td>Radius ⊥ chord</td>
+<td>bisects the chord</td>
+</tr>
+<tr>
+<td>Circular segment</td>
+<td>sector − triangle</td>
+</tr>
+<tr>
 <td>Pythagoras</td>
 <td>a² + b² = c² (c = hypotenuse)</td>
+</tr>
+<tr>
+<td>c² vs a²+b²</td>
+<td>=right, &lt;acute, &gt;obtuse (angle opposite c)</td>
+</tr>
+<tr>
+<td>Longest side</td>
+<td>faces the largest angle</td>
+</tr>
+<tr>
+<td>Pythagorean triples</td>
+<td>3-4-5, 5-12-13, 7-24-25, 8-15-17, 9-40-41</td>
+</tr>
+<tr>
+<td>Incircle tangents</td>
+<td>s−a, s−b, s−c from the vertices</td>
 </tr>
 <tr>
 <td>45-45-90</td>
@@ -348,6 +387,8 @@
 <li>Find the area of a triangle with sides 5, 5, 6 (use Heron, or split it).</li>
 <li>Why must the three exterior angles of any triangle add to 360°?</li>
 <li>From a point P outside a circle, a tangent has length 6 and a secant hits the circle at distances 4 and x from P. Find x.</li>
+<li>A triangle has sides 6, 8, 11. Is its largest angle acute, right, or obtuse?</li>
+<li>A triangle has sides 6, 8, 9. Which angle is the smallest?</li>
 </ol>
 <details><summary>Answers</summary><div class="answer">
 <p>1. 55° + 65° = <strong>120°</strong></p>
@@ -360,7 +401,9 @@
 <p>8. Need 4 + 5 &gt; 10? No (9 &lt; 10). <strong>Not a triangle.</strong></p>
 <p>9. s = 8, area = √(8·3·3·2) = √144 = <strong>12</strong>. (Check: base 6, height 4 → ½·6·4 = 12 ✓)</p>
 <p>10. Each exterior angle = sum of its two far interior angles, so the three add to 2(∠A+∠B+∠C) = 2·180° = <strong>360°</strong>.</p>
-<p>11. Power of a Point: tangent² = (near)(far) → 6² = 4·x → 36 = 4x → <strong>x = 9</strong>.</p></div></details>
+<p>11. Power of a Point: tangent² = (near)(far) → 6² = 4·x → 36 = 4x → <strong>x = 9</strong>.</p>
+<p>12. Longest side 11: compare 11² = 121 with 6²+8² = 100. Since 121 &gt; 100 → <strong>obtuse</strong>.</p>
+<p>13. Smallest angle faces the shortest side (6) → the angle opposite the side of length <strong>6</strong> is smallest.</p></div></details>
 <p class="footer-note">Source map: <code>약점진단/02_각도_닮음_원.md</code> · Plane geometry continues in <a class="cx" href="03_Special_Theorems_Coordinates_Solids.html">03 Special Theorems Coordinates Solids</a></p>
 </section>
 <a class="backlink" href="index.html">← All units</a>

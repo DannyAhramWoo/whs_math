@@ -29,6 +29,7 @@ What this note covers:
   - We write ∠XOY with the **vertex in the middle** (∠XOY or ∠YOX, but never ∠XYO). When only one angle can be meant, just ∠O.
   - When two lines cross at P, "∠P" is ambiguous — you must name three points (∠APC, ∠BPC, …) to say *which* angle.
 - **Measuring — degrees.** A full circle is **360°**; a half-circle (**semicircle**) is 180°. A protractor is a semicircle split into 180 equal degrees.
+- **Naming angles by size:** **acute** < 90°, **right** = 90°, **obtuse** between 90° and 180°, **straight** = 180°, **reflex** > 180°. Two lines that meet at a right angle are **perpendicular** (⊥).
 - **The "fraction of a circle" view (very useful).** An angle's measure = the fraction of a full circle it cuts off, times 360°.
   - ¼ of a circle = 90°, ⅓ = 120°, 1/12 = 30°, 1/8 = 45°.
 
@@ -148,6 +149,8 @@ What this note covers:
 
 **Vocabulary.** A **circle** is all points a fixed distance (the **radius** r) from a fixed **center**. A **chord** joins two points on the circle; a **diameter** is a chord through the center (length 2r). A **secant** is a line hitting the circle at two points; a **tangent** touches at exactly one point. An **arc** is a piece of the circle; a **central angle** (vertex at the center) equals the measure of the arc it cuts off.
 
+**Basic size formulas.** **Circumference = πd = 2πr**, and **area = πr²**. A **radius perpendicular to a chord bisects that chord** (and vice versa) — a reflex move for chord problems.
+
 **The angle rules (this is the whole chapter in one place).** Where an angle's vertex sits decides the rule:
 
 - **Vertex ON the circle — inscribed angle = half its arc.** An angle formed by two chords from a point on the circle equals **half the arc it cuts off**: ∠PQR = (arc PR)/2.
@@ -164,6 +167,8 @@ What this note covers:
 - From an outside point you can draw **two tangent segments, and they're equal in length**.
 
 **Cyclic quadrilateral:** if all 4 corners lie on a circle, **opposite angles add to 180°**.
+
+**Circular segment area** (the region between a chord and its arc): compute the **sector** (pie slice) cut off by the two radii to the chord's ends, then **subtract the triangle** formed by those two radii and the chord. Segment = sector − triangle.
 
 **Power of a Point (Sec 2, advanced but very useful).** For any line through a point P meeting the circle at U and V, the product **(PU)(PV) is constant** — the "power" of P.
 
@@ -182,8 +187,10 @@ What this note covers:
 > 📖 *Source: AOPS Introduction to Geometry §6.2 (Two Special Right Triangles), §6.3 (Pythagorean Triples), §6.5★ (Heron's Formula), §6.7 Summary, and Ch.10 §10.3 (Triangle Inequality)*
 
 - **Pythagoras' theorem:** in a **right-angled triangle**, **a² + b² = c²**, where **c is the hypotenuse** (longest side, opposite the right angle).
-- **Pythagorean triples (memorise!):** whole-number sides that fit a²+b²=c² — **3-4-5**, **5-12-13**, **8-15-17**, **7-24-25**. Any multiple works too (6-8-10, 9-12-15). Spotting one skips all calculation.
+- **Pythagorean triples (memorise!):** whole-number sides that fit a²+b²=c² — **3-4-5**, **5-12-13**, **7-24-25**, **8-15-17**, **9-40-41**. Any multiple works too (6-8-10, 9-12-15). Spotting one skips all calculation.
   - Legs 3 and 4 → hypotenuse **5**, no working. (Note {1,2,3} is *not* a triple — you can't make the third from the other two.)
+- **Acute / right / obtuse by the Pythagorean comparison:** for a triangle with longest side *c*, compare c² with a²+b². If **c² = a²+b²** it's right; if **c² < a²+b²** the angle opposite c is **acute** (whole triangle acute); if **c² > a²+b²** that angle is **obtuse**. (Pythagoras is just the boundary case.)
+- **Longest side faces the largest angle.** In any triangle, the biggest angle is opposite the longest side and the smallest angle opposite the shortest side (∠A ≥ ∠B ≥ ∠C ⟺ a ≥ b ≥ c). Handy for ordering sides/angles without measuring.
 
 **Two special right triangles (know the side ratios cold):**
 
@@ -216,7 +223,8 @@ What this note covers:
 
 > 📖 *Source: AOPS Introduction to Geometry Ch.7 (Special Parts of a Triangle — centers), Ch.8 (Quadrilaterals), Ch.9 (Polygons), Ch.11 (sector area), plus standard competition results (Ptolemy). These go beyond the core chapters above.*
 
-- **Right-triangle congruence shortcuts:** besides SSS/SAS/ASA/AAS, right triangles also have **HL** (hypotenuse + one leg) and **LL** (two legs).
+- **Right-triangle shortcuts:** besides SSS/SAS/ASA/AAS, right triangles also have **HL** (hypotenuse + one leg) and **LL** (two legs) for **congruence** — and the matching **HL similarity** and **LL similarity** tests when the parts are in a constant ratio instead of equal.
+- **A median equal to half the side it hits ⟺ right triangle** (that side is then the hypotenuse and its midpoint is the circumcenter) — the converse of the "circumcenter = hypotenuse midpoint" fact.
 - **Four triangle centers** (Ch.7):
   - **Centroid** — the three **medians** meet here, cutting each median **2:1** from the vertex; splits the triangle into **6 equal-area** pieces.
   - **Incenter** — the three **angle bisectors** meet here, equidistant from the 3 *sides* (center of the incircle, radius r). **Area = r × s** (s = semiperimeter).
@@ -226,6 +234,7 @@ What this note covers:
 - **Altitude-to-hypotenuse (right triangle):** the altitude from the right angle to the hypotenuse at D gives three "geometric mean" facts: **BD² = AD·DC**, **AB² = AD·AC**, **CB² = CD·CA**.
 - **Ptolemy's Theorem** (cyclic quadrilateral ABCD): **AC · BD = AB·CD + AD·BC**.
 - **Incircle/circumcircle radii:** **r = Area/s**; for a right triangle **r = (leg₁ + leg₂ − hypotenuse)/2**; and **R = abc/(4·Area)**.
+- **Incircle tangent lengths:** the incircle touches the three sides so that the two tangent segments from each vertex are equal, giving **(distance from a vertex to a touch-point) = s − (opposite side)** — i.e. s−a, s−b, s−c from the three vertices. Very handy for "find the segment" problems.
 - **Special quadrilaterals** (Ch.8):
   - **Rhombus:** area = (d₁ × d₂)/2, diagonals perpendicular.
   - **Isosceles trapezoid:** base angles equal in pairs, legs equal, diagonals equal (any one forces the others).
@@ -260,7 +269,15 @@ What this note covers:
 | Two tangents from a point | equal length |
 | Power of a Point | (PU)(PV) constant; tangent² = (PB)(PA) |
 | Cyclic quadrilateral | opposite angles add to 180° |
+| Angle sizes | acute<90, right=90, obtuse<180, straight=180, reflex>180 |
+| Circle size | C = 2πr, area = πr² |
+| Radius ⊥ chord | bisects the chord |
+| Circular segment | sector − triangle |
 | Pythagoras | a² + b² = c² (c = hypotenuse) |
+| c² vs a²+b² | =right, <acute, >obtuse (angle opposite c) |
+| Longest side | faces the largest angle |
+| Pythagorean triples | 3-4-5, 5-12-13, 7-24-25, 8-15-17, 9-40-41 |
+| Incircle tangents | s−a, s−b, s−c from the vertices |
 | 45-45-90 | hypotenuse = leg·√2 |
 | 30-60-90 | sides 1 : √3 : 2 |
 | Heron | Area = √(s(s−a)(s−b)(s−c)), s=(a+b+c)/2 |
@@ -318,6 +335,8 @@ These concepts appear in real problems on the quiz app. Learn the idea, then cli
 9. Find the area of a triangle with sides 5, 5, 6 (use Heron, or split it).
 10. Why must the three exterior angles of any triangle add to 360°?
 11. From a point P outside a circle, a tangent has length 6 and a secant hits the circle at distances 4 and x from P. Find x.
+12. A triangle has sides 6, 8, 11. Is its largest angle acute, right, or obtuse?
+13. A triangle has sides 6, 8, 9. Which angle is the smallest?
 
 <details>
 <summary>Answers</summary>
@@ -333,6 +352,8 @@ These concepts appear in real problems on the quiz app. Learn the idea, then cli
 9. s = 8, area = √(8·3·3·2) = √144 = **12**. (Check: base 6, height 4 → ½·6·4 = 12 ✓)
 10. Each exterior angle = sum of its two far interior angles, so the three add to 2(∠A+∠B+∠C) = 2·180° = **360°**.
 11. Power of a Point: tangent² = (near)(far) → 6² = 4·x → 36 = 4x → **x = 9**.
+12. Longest side 11: compare 11² = 121 with 6²+8² = 100. Since 121 > 100 → **obtuse**.
+13. Smallest angle faces the shortest side (6) → the angle opposite the side of length **6** is smallest.
 
 </details>
 
