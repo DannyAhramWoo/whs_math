@@ -19,6 +19,7 @@
 <section id="s1">
 <span class="sec-num">1</span>
 <h2>Colouring counts</h2>
+<p class="src-note"><em>Source: standard competition technique (adjacency colouring). It isn't a named topic in AOPS Introduction to Counting &amp; Probability, but it's just the <strong>product rule</strong> from <a class="cx" href="08_Permutations_Combinations_Counting.html">08 Permutations Combinations Counting</a> §1 applied one cell at a time.</em></p>
 <ul>
 <li><strong>Basic multiplication (step by step):</strong> colour one cell at a time. The <strong>first</strong> cell can be any colour. Each next cell must differ from its coloured neighbours, so it has <strong>(total colours − colours already used next to it)</strong> choices. Multiply all the choices.<br><span style="color:var(--ink-soft)">Example: a row of 3 cells, 4 colours, neighbours must differ → first 4, second 3, third 3 → 4×3×3 = <strong>36</strong>.</span></li>
 <li><strong>Neighbours differ = adjacent rule:</strong> two cells that touch (share a side or edge) may not have the same colour. Cells that do <strong>not</strong> touch may share a colour.</li>
@@ -29,6 +30,7 @@
 <section id="s2">
 <span class="sec-num">2</span>
 <h2>Chromatic polynomial — <em>Sec, advanced</em></h2>
+<p class="src-note"><em>Source: graph theory — an external, advanced topic well beyond AOPS Introduction to Counting &amp; Probability. Included only for the rare contest that needs it; the step-by-step method in Section 1 is what you'll actually use.</em></p>
 <ul>
 <li><strong>Chromatic polynomial P(G, k):</strong> a formula that gives the <strong>number of ways to colour</strong> a shape (graph G) with <strong>k colours</strong> so touching parts differ. Plug in k to get the count.<br><span style="color:var(--ink-soft)">Example: a triangle (3 cells all touching) → P = k(k−1)(k−2). With k = 4 → 4×3×2 = <strong>24</strong>.</span></li>
 <li><strong>Deletion-contraction:</strong> a rule to build the formula: <strong>P(G, k) = P(G−e, k) − P(G/e, k)</strong>.<br><span style="color:var(--ink-soft)"><strong>G−e</strong> = the same shape with one edge <strong>removed</strong> (that pair may now match).</span><br><span style="color:var(--ink-soft)"><strong>G/e</strong> = the two ends of that edge <strong>merged</strong> into one cell.</span><br><span style="color:var(--ink-soft)">You keep breaking a hard shape into two easier shapes until each is simple.</span></li>
@@ -38,8 +40,10 @@
 <section id="s3">
 <span class="sec-num">3</span>
 <h2>Integer partition (stars and bars) — <em>Sec 1</em></h2>
+<p class="src-note"><em>Source: AOPS Introduction to Counting &amp; Probability §13.4 "A Clever Solution" (the dividers method, pp.198–199); built up in §13.3 (pp.193–197), where the answers are shown to be Pascal's-Triangle diagonals.</em></p>
 <ul>
 <li><strong>Stars and bars idea:</strong> to share <strong>n identical items</strong> into <strong>k groups</strong>, line up n stars and drop <strong>k−1 bars</strong> between them to split them. Counting the arrangements counts the sharings.</li>
+<li><strong>Why the formula (the book's derivation):</strong> you now have <strong>n stars + (k−1) bars = n + k − 1 symbols</strong> in a row, and you just choose <strong>which k−1 of them are bars</strong> — so ways = <strong>C(n + k − 1, k − 1)</strong>. (Two bars next to each other = a group gets <strong>0</strong>, which is why empty groups are allowed.)</li>
 <li><strong>Non-negative (groups may be empty):</strong> ways = <strong>C(n + k − 1, k − 1)</strong>.<br><span style="color:var(--ink-soft)">Example: 5 sweets into 3 kids, empty allowed → C(5+2, 2) = C(7,2) = <strong>21</strong>.</span></li>
 <li><strong>Positive (no group empty):</strong> first give each group 1, then share the rest → ways = <strong>C(n − 1, k − 1)</strong>.<br><span style="color:var(--ink-soft)">Example: 5 sweets into 3 kids, none empty → C(4,2) = <strong>6</strong>.</span></li>
 <li><strong>Minimum / maximum limits:</strong> if group <em>i</em> must get at least <em>mᵢ</em>, <strong>hand out those minimums first</strong>, then stars-and-bars the leftover. This turns a hard question into a plain one.</li>
@@ -50,6 +54,7 @@
 <section id="s4">
 <span class="sec-num">4</span>
 <h2>Pigeonhole principle</h2>
+<p class="src-note"><em>Source: standard competition principle — not a named topic in AOPS Introduction to Counting &amp; Probability, but a must-know for olympiad-style "two must be the same" arguments.</em></p>
 <ul>
 <li><strong>Basic pigeonhole:</strong> put <strong>n + 1 items</strong> into <strong>n boxes</strong> → some box holds <strong>at least 2</strong>.<br><span style="color:var(--ink-soft)">Example: 13 people, 12 months → two share a birth month.</span></li>
 <li><strong>Stronger pigeonhole:</strong> put <strong>kn + 1 items</strong> into <strong>n boxes</strong> → some box holds <strong>at least k + 1</strong>.<br><span style="color:var(--ink-soft)">Example: 25 socks in 4 drawers → 25 = 6×4 + 1 → some drawer holds <strong>at least 7</strong>.</span></li>
@@ -60,8 +65,11 @@
 <section id="s5">
 <span class="sec-num">5</span>
 <h2>Grid paths</h2>
+<p class="src-note"><em>Source: AOPS Introduction to Counting &amp; Probability §5.2 "Paths on a Grid" (pp.81–83); §5.5 Summary (p.92).</em></p>
 <ul>
 <li><strong>Basic grid path:</strong> to go from a corner to the opposite corner using only <strong>right</strong> and <strong>up</strong> steps, with m rights and n ups, ways = <strong>C(m + n, m)</strong>.<br><span style="color:var(--ink-soft)">Example: a 3-by-2 grid needs 3 rights and 2 ups → C(5, 3) = <strong>10</strong>.</span></li>
+<li><strong>Why it's a combination (the book's model):</strong> every path is just a <strong>word</strong> made of the steps, like R R R U U — m R's and n U's in some order. Counting the arrangements of that word (a permutation with repeats, m+n steps of which m are identical R's) gives <strong>(m+n)! / (m! n!) = C(m+n, m)</strong>. Choosing <strong>where the m R-steps go</strong> among the m+n moves <em>is</em> the path. (Same "identical items" division as <a class="cx" href="08_Permutations_Combinations_Counting.html">08 Permutations Combinations Counting</a> §1.)</li>
+<li><strong>Reversed directions still count the same way:</strong> a "down and right" grid, or "left and up", uses the identical C(m+n, m) — only the two step-types and their counts matter.</li>
 <li><strong>Through a point P:</strong> a path <strong>must pass P</strong> → count (start → P) and (P → end) separately, then <strong>multiply</strong> them.</li>
 <li><strong>Through two points Y and P (in order):</strong> break the trip into pieces start→Y, Y→P, P→end and <strong>multiply all pieces</strong>.</li>
 </ul>
@@ -102,8 +110,12 @@
 <td>kn+1 into n boxes → some box ≥ k+1</td>
 </tr>
 <tr>
+<td>Stars &amp; bars, why</td>
+<td>arrange n stars + (k−1) bars → choose bar spots</td>
+</tr>
+<tr>
 <td>Grid path corner to corner</td>
-<td>C(m+n, m)</td>
+<td>C(m+n, m) = arrange m R's + n U's</td>
 </tr>
 <tr>
 <td>Path through point P</td>
@@ -147,13 +159,15 @@
 <li>Share 10 identical sweets among 3 children, none empty. How many ways?</li>
 <li>100 people each pick a number from 1 to 9. Must two people share a number? What is the largest group forced?</li>
 <li>How many right/up paths go from one corner of a 4-by-3 grid to the opposite corner?</li>
+<li>Write the grid-path count in question 5 as an arrangement of R's and U's — how many of each letter?</li>
 </ol>
 <details><summary>Answers</summary><div class="answer">
 <p>1. First cell 3, then each next 2 → 3×2×2×2 = <strong>24</strong></p>
 <p>2. C(10+2, 2) = C(12,2) = <strong>66</strong></p>
 <p>3. C(10−1, 2) = C(9,2) = <strong>36</strong></p>
 <p>4. 100 = 11×9 + 1 → some number is shared by <strong>at least 12</strong> people</p>
-<p>5. 4 rights, 3 ups → C(7, 3) = <strong>35</strong></p></div></details>
+<p>5. 4 rights, 3 ups → C(7, 3) = <strong>35</strong></p>
+<p>6. 4 R's and 3 U's → arrangements of RRRRUUU = 7!/(4!3!) = <strong>35</strong> (same as question 5)</p></div></details>
 <p class="footer-note">Source map: <code>약점진단/09_색칠_분할_비둘기집.md</code> · Counting continues in <a class="cx" href="10_Distance_Speed_Time.html">10 Distance Speed Time</a></p>
 </section>
 <a class="backlink" href="index.html">← All units</a>

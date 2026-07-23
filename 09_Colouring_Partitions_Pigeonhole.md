@@ -19,6 +19,8 @@ What this note covers:
 
 ## 1. Colouring counts
 
+> 📖 *Source: standard competition technique (adjacency colouring). It isn't a named topic in AOPS Introduction to Counting & Probability, but it's just the **product rule** from [[08_Permutations_Combinations_Counting]] §1 applied one cell at a time.*
+
 - **Basic multiplication (step by step):** colour one cell at a time. The **first** cell can be any colour. Each next cell must differ from its coloured neighbours, so it has **(total colours − colours already used next to it)** choices. Multiply all the choices.
   - Example: a row of 3 cells, 4 colours, neighbours must differ → first 4, second 3, third 3 → 4×3×3 = **36**.
 - **Neighbours differ = adjacent rule:** two cells that touch (share a side or edge) may not have the same colour. Cells that do **not** touch may share a colour.
@@ -29,6 +31,8 @@ What this note covers:
 ---
 
 ## 2. Chromatic polynomial — *Sec, advanced*
+
+> 📖 *Source: graph theory — an external, advanced topic well beyond AOPS Introduction to Counting & Probability. Included only for the rare contest that needs it; the step-by-step method in Section 1 is what you'll actually use.*
 
 - **Chromatic polynomial P(G, k):** a formula that gives the **number of ways to colour** a shape (graph G) with **k colours** so touching parts differ. Plug in k to get the count.
   - Example: a triangle (3 cells all touching) → P = k(k−1)(k−2). With k = 4 → 4×3×2 = **24**.
@@ -43,7 +47,10 @@ What this note covers:
 
 ## 3. Integer partition (stars and bars) — *Sec 1*
 
+> 📖 *Source: AOPS Introduction to Counting & Probability §13.4 "A Clever Solution" (the dividers method, pp.198–199); built up in §13.3 (pp.193–197), where the answers are shown to be Pascal's-Triangle diagonals.*
+
 - **Stars and bars idea:** to share **n identical items** into **k groups**, line up n stars and drop **k−1 bars** between them to split them. Counting the arrangements counts the sharings.
+- **Why the formula (the book's derivation):** you now have **n stars + (k−1) bars = n + k − 1 symbols** in a row, and you just choose **which k−1 of them are bars** — so ways = **C(n + k − 1, k − 1)**. (Two bars next to each other = a group gets **0**, which is why empty groups are allowed.)
 - **Non-negative (groups may be empty):** ways = **C(n + k − 1, k − 1)**.
   - Example: 5 sweets into 3 kids, empty allowed → C(5+2, 2) = C(7,2) = **21**.
 - **Positive (no group empty):** first give each group 1, then share the rest → ways = **C(n − 1, k − 1)**.
@@ -57,6 +64,8 @@ What this note covers:
 
 ## 4. Pigeonhole principle
 
+> 📖 *Source: standard competition principle — not a named topic in AOPS Introduction to Counting & Probability, but a must-know for olympiad-style "two must be the same" arguments.*
+
 - **Basic pigeonhole:** put **n + 1 items** into **n boxes** → some box holds **at least 2**.
   - Example: 13 people, 12 months → two share a birth month.
 - **Stronger pigeonhole:** put **kn + 1 items** into **n boxes** → some box holds **at least k + 1**.
@@ -69,8 +78,12 @@ What this note covers:
 
 ## 5. Grid paths
 
+> 📖 *Source: AOPS Introduction to Counting & Probability §5.2 "Paths on a Grid" (pp.81–83); §5.5 Summary (p.92).*
+
 - **Basic grid path:** to go from a corner to the opposite corner using only **right** and **up** steps, with m rights and n ups, ways = **C(m + n, m)**.
   - Example: a 3-by-2 grid needs 3 rights and 2 ups → C(5, 3) = **10**.
+- **Why it's a combination (the book's model):** every path is just a **word** made of the steps, like R R R U U — m R's and n U's in some order. Counting the arrangements of that word (a permutation with repeats, m+n steps of which m are identical R's) gives **(m+n)! / (m! n!) = C(m+n, m)**. Choosing **where the m R-steps go** among the m+n moves *is* the path. (Same "identical items" division as [[08_Permutations_Combinations_Counting]] §1.)
+- **Reversed directions still count the same way:** a "down and right" grid, or "left and up", uses the identical C(m+n, m) — only the two step-types and their counts matter.
 - **Through a point P:** a path **must pass P** → count (start → P) and (P → end) separately, then **multiply** them.
 - **Through two points Y and P (in order):** break the trip into pieces start→Y, Y→P, P→end and **multiply all pieces**.
 
@@ -89,7 +102,8 @@ What this note covers:
 | Minimum limits | give out minimums first, then stars-and-bars |
 | Pigeonhole (basic) | n+1 into n boxes → some box ≥ 2 |
 | Pigeonhole (strong) | kn+1 into n boxes → some box ≥ k+1 |
-| Grid path corner to corner | C(m+n, m) |
+| Stars & bars, why | arrange n stars + (k−1) bars → choose bar spots |
+| Grid path corner to corner | C(m+n, m) = arrange m R's + n U's |
 | Path through point P | (start→P) × (P→end) |
 
 ---
@@ -127,6 +141,7 @@ These concepts appear in real problems on the quiz app. Learn the idea, then cli
 3. Share 10 identical sweets among 3 children, none empty. How many ways?
 4. 100 people each pick a number from 1 to 9. Must two people share a number? What is the largest group forced?
 5. How many right/up paths go from one corner of a 4-by-3 grid to the opposite corner?
+6. Write the grid-path count in question 5 as an arrangement of R's and U's — how many of each letter?
 
 <details>
 <summary>Answers</summary>
@@ -136,6 +151,7 @@ These concepts appear in real problems on the quiz app. Learn the idea, then cli
 3. C(10−1, 2) = C(9,2) = **36**
 4. 100 = 11×9 + 1 → some number is shared by **at least 12** people
 5. 4 rights, 3 ups → C(7, 3) = **35**
+6. 4 R's and 3 U's → arrangements of RRRRUUU = 7!/(4!3!) = **35** (same as question 5)
 
 </details>
 
