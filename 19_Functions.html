@@ -11,38 +11,59 @@
 <p class="src-note" style="border-left-color:var(--rule);color:var(--ink-faint)"><strong>Unit:</strong> Functions (Unit 19 · extra unit from book scans, no linked quiz-app problems yet) · <strong>For:</strong> primary students — concepts go up to <strong>Secondary 2</strong> level</p>
 <nav class="onpage"><div class="onpage-tag">On this page</div><ol>
 <li><span class="n">1</span><a href="#s1">What is a Function</a></li>
-<li><span class="n">2</span><a href="#s2">Domain and Range</a></li>
-<li><span class="n">3</span><a href="#s3">Graph Transformations</a></li>
-<li><span class="n">4</span><a href="#s4">Floor, Ceiling, and Absolute Value Functions</a></li>
+<li><span class="n">2</span><a href="#s2">Composition and Inverses — <em>Sec 2</em></a></li>
+<li><span class="n">3</span><a href="#s3">Domain and Range</a></li>
+<li><span class="n">4</span><a href="#s4">Graph Transformations</a></li>
+<li><span class="n">5</span><a href="#s5">Floor, Ceiling, Piecewise &amp; Absolute Value</a></li>
 </ol></nav>
 <section id="s1">
 <span class="sec-num">1</span>
 <h2>What is a Function</h2>
+<p class="src-note"><em>Source: AOPS Introduction to Algebra Ch.16 "Functions" — §16.1 (the "machine" idea), §16.6 (custom operations).</em></p>
 <ul>
-<li>A <strong>function</strong> is a rule that takes an input and gives exactly ONE output — like f(x) = 2x + 3.</li>
+<li>A <strong>function</strong> is a rule (a "machine") that takes an input and gives exactly ONE output — like f(x) = 2x + 3.</li>
+<li><strong>Evaluate by substitution:</strong> f(5) = 2·5 + 3 = 13. You can also feed in an <strong>expression</strong>: f(2k) = 2·(2k) + 3 = 4k + 3.</li>
 <li>If a single input could give more than one output, it's NOT a function.</li>
-<li>This is the same idea as the <strong>custom-defined operators</strong> already in <a class="cx" href="12_Equations_Algebra_Factoring.html">12 Equations Algebra Factoring</a> (like a♦b = a²+ab−b²) — a function is just a formula you evaluate by substitution.</li>
+<li>A function doesn't have to be a formula — it can be given by a <strong>table</strong> or a set of input→output pairs.</li>
+<li>This is the same idea as the <strong>custom-defined operators</strong> already in <a class="cx" href="12_Equations_Algebra_Factoring.html">12 Equations Algebra Factoring</a> (like a♦b = a²+ab−b²) — a function is just a rule you evaluate by substitution.</li>
 </ul>
+<div class="callout warn"><strong>Warning:</strong> f²(x) usually means <strong>f(f(x))</strong> (apply f twice), <em>not</em> f(x)·f(x). Read the problem's definition carefully.</div>
 </section>
 <section id="s2">
 <span class="sec-num">2</span>
-<h2>Domain and Range</h2>
+<h2>Composition and Inverses — <em>Sec 2</em></h2>
+<p class="src-note"><em>Source: AOPS Introduction to Algebra §16.2 (combining functions), §16.3 (composition), §16.4 (inverse functions).</em></p>
 <ul>
-<li><strong>Domain:</strong> every input value that's allowed (doesn't break the rule — like dividing by zero, or taking the square root of a negative number).</li>
-<li><strong>Range:</strong> every possible output value.<br><span style="color:var(--ink-soft)">Example: f(x) = 1/(x−3) has domain "all reals except 3" (can't divide by 0) and range "all reals except 0" (the fraction can never equal exactly 0).</span></li>
+<li><strong>Combining functions:</strong> you can add, subtract, multiply or divide two functions — (f + g)(x) = f(x) + g(x), and so on.</li>
+<li><strong>Composition f(g(x))</strong> (also written (f∘g)(x)): put x into g <strong>first</strong>, then feed g's output into f.<br><span style="color:var(--ink-soft)">Example: f(x) = x + 1, g(x) = 2x → f(g(x)) = f(2x) = 2x + 1. (Order matters: g(f(x)) = 2(x+1) = 2x + 2 is different.)</span></li>
+<li><strong>Inverse function f⁻¹:</strong> the function that <strong>undoes</strong> f — if f sends 3 → 7, then f⁻¹ sends 7 → 3. Formally f(f⁻¹(x)) = x and f⁻¹(f(x)) = x.<br><span style="color:var(--ink-soft)">To find it: write y = f(x), swap x and y, then solve for y. E.g. f(x) = 2x + 1 → x = 2y + 1 → <strong>f⁻¹(x) = (x − 1)/2</strong>.</span></li>
 </ul>
 </section>
 <section id="s3">
 <span class="sec-num">3</span>
+<h2>Domain and Range</h2>
+<p class="src-note"><em>Source: AOPS Introduction to Algebra §16.1 (domain/range), §16.7 Summary (range-finding method).</em></p>
+<ul>
+<li><strong>Domain:</strong> every input value that's allowed (doesn't break the rule — like dividing by zero, or taking the square root of a negative number).</li>
+<li><strong>Range:</strong> every possible output value.<br><span style="color:var(--ink-soft)">Example: f(x) = 1/(x−3) has domain "all reals except 3" (can't divide by 0) and range "all reals except 0" (the fraction can never equal exactly 0).</span></li>
+<li><strong>Finding the range:</strong> set y = f(x) and solve for x in terms of y; the y-values for which a valid x exists are the range.</li>
+</ul>
+</section>
+<section id="s4">
+<span class="sec-num">4</span>
 <h2>Graph Transformations</h2>
-<p>Four basic moves on a graph, given the original y = f(x):</p>
+<p class="src-note"><em>Source: AOPS Introduction to Algebra Ch.17 "Graphing Functions" — §17.1 (graphs, vertical-line test), §17.2 (transformations).</em></p>
+<ul>
+<li><strong>A function's graph is y = f(x).</strong> Because each input has exactly one output, <strong>any vertical line hits the graph at most once</strong> (the "vertical-line test" — a quick way to check something is a function).</li>
+</ul>
+<p>The basic moves on a graph, given the original y = f(x):</p>
 <div class="tbl-scroll"><table><thead><tr>
 <th>Change</th>
 <th>Effect</th>
 </tr></thead><tbody>
 <tr>
 <td>f(x) + k</td>
-<td>shifts UP by k</td>
+<td>shifts UP by k (down if k &lt; 0)</td>
 </tr>
 <tr>
 <td>f(x − h)</td>
@@ -50,26 +71,38 @@
 </tr>
 <tr>
 <td>−f(x)</td>
-<td>flips vertically (upside down)</td>
+<td>reflects over the <strong>x-axis</strong> (upside down)</td>
+</tr>
+<tr>
+<td>f(−x)</td>
+<td>reflects over the <strong>y-axis</strong> (left-right mirror)</td>
 </tr>
 <tr>
 <td>a·f(x)</td>
-<td>stretches vertically by factor a</td>
+<td>vertical stretch by a (if a &gt; 1); <strong>squash</strong> if 0 &lt; a &lt; 1</td>
+</tr>
+<tr>
+<td>f(a·x)</td>
+<td>horizontal squash by a (if a &gt; 1); stretch if 0 &lt; a &lt; 1</td>
 </tr>
 </tbody></table></div>
 <ul>
+<li>**Why f(x − h) shifts <em>right</em>:<strong> to get the same output the machine used to give at x, you now have to feed in a value that's h </strong>bigger**, so every point slides right. Test with a point if unsure.</li>
 <li>Example: if f(x) = x², then f(x−3)+2 = (x−3)²+2 is the same parabola moved 3 right and 2 up.</li>
 </ul>
-<div class="cp"><strong>Competition point:</strong> f(x−h) shifts RIGHT, not left — a common mix-up. Test it with an easy point if unsure.</div>
+<div class="cp"><strong>Competition point:</strong> f(x−h) shifts RIGHT, not left — a common mix-up. And changes <strong>inside</strong> f(...) affect the graph <strong>horizontally</strong> (backwards-looking); changes <strong>outside</strong> affect it <strong>vertically</strong> (the intuitive way).</div>
 </section>
-<section id="s4">
-<span class="sec-num">4</span>
-<h2>Floor, Ceiling, and Absolute Value Functions</h2>
+<section id="s5">
+<span class="sec-num">5</span>
+<h2>Floor, Ceiling, Piecewise &amp; Absolute Value</h2>
+<p class="src-note"><em>Source: AOPS Introduction to Algebra Ch.20 "Special Functions" — §20.2 (absolute value), §20.3 (floor &amp; ceiling), §20.5 (piecewise).</em></p>
 <ul>
 <li><strong>Floor function ⌊x⌋:</strong> the greatest integer ≤ x ("round down"). ⌊4.7⌋ = 4, but for negatives it's NOT the same as truncating: ⌊−5.3⌋ = <strong>−6</strong>, not −5.</li>
 <li><strong>Ceiling function ⌈x⌉:</strong> the smallest integer ≥ x ("round up"). ⌈3.2⌉ = 4, ⌈−2.3⌉ = −2.</li>
-<li><strong>Fractional part:</strong> {x} = x − ⌊x⌋, always between 0 (inclusive) and 1 (exclusive).</li>
-<li><strong>Absolute value |x|:</strong> the distance from x to 0 — always non-negative. |x−a| means "distance from x to a."<br><span style="color:var(--ink-soft)">Example: |x+3| + |x−2| = 7 — split into cases based on where each inside expression changes sign (x &lt; −3, −3 ≤ x &lt; 2, x ≥ 2), solve each case, then check the solution actually falls in that case's range.</span></li>
+<li><strong>Floor/ceiling of a surd — bracket between squares:</strong> to find ⌊√39⌋, note 6² = 36 ≤ 39 &lt; 49 = 7², so 6 &lt; √39 &lt; 7 → ⌊√39⌋ = <strong>6</strong> (and ⌈√39⌉ = 7).</li>
+<li><strong>Fractional part:</strong> {x} = x − ⌊x⌋, always between 0 (inclusive) and 1 (exclusive). So every number splits as <strong>x = ⌊x⌋ + {x}</strong> (integer part + fractional part).</li>
+<li><strong>Piecewise function:</strong> a function defined by different rules on different pieces of the domain, e.g. f(x) = 2x if x &lt; 0, and 3x if x ≥ 0. Evaluate by first checking <strong>which piece</strong> the input falls in.</li>
+<li><strong>Absolute value |x|:</strong> the distance from x to 0 — always non-negative, and |x| = √(x²). Split by the sign: |x| = x if x ≥ 0, and −x if x &lt; 0. |x−a| means "distance from x to a."<br><span style="color:var(--ink-soft)">Example: |x+3| + |x−2| = 7 — split into cases based on where each inside expression changes sign (x &lt; −3, −3 ≤ x &lt; 2, x ≥ 2), solve each case, then check the solution actually falls in that case's range.</span></li>
 </ul>
 </section>
 <section id="cheat-sheet">
@@ -83,12 +116,28 @@
 <td>one input → exactly one output</td>
 </tr>
 <tr>
+<td>f²(x)</td>
+<td>means f(f(x)), not f(x)²</td>
+</tr>
+<tr>
+<td>Composition f(g(x))</td>
+<td>do g first, then f (order matters)</td>
+</tr>
+<tr>
+<td>Inverse f⁻¹</td>
+<td>undoes f; swap x,y and solve</td>
+</tr>
+<tr>
+<td>Vertical-line test</td>
+<td>a function's graph: each vertical line hits once</td>
+</tr>
+<tr>
 <td>Domain</td>
 <td>allowed inputs</td>
 </tr>
 <tr>
 <td>Range</td>
-<td>possible outputs</td>
+<td>possible outputs; set y=f(x), solve for x</td>
 </tr>
 <tr>
 <td>f(x)+k</td>
@@ -96,11 +145,15 @@
 </tr>
 <tr>
 <td>f(x−h)</td>
-<td>shift right</td>
+<td>shift right (inside = horizontal, backwards)</td>
 </tr>
 <tr>
-<td>−f(x)</td>
-<td>flip vertically</td>
+<td>−f(x) / f(−x)</td>
+<td>flip over x-axis / y-axis</td>
+</tr>
+<tr>
+<td>a·f(x)</td>
+<td>stretch (a&gt;1) or squash (0&lt;a&lt;1)</td>
 </tr>
 <tr>
 <td>⌊x⌋</td>
@@ -111,10 +164,20 @@
 <td>round up</td>
 </tr>
 <tr>
+<td>⌊√n⌋</td>
+<td>bracket n between consecutive squares</td>
+</tr>
+<tr>
+<td>Piecewise</td>
+<td>different rule on each piece; check which</td>
+</tr>
+<tr>
 <td>\</td>
 <td>x−a\</td>
 <td></td>
-<td>distance from x to a</td>
+<td>distance from x to a; \</td>
+<td>x\</td>
+<td>=√(x²)</td>
 </tr>
 </tbody></table></div>
 </section>
@@ -125,12 +188,18 @@
 <li>What is ⌊−3.2⌋?</li>
 <li>If f(x) = x² − 1, what is the domain and range?</li>
 <li>Sketch (in words) how y = f(x−2) − 1 relates to y = f(x).</li>
+<li>If f(x) = x + 4 and g(x) = 3x, find f(g(2)) and g(f(2)).</li>
+<li>Find the inverse of f(x) = 3x − 6.</li>
+<li>What is ⌊√50⌋?</li>
 </ol>
 <details><summary>Answers</summary><div class="answer">
 <p>1. ⌊7.9⌋ = <strong>7</strong>, ⌈7.1⌉ = <strong>8</strong>.</p>
 <p>2. <strong>−4</strong> (round down, away from zero for negatives).</p>
 <p>3. Domain = all reals. Range = <strong>y ≥ −1</strong> (since x² ≥ 0, so x²−1 ≥ −1).</p>
-<p>4. Shift <strong>right by 2, then down by 1</strong>.</p></div></details>
+<p>4. Shift <strong>right by 2, then down by 1</strong>.</p>
+<p>5. f(g(2)) = f(6) = <strong>10</strong>; g(f(2)) = g(6) = <strong>18</strong> (order matters).</p>
+<p>6. y = 3x − 6 → x = 3y − 6 → <strong>f⁻¹(x) = (x + 6)/3</strong>.</p>
+<p>7. 7² = 49 ≤ 50 &lt; 64 = 8² → <strong>7</strong>.</p></div></details>
 <p class="footer-note">This is a new unit added from book scans (2026-07-22) — no quiz-app problems are linked to it yet. Connects to custom operators in <a class="cx" href="12_Equations_Algebra_Factoring.html">12 Equations Algebra Factoring</a> and graphing in <a class="cx" href="17_Coordinate_Geometry.html">17 Coordinate Geometry</a>.</p>
 </section>
 <a class="backlink" href="index.html">← All units</a>
