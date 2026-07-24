@@ -15,55 +15,66 @@
 <li><span class="n">3</span><a href="#s3">Equations of a Line</a></li>
 <li><span class="n">4</span><a href="#s4">Parallel &amp; Perpendicular Lines</a></li>
 <li><span class="n">5</span><a href="#s5">Equation of a Circle</a></li>
-<li><span class="n">6</span><a href="#s6">Power of a Point (algebraic view)</a></li>
+<li><span class="n">6</span><a href="#s6">Where a Line Meets a Circle (algebra)</a></li>
 </ol></nav>
 <section id="s1">
 <span class="sec-num">1</span>
 <h2>Distance and Midpoint Formulas</h2>
+<p class="src-note"><em>Source: AOPS Introduction to Algebra §8.1 (Cartesian plane, distance formula) &amp; §8.3 (midpoint). The distance formula is just the Pythagorean theorem on the coordinate grid.</em></p>
 <ul>
 <li><strong>Distance formula</strong> (from Pythagoras): distance between (x₁,y₁) and (x₂,y₂) = √[(x₂−x₁)² + (y₂−y₁)²].<br><span style="color:var(--ink-soft)">Example: distance from (1,1) to (4,5) = √[3² + 4²] = √25 = 5.</span></li>
-<li><strong>Midpoint formula:</strong> midpoint of (x₁,y₁) and (x₂,y₂) = ((x₁+x₂)/2, (y₁+y₂)/2).<br><span style="color:var(--ink-soft)">Example: midpoint of (2,4) and (8,10) = (5,7).</span></li>
+<li><strong>Midpoint formula:</strong> midpoint of (x₁,y₁) and (x₂,y₂) = ((x₁+x₂)/2, (y₁+y₂)/2) — just the <strong>average</strong> of the x's and of the y's.<br><span style="color:var(--ink-soft)">Example: midpoint of (2,4) and (8,10) = (5,7).</span></li>
+<li><strong>Section (ratio) formula:</strong> to find the point that divides the segment from P to Q in the ratio <strong>m : n</strong> (m parts from P), step that fraction of the way in each coordinate: the point is <strong>(P + (m/(m+n))·(Q − P))</strong> coordinate by coordinate.<br><span style="color:var(--ink-soft)">Example: the point 1/3 of the way from (0,0) to (9,6) is (3, 2).</span></li>
 </ul>
 </section>
 <section id="s2">
 <span class="sec-num">2</span>
 <h2>Slope</h2>
+<p class="src-note"><em>Source: AOPS Introduction to Algebra §8.2 "Slope" &amp; §8.6 "Comparing Lines".</em></p>
 <ul>
-<li><strong>Slope</strong> m = (y₂−y₁)/(x₂−x₁) — measures steepness. Positive slope rises left-to-right, negative falls, zero slope is horizontal (y=k), and a vertical line (x=h) has undefined slope.<br><span style="color:var(--ink-soft)">Example: through (2,3) and (6,11): slope = (11−3)/(6−2) = 8/4 = 2.</span></li>
+<li><strong>Slope</strong> m = (y₂−y₁)/(x₂−x₁) — measures steepness (rise over run). Positive slope rises left-to-right, negative falls, zero slope is horizontal (y=k), and a vertical line (x=h) has undefined slope.<br><span style="color:var(--ink-soft)">Example: through (2,3) and (6,11): slope = (11−3)/(6−2) = 8/4 = 2.</span></li>
+<li><strong>Steepness by size:</strong> a big slope (like 5) is nearly vertical; a small one (like 1/5) is nearly flat. |slope| &gt; 1 rises faster than 45°, |slope| &lt; 1 slower.</li>
+<li><strong>Collinearity test:</strong> three points lie on <strong>one line</strong> exactly when the slope between each pair is the <strong>same</strong> (e.g. slope(A,B) = slope(B,C)).</li>
 </ul>
 <div class="cp"><strong>Competition point:</strong> Never swap the order of subtraction between numerator and denominator — always use the SAME point order in both.</div>
 </section>
 <section id="s3">
 <span class="sec-num">3</span>
 <h2>Equations of a Line</h2>
+<p class="src-note"><em>Source: AOPS Introduction to Algebra §8.4 (point-slope &amp; standard form) &amp; §8.5 (slope-intercept, intercepts); horizontal/vertical lines in §8.7 Summary.</em></p>
 <ul>
-<li><strong>Slope-intercept form:</strong> y = mx + b (m = slope, b = y-intercept).</li>
+<li><strong>Slope-intercept form:</strong> y = mx + b — you can <strong>read the slope (m) and y-intercept (b) straight off</strong> the equation.</li>
 <li><strong>Point-slope form:</strong> y − y₁ = m(x − x₁), built directly from the slope formula using one known point.</li>
-<li><strong>Standard form:</strong> Ax + By = C.</li>
+<li><strong>Standard form:</strong> Ax + By = C (written with A &gt; 0, integer coefficients, no common factor). Its <strong>slope is −A/B</strong> and its y-intercept is C/B — no rearranging needed.</li>
+<li><strong>Horizontal &amp; vertical lines:</strong> a horizontal line is <strong>y = k</strong> (slope 0); a vertical line is <strong>x = h</strong> (undefined slope). These don't fit y = mx + b, so know them separately.</li>
 <li><strong>x-intercept / y-intercept:</strong> set y=0 to find the x-intercept, set x=0 to find the y-intercept. Quick way to graph a line — just plot both intercepts and connect them.<br><span style="color:var(--ink-soft)">Example: for 2x + 3y = 12, x-intercept = (6,0), y-intercept = (0,4).</span></li>
 </ul>
 </section>
 <section id="s4">
 <span class="sec-num">4</span>
 <h2>Parallel &amp; Perpendicular Lines</h2>
+<p class="src-note"><em>Source: AOPS Introduction to Algebra §8.6 "Comparing Lines".</em></p>
 <ul>
 <li><strong>Parallel lines</strong> have EQUAL slopes.</li>
 <li><strong>Perpendicular lines</strong> have slopes that are <strong>negative reciprocals</strong> of each other (their product = −1).<br><span style="color:var(--ink-soft)">Example: a line perpendicular to slope 2/3 has slope −3/2.</span></li>
+<li><strong>Two lines = two equations:</strong> solving them together gives <strong>one</strong> point (different slopes), <strong>no</strong> point (parallel — same slope, different intercept), or <strong>infinitely many</strong> (the same line). Comparing slopes tells you which before you solve.</li>
 </ul>
 </section>
 <section id="s5">
 <span class="sec-num">5</span>
 <h2>Equation of a Circle</h2>
+<p class="src-note"><em>Source: standard analytic geometry (a direct application of the distance formula from §1). The circle equation isn't in our AOPS book excerpts, but it follows immediately: a point (x,y) is on the circle exactly when its distance to the centre equals r.</em></p>
 <ul>
-<li>A circle with center (h,k) and radius r has equation (x−h)² + (y−k)² = r².</li>
+<li>A circle with center (h,k) and radius r has equation (x−h)² + (y−k)² = r². (This just says "distance from (x,y) to (h,k) = r", squared.)</li>
 <li>If given a messy expanded equation, <strong>complete the square</strong> (for x and for y separately) to find the center and radius.<br><span style="color:var(--ink-soft)">Example: x² − 4x + y² + 8y = 2 → (x−2)² + (y+4)² = 22, so center (2,−4), radius √22.</span></li>
 </ul>
 </section>
 <section id="s6">
 <span class="sec-num">6</span>
-<h2>Power of a Point (algebraic view)</h2>
-<p>This is the same theorem already in <a class="cx" href="02_Angles_Similarity_Circles.html">02 Angles Similarity Circles</a>, but here's how to find where a line crosses a circle using algebra: substitute the line's equation into the circle's equation, giving a quadratic — its two roots are the two crossing points' coordinates.</p>
-<div class="cp"><strong>Competition point:</strong> Combining a line equation and a circle equation always reduces to solving ONE quadratic. If the discriminant (see <a class="cx" href="12_Equations_Algebra_Factoring.html">12 Equations Algebra Factoring</a>) is zero, the line is tangent to the circle (touches at exactly one point).</div>
+<h2>Where a Line Meets a Circle (algebra)</h2>
+<p class="src-note"><em>Source: standard analytic geometry. (Note: this algebraic substitution method is different from the synthetic <strong>Power of a Point</strong> theorem PA·PB = PC·PD in <a class="cx" href="02_Angles_Similarity_Circles.html">02 Angles Similarity Circles</a> — that one relates segment lengths; this one finds the actual crossing points.)</em></p>
+<p>To find where a line crosses a circle: <strong>substitute the line's equation into the circle's equation</strong>, giving a quadratic in one variable — its roots are the crossing points.</p>
+<div class="cp"><strong>Competition point:</strong> Combining a line equation and a circle equation always reduces to solving ONE quadratic. The <strong>discriminant</strong> (see <a class="cx" href="12_Equations_Algebra_Factoring.html">12 Equations Algebra Factoring</a>) tells you how they meet: <strong>positive</strong> → two crossing points, <strong>zero</strong> → tangent (touches at one point), <strong>negative</strong> → the line misses the circle.</div>
 </section>
 <section id="cheat-sheet">
 <h2>Cheat Sheet</h2>
@@ -84,8 +95,20 @@
 <td>(y₂−y₁)/(x₂−x₁)</td>
 </tr>
 <tr>
+<td>3 points collinear</td>
+<td>equal slopes between pairs</td>
+</tr>
+<tr>
 <td>Point-slope form</td>
 <td>y−y₁ = m(x−x₁)</td>
+</tr>
+<tr>
+<td>Standard form Ax+By=C</td>
+<td>slope = −A/B</td>
+</tr>
+<tr>
+<td>Horizontal / vertical line</td>
+<td>y = k / x = h</td>
 </tr>
 <tr>
 <td>Parallel lines</td>
@@ -112,12 +135,16 @@
 <li>Find the midpoint of (−2,6) and (4,−2).</li>
 <li>Find the slope of the line through (1,2) and (5,10).</li>
 <li>Find the equation of a circle with center (3,−1) and radius 5.</li>
+<li>What is the slope of the line 3x + 4y = 12?</li>
+<li>What is the equation of the horizontal line through (7, −2)?</li>
 </ol>
 <details><summary>Answers</summary><div class="answer">
 <p>1. √(9+16) = √25 = <strong>5</strong>.</p>
 <p>2. ((−2+4)/2, (6−2)/2) = <strong>(1, 2)</strong>.</p>
 <p>3. (10−2)/(5−1) = 8/4 = <strong>2</strong>.</p>
-<p>4. (x−3)² + (y+1)² = <strong>25</strong>.</p></div></details>
+<p>4. (x−3)² + (y+1)² = <strong>25</strong>.</p>
+<p>5. slope = −A/B = −3/4 → <strong>−3/4</strong>.</p>
+<p>6. horizontal → y = k through y = −2 → <strong>y = −2</strong>.</p></div></details>
 <p class="footer-note">This is a new unit added from book scans (2026-07-22) — no quiz-app problems are linked to it yet. Builds on the coordinate basics in <a class="cx" href="03_Special_Theorems_Coordinates_Solids.html">03 Special Theorems Coordinates Solids</a> and connects to circle theorems in <a class="cx" href="02_Angles_Similarity_Circles.html">02 Angles Similarity Circles</a>.</p>
 </section>
 <a class="backlink" href="index.html">← All units</a>
