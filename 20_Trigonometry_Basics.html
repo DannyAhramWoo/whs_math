@@ -12,31 +12,43 @@
 <nav class="onpage"><div class="onpage-tag">On this page</div><ol>
 <li><span class="n">1</span><a href="#s1">sin, cos, tan Basics — <em>Sec 3, advanced</em></a></li>
 <li><span class="n">2</span><a href="#s2">Special Angle Values</a></li>
-<li><span class="n">3</span><a href="#s3">Law of Sines and Law of Cosines — <em>Sec 3, advanced</em></a></li>
+<li><span class="n">3</span><a href="#s3">Area, Law of Sines &amp; Law of Cosines — <em>Sec 3, advanced</em></a></li>
 </ol></nav>
 <section id="s1">
 <span class="sec-num">1</span>
 <h2>sin, cos, tan Basics — <em>Sec 3, advanced</em></h2>
+<p class="src-note"><em>Source: AOPS Introduction to Geometry Ch.18 "Introduction to Trigonometry" — §18.1 (right-triangle ratios), §18.2 (beyond right triangles).</em></p>
 <p>For a right triangle with a chosen acute angle A:</p>
 <ul>
 <li><strong>sin A</strong> = opposite side / hypotenuse</li>
 <li><strong>cos A</strong> = adjacent side / hypotenuse</li>
 <li><strong>tan A</strong> = opposite / adjacent = sin A / cos A</li>
+<li><strong>Remember it as SOH-CAH-TOA:</strong> <strong>S</strong>in = <strong>O</strong>pp/<strong>H</strong>yp, <strong>C</strong>os = <strong>A</strong>dj/<strong>H</strong>yp, <strong>T</strong>an = <strong>O</strong>pp/<strong>A</strong>dj.</li>
+<li><strong>Reciprocals</strong> (less common): cosec A = 1/sin A, sec A = 1/cos A, cot A = 1/tan A.</li>
 </ul>
 <ul>
-<li>Core identity: sin²A + cos²A = 1 (this is really just Pythagoras in disguise).</li>
+<li><strong>Core identity: sin²A + cos²A = 1.</strong> <em>Why:</em> opp² + adj² = hyp² (Pythagoras); divide both sides by hyp² and each term becomes sin²A + cos²A = 1.</li>
+<li><strong>Cofunction identity:</strong> sin A = cos(90° − A). The sine of an angle equals the cosine of its complement (opposite and adjacent swap when you look from the other acute angle).</li>
+<li><strong>Bounds (for an acute angle):</strong> 0 &lt; sin A &lt; 1 and 0 &lt; cos A &lt; 1, while tan A &gt; 0 with <strong>no upper limit</strong> (it shoots to infinity as A → 90°).</li>
 </ul>
 </section>
 <section id="s2">
 <span class="sec-num">2</span>
 <h2>Special Angle Values</h2>
-<p>These come straight from the 45-45-90 and 30-60-90 triangles already in <a class="cx" href="02_Angles_Similarity_Circles.html">02 Angles Similarity Circles</a>:</p>
+<p class="src-note"><em>Source: AOPS Introduction to Geometry §18.1 &amp; §18.4; the 30/45/60 values come from the special right triangles in Ch.6 §6.2 (also <a class="cx" href="02_Angles_Similarity_Circles.html">02 Angles Similarity Circles</a>).</em></p>
+<p>These come straight from the 45-45-90 and 30-60-90 triangles:</p>
 <div class="tbl-scroll"><table><thead><tr>
 <th>Angle</th>
 <th>sin</th>
 <th>cos</th>
 <th>tan</th>
 </tr></thead><tbody>
+<tr>
+<td>0°</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
 <tr>
 <td>30°</td>
 <td>1/2</td>
@@ -55,19 +67,29 @@
 <td>1/2</td>
 <td>√3</td>
 </tr>
+<tr>
+<td>90°</td>
+<td>1</td>
+<td>0</td>
+<td>undefined</td>
+</tr>
 </tbody></table></div>
 <ul>
+<li><strong>Memory pattern for sine:</strong> 0°, 30°, 45°, 60°, 90° give sin = √0/2, √1/2, √2/2, √3/2, √4/2 — i.e. <strong>√0, √1, √2, √3, √4 all over 2</strong>. Cosine is the same list <strong>reversed</strong>.</li>
 <li>Example: a right triangle with a 30° angle and short leg 5 → other leg = 5√3, hypotenuse = 10 (matches the 1:√3:2 ratio).</li>
 </ul>
 </section>
 <section id="s3">
 <span class="sec-num">3</span>
-<h2>Law of Sines and Law of Cosines — <em>Sec 3, advanced</em></h2>
+<h2>Area, Law of Sines &amp; Law of Cosines — <em>Sec 3, advanced</em></h2>
+<p class="src-note"><em>Source: AOPS Introduction to Geometry §18.2 (area formula) &amp; §18.3 (Law of Sines, Law of Cosines).</em></p>
 <ul>
-<li><strong>Law of Sines:</strong> a/sin A = b/sin B = c/sin C = 2R (R = circumradius). Use this when you know two angles and one side (or two sides and a non-included angle).</li>
+<li><strong>Area of any triangle: [ABC] = ½·ab·sin C</strong> — half the product of two sides times the sine of the angle <strong>between</strong> them. (No height needed — great for "ugly angle" area problems.)<br><span style="color:var(--ink-soft)">Example: sides 6 and 8 with a 30° angle between → area = ½·6·8·sin30° = 24·½ = <strong>12</strong>.</span></li>
+<li><strong>Law of Sines:</strong> a/sin A = b/sin B = c/sin C. Use this when you know two angles and one side (or two sides and a non-included angle). <em>(The extended form a/sin A = 2R, R = circumradius, is a harder challenge-level result, not the basic law.)</em></li>
 <li><strong>Law of Cosines:</strong> c² = a² + b² − 2ab·cos(C). Use this when you know two sides and the INCLUDED angle, or all three sides (to find an angle). It's a generalization of Pythagoras — when C=90°, cos(90°)=0 and it collapses to the normal c²=a²+b².<br><span style="color:var(--ink-soft)">Example: sides a=3, b=4, included angle C=30° → c² = 9+16−2(3)(4)cos30° = 25−12√3.</span></li>
 </ul>
-<div class="cp"><strong>Competition point:</strong> If a triangle problem gives you an "ugly" non-90° angle and asks for a side or area, the Law of Cosines usually solves it in one line — faster than trying to angle-chase a solution.</div>
+<div class="callout warn"><strong>Warning (the ambiguous SSA case):</strong> with two sides and a <strong>non-included</strong> angle, the Law of Sines can give <strong>two</strong> possible triangles (an angle and its supplement both have the same sine). Always check whether both fit — this is exactly why "SSA" is not a valid congruence rule.</div>
+<div class="cp"><strong>Competition point:</strong> If a triangle problem gives you an "ugly" non-90° angle and asks for a side or area, the Law of Cosines (for a side) or ½ab·sin C (for the area) usually solves it in one line — faster than angle-chasing.</div>
 </section>
 <section id="cheat-sheet">
 <h2>Cheat Sheet</h2>
@@ -77,27 +99,43 @@
 </tr></thead><tbody>
 <tr>
 <td>sin A</td>
-<td>opposite / hypotenuse</td>
+<td>opposite / hypotenuse (SOH)</td>
 </tr>
 <tr>
 <td>cos A</td>
-<td>adjacent / hypotenuse</td>
+<td>adjacent / hypotenuse (CAH)</td>
 </tr>
 <tr>
 <td>tan A</td>
-<td>opposite / adjacent</td>
+<td>opposite / adjacent (TOA)</td>
 </tr>
 <tr>
 <td>sin²+cos²</td>
 <td>= 1 always</td>
 </tr>
 <tr>
+<td>Cofunction</td>
+<td>sin A = cos(90°−A)</td>
+</tr>
+<tr>
+<td>sin pattern (0/30/45/60/90)</td>
+<td>√0/2, √1/2, √2/2, √3/2, √4/2</td>
+</tr>
+<tr>
+<td>Triangle area</td>
+<td>½·ab·sin C</td>
+</tr>
+<tr>
 <td>Law of Sines</td>
-<td>a/sinA = b/sinB = c/sinC = 2R</td>
+<td>a/sinA = b/sinB = c/sinC</td>
 </tr>
 <tr>
 <td>Law of Cosines</td>
 <td>c² = a²+b²−2ab·cosC</td>
+</tr>
+<tr>
+<td>SSA</td>
+<td>ambiguous — may give two triangles</td>
 </tr>
 </tbody></table></div>
 </section>
@@ -107,11 +145,15 @@
 <li>In a right triangle, one leg is 5 and the angle opposite it is 30°. Find the hypotenuse.</li>
 <li>What is sin 60°?</li>
 <li>A triangle has sides 5, 7, and an included angle of 60°. Use the Law of Cosines to find the third side squared.</li>
+<li>Find the area of a triangle with sides 10 and 6 and a 30° angle between them.</li>
+<li>Using the cofunction identity, what is sin 70° equal to in terms of cosine?</li>
 </ol>
 <details><summary>Answers</summary><div class="answer">
 <p>1. sin30° = 5/hyp = 1/2 → hyp = <strong>10</strong>.</p>
 <p>2. sin60° = <strong>√3/2</strong>.</p>
-<p>3. c² = 25+49−2(5)(7)cos60° = 74−70(1/2) = 74−35 = <strong>39</strong>.</p></div></details>
+<p>3. c² = 25+49−2(5)(7)cos60° = 74−70(1/2) = 74−35 = <strong>39</strong>.</p>
+<p>4. ½·10·6·sin30° = 30·½ = <strong>15</strong>.</p>
+<p>5. sin 70° = cos(90° − 70°) = <strong>cos 20°</strong>.</p></div></details>
 <p class="footer-note">This is a new, optional/advanced unit added from book scans (2026-07-22) — no quiz-app problems are linked to it yet. Builds on the special right triangles in <a class="cx" href="02_Angles_Similarity_Circles.html">02 Angles Similarity Circles</a>. Most primary problems don't need this — only use it if a problem gives an "ugly" angle that resists angle-chasing.</p>
 </section>
 <a class="backlink" href="index.html">← All units</a>
