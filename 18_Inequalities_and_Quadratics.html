@@ -12,32 +12,40 @@
 <nav class="onpage"><div class="onpage-tag">On this page</div><ol>
 <li><span class="n">1</span><a href="#s1">Inequality Manipulation Rules</a></li>
 <li><span class="n">2</span><a href="#s2">Absolute Value Inequalities</a></li>
-<li><span class="n">3</span><a href="#s3">Quadratic Inequalities (Sign Analysis)</a></li>
+<li><span class="n">3</span><a href="#s3">Quadratic &amp; Rational Inequalities (Sign Analysis)</a></li>
 <li><span class="n">4</span><a href="#s4">The Trivial Inequality and AM-GM</a></li>
 <li><span class="n">5</span><a href="#s5">Parabolas and the Vertex</a></li>
 </ol></nav>
 <section id="s1">
 <span class="sec-num">1</span>
 <h2>Inequality Manipulation Rules</h2>
+<p class="src-note"><em>Source: AOPS Introduction to Algebra Ch.9 "Introduction to Inequalities" — §9.1 (the basics), §9.3 (linear inequalities &amp; interval notation), §9.6 Summary.</em></p>
 <ul>
 <li>Adding/subtracting the same number from both sides keeps the direction the same.</li>
 <li>Multiplying/dividing by a <strong>positive</strong> number keeps the direction the same.</li>
 <li>Multiplying/dividing by a <strong>negative</strong> number <strong>FLIPS</strong> the inequality sign — the single most commonly missed step.<br><span style="color:var(--ink-soft)">Example: −2x &lt; 6 → dividing by −2 flips the sign: x &gt; −3.</span></li>
+<li><strong>Transitivity:</strong> if a &gt; b and b &gt; c, then a &gt; c.</li>
+<li><strong>Adding two inequalities:</strong> if a &gt; b and c &gt; d, then <strong>a + c &gt; b + d</strong> (add same-direction inequalities freely).</li>
+<li><strong>Multiplying two inequalities — only when all parts are positive:</strong> if a &gt; b &gt; 0 and c &gt; d &gt; 0, then ac &gt; bd. (Don't multiply inequalities that involve negatives — the sign can go wrong.)</li>
 <li><strong>Compound inequalities</strong> like a &lt; x &lt; b: apply the same operation to all three parts at once.</li>
+<li><strong>Interval / number-line notation:</strong> write the solution as an interval — <code>2 &lt; x &lt; 5</code> is <strong>(2, 5)</strong>; <code>x ≤ −1 or x ≥ 3</code> is <strong>(−∞, −1] ∪ [3, ∞)</strong>. A round bracket excludes the endpoint (strict &lt;), a square bracket includes it (≤).</li>
 </ul>
 </section>
 <section id="s2">
 <span class="sec-num">2</span>
 <h2>Absolute Value Inequalities</h2>
+<p class="src-note"><em>Source: AOPS Introduction to Algebra §20.2 covers <strong>absolute value as distance</strong> and abs-value </em>equations<em> (|2x−9| = 5) by casework; the |x| &lt; k / |x| &gt; k <strong>inequality</strong> split below is the standard extension of that distance idea.</em></p>
 <ul>
+<li><strong>|x| means distance from 0.</strong> So |x| = 3 means x is 3 away from 0 → x = 3 or −3. Inequalities follow from this "distance" picture:</li>
 <li>Isolate the absolute value first.</li>
-<li>|expr| <strong>&gt;</strong> k (k&gt;0) splits into TWO separate ranges: "expr &gt; k OR expr &lt; −k".</li>
-<li>|expr| <strong>&lt;</strong> k becomes ONE combined range: "−k &lt; expr &lt; k" (not "or").<br><span style="color:var(--ink-soft)">Example: 4|x+3|+3 &gt; 9 → |x+3| &gt; 3/2 → x &gt; −3/2 OR x &lt; −9/2.</span></li>
+<li>|expr| <strong>&gt;</strong> k (k&gt;0) means "<strong>farther than k from 0</strong>" → splits into TWO separate ranges: "expr &gt; k OR expr &lt; −k".</li>
+<li>|expr| <strong>&lt;</strong> k means "<strong>within k of 0</strong>" → ONE combined range: "−k &lt; expr &lt; k" (not "or").<br><span style="color:var(--ink-soft)">Example: 4|x+3|+3 &gt; 9 → |x+3| &gt; 3/2 → x &gt; −3/2 OR x &lt; −9/2.</span></li>
 </ul>
 </section>
 <section id="s3">
 <span class="sec-num">3</span>
-<h2>Quadratic Inequalities (Sign Analysis)</h2>
+<h2>Quadratic &amp; Rational Inequalities (Sign Analysis)</h2>
+<p class="src-note"><em>Source: AOPS Introduction to Algebra Ch.15 "More Inequalities" — §15.1 (quadratic inequalities), §15.2 (rational &amp; higher-degree).</em></p>
 <p>To solve something like (x−2)(x−5) &lt; 0:</p>
 <ol>
 <li>Find the roots (where each factor = 0) — these are the boundary points.</li>
@@ -46,25 +54,36 @@
 </ol>
 <ul>
 <li>Example: (x−2)(x−5) &lt; 0 is true only BETWEEN the roots: 2 &lt; x &lt; 5 (since one factor is positive and one is negative in that range, making the product negative).</li>
+<li><strong>More than two factors:</strong> the same interval-testing works for (x−1)(x−2)(x−3) etc. — mark all the roots on a number line, then check the sign in each piece.</li>
+<li><strong>Rational inequalities (a fraction):</strong> treat the numerator's and denominator's roots as boundary points. ⚠️ <strong>The denominator's roots are never allowed</strong> (they make it undefined), so those points are always <strong>excluded</strong>, even for ≤/≥.</li>
+<li><strong>Link to the discriminant:</strong> if a quadratic has <strong>no real roots</strong> (discriminant &lt; 0), it never crosses the x-axis, so it keeps <strong>one sign everywhere</strong> — always positive (if it opens up) or always negative (opens down).</li>
 </ul>
 <div class="cp"><strong>Competition point:</strong> If the quadratic isn't factored, use the quadratic formula (see <a class="cx" href="12_Equations_Algebra_Factoring.html">12 Equations Algebra Factoring</a>) to find the roots first, THEN do the sign analysis.</div>
 </section>
 <section id="s4">
 <span class="sec-num">4</span>
 <h2>The Trivial Inequality and AM-GM</h2>
+<p class="src-note"><em>Source: AOPS Introduction to Algebra §15.3 "The Trivial Inequality" — x² ≥ 0 and the (a²+b²)/2 ≥ ab form. The named "AM–GM / √(ab)" statement is the standard competition version (the book proves the equivalent square form rather than naming it).</em></p>
 <ul>
-<li><strong>Trivial Inequality:</strong> for any real number x, x² ≥ 0 always (equality only when x=0). This "obvious" fact is the starting point for proving many other inequalities — rearrange an expression until it becomes a sum of squares.</li>
-<li><strong>AM-GM Inequality (core idea):</strong> for positive numbers, their average (arithmetic mean) is always ≥ the geometric mean (nth root of the product); equality happens only when all the numbers are equal.<br><span style="color:var(--ink-soft)">Example: for two positive numbers with a fixed sum a+b, their product ab is LARGEST when a=b.</span></li>
+<li><strong>Trivial Inequality:</strong> for any real number x, x² ≥ 0 always (equality only when x=0). This "obvious" fact is the starting point for proving many other inequalities — rearrange an expression until it becomes a <strong>sum of squares</strong>.</li>
+<li><strong>The book's key consequence:</strong> since (a − b)² ≥ 0, expanding gives <strong>(a² + b²)/2 ≥ ab</strong>. Another famous one: for any positive x, <strong>x + 1/x ≥ 2</strong> (from (√x − 1/√x)² ≥ 0).</li>
+<li><strong>Proof technique — work backwards, then write it forwards:</strong> to <em>prove</em> an inequality, work back from it to something obviously true (a square ≥ 0), then reverse the steps to present it. (You can't just manipulate the thing you're trying to prove as if it's already true.)</li>
+<li><strong>AM-GM Inequality (the named √ version):</strong> for positive numbers, their <strong>arithmetic mean ≥ geometric mean</strong>; for two numbers <strong>(a + b)/2 ≥ √(ab)</strong>, with equality only when a = b.<br><span style="color:var(--ink-soft)">Example: for two positive numbers with a fixed sum a+b, their product ab is LARGEST when a=b.</span></li>
 </ul>
 <div class="cp"><strong>Competition point:</strong> "Find the maximum/minimum" word problems with a fixed sum or fixed product are usually AM-GM in disguise — check when equality can happen (both a bound AND an attainability check are needed).</div>
 </section>
 <section id="s5">
 <span class="sec-num">5</span>
 <h2>Parabolas and the Vertex</h2>
+<p class="src-note"><em>Source: AOPS Introduction to Algebra Ch.14 "Graphing Quadratics" (parabola shape, vertex, axis of symmetry) &amp; §15.4 "Quadratic Optimization" (max/min via completing the square).</em></p>
 <ul>
-<li>The graph of y = ax² + bx + c is a U-shaped curve called a <strong>parabola</strong>. It opens upward if a &gt; 0 (has a minimum) and downward if a &lt; 0 (has a maximum). The turning point is the <strong>vertex</strong>.</li>
-<li><strong>Vertex x-coordinate:</strong> x = −b/(2a) — this is also the average of the two roots.</li>
-<li><strong>Vertex form:</strong> y = a(x−h)² + k, where (h,k) is the vertex — get there by completing the square (see <a class="cx" href="12_Equations_Algebra_Factoring.html">12 Equations Algebra Factoring</a>).<br><span style="color:var(--ink-soft)">Example: y = x² − 4x + 3 = (x−2)² − 1, so the vertex is (2,−1), minimum value −1.</span></li>
+<li>The graph of y = ax² + bx + c is a U-shaped curve called a <strong>parabola</strong>. It opens upward if a &gt; 0 (has a <strong>minimum</strong>) and downward if a &lt; 0 (has a <strong>maximum</strong>). The turning point is the <strong>vertex</strong>.</li>
+<li><strong>|a| controls the width:</strong> the bigger |a| is, the <strong>narrower</strong> the parabola; small |a| makes it wide.</li>
+<li><strong>Axis of symmetry:</strong> the vertical line <strong>x = −b/(2a)</strong> through the vertex — the parabola is a mirror image across it.</li>
+<li><strong>Vertex x-coordinate:</strong> x = −b/(2a) — this is also the <strong>average of the two roots</strong> (they sit symmetrically either side).</li>
+<li><strong>Intercepts:</strong> the y-intercept is (0, c); the x-intercepts (if any) are the roots. No real roots (discriminant &lt; 0) → the parabola never touches the x-axis.</li>
+<li><strong>Vertex form:</strong> y = a(x−h)² + k, where (h,k) is the vertex — get there by completing the square (see <a class="cx" href="12_Equations_Algebra_Factoring.html">12 Equations Algebra Factoring</a>). Reading it as a <strong>shift</strong>: start from y = x², move <strong>h</strong> right and <strong>k</strong> up.<br><span style="color:var(--ink-soft)">Example: y = x² − 4x + 3 = (x−2)² − 1, so the vertex is (2,−1), minimum value −1.</span></li>
+<li><strong>Why the vertex is the max/min (the optimization argument):</strong> in vertex form a(x−h)² + k, the square (x−h)² ≥ 0 (Trivial Inequality), so if a &gt; 0 the smallest y is k (at x = h); if a &lt; 0 the largest y is k. That's why completing the square finds the extreme value.</li>
 </ul>
 </section>
 <section id="cheat-sheet">
@@ -78,28 +97,54 @@
 <td>flips the inequality sign</td>
 </tr>
 <tr>
+<td>Add two inequalities</td>
+<td>same direction: a&gt;b, c&gt;d ⟹ a+c&gt;b+d</td>
+</tr>
+<tr>
+<td>Multiply two inequalities</td>
+<td>only if all parts positive</td>
+</tr>
+<tr>
+<td>Interval notation</td>
+<td>(2,5) excludes ends; [2,5] includes them</td>
+</tr>
+<tr>
 <td>\</td>
 <td>expr\</td>
 <td>&gt; k</td>
-<td>expr &gt; k OR expr &lt; −k</td>
+<td>expr &gt; k OR expr &lt; −k (far from 0)</td>
 </tr>
 <tr>
 <td>\</td>
 <td>expr\</td>
 <td>&lt; k</td>
-<td>−k &lt; expr &lt; k</td>
+<td>−k &lt; expr &lt; k (near 0)</td>
 </tr>
 <tr>
 <td>Quadratic inequality</td>
 <td>find roots, test each interval's sign</td>
 </tr>
 <tr>
+<td>Rational inequality</td>
+<td>denominator's roots always excluded</td>
+</tr>
+<tr>
 <td>Trivial Inequality</td>
-<td>x² ≥ 0 always</td>
+<td>x² ≥ 0 always → (a²+b²)/2 ≥ ab, x+1/x ≥ 2</td>
 </tr>
 <tr>
 <td>AM-GM (2 numbers)</td>
 <td>(a+b)/2 ≥ √(ab), equal only when a=b</td>
+</tr>
+<tr>
+<td>Parabola width</td>
+<td>bigger \</td>
+<td>a\</td>
+<td>→ narrower</td>
+</tr>
+<tr>
+<td>Axis of symmetry</td>
+<td>x = −b/(2a)</td>
 </tr>
 <tr>
 <td>Vertex x-coordinate</td>
@@ -107,7 +152,7 @@
 </tr>
 <tr>
 <td>Vertex form</td>
-<td>y = a(x−h)²+k</td>
+<td>y = a(x−h)²+k; min/max = k (Trivial Ineq)</td>
 </tr>
 </tbody></table></div>
 </section>
@@ -118,12 +163,16 @@
 <li>Solve: |x − 4| &lt; 3.</li>
 <li>Solve: (x+1)(x−3) ≥ 0.</li>
 <li>Find the vertex of y = x² − 6x + 5.</li>
+<li>Write the solution of question 3 in interval notation.</li>
+<li>What is the minimum value of y = 2(x − 4)² + 7, and where does it occur?</li>
 </ol>
 <details><summary>Answers</summary><div class="answer">
 <p>1. −2x &gt; 4 → dividing by −2 flips → x &lt; <strong>−2</strong>.</p>
 <p>2. −3 &lt; x−4 &lt; 3 → <strong>1 &lt; x &lt; 7</strong>.</p>
 <p>3. Roots at x=−1, x=3. Product ≥0 outside or on the roots → <strong>x ≤ −1 or x ≥ 3</strong>.</p>
-<p>4. x = −(−6)/(2×1) = 3 → y = 9−18+5 = −4 → vertex <strong>(3, −4)</strong>.</p></div></details>
+<p>4. x = −(−6)/(2×1) = 3 → y = 9−18+5 = −4 → vertex <strong>(3, −4)</strong>.</p>
+<p>5. <strong>(−∞, −1] ∪ [3, ∞)</strong> (square brackets since ≥ includes the roots).</p>
+<p>6. The square is ≥ 0, so the minimum is <strong>7</strong>, at <strong>x = 4</strong>.</p></div></details>
 <p class="footer-note">This is a new unit added from book scans (2026-07-22) — no quiz-app problems are linked to it yet. Builds directly on the quadratic formula/discriminant in <a class="cx" href="12_Equations_Algebra_Factoring.html">12 Equations Algebra Factoring</a>.</p>
 </section>
 <a class="backlink" href="index.html">← All units</a>
