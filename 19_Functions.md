@@ -82,7 +82,7 @@ The basic moves on a graph, given the original y = f(x):
 
 > 📖 *Source: AOPS Introduction to Algebra Ch.20 "Special Functions" — §20.2 (absolute value), §20.3 (floor & ceiling), §20.5 (piecewise).*
 
-- **Floor function ⌊x⌋:** the greatest integer ≤ x ("round down"). ⌊4.7⌋ = 4, but for negatives it's NOT the same as truncating: ⌊−5.3⌋ = **−6**, not −5.
+- **Floor function ⌊x⌋** (also called the **greatest integer function**, sometimes written [x]): the greatest integer ≤ x ("round down"). ⌊4.7⌋ = 4, but for negatives it's NOT the same as truncating: ⌊−5.3⌋ = **−6**, not −5.
 - **Ceiling function ⌈x⌉:** the smallest integer ≥ x ("round up"). ⌈3.2⌉ = 4, ⌈−2.3⌉ = −2.
 - **Floor/ceiling of a surd — bracket between squares:** to find ⌊√39⌋, note 6² = 36 ≤ 39 < 49 = 7², so 6 < √39 < 7 → ⌊√39⌋ = **6** (and ⌈√39⌉ = 7).
 - **Fractional part:** {x} = x − ⌊x⌋, always between 0 (inclusive) and 1 (exclusive). So every number splits as **x = ⌊x⌋ + {x}** (integer part + fractional part).

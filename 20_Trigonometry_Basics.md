@@ -30,6 +30,8 @@ For a right triangle with a chosen acute angle A:
 - **Core identity: sin²A + cos²A = 1.** *Why:* opp² + adj² = hyp² (Pythagoras); divide both sides by hyp² and each term becomes sin²A + cos²A = 1.
 - **Cofunction identity:** sin A = cos(90° − A). The sine of an angle equals the cosine of its complement (opposite and adjacent swap when you look from the other acute angle).
 - **Bounds (for an acute angle):** 0 < sin A < 1 and 0 < cos A < 1, while tan A > 0 with **no upper limit** (it shoots to infinity as A → 90°).
+- **What trig is *for*:** in a right triangle, if you know **one side and one acute angle** (or one trig value), you can find **every** side. Set up the right ratio (SOH-CAH-TOA), plug in the known side, solve.
+  - Example: a ramp rises at 30° and is 10 m long (hypotenuse) → height = 10·sin30° = **5 m**.
 
 ---
 
